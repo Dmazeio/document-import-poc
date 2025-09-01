@@ -1,74 +1,75 @@
-# main.py
-
 import os
 import json
-import pdfplumber  # Import the new library
+import pdfplumber
 from openai import OpenAI
 from dotenv import load_dotenv
 
-# --- CONFIGURATION ---
-# 1. Load environment variables from the .env file
+# --- KONFIGURASJON ---
+# 1. Last inn miljøvariabler fra .env-filen
 load_dotenv()
 
-# 2. Get the API key and initialize the OpenAI client
+# 2. Hent API-nøkkel og initialiser OpenAI-klienten
 api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
-    raise ValueError("Could not find OPENAI_API_KEY. Check your .env file.")
+    raise ValueError("Kunne ikke finne OPENAI_API_KEY. Sjekk din .env-fil.")
 client = OpenAI(api_key=api_key)
 
 
-# --- FUNCTIONS ---
+# --- FUNKSJONER ---
 
 def extract_text_from_pdf(file_path):
     """
-    Opens a PDF file and extracts all text from all pages.
-    Returns the text as a single string.
+    Åpner en PDF-fil og trekker ut all tekst fra alle sider.
+    Returnerer teksten som en enkelt streng.
     """
-    print(f"Reading text from PDF file: {file_path}...")
+    print(f"Leser tekst fra PDF-fil: {file_path}...")
     try:
         full_text = ""
         with pdfplumber.open(file_path) as pdf:
             for page in pdf.pages:
                 text = page.extract_text()
                 if text:
-                    full_text += text + "\n\n" # Add a newline between pages
+                    full_text += text + "\n\n"  # Legg til linjeskift mellom sider
         return full_text
     except FileNotFoundError:
-        return {"error": f"The file was not found at the path: {file_path}"}
+        return {"error": f"Filen ble ikke funnet på stien: {file_path}"}
     except Exception as e:
-        return {"error": f"An error occurred while reading the PDF: {e}"}
+        return {"error": f"En feil oppstod under lesing av PDF-en: {e}"}
 
 def extract_meeting_data_as_json(meeting_text):
     """
-    Sends unstructured meeting text to OpenAI and requests structured JSON in return.
+    Sender ustrukturert møtetekst til OpenAI og ber om strukturert JSON i retur.
+    Validerer at responsen kun inneholder de forventede feltene.
     """
-    # Define the template for the data we want in return
-    data_template = """
-    {
+    # Definer malen og de forventede nøklene
+    expected_keys = ["title", "description", "date"]
+    data_template = {
         "title": "...",
         "description": "...",
         "date": "YYYY-MM-DD"
     }
-    """
     
-    # Define a detailed instruction for the model
+    # Definer en detaljert og streng instruksjon for modellen
     system_instruction = f"""
-    You are an expert at analyzing minutes of meetings.
-    Analyze the user's text. Extract the following data fields:
-    1.  'title': The main title of the meeting.
-    2.  'description': A brief summary of the meeting's purpose.
-    3.  'date': The date of the meeting.
+    Du er en ekspert på å analysere møtereferater.
+    Analyser brukerens tekst. Trekk ut følgende datafelt:
+    1.  'title': Hovedtittelen til møtet.
+    2.  'description': En kort oppsummering av møtets formål.
+    3.  'date': Datoen for møtet.
+
+    Formater responsen din som et gyldig JSON-objekt.
+    JSON-objektet MÅ KUN inneholde følgende nøkler: {json.dumps(expected_keys)}.
+    Ikke legg til, fjern eller endre navn på noen av nøklene.
+    Strukturen SKAL være nøyaktig som denne malen:
+    {json.dumps(data_template, indent=4)}
     
-    Format your response as a valid JSON object based on this template:
-    {data_template}
-    
-    Respond ONLY with the JSON object itself.
+    Svar KUN med selve JSON-objektet, uten ekstra tekst eller forklaringer.
     """
 
     try:
-        print("Sending text to OpenAI for analysis...")
+        print("Sender tekst til OpenAI for analyse...")
         response = client.chat.completions.create(
-            model="gpt-5",
+            model="gpt-4o",  # Anbefaler gpt-4o for bedre instruksjonsfølging
             response_format={"type": "json_object"},
             messages=[
                 {"role": "system", "content": system_instruction},
@@ -76,32 +77,40 @@ def extract_meeting_data_as_json(meeting_text):
             ]
         )
         json_response_str = response.choices[0].message.content
-        return json.loads(json_response_str)
+        
+        # Validering av responsen
+        data = json.loads(json_response_str)
+        
+        # Sjekk at kun de forventede nøklene finnes
+        if not isinstance(data, dict) or sorted(data.keys()) != sorted(expected_keys):
+            return {"error": f"OpenAI-responsen fulgte ikke det forventede formatet. Mottok nøkler: {list(data.keys())}"}
+            
+        return data
 
     except json.JSONDecodeError:
-        return {"error": "Failed to decode the JSON response from OpenAI."}
+        return {"error": "Klarte ikke å dekode JSON-responsen fra OpenAI."}
     except Exception as e:
-        return {"error": f"An error occurred during the call to OpenAI: {e}"}
+        return {"error": f"En feil oppstod under kallet til OpenAI: {e}"}
 
 
-# --- MAIN LOGIC ---
+# --- HOVEDLOGIKK ---
 if __name__ == "__main__":
-    # Define the path to the PDF file you want to analyze
+    # Definer stien til PDF-filen du vil analysere
     pdf_file_path = "Minutes_of_meeting_samples/SampleMinutes-1.pdf"
     
-    # Step 1: Extract text from the PDF
+    # Steg 1: Trekk ut tekst fra PDF
     raw_text_from_pdf = extract_text_from_pdf(pdf_file_path)
     
-    # Check if text extraction was successful
+    # Sjekk om tekstutvinning var vellykket
     if isinstance(raw_text_from_pdf, dict) and "error" in raw_text_from_pdf:
-        print(f"Error: {raw_text_from_pdf['error']}")
+        print(f"Feil: {raw_text_from_pdf['error']}")
     else:
-        print("Text successfully extracted from PDF.")
+        print("Tekst ble trukket ut fra PDF.")
         
-        # Step 2: Send the text to OpenAI to get structured data
+        # Steg 2: Send teksten til OpenAI for å få strukturerte data
         structured_data = extract_meeting_data_as_json(raw_text_from_pdf)
         
-        print("\n--- Result from OpenAI ---")
-        # Use json.dumps to "pretty-print" the result with indentation
+        print("\n--- Resultat fra OpenAI ---")
+        # Bruk json.dumps for å "pen-printe" resultatet med innrykk
         print(json.dumps(structured_data, indent=2, ensure_ascii=False))
-        print("--------------------------") 
+        print("--------------------------")
