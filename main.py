@@ -68,7 +68,7 @@ def extract_meeting_data_as_json(meeting_text):
     try:
         print("Sending text to OpenAI for analysis...")
         response = client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-5o",
             response_format={"type": "json_object"},
             messages=[
                 {"role": "system", "content": system_instruction},
