@@ -50,11 +50,17 @@ def extract_data_based_on_schema(client: OpenAI, text_content: str, schema_info:
     Analyze the user's text and extract data for the following fields:
     {schema_info['field_instructions']}
 
-    IMPORTANT RULES:
+    IMPORTANT RULES FOR DATE AND TIME:
+    - For datetime fields, you often need to combine a date (e.g., "3.21.07") with a time (e.g., "6:02pm") found in different places in the text.
+    - Convert dates with two-digit years (like '07') to a four-digit year in the 21st century (2007).
+    - Convert times with AM/PM to 24-hour format.
+    - If no timezone is specified in the text, assume the timezone is UTC and use 'Z' at the end of the string. Example: "2007-03-21T18:02:00Z".
+
+    GENERAL RULES:
     - The response MUST be a valid JSON object.
     - The JSON object MUST ONLY contain the keys: {json.dumps(schema_info['expected_keys'])}.
-    - If a value for a field is not found, you MUST return `null` for that field.
-
+    - If a value for a field absolutely cannot be found, return `null` for that field.
+    
     Respond ONLY with the JSON object itself.
     """
 
