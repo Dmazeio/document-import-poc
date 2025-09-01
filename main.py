@@ -104,4 +104,4 @@ if __name__ == "__main__":
         print("\n--- Result from OpenAI ---")
         # Use json.dumps to "pretty-print" the result with indentation
         print(json.dumps(structured_data, indent=2, ensure_ascii=False))
-        print("--------------------------")
+        print("--------------------------") 
