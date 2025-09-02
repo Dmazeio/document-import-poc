@@ -2,6 +2,10 @@
     {
         "id": "1",
         "objectname": "mom",
+        "startuptime": "2023-10-01T10:00:00Z",
+        "endtime": "2023-10-01T11:00:00Z",
+        "title": "Weekly Team Meeting",
+        "description": "Weekly sync to discuss project updates and action items.",
         "a_agenda_ids": {
             "type": "agenda",
             "values": [
@@ -14,12 +18,17 @@
         "id": "2",
         "parentid": "1",
         "parenttype": "mom",
-        "objectname": "agenda"
+        "objectname": "agenda",
+        "title": "Project Kickoff",
+        "description": "Discuss project objectives, timelines, and team roles.",
+        "conclusion": "Assigned risk management tasks to team members."}
     },
     {
         "id": "3",
         "parentid": "1",
         "parenttype": "mom",
-        "objectname": "agenda"
-    }
+        "objectname": "agenda",
+        "title": "Risk Assessment",
+        "description": "Identify potential risks and mitigation strategies.",
+        "conclusion": "Assigned risk management tasks to team members."}
 ]
