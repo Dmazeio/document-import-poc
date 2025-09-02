@@ -1,35 +1,77 @@
 {
-  "name": "Minutes of meeting",
-  "description": "Overview of general meeting context, including purpose, participants, schedule, and background information.\n\n🎯 Purpose: Document essential context to aid transparency and accountability.\n\n👥 Roles: Provided by meeting organiser or minute taker.\n\n💡 Why this matters: This info is reused in exports, reports, and audits.\n\n🚩 Tips: Be concise but complete.\n\n* Note: Selection options may be customised by your administrator.*",
-  "objectname": "mom",
-  "fields": [
+  "name": "Minutes of meeting",  
+  "types": [
     {
-      "fieldname": "title",
-      "type": "string",
-      "description": "Provide a concise and specific title for the meeting. This title will appear in dashboards, reports, and exports, so clarity is essential.\n\n🎯 Purpose: Clearly identify the meeting type, project, or team context.\n\n👥 Roles: Created by the meeting organiser or administrator.\n\n💡 Why this matters: A specific title enables easy search and comparison with other meetings.\n\n🚩 Tips: Avoid vague titles like \"Meeting\" or \"Workshop\".\n\n📌 Examples:\n- \"IT Project Governance Meeting – Q2 2025\"\n- \"Weekly Team Sync – Digital Marketing\"\n- \"HR Policy Alignment – Kickoff\"\n\n* Note: Selection options may be customised by your administrator.*",
-      "label": "Title",
-      "required": true
+      "description": "Overview of general meeting context, including purpose, participants, schedule, and background information.\n\n🎯 Purpose: Document essential context to aid transparency and accountability.\n\n👥 Roles: Provided by meeting organiser or minute taker.\n\n💡 Why this matters: This info is reused in exports, reports, and audits.\n\n🚩 Tips: Be concise but complete.\n\n* Note: Selection options may be customised by your administrator.*",
+      "isroot": true,
+      "objectname": "mom",
+      "fields": [
+        {
+          "fieldname": "title",
+          "type": "string",
+          "description": "Provide a concise and specific title for the meeting. This title will appear in dashboards, reports, and exports, so clarity is essential.\n\n🎯 Purpose: Clearly identify the meeting type, project, or team context.\n\n👥 Roles: Created by the meeting organiser or administrator.\n\n💡 Why this matters: A specific title enables easy search and comparison with other meetings.\n\n🚩 Tips: Avoid vague titles like \"Meeting\" or \"Workshop\".\n\n📌 Examples:\n- \"IT Project Governance Meeting – Q2 2025\"\n- \"Weekly Team Sync – Digital Marketing\"\n- \"HR Policy Alignment – Kickoff\"\n\n* Note: Selection options may be customised by your administrator.*",
+          "label": "Title",
+          "required": true
+        },
+        {
+          "fieldname": "description",
+          "type": "string",
+          "description": "Describe the purpose, scope, and context of the meeting in detail. This field helps readers quickly understand why the meeting was held and what it aimed to achieve.\n\n🎯 Purpose: Provide background or triggers for the meeting and outline its main goals or expected outcomes.\n\n👥 Roles: Typically completed by the meeting organiser or note taker.\n\n💡 Why this matters: Clear context supports traceability and helps align attendees with meeting objectives.\n\n🚩 Tips: Add information if the meeting was called ad hoc or for specific issues.\n\n📌 Examples:\n- \"Monthly planning meeting for the customer onboarding project. Focus on risk tracking and resource allocation.\"\n- \"Internal compliance check-in for vendor due diligence and documentation requirements.\"\n\n* Note: Selection options may be customised by your administrator.*",
+          "label": "Description",
+          "required": true
+        },
+        {
+          "fieldname": "startuptime",
+          "type": "datetime",
+          "description": "Record the actual or scheduled start time of the meeting in HH:MM format. This supports agenda planning and timing analysis.\n\n🎯 Purpose: Capture precise meeting start times for duration tracking.\n\n👥 Roles: Logged by meeting organiser or minute taker.\n\n💡 Why this matters: Helps identify meeting efficiency and timing trends.\n\n🚩 Tips: Reflect local time zones and update if the start was delayed.\n\n* Note: Selection options may be customised by your administrator.*",
+          "label": "Start Time",
+          "required": false
+        },
+        {
+          "fieldname": "endtime",
+          "type": "datetime",
+          "description": "Record the actual or planned end time of the meeting in HH:MM format. This completes the time frame for the session.\n\n🎯 Purpose: Define the meeting duration for planning and reporting.\n\n👥 Roles: Recorded by meeting organiser or minute taker.\n\n💡 Why this matters: Useful for monitoring schedule adherence.\n\n🚩 Tips: Adjust for overruns or early endings as necessary.\n\n* Note: Selection options may be customised by your administrator.*",
+          "label": "End time",
+          "required": false
+        }
+      ]
     },
     {
-      "fieldname": "description",
-      "type": "string",
-      "description": "Describe the purpose, scope, and context of the meeting in detail. This field helps readers quickly understand why the meeting was held and what it aimed to achieve.\n\n🎯 Purpose: Provide background or triggers for the meeting and outline its main goals or expected outcomes.\n\n👥 Roles: Typically completed by the meeting organiser or note taker.\n\n💡 Why this matters: Clear context supports traceability and helps align attendees with meeting objectives.\n\n🚩 Tips: Add information if the meeting was called ad hoc or for specific issues.\n\n📌 Examples:\n- \"Monthly planning meeting for the customer onboarding project. Focus on risk tracking and resource allocation.\"\n- \"Internal compliance check-in for vendor due diligence and documentation requirements.\"\n\n* Note: Selection options may be customised by your administrator.*",
-      "label": "Description",
-      "required": true
-    },
+      "description": "Capture each agenda item, its discussion, presenter, and outcomes to structure meeting content and support follow-up.\n\n🎯 Purpose: Organise meeting discussions and assign responsibilities.\n\n👥 Roles: Updated by minute taker or agenda owner.\n\n💡 Why this matters: Drives clarity and systematic follow-up.\n\n🚩 Tips: Be specific in conclusions and statuses.\n\n* Note: Selection options may be customised by your administrator.*",
+      "isroot": false,
+      "objectname": "agenda",
+      "fields": [
+        {
+          "fieldname": "title",
+          "type": "string",
+          "description": "Provide a short and clear title for the agenda item. This structures the meeting and aids follow-up.\n\n🎯 Purpose: Clearly define topics or decisions.\n\n👥 Roles: Created by meeting organisers or presenters.\n\n💡 Why this matters: Facilitates meeting flow and reporting.\n\n🚩 Tips: Avoid vague titles like \"Discussion\" or \"Update\".\n\n* Note: Selection options may be customised by your administrator.*",
+          "label": "Agenda point",
+          "required": true
+        },
+        {
+          "fieldname": "description",
+          "type": "string",
+          "description": "Summarise the discussion for each agenda item. This records what was said, clarified, or raised during the meeting.\n\n🎯 Purpose: Document key points and viewpoints.\n\n👥 Roles: Captured by minute takers or presenters.\n\n💡 Why this matters: Provides a record for transparency and follow-up.\n\n🚩 Tips: Use bullet points and separate discussion from conclusions.\n\n* Note: Selection options may be customised by your administrator.*",
+          "label": "Discussion",
+          "required": true
+        },
+        {
+          "fieldname": "conclusion",
+          "type": "string",
+          "description": "Capture the outcome or decision for the agenda item. This clarifies agreements and next steps.\n\n🎯 Purpose: Document resolutions and future actions.\n\n👥 Roles: Entered by minute takers or agenda owners.\n\n💡 Why this matters: Enhances accountability and clarity.\n\n🚩 Tips: Be specific and avoid vague statements.\n\n* Note: Selection options may be customised by your administrator.*",
+          "label": "Conclusions",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "relationships": [
     {
-      "fieldname": "startuptime",
-      "type": "datetime",
-      "description": "Record the actual or scheduled start time of the meeting in HH:MM format. This supports agenda planning and timing analysis.\n\n🎯 Purpose: Capture precise meeting start times for duration tracking.\n\n👥 Roles: Logged by meeting organiser or minute taker.\n\n💡 Why this matters: Helps identify meeting efficiency and timing trends.\n\n🚩 Tips: Reflect local time zones and update if the start was delayed.\n\n* Note: Selection options may be customised by your administrator.*",
-      "label": "Start Time",
-      "required": false
-    },
-    {
-      "fieldname": "endtime",
-      "type": "datetime",
-      "description": "Record the actual or planned end time of the meeting in HH:MM format. This completes the time frame for the session.\n\n🎯 Purpose: Define the meeting duration for planning and reporting.\n\n👥 Roles: Recorded by meeting organiser or minute taker.\n\n💡 Why this matters: Useful for monitoring schedule adherence.\n\n🚩 Tips: Adjust for overruns or early endings as necessary.\n\n* Note: Selection options may be customised by your administrator.*",
-      "label": "End time",
-      "required": false
+      "parent": "mom",
+      "child": "agenda",
+      "type": "one-to-many",
+      "childfieldname": "a_agenda_ids",
+      "description": "Link agenda items to their parent meeting record. This structures the meeting content and supports detailed documentation."
     }
   ]
 }

@@ -1,0 +1,25 @@
+[
+    {
+        "id": "1",
+        "objectname": "mom",
+        "a_agenda_ids": {
+            "type": "agenda",
+            "values": [
+                "2",
+                "3"
+            ]
+        }
+    },
+    {
+        "id": "2",
+        "parentid": "1",
+        "parenttype": "mom",
+        "objectname": "agenda"
+    },
+    {
+        "id": "3",
+        "parentid": "1",
+        "parenttype": "mom",
+        "objectname": "agenda"
+    }
+]
