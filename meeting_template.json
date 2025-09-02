@@ -1,8 +1,8 @@
 {
-  "name": "Minutes of meeting",
-  "description": "Overview of general meeting context, including purpose, participants, schedule, and background information.\n\n🎯 Purpose: Document essential context to aid transparency and accountability.\n\n👥 Roles: Provided by meeting organiser or minute taker.\n\n💡 Why this matters: This info is reused in exports, reports, and audits.\n\n🚩 Tips: Be concise but complete.\n\n* Note: Selection options may be customised by your administrator.*",
+  "name": "Minutes of meeting",  
   "types": [
     {
+      "description": "Overview of general meeting context, including purpose, participants, schedule, and background information.\n\n🎯 Purpose: Document essential context to aid transparency and accountability.\n\n👥 Roles: Provided by meeting organiser or minute taker.\n\n💡 Why this matters: This info is reused in exports, reports, and audits.\n\n🚩 Tips: Be concise but complete.\n\n* Note: Selection options may be customised by your administrator.*",
       "isroot": true,
       "objectname": "mom",
       "fields": [
@@ -37,6 +37,7 @@
       ]
     },
     {
+      "description": "Capture each agenda item, its discussion, presenter, and outcomes to structure meeting content and support follow-up.\n\n🎯 Purpose: Organise meeting discussions and assign responsibilities.\n\n👥 Roles: Updated by minute taker or agenda owner.\n\n💡 Why this matters: Drives clarity and systematic follow-up.\n\n🚩 Tips: Be specific in conclusions and statuses.\n\n* Note: Selection options may be customised by your administrator.*",
       "isroot": false,
       "objectname": "agenda",
       "fields": [
