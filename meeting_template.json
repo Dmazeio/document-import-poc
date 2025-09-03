@@ -41,6 +41,14 @@
           "label": "Status",
           "required": true,
           "entitytype": "momstatus"
+        },
+        {
+          "fieldname": "e_attendees_ids",
+          "type": "entity",
+          "description": "List all participants who attended the meeting. This provides traceability and supports follow-up actions.\n\n🎯 Purpose: Document who was present and involved in decisions.\n\n👥 Roles: Compiled by minute taker or organiser.\n\n💡 Why this matters: Ensures accountability and accurate records.\n\n🚩 Tips: Include full names, roles, and note any absences or external attendees.\n\n📌 Examples:\n- \"Lina H. (Project Owner), Omar B. (Security Lead), Lisa N. (Consultant, Acme Corp)\"\n- \"Present: All team members. Absent: Finance representative (informed in advance).\"\n\n* Note: Selection options may be customised by your administrator.*",
+          "label": "Attendees",
+          "required": false,
+          "entitytype": "people"
         }
       ]
     },
@@ -120,6 +128,14 @@
           "label": "Status",
           "required": true,
           "entitytype": "measurestate"
+        },
+        {
+          "fieldname": "e_responsible_ids",
+          "type": "entity",
+          "description": "This field is used to assign the person responsible for implementing the action. The dropdown menu shows active Dmaze users by their full name (first and last). Assigning a responsible person is required before the action can be set to implementation.\n\n&nbsp;\n\n🎯 Purpose\n\nTo ensure clear accountability for executing and reporting on the action.\n\n&nbsp;\n\n👥 Roles\n\n- Action Creator or Initiator: Selects the responsible person from the list.\n- Responsible User: Accepts or declines the task and updates progress.\n\n&nbsp;\n\n💡 Why this matters\n\nAssigning responsibility ensures that the action is actively followed up. It also enables system-generated email notifications, improving communication and accountability.\n\n&nbsp;\n\n🚩 Tips\n\n- Choose someone with the right skills, role, and authority to carry out the action.\n- A valid email address is required to receive notifications – a warning icon will appear if the selected user is missing this.\n- The responsible person will receive an email when the action is moved to implementation status, asking them to accept or decline the task.\n\n&nbsp;\n\n📌 Examples\n\n- “Elena Rossi (IT Security Manager)”\n- “Jens Madsen (Facilities Team)”\n\n&nbsp;\n\n⚠️ Note: Only active users registered in Dmaze can be assigned. Email notifications require a valid address on the user profile.",
+          "label": "Responsible",
+          "required": false,
+          "entitytype": "user"
         }
       ]
     }
@@ -158,7 +174,7 @@
         "description": ""
       }
     ],
-     "agendastatus": [
+    "agendastatus": [
       {
         "label": "Closed",
         "id": "a7s67aa-cd92-4887-9d58-a24d28531956",
@@ -175,7 +191,7 @@
         "description": ""
       }
     ],
-     "measurestate": [
+    "measurestate": [
       {
         "label": "Existing",
         "id": "sad89a90s-cd92-4887-9d58-a24d28531956",
