@@ -1,15 +1,18 @@
-import pdfplumber
+# File: src/pdf_processor.py
 
-def extract_text_from_pdf(file_path: str) -> dict | str:
-    """Extracts all text from a PDF file."""
-    print(f"Reading text from PDF file: {file_path}...")
+from pypdf import PdfReader
+
+def extract_text_from_pdf(file_path: str) -> str:
+    """
+    Extracts all text from a PDF file and returns it as a single string.
+    """
     try:
+        reader = PdfReader(file_path)
         full_text = ""
-        with pdfplumber.open(file_path) as pdf:
-            for page in pdf.pages:
-                text = page.extract_text()
-                if text:
-                    full_text += text + "\n\n"
+        for page in reader.pages:
+            full_text += page.extract_text() + "\n"
         return full_text
+    except FileNotFoundError:
+        return {"error": f"PDF file not found at: {file_path}"}
     except Exception as e:
         return {"error": f"An error occurred while reading the PDF: {e}"}

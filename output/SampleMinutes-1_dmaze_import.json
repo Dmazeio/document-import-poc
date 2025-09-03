@@ -1,0 +1,95 @@
+[
+    {
+        "id": "mom-577973e8-fc75-4050-9864-de943eaa979f",
+        "objectname": "mom",
+        "a_agenda_ids": {
+            "type": "agenda",
+            "values": [
+                "agenda-a906982b-a1eb-4d7d-8657-faffe7a9642a",
+                "agenda-9877b6e2-56f7-48b2-9e44-7598a4f3d806",
+                "agenda-acb29363-da07-4be3-8dd6-ebf3fb407a45",
+                "agenda-6281466b-d881-4677-8a3c-7c8e4ee0d046",
+                "agenda-b0bd6b2f-3884-4b50-9f31-a96f93adb0ed",
+                "agenda-deef35a4-08bb-44d2-baf8-78228f696d0c",
+                "agenda-bda60b31-0689-468a-a7df-711a945b8b7e",
+                "agenda-acfa7672-2878-4911-a881-2e93249de67a"
+            ]
+        },
+        "title": "Skateboarding Club Meeting",
+        "description": "Minutes of the Skateboarding Club meeting held in Shafer Hall Room 221.",
+        "startuptime": null,
+        "endtime": "2007-03-21T18:45:00Z"
+    },
+    {
+        "id": "agenda-a906982b-a1eb-4d7d-8657-faffe7a9642a",
+        "parentid": "mom-577973e8-fc75-4050-9864-de943eaa979f",
+        "parenttype": "mom",
+        "objectname": "agenda",
+        "title": "Acceptance of Previous Minutes",
+        "description": "Motion to accept the minutes from the meeting on September 12, 2006.",
+        "conclusion": "Motion carries with 7 in favor, 0 opposed, 1 abstention."
+    },
+    {
+        "id": "agenda-9877b6e2-56f7-48b2-9e44-7598a4f3d806",
+        "parentid": "mom-577973e8-fc75-4050-9864-de943eaa979f",
+        "parenttype": "mom",
+        "objectname": "agenda",
+        "title": "President's Report",
+        "description": "Constitution finalized and will be submitted to advisor. Distribution of first aid kits planned for April 12, 2006. Kim offered to drive the van.",
+        "conclusion": null
+    },
+    {
+        "id": "agenda-acb29363-da07-4be3-8dd6-ebf3fb407a45",
+        "parentid": "mom-577973e8-fc75-4050-9864-de943eaa979f",
+        "parenttype": "mom",
+        "objectname": "agenda",
+        "title": "Vice President's Report",
+        "description": "DJ SK8 available for Skate-a-Palooza on May 18, 2007. Services will include sound system, lights, and various entertainment for $600.",
+        "conclusion": "Motion carries with 6 in favor, 1 opposed, 1 abstention."
+    },
+    {
+        "id": "agenda-6281466b-d881-4677-8a3c-7c8e4ee0d046",
+        "parentid": "mom-577973e8-fc75-4050-9864-de943eaa979f",
+        "parenttype": "mom",
+        "objectname": "agenda",
+        "title": "Treasurer's Report",
+        "description": "Budget and fundraising account balances were discussed. Awaiting invoice from Boards ‘R’ Us.",
+        "conclusion": null
+    },
+    {
+        "id": "agenda-b0bd6b2f-3884-4b50-9f31-a96f93adb0ed",
+        "parentid": "mom-577973e8-fc75-4050-9864-de943eaa979f",
+        "parenttype": "mom",
+        "objectname": "agenda",
+        "title": "Old Business",
+        "description": "Event registration for Skateboard Workshop approved. Room reservation for April 20th needs submission. Discussion on NY trip expenses including hotel and meal allowances.",
+        "conclusion": "Motion carries to allocate $1,010 for hotel and $20 for parking for the NY trip."
+    },
+    {
+        "id": "agenda-deef35a4-08bb-44d2-baf8-78228f696d0c",
+        "parentid": "mom-577973e8-fc75-4050-9864-de943eaa979f",
+        "parenttype": "mom",
+        "objectname": "agenda",
+        "title": "New Business",
+        "description": "Nominations for executive board positions to be held in two weeks, with elections following week.",
+        "conclusion": null
+    },
+    {
+        "id": "agenda-bda60b31-0689-468a-a7df-711a945b8b7e",
+        "parentid": "mom-577973e8-fc75-4050-9864-de943eaa979f",
+        "parenttype": "mom",
+        "objectname": "agenda",
+        "title": "Announcements",
+        "description": "West Indian Society's Patty Sale on Monday and President's Inauguration on April 13th.",
+        "conclusion": null
+    },
+    {
+        "id": "agenda-acfa7672-2878-4911-a881-2e93249de67a",
+        "parentid": "mom-577973e8-fc75-4050-9864-de943eaa979f",
+        "parenttype": "mom",
+        "objectname": "agenda",
+        "title": "Adjournment",
+        "description": "Motion to adjourn meeting.",
+        "conclusion": "Motion carries with 8 in favor, 0 opposed, 0 abstentions."
+    }
+]
