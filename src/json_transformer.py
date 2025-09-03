@@ -1,59 +1,77 @@
 # File: src/json_transformer.py
-
 import uuid
 
-def transform_to_dmaze_format_dynamically(nested_data: dict, schema_metadata: dict) -> list:
+def flatten_recursively(data_node: dict, schema_node: dict, parent_id: str, parent_type: str, flat_list: list):
     """
-    Transforms the nested JSON into the Dmaze format using
-    metadata from the template. This code is now agnostic to field names.
+    Recursively traverses the nested data and schema tree to produce a flat list
+    of Dmaze-compatible objects.
     """
-    # 1. Get the names from the metadata (the recipe)
-    parent_name = schema_metadata['parent_name']
-    child_name = schema_metadata['child_name']
-    relationship_field = schema_metadata['relationship_field']
-
-    # Check if the data from the AI matches what we expect from the metadata
-    if parent_name not in nested_data or child_name not in nested_data:
-        return [{"error": "Input from AI is missing parent or child keys defined in the schema."}]
-
-    flat_list = []
-    parent_data = nested_data.get(parent_name, {})
-    child_items = nested_data.get(child_name, [])
-
-    # 2. Generate a unique ID for the parent
-    parent_id = f"{parent_name}-{uuid.uuid4()}"
-    child_ids = []
+    object_name = schema_node['name']
     
-    # 3. Build all the child objects
-    for item in child_items:
-        child_id = f"{child_name}-{uuid.uuid4()}"
-        child_ids.append(child_id)
-        
-        child_object = {
-            "id": child_id,
-            "parentid": parent_id,
-            "parenttype": parent_name,
-            "objectname": child_name
-        }
-        # Copy all data fields dynamically
-        for field in schema_metadata['child_fields']:
-            child_object[field] = item.get(field)
-        flat_list.append(child_object)
+    # 1. Create the object for the current node
+    node_id = f"{object_name}-{uuid.uuid4()}"
+    dmaze_object = {
+        "id": node_id,
+        "objectname": object_name
+    }
+    if parent_id:
+        dmaze_object["parentid"] = parent_id
+        dmaze_object["parenttype"] = parent_type
 
-    # 4. Build the parent object
-    parent_object = {
-        "id": parent_id,
-        "objectname": parent_name,
-        relationship_field: {
+    # 2. Copy all data fields from the AI output
+    for field in schema_node['fields']:
+        dmaze_object[field] = data_node.get(field)
+    
+    # 3. Process all children
+    for child_schema in schema_node.get('children', []):
+        child_name = child_schema['name']
+        child_items = data_node.get(child_name, [])
+        child_ids = []
+        
+        if child_items: # Make sure we have child items to process
+            for item in child_items:
+                # The recursive call!
+                child_id = flatten_recursively(item, child_schema, node_id, object_name, flat_list)
+                child_ids.append(child_id)
+        
+        # Add the relationship link to the parent (current node)
+        relationship_field = child_schema['relationship_field']
+        dmaze_object[relationship_field] = {
             "type": child_name,
             "values": child_ids
         }
-    }
-    # Copy all data fields dynamically
-    for field in schema_metadata['parent_fields']:
-        parent_object[field] = parent_data.get(field)
 
-    # Insert the parent at the beginning of the list
-    flat_list.insert(0, parent_object)
+    # 4. Add the fully processed object to our master list
+    flat_list.append(dmaze_object)
+    
+    # 5. Return the ID of the created object so the parent can link to it
+    return node_id
 
-    return flat_list
+
+def transform_to_dmaze_format_hierarchically(nested_data: dict, schema_tree: dict) -> list:
+    """
+    Transforms the nested JSON into the Dmaze format using the hierarchical schema tree.
+    """
+    final_list = []
+    root_name = schema_tree['name']
+
+    # Check if the AI output contains the root key
+    if root_name not in nested_data:
+        return [{"error": f"Input from AI is missing the root key '{root_name}' defined in the schema."}]
+
+    # Start the recursive flattening process from the root node
+    flatten_recursively(
+        data_node=nested_data[root_name],
+        schema_node=schema_tree,
+        parent_id=None,
+        parent_type=None,
+        flat_list=final_list
+    )
+
+    # Re-order to ensure the parent (root) is the first element in the list
+    root_index = next((i for i, obj in enumerate(final_list) if obj.get('objectname') == root_name), -1)
+    if root_index != -1:
+        root_obj = final_list.pop(root_index)
+        final_list.insert(0, root_obj)
+
+    return final_list

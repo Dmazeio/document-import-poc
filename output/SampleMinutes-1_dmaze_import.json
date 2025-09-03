@@ -1,95 +1,173 @@
 [
     {
-        "id": "mom-577973e8-fc75-4050-9864-de943eaa979f",
+        "id": "mom-fe35ec4c-c558-406c-8696-4b02f0804ad0",
         "objectname": "mom",
+        "title": "Skateboarding Club Meeting Minutes",
+        "description": "Minutes of the Skateboarding Club meeting held on 3.21.07 in Shafer Hall Room 221.",
+        "startuptime": "2007-03-21T18:02:00Z",
+        "endtime": "2007-03-21T18:45:00Z",
         "a_agenda_ids": {
             "type": "agenda",
             "values": [
-                "agenda-a906982b-a1eb-4d7d-8657-faffe7a9642a",
-                "agenda-9877b6e2-56f7-48b2-9e44-7598a4f3d806",
-                "agenda-acb29363-da07-4be3-8dd6-ebf3fb407a45",
-                "agenda-6281466b-d881-4677-8a3c-7c8e4ee0d046",
-                "agenda-b0bd6b2f-3884-4b50-9f31-a96f93adb0ed",
-                "agenda-deef35a4-08bb-44d2-baf8-78228f696d0c",
-                "agenda-bda60b31-0689-468a-a7df-711a945b8b7e",
-                "agenda-acfa7672-2878-4911-a881-2e93249de67a"
+                "agenda-b3093adb-54cd-4009-9220-2ec01b5f3776",
+                "agenda-dee75662-7da8-459e-a189-92a3175442d1",
+                "agenda-38d353e8-4378-48df-bc52-778aeb52b689",
+                "agenda-5a3e1d07-cfdc-465f-b51d-580aeec52720",
+                "agenda-919cfb40-ccbd-4f1e-a1bc-802363c15e97",
+                "agenda-5f493309-baa2-4d09-befe-509411ce0b1d",
+                "agenda-3d0079d3-465e-428f-9d14-63825a902673",
+                "agenda-faee5d5e-abdf-4e53-8772-f4389b72fc91"
             ]
-        },
-        "title": "Skateboarding Club Meeting",
-        "description": "Minutes of the Skateboarding Club meeting held in Shafer Hall Room 221.",
-        "startuptime": null,
-        "endtime": "2007-03-21T18:45:00Z"
+        }
     },
     {
-        "id": "agenda-a906982b-a1eb-4d7d-8657-faffe7a9642a",
-        "parentid": "mom-577973e8-fc75-4050-9864-de943eaa979f",
-        "parenttype": "mom",
+        "id": "agenda-b3093adb-54cd-4009-9220-2ec01b5f3776",
         "objectname": "agenda",
-        "title": "Acceptance of Previous Minutes",
+        "parentid": "mom-fe35ec4c-c558-406c-8696-4b02f0804ad0",
+        "parenttype": "mom",
+        "title": "Motion #9",
         "description": "Motion to accept the minutes from the meeting on September 12, 2006.",
-        "conclusion": "Motion carries with 7 in favor, 0 opposed, 1 abstention."
+        "conclusion": "Motion Carries with 7 in favor, 0 opposed, and 1 abstention.",
+        "a_measures_ids": {
+            "type": "measure",
+            "values": []
+        }
     },
     {
-        "id": "agenda-9877b6e2-56f7-48b2-9e44-7598a4f3d806",
-        "parentid": "mom-577973e8-fc75-4050-9864-de943eaa979f",
-        "parenttype": "mom",
+        "id": "agenda-dee75662-7da8-459e-a189-92a3175442d1",
         "objectname": "agenda",
+        "parentid": "mom-fe35ec4c-c558-406c-8696-4b02f0804ad0",
+        "parenttype": "mom",
         "title": "President's Report",
-        "description": "Constitution finalized and will be submitted to advisor. Distribution of first aid kits planned for April 12, 2006. Kim offered to drive the van.",
-        "conclusion": null
+        "description": "Constitution is finalized and will be distributed. First-aid kits distribution scheduled for April 12, 2006.",
+        "conclusion": null,
+        "a_measures_ids": {
+            "type": "measure",
+            "values": []
+        }
     },
     {
-        "id": "agenda-acb29363-da07-4be3-8dd6-ebf3fb407a45",
-        "parentid": "mom-577973e8-fc75-4050-9864-de943eaa979f",
-        "parenttype": "mom",
+        "id": "measure-b4d23439-e1f4-4ac7-a856-466f9e1f5689",
+        "objectname": "measure",
+        "parentid": "agenda-38d353e8-4378-48df-bc52-778aeb52b689",
+        "parenttype": "agenda",
+        "title": "Motion #10",
+        "description": "To pay Bryan Caplette for DJ services of $600 for the Skate-A-Palooza held on May 18, 2007.",
+        "descriptionimplementation": "Payment to be made for services provided by Bryan Caplette, with 6 in favor, 1 opposed, and 1 abstention.",
+        "deadline": "2007-05-18T00:00:00Z"
+    },
+    {
+        "id": "agenda-38d353e8-4378-48df-bc52-778aeb52b689",
         "objectname": "agenda",
+        "parentid": "mom-fe35ec4c-c558-406c-8696-4b02f0804ad0",
+        "parenttype": "mom",
         "title": "Vice President's Report",
-        "description": "DJ SK8 available for Skate-a-Palooza on May 18, 2007. Services will include sound system, lights, and various entertainment for $600.",
-        "conclusion": "Motion carries with 6 in favor, 1 opposed, 1 abstention."
+        "description": "Discussion with DJ Sk8 for the Skate-A-Palooza event on May 18, 2007.",
+        "conclusion": null,
+        "a_measures_ids": {
+            "type": "measure",
+            "values": [
+                "measure-b4d23439-e1f4-4ac7-a856-466f9e1f5689"
+            ]
+        }
     },
     {
-        "id": "agenda-6281466b-d881-4677-8a3c-7c8e4ee0d046",
-        "parentid": "mom-577973e8-fc75-4050-9864-de943eaa979f",
-        "parenttype": "mom",
+        "id": "measure-3ead5351-954f-4c15-ad09-0d5ab325a560",
+        "objectname": "measure",
+        "parentid": "agenda-5a3e1d07-cfdc-465f-b51d-580aeec52720",
+        "parenttype": "agenda",
+        "title": "Motion #11",
+        "description": "To allocate $1,010.00 in a Purchase Order to Best Western for hotel payments for April 28th.",
+        "descriptionimplementation": "Funds to be used from the budget account with 8 in favor, 0 opposed, and 0 abstentions.",
+        "deadline": "2007-04-28T00:00:00Z"
+    },
+    {
+        "id": "measure-04fbd7b3-3bf0-4b2d-b951-8fd31d718993",
+        "objectname": "measure",
+        "parentid": "agenda-5a3e1d07-cfdc-465f-b51d-580aeec52720",
+        "parenttype": "agenda",
+        "title": "Motion #12",
+        "description": "To allocate $20.00 in a cash advance for parking in NY for April 18th from the budget account.",
+        "descriptionimplementation": "Cash advance provided to KayTe Bettencourt with 8 in favor, 0 opposed, and 0 abstentions.",
+        "deadline": "2007-04-18T00:00:00Z"
+    },
+    {
+        "id": "measure-76dcf9a2-d46b-4aa9-a253-f3b67335a787",
+        "objectname": "measure",
+        "parentid": "agenda-5a3e1d07-cfdc-465f-b51d-580aeec52720",
+        "parenttype": "agenda",
+        "title": "Motion #13",
+        "description": "To allocate $1,000.00 for meals in a cash advance for the NY trip on April 18.",
+        "descriptionimplementation": "Allocation from the fundraising account with 6 in favor, 2 opposed, and 0 abstentions.",
+        "deadline": "2007-04-18T00:00:00Z"
+    },
+    {
+        "id": "agenda-5a3e1d07-cfdc-465f-b51d-580aeec52720",
         "objectname": "agenda",
+        "parentid": "mom-fe35ec4c-c558-406c-8696-4b02f0804ad0",
+        "parenttype": "mom",
         "title": "Treasurer's Report",
-        "description": "Budget and fundraising account balances were discussed. Awaiting invoice from Boards ‘R’ Us.",
-        "conclusion": null
+        "description": "Account balances and invoice status from Boards 'R Us.",
+        "conclusion": null,
+        "a_measures_ids": {
+            "type": "measure",
+            "values": [
+                "measure-3ead5351-954f-4c15-ad09-0d5ab325a560",
+                "measure-04fbd7b3-3bf0-4b2d-b951-8fd31d718993",
+                "measure-76dcf9a2-d46b-4aa9-a253-f3b67335a787"
+            ]
+        }
     },
     {
-        "id": "agenda-b0bd6b2f-3884-4b50-9f31-a96f93adb0ed",
-        "parentid": "mom-577973e8-fc75-4050-9864-de943eaa979f",
-        "parenttype": "mom",
+        "id": "agenda-919cfb40-ccbd-4f1e-a1bc-802363c15e97",
         "objectname": "agenda",
+        "parentid": "mom-fe35ec4c-c558-406c-8696-4b02f0804ad0",
+        "parenttype": "mom",
         "title": "Old Business",
-        "description": "Event registration for Skateboard Workshop approved. Room reservation for April 20th needs submission. Discussion on NY trip expenses including hotel and meal allowances.",
-        "conclusion": "Motion carries to allocate $1,010 for hotel and $20 for parking for the NY trip."
+        "description": "Discussion regarding event registration and room reservation for the skateboard workshop.",
+        "conclusion": null,
+        "a_measures_ids": {
+            "type": "measure",
+            "values": []
+        }
     },
     {
-        "id": "agenda-deef35a4-08bb-44d2-baf8-78228f696d0c",
-        "parentid": "mom-577973e8-fc75-4050-9864-de943eaa979f",
-        "parenttype": "mom",
+        "id": "agenda-5f493309-baa2-4d09-befe-509411ce0b1d",
         "objectname": "agenda",
+        "parentid": "mom-fe35ec4c-c558-406c-8696-4b02f0804ad0",
+        "parenttype": "mom",
         "title": "New Business",
-        "description": "Nominations for executive board positions to be held in two weeks, with elections following week.",
-        "conclusion": null
+        "description": "Nominations for all Executive Board positions for next year.",
+        "conclusion": null,
+        "a_measures_ids": {
+            "type": "measure",
+            "values": []
+        }
     },
     {
-        "id": "agenda-bda60b31-0689-468a-a7df-711a945b8b7e",
-        "parentid": "mom-577973e8-fc75-4050-9864-de943eaa979f",
-        "parenttype": "mom",
+        "id": "agenda-3d0079d3-465e-428f-9d14-63825a902673",
         "objectname": "agenda",
+        "parentid": "mom-fe35ec4c-c558-406c-8696-4b02f0804ad0",
+        "parenttype": "mom",
         "title": "Announcements",
-        "description": "West Indian Society's Patty Sale on Monday and President's Inauguration on April 13th.",
-        "conclusion": null
+        "description": "West Indian Society Patty Sale on Monday and President's Inauguration on April 13.",
+        "conclusion": null,
+        "a_measures_ids": {
+            "type": "measure",
+            "values": []
+        }
     },
     {
-        "id": "agenda-acfa7672-2878-4911-a881-2e93249de67a",
-        "parentid": "mom-577973e8-fc75-4050-9864-de943eaa979f",
-        "parenttype": "mom",
+        "id": "agenda-faee5d5e-abdf-4e53-8772-f4389b72fc91",
         "objectname": "agenda",
-        "title": "Adjournment",
-        "description": "Motion to adjourn meeting.",
-        "conclusion": "Motion carries with 8 in favor, 0 opposed, 0 abstentions."
+        "parentid": "mom-fe35ec4c-c558-406c-8696-4b02f0804ad0",
+        "parenttype": "mom",
+        "title": "Motion #14",
+        "description": "To adjourn meeting at 6:45 pm.",
+        "conclusion": "Motion Carries with 8 in favor, 0 opposed, and 0 abstentions.",
+        "a_measures_ids": {
+            "type": "measure",
+            "values": []
+        }
     }
 ]
