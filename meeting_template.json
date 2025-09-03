@@ -159,56 +159,56 @@
   "entities": {
     "momstatus": [
       {
-        "label": "Closed",
+        "name": "Closed",
         "id": "089de314-cd92-4887-9d58-a24d28531956",
         "description": ""
       },
       {
-        "label": "Open",
+        "name": "Open",
         "id": "1a8d3cc0-3103-4813-b4e9-4e2b825e46eb",
         "description": ""
       },
       {
-        "label": "Draft",
+        "name": "Draft",
         "id": "03c1bb26-1ce2-422c-aced-b4edeb52fa42",
         "description": ""
       }
     ],
     "agendastatus": [
       {
-        "label": "Closed",
+        "name": "Closed",
         "id": "a7s67aa-cd92-4887-9d58-a24d28531956",
         "description": ""
       },
       {
-        "label": "Open",
+        "name": "Open",
         "id": "78a21hd-3103-4813-b4e9-4e2b825e46eb",
         "description": ""
       },
       {
-        "label": "Draft",
+        "name": "Draft",
         "id": "as897av-1ce2-422c-aced-b4edeb52fa42",
         "description": ""
       }
     ],
     "measurestate": [
       {
-        "label": "Existing",
+        "name": "Existing",
         "id": "sad89a90s-cd92-4887-9d58-a24d28531956",
         "description": "This action is already existing and has been closed."
       },
       {
-        "label": "Cancelled",
+        "name": "Cancelled",
         "id": "b7s67aa-cd92-4887-9d58-a24d28531956",
         "description": "This action has been decided not to be implemented (closed)."
       },
       {
-        "label": "Open",
+        "name": "Open",
         "id": "78a21hd-3103-4813-b4e9-4e2b825e46eb",
         "description": "The implementation of this action is in progress."
       },
       {
-        "label": "Identified (pending decision)",
+        "name": "Identified (pending decision)",
         "id": "a98sdua-1ce2-422c-aced-b4edeb52fa42",
         "description": "This is a new action that has been identified and suggested for implementation.\r\n \r\nIf the action is decided to be implemented, an e-mail will be sent automatically to the person responsible."
       }
