@@ -63,6 +63,41 @@
           "required": false
         }
       ]
+    },
+    {
+      "description": "List all actions linked to this agenda item. Provides an overview of decisions and assigned tasks.\n\n🎯 Purpose: Verify that key points have follow-up actions with clear owners and deadlines.\n\n👥 Roles: Updated by minute takers or task owners.\n\n💡 Why this matters: Supports accountability and progress tracking.\n\n🚩 Tips: Use this list to review outstanding tasks after meetings.\n\n* Note: Selection options may be customised by your administrator.*",
+      "isroot": false,
+      "objectname": "measure",
+      "fields": [
+        {
+          "fieldname": "title",
+          "type": "string",
+          "description": "This field captures the title of the action – a short and descriptive label that summarises the purpose or intended action. The title helps users quickly understand what the action is about without reading the full description.\n\n&nbsp;\n\n🎯 Purpose\n\nTo provide a clear, concise identifier for the action that facilitates communication, filtering, and reporting.\n\n&nbsp;\n\n👥 Roles\n\n- Action Creator: Enters the title during action creation.\n- All Users: Use the title to identify, search for, or discuss the action.\n\n&nbsp;\n\n💡 Why this matters\n\nEffective titles improve clarity, reduce miscommunication, and make it easier to track progress across multiple actions.\n\n&nbsp;\n\n🚩 Tips\n\n- Use action-oriented phrasing (e.g., “Install new ventilation filters”).\n- Avoid vague or generic terms like “Fix issue” or “Follow up.”\n- Keep it brief – ideally under 10 words.\n- Focus on the core activity or outcome.\n\n&nbsp;\n\n📌 Examples\n\n- “Upgrade access control system”\n- “Document training procedure for new hires”\n- “Inspect fire extinguishers in warehouse”\n\n&nbsp;\n\n⚠️ Note: Titles should be unique enough to avoid confusion when viewed in dashboards or reports.",
+          "label": "Action",
+          "required": true
+        },
+                {
+          "fieldname": "description",
+          "type": "string",
+          "description": "This field captures a detailed explanation of the action – what it aims to achieve, how it will be implemented, and what outcome is expected. A well-written description ensures clarity for everyone involved and helps support follow-up, evaluation, and accountability.\n\n&nbsp;\n\n🎯 Purpose\n\nTo document the full scope, intent, and expected results of the action.\n\n&nbsp;\n\n👥 Roles\n\n- Action Creator or Owner: Provides a clear and complete description.\n- Responsible Person: Uses the description as guidance for implementation.\n- Reviewers: Refer to the description when evaluating completion and effectiveness.\n\n&nbsp;\n\n💡 Why this matters\n\nA clear and specific description reduces misunderstandings and ensures that all parties share the same understanding of what needs to be done.\n\n&nbsp;\n\n🚩 Tips\n\n- Focus on what will be done, by whom, and to what effect.\n- Include relevant procedures, standards, or references where appropriate.\n- Avoid vague statements like “Improve process” – be action-oriented and measurable.\n- Break large or complex actions into smaller steps or milestones if needed.\n\n&nbsp;\n\n📌 Examples\n\n- “Conduct cybersecurity training for all staff and document attendance by Q3.”\n- “Replace all fluorescent fixtures with LED lighting in building A and B.”\n- “Review and update data retention policy to align with regulatory changes.”\n\n&nbsp;\n\n⚠️ Note: This field can be updated throughout the lifecycle of the action if details evolve or clarification is needed.",
+          "label": "Discussion",
+          "required": true
+        },
+        {
+          "fieldname": "descriptionimplementation",
+          "type": "string",
+          "description": "Use this field to add context or explanation regarding the current status of the action. This enhances transparency and helps clarify reasons for delays, ongoing work, or completion.\n\n🎯 Purpose: Provide narrative updates and explanations linked to the action's progress.\n\n👥 Roles: Updated by the responsible person or task owner.\n\n💡 Why this matters: Clear status comments reduce the need for direct follow-ups and improve communication.\n\n🚩 Tips: Include reasons for changes in status, blockers encountered, or key decisions.\n\n📌 Examples:\n- \"Awaiting input from legal team — extended deadline by 1 week.\"\n- \"Completed, awaiting manager sign-off.\"\n\n* Note: Selection options may be customised by your administrator.*",
+          "label": "Status comment",
+          "required": true
+        },
+        {
+          "fieldname": "deadline",
+          "type": "datetime",
+          "description": "This field defines the exact date by which the action must be completed. This value is mandatory and must be set before the action can enter the implementation workflow. Relative time frames (e.g. 'within 30 days') are not supported – only calendar dates are allowed.\n\n&nbsp;\n\n🎯 Purpose\n\nTo establish a clear and fixed target date for completing the action.\n\n&nbsp;\n\n👥 Roles\n\n- Action Creator or Initiator: Sets the deadline during action creation.\n- Responsible Person: Plans work to meet the defined date.\n\n&nbsp;\n\n💡 Why this matters\n\nDeadlines help ensure timely action, support progress tracking, and define accountability. They are also required to trigger the next workflow steps.\n\n&nbsp;\n\n🚩 Tips\n\n- The deadline must be filled in before the action can be moved to implementation.\n- Use a realistic date that reflects the complexity, dependencies, and resource availability.\n- Communicate changes to deadlines clearly if adjustments are needed.\n- Monitor upcoming deadlines using reports, dashboards, or filters.\n\n&nbsp;\n\n📌 Examples\n\n- “2025-09-01”\n- “2025-12-15”\n\n&nbsp;\n\n⚠️ Note: Only absolute calendar dates are allowed (format: YYYY-MM-DD). Relative expressions like 'in two weeks' are not supported.",
+          "label": "Due date",
+          "required": true
+        }
+      ]
     }
   ],
   "relationships": [
@@ -71,7 +106,14 @@
       "child": "agenda",
       "type": "one-to-many",
       "childfieldname": "a_agenda_ids",
-      "description": "Link agenda items to their parent meeting record. This structures the meeting content and supports detailed documentation."
+      "description": "Link agenda items to their parent meeting record."
+    },
+      {
+      "parent": "agenda",
+      "child": "measure",
+      "type": "one-to-many",
+      "childfieldname": "a_measures_ids",
+      "description": "Link actions to their parent agenda item"
     }
   ]
 }
