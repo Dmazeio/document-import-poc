@@ -44,7 +44,7 @@ def extract_data_with_hierarchy(client: OpenAI, document_text: str, schema_tree:
 
     try:
         response = client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-5",
             response_format={"type": "json_object"},
             messages=[
                 {"role": "system", "content": system_prompt},
