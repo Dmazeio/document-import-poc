@@ -2,56 +2,45 @@
 import json
 from openai import OpenAI
 
-def generate_prompt_from_schema_tree(node: dict) -> str:
+# WE DON'T NEED THIS FUNCTION ANYMORE!
+# def generate_prompt_from_schema_tree(node: dict) -> str: ...
+
+def extract_data_with_hierarchy(client: OpenAI, document_text: str, schema_package: dict) -> dict:
     """
-    Recursively generates a string describing the expected JSON structure
-    for the AI prompt.
+    Uses a dynamically generated, strict JSON Schema to extract a deeply
+    nested JSON structure from a document.
     """
-    prompt_part = f'- The top-level key must be "{node["name"]}", which is a JSON object.\n'
-    prompt_part += f'- The fields for a "{node["name"]}" object are: {json.dumps(node["fields"])}.\n'
+    # Get the two parts we created in the processor
+    schema_tree = schema_package['schema_tree']
+    json_schema = schema_package['json_schema_for_api']
 
-    for child in node.get("children", []):
-        child_name = child["name"]
-        prompt_part += f'- Inside a "{node["name"]}" object, there should be a key named "{child_name}".\n'
-        prompt_part += f'- "{child_name}" must be a JSON array of objects.\n'
-        # Recurse to describe the child structure
-        prompt_part += generate_prompt_from_schema_tree(child).replace("- The top-level key must be", "  - Each object in the array represents a")
-
-    return prompt_part
-
-
-def extract_data_with_hierarchy(client: OpenAI, document_text: str, schema_tree: dict) -> dict:
-    """
-    Uses a dynamically generated prompt based on a hierarchical schema tree
-    to extract a deeply nested JSON structure.
-    """
-    
-    structure_rules = generate_prompt_from_schema_tree(schema_tree)
-
-    system_prompt = f"""
-    You are an expert assistant who analyzes documents and structures content into a deeply nested JSON format based on a specific schema.
-
-    RULES:
-    1.  You MUST respond with a single, valid JSON object.
-    2.  If you cannot find information for a field, use `null`.
-    3.  For any datetime fields, format them as ISO 8601 strings (YYYY-MM-DDTHH:MM:SSZ).
-    4.  The required JSON structure is as follows:
-    {structure_rules}
-    5.  Respond ONLY with the JSON object. Do not add explanations.
+    # The prompt can now be much simpler!
+    # We no longer need to explain the structure, just the task.
+    system_prompt = """
+    You are an expert assistant who analyzes documents and extracts key information.
+    Structure the extracted content into the JSON format specified by the provided schema.
+    If you cannot find information for a field, use `null`.
+    For any datetime fields, format them as ISO 8601 strings (YYYY-MM-DDTHH:MM:SSZ).
     """
 
-    user_prompt = f"Here is the text from the document. Please extract the data according to the rules and the specified nested structure.\n\nDOCUMENT TEXT:\n---\n{document_text}\n---"
+    user_prompt = f"Please extract the data from the following document based on the required schema.\n\nDOCUMENT TEXT:\n---\n{document_text}\n---"
 
     try:
         response = client.chat.completions.create(
             model="gpt-5",
-            response_format={"type": "json_object"},
+            response_format={
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "dmaze_import_schema",
+                    "schema": json_schema,
+                    "strict": True  
+                }
+            },
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt}
             ]
         )
-        # The AI should return a JSON with the root key, e.g. {"mom": {...}}
         return json.loads(response.choices[0].message.content)
     except Exception as e:
         return {"error": f"An unexpected error occurred during the AI call: {e}"}

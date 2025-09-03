@@ -5,7 +5,7 @@ import json
 from openai import OpenAI
 from dotenv import load_dotenv
 
-# CHANGE: Import the new function from the renamed file
+# Imports are unchanged, but they now refer to the updated files
 from src.document_converter import convert_file_to_markdown
 from src.schema_processor import process_template_hierarchically
 from src.openai_extractor import extract_data_with_hierarchy
@@ -30,19 +30,18 @@ if __name__ == "__main__":
     base_name = os.path.splitext(os.path.basename(input_file_path))[0]
     output_file_path = f"output/{base_name}_dmaze_import.json"
 
-    # STEP 0: Process the template to create the schema tree
+    # STEP 0: Process the template to create the schema package
     print(f"--- Step 0: Processing template: {template_file_path} ---")
-    schema_tree = process_template_hierarchically(template_file_path)
+    # CHANGE: This now returns a dictionary with both the tree and the formal schema
+    schema_package = process_template_hierarchically(template_file_path) 
     
-    if "error" in schema_tree:
-        print(f"CRITICAL ERROR: {schema_tree['error']}")
+    if "error" in schema_package:
+        print(f"CRITICAL ERROR: {schema_package['error']}")
     else:
         print("Template processed successfully. Starting document processing...")
         
         # STEP 1: CONVERT FILE TO MARKDOWN
         print(f"--- Step 1: Converting file to Markdown: {input_file_path} ---")
-        
-        # CHANGE: Call the new function and use a more descriptive variable name
         markdown_content = convert_file_to_markdown(input_file_path)
         
         if isinstance(markdown_content, dict) and "error" in markdown_content:
@@ -50,11 +49,11 @@ if __name__ == "__main__":
         else:
             print("File converted to Markdown successfully.")
             
-            # STEP 2: SEND TO OPENAI
+            # STEP 2: SEND TO OPENAI WITH STRICT SCHEMA
             print("--- Step 2: Sending Markdown to OpenAI for hierarchical analysis... ---")
             
-            # CHANGE: Pass the new Markdown content along
-            nested_data = extract_data_with_hierarchy(client, markdown_content, schema_tree)
+            # CHANGE: Pass the entire schema package to the extractor function
+            nested_data = extract_data_with_hierarchy(client, markdown_content, schema_package)
             
             if "error" in nested_data:
                 print(f"ERROR: {nested_data['error']}")
@@ -63,7 +62,9 @@ if __name__ == "__main__":
                 
                 # STEP 3: TRANSFORM TO DMAZE FORMAT
                 print("--- Step 3: Transforming data to Dmaze format... ---")
-                final_flat_data = transform_to_dmaze_format_hierarchically(nested_data, schema_tree)
+                
+                # CHANGE: The transformer only needs the simple 'schema_tree', not the formal JSON schema.
+                final_flat_data = transform_to_dmaze_format_hierarchically(nested_data, schema_package['schema_tree'])
                 
                 # STEP 4: SAVE AND DISPLAY RESULT
                 print(f"Transformation complete. Saving to: {output_file_path}")
