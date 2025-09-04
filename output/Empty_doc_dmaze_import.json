@@ -1,0 +1,41 @@
+[
+    {
+        "id": "mom-605b0f6f-5a54-4a6a-9fe7-cca13765fa24",
+        "objectname": "mom",
+        "title": "/",
+        "description": "/",
+        "startuptime": "2025-09-04T19:31:00Z",
+        "endtime": "2025-09-04T19:31:00Z",
+        "a_agenda_ids": {
+            "type": "agenda",
+            "values": [
+                "agenda-428f1ef3-4e9c-4b2f-9e44-6b885739999f"
+            ]
+        }
+    },
+    {
+        "id": "measure-cb32c03f-6054-42ca-8bcc-9103e15ffc32",
+        "objectname": "measure",
+        "parentid": "agenda-428f1ef3-4e9c-4b2f-9e44-6b885739999f",
+        "parenttype": "agenda",
+        "title": "Resolve blocker A",
+        "description": "Coordinate with DevOps to fix environment issue.",
+        "descriptionimplementation": "Schedule a meeting with DevOps and apply the patch in staging.",
+        "deadline": "2025-09-10T00:00:00Z"
+    },
+    {
+        "id": "agenda-428f1ef3-4e9c-4b2f-9e44-6b885739999f",
+        "objectname": "agenda",
+        "parentid": "mom-605b0f6f-5a54-4a6a-9fe7-cca13765fa24",
+        "parenttype": "mom",
+        "title": "Status Updates",
+        "description": "Team members provided updates on their current tasks and progress.",
+        "conclusion": "Progress is on track; minor blockers identified.",
+        "a_measures_ids": {
+            "type": "measure",
+            "values": [
+                "measure-cb32c03f-6054-42ca-8bcc-9103e15ffc32"
+            ]
+        }
+    }
+]

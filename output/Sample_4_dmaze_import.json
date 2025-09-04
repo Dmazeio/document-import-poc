@@ -1,0 +1,130 @@
+[
+    {
+        "id": "mom-cf994480-0bb8-47f3-871e-96f7400a3684",
+        "objectname": "mom",
+        "title": "Møtereferat: Kvartalsvis IT-sikkerhetsgjennomgang Q4 2025",
+        "description": "Dette dokumentet inneholder referat fra IT-sikkerhetsmøtet (Q4 2025) samt protokoll fra oppstartsmøtet for markedsføringskampanjen \"Prosjekt Phoenix\".\n- IT-sikkerhetsmøte: 2025-12-05 kl. 10:00–12:00 i Møterom \"Krypton\". Formål: Gjennomgå sikkerhetshendelser fra Q4, evaluere status på tiltak og planlegge prioriteringer for Q1 2026.\n- Oppstartsmøte \"Prosjekt Phoenix\": 2025-12-06 kl. 13:00–14:30 i \"Kreativt Rom\". Formål: Definere nøkkelbudskap, tildele ansvar og sette en overordnet tidslinje for de neste 6 ukene.",
+        "startuptime": "2025-12-05T10:00:00Z",
+        "endtime": "2025-12-05T12:00:00Z",
+        "a_agenda_ids": {
+            "type": "agenda",
+            "values": [
+                "agenda-76d7a33a-962f-4ea1-a3aa-41e57900016f",
+                "agenda-e66d106a-28ae-4419-bbca-f09d7ade2987",
+                "agenda-d21c208b-bee6-4551-8611-42661650d79c",
+                "agenda-87fbc80e-4127-4098-b89a-2d08b3bf22d0"
+            ]
+        }
+    },
+    {
+        "id": "measure-52da1eb2-4ac4-4fcf-a1cd-6667b8886546",
+        "objectname": "measure",
+        "parentid": "agenda-76d7a33a-962f-4ea1-a3aa-41e57900016f",
+        "parenttype": "agenda",
+        "title": "Utvikle ny opplæringsmodul om \"CEO fraud\"",
+        "description": "Sikkerhetsteamet skal lage en interaktiv modul som simulerer avanserte svindelforsøk rettet mot ledelsen.",
+        "descriptionimplementation": "Tildelt til Ola Hansen. Ikke påbegynt.",
+        "deadline": "2026-02-01T00:00:00Z"
+    },
+    {
+        "id": "measure-2bea043c-e206-49a4-8ba6-e28753c4f7f1",
+        "objectname": "measure",
+        "parentid": "agenda-76d7a33a-962f-4ea1-a3aa-41e57900016f",
+        "parenttype": "agenda",
+        "title": "Analysere og rapportere phishing-trender",
+        "description": "Samle inn data fra Q4 og lage en detaljert rapport om hvilke typer phishing som er mest utbredt.",
+        "descriptionimplementation": "Pågår.",
+        "deadline": "2026-01-15T00:00:00Z"
+    },
+    {
+        "id": "agenda-76d7a33a-962f-4ea1-a3aa-41e57900016f",
+        "objectname": "agenda",
+        "parentid": "mom-cf994480-0bb8-47f3-871e-96f7400a3684",
+        "parenttype": "mom",
+        "title": "Gjennomgang av hendelsesrapport for Q4",
+        "description": "Registrert 15% økning i phishing-forsøk sammenlignet med Q3; ingen vellykkede angrep, trolig pga. ny obligatorisk opplæring rullet ut i oktober. Mindre hendelse: en ansatt mistet en firmatelefon som ble fjernslettet innen 10 minutter i henhold til prosedyre. Teamet vurderer at rutinene fungerer etter hensikten.",
+        "conclusion": "Phishing-opplæringen anses som en suksess og videreføres med en ny modul i februar. Rutinene for tap av utstyr fungerer; ingen endringer nødvendig.",
+        "a_measures_ids": {
+            "type": "measure",
+            "values": [
+                "measure-52da1eb2-4ac4-4fcf-a1cd-6667b8886546",
+                "measure-2bea043c-e206-49a4-8ba6-e28753c4f7f1"
+            ]
+        }
+    },
+    {
+        "id": "measure-6db01c67-1413-4ecb-a295-07a8ee11df05",
+        "objectname": "measure",
+        "parentid": "agenda-e66d106a-28ae-4419-bbca-f09d7ade2987",
+        "parenttype": "agenda",
+        "title": "Lage en kost/nytte-analyse for oppgradering av eldre applikasjon",
+        "description": "Utrede kostnader ved full oppgradering versus risikoen ved å fortsette med midlertidig løsning, i samarbeid med økonomiavdelingen.",
+        "descriptionimplementation": "Ikke påbegynt. Ansvar: Arne Pettersen (i samarbeid med økonomiavdelingen).",
+        "deadline": "2026-01-31T00:00:00Z"
+    },
+    {
+        "id": "agenda-e66d106a-28ae-4419-bbca-f09d7ade2987",
+        "objectname": "agenda",
+        "parentid": "mom-cf994480-0bb8-47f3-871e-96f7400a3684",
+        "parenttype": "mom",
+        "title": "Status for implementering av 2-faktor autentisering (2FA)",
+        "description": "95% av brukerne har aktivert 2FA; resterende 5% er primært konsulenter og deltidsansatte. Tekniske utfordringer med en eldre applikasjon uten moderne autentiseringsstøtte; midlertidig løsning er på plass, men permanent oppgradering må planlegges.",
+        "conclusion": "Prosjektet er i rute. Det må utarbeides en plan for å fase ut eller oppgradere den eldre applikasjonen for full 2FA-støtte.",
+        "a_measures_ids": {
+            "type": "measure",
+            "values": [
+                "measure-6db01c67-1413-4ecb-a295-07a8ee11df05"
+            ]
+        }
+    },
+    {
+        "id": "measure-de0d4aa3-f746-4616-a629-0e1809481ab1",
+        "objectname": "measure",
+        "parentid": "agenda-d21c208b-bee6-4551-8611-42661650d79c",
+        "parenttype": "agenda",
+        "title": "Utvikle storyboard for 5 kampanjevideoer",
+        "description": "Lage detaljerte storyboards for videokonseptene i samarbeid mellom innholdsprodusent og byrå.",
+        "descriptionimplementation": "Ikke påbegynt. Ansvar: Lise Berg og Jonas Fredriksen.",
+        "deadline": "2025-12-15T00:00:00Z"
+    },
+    {
+        "id": "agenda-d21c208b-bee6-4551-8611-42661650d79c",
+        "objectname": "agenda",
+        "parentid": "mom-cf994480-0bb8-47f3-871e-96f7400a3684",
+        "parenttype": "mom",
+        "title": "Definisjon av kjernebudskap og målgruppe (Prosjekt Phoenix)",
+        "description": "Workshop identifiserte tre kjernekonsepter: \"Enkelhet i hverdagen\", \"Bærekraftig valg\" og \"Moderne design\". Data viser at målgruppen (25–40 år) responderer best på visuelt innhold på Instagram og TikTok. Forslag: produsere en serie korte videoklipp som viser produktet i bruk.",
+        "conclusion": "Hovedbudskapet blir \"Enkelhet i hverdagen\". Kampanjen skal primært fokusere på Instagram (Reels) og TikTok. En serie på 5 korte videoer skal produseres.",
+        "a_measures_ids": {
+            "type": "measure",
+            "values": [
+                "measure-de0d4aa3-f746-4616-a629-0e1809481ab1"
+            ]
+        }
+    },
+    {
+        "id": "measure-4c95f64b-3e3e-42df-8e8e-82a16918c77f",
+        "objectname": "measure",
+        "parentid": "agenda-87fbc80e-4127-4098-b89a-2d08b3bf22d0",
+        "parenttype": "agenda",
+        "title": "Få godkjenning for revidert budsjett",
+        "description": "Sende formell forespørsel til ledelsen for å få godkjent økning av budsjett med 100 000 NOK.",
+        "descriptionimplementation": "Venter på endelig tallgrunnlag fra Erik. Ansvar: Silje Dahl.",
+        "deadline": "2025-12-10T00:00:00Z"
+    },
+    {
+        "id": "agenda-87fbc80e-4127-4098-b89a-2d08b3bf22d0",
+        "objectname": "agenda",
+        "parentid": "mom-cf994480-0bb8-47f3-871e-96f7400a3684",
+        "parenttype": "mom",
+        "title": "Budsjett og tidslinje (Prosjekt Phoenix)",
+        "description": "Foreløpig budsjett presentert: 500 000 NOK. Forslag om å øke annonsebudsjettet med 100 000 NOK (midler hentes fra reisebudsjett med lavere forbruk). Tidslinje satt med lansering i uke 3, 2026.",
+        "conclusion": "Budsjettet økes til 600 000 NOK. Silje Dahl tar ansvar for å innhente formell godkjenning. Lanseringsdato bekreftet (uke 3, 2026).",
+        "a_measures_ids": {
+            "type": "measure",
+            "values": [
+                "measure-4c95f64b-3e3e-42df-8e8e-82a16918c77f"
+            ]
+        }
+    }
+]

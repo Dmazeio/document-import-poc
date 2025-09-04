@@ -1,0 +1,67 @@
+[
+    {
+        "id": "mom-b774d539-9e12-4dcb-bf02-899c59f96684",
+        "objectname": "mom",
+        "title": "Prosjekt Phoenix – Oppstartsmøte",
+        "description": "Dato: 6. desember 2025; Tid: 13:00–14:30; Sted: Kreativt Rom. Deltakere: Silje Dahl (Prosjektleder, Marked), Erik Larsen (Digital strateg), Lise Berg (Innholdsprodusent), Jonas Fredriksen (Eksternt byrå). Formål: Offisielt starte Prosjekt Phoenix, definere nøkkelbudskap, tildele ansvar og sette overordnet tidslinje for de neste 6 ukene for å øke merkekjennskapen med 20% i målgruppen 25–40 år.",
+        "startuptime": "2025-12-06T13:00:00Z",
+        "endtime": "2025-12-06T14:30:00Z",
+        "a_agenda_ids": {
+            "type": "agenda",
+            "values": [
+                "agenda-8a9453bf-408e-4a21-af84-f38447577c8d",
+                "agenda-39acdc04-a779-4c66-aece-231c40402b1e"
+            ]
+        }
+    },
+    {
+        "id": "measure-ff986127-cd81-42a5-b14c-808c13feec07",
+        "objectname": "measure",
+        "parentid": "agenda-8a9453bf-408e-4a21-af84-f38447577c8d",
+        "parenttype": "agenda",
+        "title": "Utvikle storyboard for 5 kampanjevideoer",
+        "description": "Lise Berg og Jonas Fredriksen skal samarbeide om å lage detaljerte storyboards for videokonseptene.",
+        "descriptionimplementation": "Ikke påbegynt.",
+        "deadline": "2025-12-15T00:00:00Z"
+    },
+    {
+        "id": "agenda-8a9453bf-408e-4a21-af84-f38447577c8d",
+        "objectname": "agenda",
+        "parentid": "mom-b774d539-9e12-4dcb-bf02-899c59f96684",
+        "parenttype": "mom",
+        "title": "Definisjon av kjernebudskap og målgruppe",
+        "description": "Workshop for hovedbudskap; tre kjernekonsepter vurdert (Enkelhet i hverdagen, Bærekraftig valg, Moderne design). Data viser at målgruppen responderer best på visuelt innhold på Instagram og TikTok. Forslag om serie korte videoklipp som viser produktet i bruk.",
+        "conclusion": "Hovedbudskap: «Enkelhet i hverdagen». Primærkanaler: Instagram (Reels) og TikTok. En serie på 5 korte videoer skal produseres.",
+        "a_measures_ids": {
+            "type": "measure",
+            "values": [
+                "measure-ff986127-cd81-42a5-b14c-808c13feec07"
+            ]
+        }
+    },
+    {
+        "id": "measure-1d7d9677-9fe0-4b03-bc41-bce145363021",
+        "objectname": "measure",
+        "parentid": "agenda-39acdc04-a779-4c66-aece-231c40402b1e",
+        "parenttype": "agenda",
+        "title": "Få godkjenning for revidert budsjett",
+        "description": "Silje Dahl skal sende en formell forespørsel til ledelsen om å godkjenne økningen på 100 000 NOK.",
+        "descriptionimplementation": "Venter på endelig tallgrunnlag fra Erik.",
+        "deadline": "2025-12-10T00:00:00Z"
+    },
+    {
+        "id": "agenda-39acdc04-a779-4c66-aece-231c40402b1e",
+        "objectname": "agenda",
+        "parentid": "mom-b774d539-9e12-4dcb-bf02-899c59f96684",
+        "parenttype": "mom",
+        "title": "Budsjett og tidslinje",
+        "description": "Foreløpig budsjett på 500 000 NOK for produksjon, annonsering og byråhonorar. Forslag om å øke annonsebudsjettet med 100 000 NOK finansiert ved reduksjon i reisebudsjett. Lansering planlagt i uke 3, 2026.",
+        "conclusion": "Budsjettet økes til 600 000 NOK. Silje Dahl tar ansvaret for å innhente formell godkjenning. Lanseringsplan for uke 3, 2026 er bekreftet.",
+        "a_measures_ids": {
+            "type": "measure",
+            "values": [
+                "measure-1d7d9677-9fe0-4b03-bc41-bce145363021"
+            ]
+        }
+    }
+]
