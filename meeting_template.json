@@ -1,5 +1,5 @@
 {
-  "name": "Minutes of meeting",  
+  "name": "Minutes of meeting",
   "types": [
     {
       "description": "Overview of general meeting context, including purpose, participants, schedule, and background information.\n\n🎯 Purpose: Document essential context to aid transparency and accountability.\n\n👥 Roles: Provided by meeting organiser or minute taker.\n\n💡 Why this matters: This info is reused in exports, reports, and audits.\n\n🚩 Tips: Be concise but complete.\n\n* Note: Selection options may be customised by your administrator.*",
@@ -33,6 +33,22 @@
           "description": "Record the actual or planned end time of the meeting in HH:MM format. This completes the time frame for the session.\n\n🎯 Purpose: Define the meeting duration for planning and reporting.\n\n👥 Roles: Recorded by meeting organiser or minute taker.\n\n💡 Why this matters: Useful for monitoring schedule adherence.\n\n🚩 Tips: Adjust for overruns or early endings as necessary.\n\n* Note: Selection options may be customised by your administrator.*",
           "label": "End time",
           "required": false
+        },
+        {
+          "fieldname": "e_status_ids",
+          "type": "entity",
+          "description": "Indicate the current lifecycle status of the meeting record. This supports tracking whether minutes are draft, finalised, or archived.\n\n🎯 Purpose: Manage the progress and visibility of the meeting documentation.\n\n👥 Roles: Updated by the minute taker or meeting owner.\n\n💡 Why this matters: Accurate status tracking supports dashboard filtering and audit trails.\n\n🚩 Tips: Use status comments for additional context or clarifications.\n\n📌 Typical statuses:\n- Draft\n- Final\n- Closed\n\n* Note: Selection options may be customised by your administrator.*",
+          "label": "Status",
+          "required": true,
+          "entitytype": "momstatus"
+        },
+        {
+          "fieldname": "e_attendees_ids",
+          "type": "entity",
+          "description": "List all participants who attended the meeting. This provides traceability and supports follow-up actions.\n\n🎯 Purpose: Document who was present and involved in decisions.\n\n👥 Roles: Compiled by minute taker or organiser.\n\n💡 Why this matters: Ensures accountability and accurate records.\n\n🚩 Tips: Include full names, roles, and note any absences or external attendees.\n\n📌 Examples:\n- \"Lina H. (Project Owner), Omar B. (Security Lead), Lisa N. (Consultant, Acme Corp)\"\n- \"Present: All team members. Absent: Finance representative (informed in advance).\"\n\n* Note: Selection options may be customised by your administrator.*",
+          "label": "Attendees",
+          "required": false,
+          "entitytype": "people"
         }
       ]
     },
@@ -61,6 +77,14 @@
           "description": "Capture the outcome or decision for the agenda item. This clarifies agreements and next steps.\n\n🎯 Purpose: Document resolutions and future actions.\n\n👥 Roles: Entered by minute takers or agenda owners.\n\n💡 Why this matters: Enhances accountability and clarity.\n\n🚩 Tips: Be specific and avoid vague statements.\n\n* Note: Selection options may be customised by your administrator.*",
           "label": "Conclusions",
           "required": false
+        },
+        {
+          "fieldname": "e_status_ids",
+          "type": "entity",
+          "description": "Show the status of the agenda item. Indicates if it was resolved, discussed, deferred, or postponed.\n\n🎯 Purpose: Track progress of agenda points during and after meetings.\n\n👥 Roles: Updated by minute takers or agenda owners.\n\n💡 Why this matters: Supports clear documentation and follow-up.\n\n🚩 Tips: Combine with conclusion field for full traceability.\n\n* Note: Selection options may be customised by your administrator.*",
+          "label": "Status",
+          "required": true,
+          "entitytype": "agendastatus"
         }
       ]
     },
@@ -76,7 +100,7 @@
           "label": "Action",
           "required": true
         },
-                {
+        {
           "fieldname": "description",
           "type": "string",
           "description": "This field captures a detailed explanation of the action – what it aims to achieve, how it will be implemented, and what outcome is expected. A well-written description ensures clarity for everyone involved and helps support follow-up, evaluation, and accountability.\n\n&nbsp;\n\n🎯 Purpose\n\nTo document the full scope, intent, and expected results of the action.\n\n&nbsp;\n\n👥 Roles\n\n- Action Creator or Owner: Provides a clear and complete description.\n- Responsible Person: Uses the description as guidance for implementation.\n- Reviewers: Refer to the description when evaluating completion and effectiveness.\n\n&nbsp;\n\n💡 Why this matters\n\nA clear and specific description reduces misunderstandings and ensures that all parties share the same understanding of what needs to be done.\n\n&nbsp;\n\n🚩 Tips\n\n- Focus on what will be done, by whom, and to what effect.\n- Include relevant procedures, standards, or references where appropriate.\n- Avoid vague statements like “Improve process” – be action-oriented and measurable.\n- Break large or complex actions into smaller steps or milestones if needed.\n\n&nbsp;\n\n📌 Examples\n\n- “Conduct cybersecurity training for all staff and document attendance by Q3.”\n- “Replace all fluorescent fixtures with LED lighting in building A and B.”\n- “Review and update data retention policy to align with regulatory changes.”\n\n&nbsp;\n\n⚠️ Note: This field can be updated throughout the lifecycle of the action if details evolve or clarification is needed.",
@@ -96,6 +120,22 @@
           "description": "This field defines the exact date by which the action must be completed. This value is mandatory and must be set before the action can enter the implementation workflow. Relative time frames (e.g. 'within 30 days') are not supported – only calendar dates are allowed.\n\n&nbsp;\n\n🎯 Purpose\n\nTo establish a clear and fixed target date for completing the action.\n\n&nbsp;\n\n👥 Roles\n\n- Action Creator or Initiator: Sets the deadline during action creation.\n- Responsible Person: Plans work to meet the defined date.\n\n&nbsp;\n\n💡 Why this matters\n\nDeadlines help ensure timely action, support progress tracking, and define accountability. They are also required to trigger the next workflow steps.\n\n&nbsp;\n\n🚩 Tips\n\n- The deadline must be filled in before the action can be moved to implementation.\n- Use a realistic date that reflects the complexity, dependencies, and resource availability.\n- Communicate changes to deadlines clearly if adjustments are needed.\n- Monitor upcoming deadlines using reports, dashboards, or filters.\n\n&nbsp;\n\n📌 Examples\n\n- “2025-09-01”\n- “2025-12-15”\n\n&nbsp;\n\n⚠️ Note: Only absolute calendar dates are allowed (format: YYYY-MM-DD). Relative expressions like 'in two weeks' are not supported.",
           "label": "Due date",
           "required": true
+        },
+        {
+          "fieldname": "e_status_ids",
+          "type": "entity",
+          "description": "This field shows the current status of the action (task or action), reflecting its progress from creation to closure. The status updates automatically based on user decisions and system events, and determines when an action is considered closed. Email notifications are triggered at key decision points to keep responsible parties informed.\n\n&nbsp;\n\n🎯 Purpose\n\nTo track and manage the lifecycle of an action, ensure all stakeholders are aligned, and maintain control over implementation, acceptance, and completion.\n\n&nbsp;\n\n👥 Roles\n\n**Initiator** (e.g. process owner, risk owner, team lead):  \n- Creates the action and chooses between implementing, acknowledging it already exists, or cancelling it.  \n- Assigns a responsible person and sets a due date if implementation is selected.  \n- Approves, cancels, or rejects the completed action.\n\n**Action Responsible**:  \n- Accepts, declines, cancels, or closes the action as “Existing” or “Do not implement”.  \n- Updates progress status during implementation.  \n- Marks the action as complete for approval.\n\n&nbsp;\n\n💡 Why this matters\n\nA well-defined status lifecycle ensures consistent handling of all actions, enables transparency, automates follow-up through email notifications, and defines clear closure criteria. It supports accountability across different roles.\n\n&nbsp;\n\n🚩 Tips\n\n- Make sure 'Responsible' and 'Due Date' are filled in before starting implementation.  \n- Use “Exists” only when the action is already implemented and verifiable.  \n- Actions are considered **closed** when status is: **Existing**, **Cancelled**, or **Completed (100%) (approved)**.  \n- Emails are automatically sent when an action is assigned, declined, completed, cancelled, or approved.  \n- If an action is rejected after completion, the responsible person must continue working until it can be approved.\n\n&nbsp;\n\n📌 Examples\n\n- A user creates an action and selects “Do not implement”. The status becomes **Cancelled**, and the action is closed.  \n- A responsible user accepts an action, completes it, and the initiator approves it. The status becomes **Completed (100%) (approved)**, and the process is complete.\n\n💬 **Want to see the actual lifecycle for this action?**  \nClick the **Change log** button in the top-right corner above this field to view the full step-by-step history, including who made each change and when.\n\n&nbsp;\n\n📊 Status Lifecycle Overview\n\n1. **Action is created** → `Identified (pending decision)` *(System)*  \n2. **Initiator clicks**:\n   - *Implement* → Requires Responsible + Due date → `To be implemented (pending accept)` *(email sent to Responsible)*  \n   - *Exists* → `Existing` *(Closed)*  \n   - *Do not implement* → `Cancelled` *(Closed)*\n3. **Responsible user chooses**:\n   - *Decline* → `To be implemented (declined)` *(email sent to Initiator)*  \n   - *Accept* → `In progress (not started)` → Access to:\n     - `In progress (25%)`, `In progress (50%)`, `In progress (75%)`\n     - `Completed (100%) (for approval)` *(email sent to Initiator)*  \n     - *Cancel* → `In progress (cancelled)` *(email sent to Initiator)*  \n   - *Exists* → `Existing` *(Closed)*  \n   - *Do not implement* → `Cancelled` *(Closed)*\n4. **Initiator chooses**:\n   - *Approve* → `Completed (100%) (approved)` *(Closed)*  \n   - *Reject* → `Completed (100%) (not approved)` *(action reopens)*  \n   - *Cancel* → `In progress (cancelled)` *(Closed)*\n\n&nbsp;\n\n✅ When is an action considered closed?\n\n- `Existing`  \n- `Cancelled`  \n- `Completed (100%) (approved)`\n\n&nbsp;\n\n⚠️ Note: The list of selectable status options and transitions may be customised by your organisation’s administrator to reflect internal processes and governance.",
+          "label": "Status",
+          "required": true,
+          "entitytype": "measurestate"
+        },
+        {
+          "fieldname": "e_responsible_ids",
+          "type": "entity",
+          "description": "This field is used to assign the person responsible for implementing the action. The dropdown menu shows active Dmaze users by their full name (first and last). Assigning a responsible person is required before the action can be set to implementation.\n\n&nbsp;\n\n🎯 Purpose\n\nTo ensure clear accountability for executing and reporting on the action.\n\n&nbsp;\n\n👥 Roles\n\n- Action Creator or Initiator: Selects the responsible person from the list.\n- Responsible User: Accepts or declines the task and updates progress.\n\n&nbsp;\n\n💡 Why this matters\n\nAssigning responsibility ensures that the action is actively followed up. It also enables system-generated email notifications, improving communication and accountability.\n\n&nbsp;\n\n🚩 Tips\n\n- Choose someone with the right skills, role, and authority to carry out the action.\n- A valid email address is required to receive notifications – a warning icon will appear if the selected user is missing this.\n- The responsible person will receive an email when the action is moved to implementation status, asking them to accept or decline the task.\n\n&nbsp;\n\n📌 Examples\n\n- “Elena Rossi (IT Security Manager)”\n- “Jens Madsen (Facilities Team)”\n\n&nbsp;\n\n⚠️ Note: Only active users registered in Dmaze can be assigned. Email notifications require a valid address on the user profile.",
+          "label": "Responsible",
+          "required": false,
+          "entitytype": "user"
         }
       ]
     }
@@ -108,12 +148,70 @@
       "childfieldname": "a_agenda_ids",
       "description": "Link agenda items to their parent meeting record."
     },
-      {
+    {
       "parent": "agenda",
       "child": "measure",
       "type": "one-to-many",
       "childfieldname": "a_measures_ids",
       "description": "Link actions to their parent agenda item"
     }
-  ]
+  ],
+  "entities": {
+    "momstatus": [
+      {
+        "name": "Closed",
+        "id": "089de314-cd92-4887-9d58-a24d28531956",
+        "description": ""
+      },
+      {
+        "name": "Open",
+        "id": "1a8d3cc0-3103-4813-b4e9-4e2b825e46eb",
+        "description": ""
+      },
+      {
+        "name": "Draft",
+        "id": "03c1bb26-1ce2-422c-aced-b4edeb52fa42",
+        "description": ""
+      }
+    ],
+    "agendastatus": [
+      {
+        "name": "Closed",
+        "id": "a7s67aa-cd92-4887-9d58-a24d28531956",
+        "description": ""
+      },
+      {
+        "name": "Open",
+        "id": "78a21hd-3103-4813-b4e9-4e2b825e46eb",
+        "description": ""
+      },
+      {
+        "name": "Draft",
+        "id": "as897av-1ce2-422c-aced-b4edeb52fa42",
+        "description": ""
+      }
+    ],
+    "measurestate": [
+      {
+        "name": "Existing",
+        "id": "sad89a90s-cd92-4887-9d58-a24d28531956",
+        "description": "This action is already existing and has been closed."
+      },
+      {
+        "name": "Cancelled",
+        "id": "b7s67aa-cd92-4887-9d58-a24d28531956",
+        "description": "This action has been decided not to be implemented (closed)."
+      },
+      {
+        "name": "Open",
+        "id": "78a21hd-3103-4813-b4e9-4e2b825e46eb",
+        "description": "The implementation of this action is in progress."
+      },
+      {
+        "name": "Identified (pending decision)",
+        "id": "a98sdua-1ce2-422c-aced-b4edeb52fa42",
+        "description": "This is a new action that has been identified and suggested for implementation.\r\n \r\nIf the action is decided to be implemented, an e-mail will be sent automatically to the person responsible."
+      }
+    ]
+  }
 }
