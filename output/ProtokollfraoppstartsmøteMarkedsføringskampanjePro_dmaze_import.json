@@ -1,66 +1,74 @@
 [
     {
-        "id": "mom-b774d539-9e12-4dcb-bf02-899c59f96684",
+        "id": "mom-54d24bdb-91d6-4db0-83f2-9ba5d89133a9",
         "objectname": "mom",
-        "title": "Prosjekt Phoenix – Oppstartsmøte",
-        "description": "Dato: 6. desember 2025; Tid: 13:00–14:30; Sted: Kreativt Rom. Deltakere: Silje Dahl (Prosjektleder, Marked), Erik Larsen (Digital strateg), Lise Berg (Innholdsprodusent), Jonas Fredriksen (Eksternt byrå). Formål: Offisielt starte Prosjekt Phoenix, definere nøkkelbudskap, tildele ansvar og sette overordnet tidslinje for de neste 6 ukene for å øke merkekjennskapen med 20% i målgruppen 25–40 år.",
+        "title": "Oppstartsmøte: Prosjekt Phoenix",
+        "description": "Oppstart av \"Prosjekt Phoenix\", en digital markedsføringskampanje for å øke merkekjennskap med 20% i målgruppen 25–40 år. Møtets mål var å definere kjernebudskap, tildele ansvar og sette en overordnet tidslinje for de neste 6 ukene.",
         "startuptime": "2025-12-06T13:00:00Z",
         "endtime": "2025-12-06T14:30:00Z",
+        "e_status_ids": "Closed",
+        "e_attendees_ids": "Silje Dahl; Erik Larsen; Lise Berg; Jonas Fredriksen",
         "a_agenda_ids": {
             "type": "agenda",
             "values": [
-                "agenda-8a9453bf-408e-4a21-af84-f38447577c8d",
-                "agenda-39acdc04-a779-4c66-aece-231c40402b1e"
+                "agenda-82cf3f17-a7d8-4554-90b5-38fb5cf812d5",
+                "agenda-bf380972-076a-4052-9f4b-bda5eb1ecfe6"
             ]
         }
     },
     {
-        "id": "measure-ff986127-cd81-42a5-b14c-808c13feec07",
+        "id": "measure-4cc675ea-3c3a-4967-8449-817888a8c8a8",
         "objectname": "measure",
-        "parentid": "agenda-8a9453bf-408e-4a21-af84-f38447577c8d",
+        "parentid": "agenda-82cf3f17-a7d8-4554-90b5-38fb5cf812d5",
         "parenttype": "agenda",
         "title": "Utvikle storyboard for 5 kampanjevideoer",
-        "description": "Lise Berg og Jonas Fredriksen skal samarbeide om å lage detaljerte storyboards for videokonseptene.",
+        "description": "Lise Berg og Jonas Fredriksen skal samarbeide om detaljerte storyboards for videokonseptene.",
         "descriptionimplementation": "Ikke påbegynt.",
-        "deadline": "2025-12-15T00:00:00Z"
+        "deadline": "2025-12-15T00:00:00Z",
+        "e_status_ids": "Open",
+        "e_responsible_ids": "Lise Berg, Jonas Fredriksen"
     },
     {
-        "id": "agenda-8a9453bf-408e-4a21-af84-f38447577c8d",
+        "id": "agenda-82cf3f17-a7d8-4554-90b5-38fb5cf812d5",
         "objectname": "agenda",
-        "parentid": "mom-b774d539-9e12-4dcb-bf02-899c59f96684",
+        "parentid": "mom-54d24bdb-91d6-4db0-83f2-9ba5d89133a9",
         "parenttype": "mom",
         "title": "Definisjon av kjernebudskap og målgruppe",
-        "description": "Workshop for hovedbudskap; tre kjernekonsepter vurdert (Enkelhet i hverdagen, Bærekraftig valg, Moderne design). Data viser at målgruppen responderer best på visuelt innhold på Instagram og TikTok. Forslag om serie korte videoklipp som viser produktet i bruk.",
-        "conclusion": "Hovedbudskap: «Enkelhet i hverdagen». Primærkanaler: Instagram (Reels) og TikTok. En serie på 5 korte videoer skal produseres.",
+        "description": "Teamet gjennomførte en workshop for å spikre hovedbudskapet. Tre kjernekonsepter ble diskutert: \"Enkelhet i hverdagen\", \"Bærekraftig valg\" og \"Moderne design\". Jonas presenterte data som viser at målgruppen responderer best på visuelt innhold på Instagram og TikTok. Lise foreslo en serie korte videoklipp som viser produktet i bruk i reelle situasjoner.",
+        "conclusion": "Hovedbudskapet blir \"Enkelhet i hverdagen\". Kampanjen fokuserer primært på Instagram (Reels) og TikTok. En serie på 5 korte videoer skal produseres.",
+        "e_status_ids": "Closed",
         "a_measures_ids": {
             "type": "measure",
             "values": [
-                "measure-ff986127-cd81-42a5-b14c-808c13feec07"
+                "measure-4cc675ea-3c3a-4967-8449-817888a8c8a8"
             ]
         }
     },
     {
-        "id": "measure-1d7d9677-9fe0-4b03-bc41-bce145363021",
+        "id": "measure-2152ffae-feb9-4388-b33e-4983768a86f0",
         "objectname": "measure",
-        "parentid": "agenda-39acdc04-a779-4c66-aece-231c40402b1e",
+        "parentid": "agenda-bf380972-076a-4052-9f4b-bda5eb1ecfe6",
         "parenttype": "agenda",
         "title": "Få godkjenning for revidert budsjett",
-        "description": "Silje Dahl skal sende en formell forespørsel til ledelsen om å godkjenne økningen på 100 000 NOK.",
+        "description": "Silje Dahl skal sende formell forespørsel til ledelsen for å få godkjent økning på 100 000 NOK.",
         "descriptionimplementation": "Venter på endelig tallgrunnlag fra Erik.",
-        "deadline": "2025-12-10T00:00:00Z"
+        "deadline": "2025-12-10T00:00:00Z",
+        "e_status_ids": "Open",
+        "e_responsible_ids": "Silje Dahl"
     },
     {
-        "id": "agenda-39acdc04-a779-4c66-aece-231c40402b1e",
+        "id": "agenda-bf380972-076a-4052-9f4b-bda5eb1ecfe6",
         "objectname": "agenda",
-        "parentid": "mom-b774d539-9e12-4dcb-bf02-899c59f96684",
+        "parentid": "mom-54d24bdb-91d6-4db0-83f2-9ba5d89133a9",
         "parenttype": "mom",
         "title": "Budsjett og tidslinje",
-        "description": "Foreløpig budsjett på 500 000 NOK for produksjon, annonsering og byråhonorar. Forslag om å øke annonsebudsjettet med 100 000 NOK finansiert ved reduksjon i reisebudsjett. Lansering planlagt i uke 3, 2026.",
-        "conclusion": "Budsjettet økes til 600 000 NOK. Silje Dahl tar ansvaret for å innhente formell godkjenning. Lanseringsplan for uke 3, 2026 er bekreftet.",
+        "description": "Silje Dahl presenterte et foreløpig budsjett på 500 000 NOK til produksjon, annonsering og byråhonorar. Erik foreslo å øke annonsebudsjettet med 100 000 NOK (omdisponert fra reisebudsjett) for bedre rekkevidde på TikTok. Tidslinje satt med lansering i uke 3, 2026.",
+        "conclusion": "Budsjettet økes til 600 000 NOK. Silje Dahl tar ansvar for formell godkjenning. Lanseringsdato er bekreftet.",
+        "e_status_ids": "Closed",
         "a_measures_ids": {
             "type": "measure",
             "values": [
-                "measure-1d7d9677-9fe0-4b03-bc41-bce145363021"
+                "measure-2152ffae-feb9-4388-b33e-4983768a86f0"
             ]
         }
     }

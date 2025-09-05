@@ -30,14 +30,15 @@ if __name__ == "__main__":
     
     os.makedirs("output", exist_ok=True)
 
-    # STEP 0: Process the template (unchanged)
+    # STEP 0: Process the template
     print(f"--- Step 0: Processing template: {template_file_path} ---")
+    # 'schema_package' inneholder nå schema_tree, json_schema_for_api, OG entity_map
     schema_package = process_template_hierarchically(template_file_path) 
     
     if "error" in schema_package:
         print(f"CRITICAL ERROR: {schema_package['error']}")
     else:
-        # STEP 1: Convert to Markdown (unchanged)
+        # STEP 1: Convert to Markdown
         print(f"--- Step 1: Converting file to Markdown: {input_file_path} ---")
         markdown_content = convert_file_to_markdown(input_file_path)
         
@@ -46,11 +47,11 @@ if __name__ == "__main__":
         else:
             print("File converted to Markdown successfully.")
             
-            # STEP 2: CLASSIFY THE DOCUMENT (New agent step)
+            # STEP 2: CLASSIFY THE DOCUMENT
             print("\n--- Step 2: Classifying document structure... ---")
             doc_type = classify_document_type(client, markdown_content)
 
-            # STEP 3: CONDITIONAL ROUTING (New agent logic)
+            # STEP 3: CONDITIONAL ROUTING
             if doc_type == "multiple_meetings":
                 print("\n--- Step 3: Document contains multiple meetings. Splitting into chunks... ---")
                 meeting_chunks = split_document_into_meetings(client, markdown_content)
@@ -68,7 +69,9 @@ if __name__ == "__main__":
                             print(f"  ERROR: Could not process chunk for '{chunk.meeting_title}': {nested_data['error']}")
                             continue
                         
-                        final_flat_data = transform_to_dmaze_format_hierarchically(nested_data, schema_package['schema_tree'])
+                        # ENDRING HER: Send hele 'schema_package', ikke bare 'schema_tree'.
+                        # Dette gir transformatoren tilgang til 'entity_map'.
+                        final_flat_data = transform_to_dmaze_format_hierarchically(nested_data, schema_package)
                         
                         safe_title = "".join(x for x in chunk.meeting_title if x.isalnum())[:50]
                         output_file_path = f"output/{safe_title}_dmaze_import.json"
@@ -77,10 +80,8 @@ if __name__ == "__main__":
                         with open(output_file_path, "w", encoding="utf-8") as f:
                             json.dump(final_flat_data, f, indent=4, ensure_ascii=False)
                         
-                        # --- ADD THIS BLOCK HERE (inside the loop) ---
                         print("\n--- FINAL DMAZE IMPORT JSON (for this chunk) ---")
                         print(json.dumps(final_flat_data, indent=2, ensure_ascii=False))
-                        # ---------------------------------------------------
 
             else: # doc_type == "single_meeting"
                 print("\n--- Step 3: Document contains a single meeting. Processing directly... ---")
@@ -90,7 +91,9 @@ if __name__ == "__main__":
                 if "error" in nested_data:
                     print(f"ERROR: Could not process single meeting document: {nested_data['error']}")
                 else:
-                    final_flat_data = transform_to_dmaze_format_hierarchically(nested_data, schema_package['schema_tree'])
+                    # ENDRING HER: Send hele 'schema_package', ikke bare 'schema_tree'.
+                    # Dette gir transformatoren tilgang til 'entity_map'.
+                    final_flat_data = transform_to_dmaze_format_hierarchically(nested_data, schema_package)
                     
                     base_name = os.path.splitext(os.path.basename(input_file_path))[0]
                     output_file_path = f"output/{base_name}_dmaze_import.json"
@@ -99,9 +102,7 @@ if __name__ == "__main__":
                     with open(output_file_path, "w", encoding="utf-8") as f:
                         json.dump(final_flat_data, f, indent=4, ensure_ascii=False)
 
-                    # --- ADD THIS BLOCK HERE ---
                     print("\n--- FINAL DMAZE IMPORT JSON ---")
                     print(json.dumps(final_flat_data, indent=2, ensure_ascii=False))
-                    # ---------------------------
 
             print("\n--- Processing finished. ---")

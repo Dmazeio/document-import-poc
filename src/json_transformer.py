@@ -1,14 +1,10 @@
 # File: src/json_transformer.py
 import uuid
 
-def flatten_recursively(data_node: dict, schema_node: dict, parent_id: str, parent_type: str, flat_list: list):
-    """
-    Recursively traverses the nested data and schema tree to produce a flat list
-    of Dmaze-compatible objects.
-    """
+# ENDRET: Funksjonen trenger nå 'entity_map' for å kunne oversette labels til ID-er.
+def flatten_recursively(data_node: dict, schema_node: dict, parent_id: str, parent_type: str, flat_list: list, entity_map: dict):
     object_name = schema_node['name']
     
-    # 1. Create the object for the current node
     node_id = f"{object_name}-{uuid.uuid4()}"
     dmaze_object = {
         "id": node_id,
@@ -18,57 +14,69 @@ def flatten_recursively(data_node: dict, schema_node: dict, parent_id: str, pare
         dmaze_object["parentid"] = parent_id
         dmaze_object["parenttype"] = parent_type
 
-    # 2. Copy all data fields from the AI output
-    for field in schema_node['fields']:
-        dmaze_object[field] = data_node.get(field)
+    # ENDRET: Oppdatert logikk for å håndtere oversettelse av entities.
+    for field_info in schema_node['fields']:
+        field_name = field_info['fieldname']
+        entity_key = field_info.get('entity')
+        
+        # Hent verdien fra AI-outputen.
+        ai_value = data_node.get(field_name)
+
+        # NYTT: Hvis det er en entity og vi har en verdi, slå opp ID-en.
+        if entity_key and ai_value is not None:
+            # Slå opp f.eks. entity_map["status"]["Draft"] -> "d-draft"
+            # Hvis den ikke finner en match, bruker den bare rå-verdien fra AI-en som en fallback.
+            final_value = entity_map.get(entity_key, {}).get(ai_value, ai_value) 
+            dmaze_object[field_name] = final_value
+        else:
+            # Hvis ikke en entity, bruk verdien som den er.
+            dmaze_object[field_name] = ai_value
     
-    # 3. Process all children
     for child_schema in schema_node.get('children', []):
         child_name = child_schema['name']
         child_items = data_node.get(child_name, [])
         child_ids = []
         
-        if child_items: # Make sure we have child items to process
+        if child_items:
             for item in child_items:
-                # The recursive call!
-                child_id = flatten_recursively(item, child_schema, node_id, object_name, flat_list)
+                # ENDRET: Send 'entity_map' med i det rekursive kallet.
+                child_id = flatten_recursively(item, child_schema, node_id, object_name, flat_list, entity_map)
                 child_ids.append(child_id)
         
-        # Add the relationship link to the parent (current node)
         relationship_field = child_schema['relationship_field']
         dmaze_object[relationship_field] = {
             "type": child_name,
             "values": child_ids
         }
 
-    # 4. Add the fully processed object to our master list
     flat_list.append(dmaze_object)
-    
-    # 5. Return the ID of the created object so the parent can link to it
     return node_id
 
 
-def transform_to_dmaze_format_hierarchically(nested_data: dict, schema_tree: dict) -> list:
-    """
-    Transforms the nested JSON into the Dmaze format using the hierarchical schema tree.
-    """
+# ENDRET: Funksjonen bør motta hele 'schema_package' for å få tilgang til alt den trenger.
+def transform_to_dmaze_format_hierarchically(nested_data: dict, schema_package: dict) -> list:
     final_list = []
+    
+    # ENDRET: Hent ut alle nødvendige deler fra pakken.
+    schema_tree = schema_package['schema_tree']
+    entity_map = schema_package.get('entity_map', {}) # Hent mappingen
+    
     root_name = schema_tree['name']
 
-    # Check if the AI output contains the root key
     if root_name not in nested_data:
         return [{"error": f"Input from AI is missing the root key '{root_name}' defined in the schema."}]
 
-    # Start the recursive flattening process from the root node
+    # ENDRET: Send med 'entity_map' til den rekursive funksjonen.
     flatten_recursively(
         data_node=nested_data[root_name],
         schema_node=schema_tree,
         parent_id=None,
         parent_type=None,
-        flat_list=final_list
+        flat_list=final_list,
+        entity_map=entity_map
     )
 
-    # Re-order to ensure the parent (root) is the first element in the list
+    # Re-ordering forblir uendret
     root_index = next((i for i, obj in enumerate(final_list) if obj.get('objectname') == root_name), -1)
     if root_index != -1:
         root_obj = final_list.pop(root_index)
