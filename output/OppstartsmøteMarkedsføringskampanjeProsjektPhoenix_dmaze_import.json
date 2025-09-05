@@ -1,0 +1,75 @@
+[
+    {
+        "id": "mom-27d5de06-d4a8-49a3-88ed-598fdbf565ca",
+        "objectname": "mom",
+        "title": "Prosjekt Phoenix - Oppstartsmøte",
+        "description": "Offisielt starte \"Prosjekt Phoenix\", en ny digital markedsføringskampanje rettet mot å øke merkekjennskapen med 20% i segmentet 25-40 år. Målet for møtet var å definere nøkkelbudskap, tildele ansvar og sette en overordnet tidslinje for de neste 6 ukene.",
+        "startuptime": "2025-12-06T13:00:00Z",
+        "endtime": "2025-12-06T14:30:00Z",
+        "e_status_ids": "",
+        "e_attendees_ids": "Silje Dahl (Prosjektleder, Marked); Erik Larsen (Digital strateg); Lise Berg (Innholdsprodusent); Jonas Fredriksen (Eksternt byrå)",
+        "a_agenda_ids": {
+            "type": "agenda",
+            "values": [
+                "agenda-f9e7269e-44c0-4987-ab61-c3247348c3f6",
+                "agenda-01650d82-1243-44e3-8a5f-17a71d9e7666"
+            ]
+        }
+    },
+    {
+        "id": "measure-59a907e2-b49b-4ddb-b669-f090b3d5af01",
+        "objectname": "measure",
+        "parentid": "agenda-f9e7269e-44c0-4987-ab61-c3247348c3f6",
+        "parenttype": "agenda",
+        "title": "Utvikle storyboard for 5 kampanjevideoer",
+        "description": "Lise Berg og Jonas Fredriksen skal samarbeide om å lage detaljerte storyboards for videokonseptene.",
+        "descriptionimplementation": "",
+        "deadline": "2025-12-15T00:00:00Z",
+        "e_status_ids": "Ikke påbegynt",
+        "e_responsible_ids": "Lise Berg, Jonas Fredriksen"
+    },
+    {
+        "id": "agenda-f9e7269e-44c0-4987-ab61-c3247348c3f6",
+        "objectname": "agenda",
+        "parentid": "mom-27d5de06-d4a8-49a3-88ed-598fdbf565ca",
+        "parenttype": "mom",
+        "title": "Definisjon av kjernebudskap og målgruppe",
+        "description": "Teamet gjennomførte en workshop for å spikre hovedbudskapet. Diskusjonen landet på tre kjernekonsepter: \"Enkelhet i hverdagen\", \"Bærekraftig valg\" og \"Moderne design\". Jonas presenterte data som viser at målgruppen responderer best på visuelt innhold på Instagram og TikTok. Lise Berg foreslo å produsere en serie korte videoklipp som viser produktet i bruk i reelle situasjoner.",
+        "conclusion": "Hovedbudskapet blir \"Enkelhet i hverdagen\". Kampanjen vil primært fokusere på Instagram (Reels) og TikTok. En serie på 5 korte videoer skal produseres.",
+        "e_status_ids": "",
+        "a_measures_ids": {
+            "type": "measure",
+            "values": [
+                "measure-59a907e2-b49b-4ddb-b669-f090b3d5af01"
+            ]
+        }
+    },
+    {
+        "id": "measure-43ae3b6e-c0c7-41dc-af3e-8d1e2a41cde3",
+        "objectname": "measure",
+        "parentid": "agenda-01650d82-1243-44e3-8a5f-17a71d9e7666",
+        "parenttype": "agenda",
+        "title": "Få godkjenning for revidert budsjett",
+        "description": "Silje Dahl skal sende en formell forespørsel til ledelsen for å få godkjent det økte budsjettet på 100 000 NOK.",
+        "descriptionimplementation": "",
+        "deadline": "2025-12-10T00:00:00Z",
+        "e_status_ids": "Venter på endelig tallgrunnlag fra Erik",
+        "e_responsible_ids": "Silje Dahl"
+    },
+    {
+        "id": "agenda-01650d82-1243-44e3-8a5f-17a71d9e7666",
+        "objectname": "agenda",
+        "parentid": "mom-27d5de06-d4a8-49a3-88ed-598fdbf565ca",
+        "parenttype": "mom",
+        "title": "Budsjett og tidslinje",
+        "description": "Silje Dahl presenterte det foreløpige budsjettet på 500 000 NOK. Beløpet skal dekke produksjon, annonsering og honorar til byrået. Erik Larsen foreslo å øke annonsebudsjettet med 100 000 NOK for å sikre tilstrekkelig rekkevidde på TikTok, finansiert ved å redusere reisebudsjettet. Tidslinjen ble satt med lansering i uke 3, 2026.",
+        "conclusion": "Budsjettet økes til 600 000 NOK. Silje Dahl tar ansvaret for å få den formelle godkjenningen. Lanseringsdato er bekreftet (uke 3, 2026).",
+        "e_status_ids": "",
+        "a_measures_ids": {
+            "type": "measure",
+            "values": [
+                "measure-43ae3b6e-c0c7-41dc-af3e-8d1e2a41cde3"
+            ]
+        }
+    }
+]

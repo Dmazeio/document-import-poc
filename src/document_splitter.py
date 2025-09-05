@@ -22,4 +22,4 @@ def split_document_into_meetings(client: OpenAI, markdown_content: str) -> List[
         # We only return the list of meetings that were found.
         return structured_document.meetings
     except Exception as e:
-        return [] # Returns an empty list on error.
+        return [] # Returns an empty list on error

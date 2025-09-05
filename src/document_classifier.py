@@ -12,7 +12,7 @@ def classify_document_type(client: OpenAI, markdown_content: str) -> DocumentTyp
     instructor_client = instructor.patch(client)
     
     # Create a representative sample of the document
-    sample_size = 4000 # Number of characters from the start and end
+    sample_size = 4000
     if len(markdown_content) > sample_size * 2:
         document_sample = (
             markdown_content[:sample_size]

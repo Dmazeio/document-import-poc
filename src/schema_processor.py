@@ -55,6 +55,7 @@ def process_template_hierarchically(template_path: str) -> dict:
 
         types_map = {t['objectname']: t for t in template.get('types', [])}
         relationships = template.get('relationships', [])
+        # entities = template.get('entities', [])
         root_object_info = next((t for t in template['types'] if t.get('isroot')), None)
         if not root_object_info:
             return {"error": "Could not find a root object (isroot: true) in the template."}
