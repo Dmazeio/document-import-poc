@@ -26,11 +26,11 @@ def build_json_schema_from_tree(node: dict, entities: dict) -> dict:
     
     for field_info in node.get('fields', []):
         field_name = field_info['fieldname']
-        # ENDRING: Vi ser etter 'entitytype' slik det er definert i din JSON-fil.
+        
         entity_key = field_info.get('entitytype') 
 
         if entity_key and entity_key in entities:
-            # KORRIGERT HER: Endret fra item['label'] til item['name']
+            
             valid_names = [item['name'] for item in entities[entity_key]]
             properties[field_name] = {
                 "type": "string",
@@ -89,7 +89,6 @@ def process_template_hierarchically(template_path: str) -> dict:
             "additionalProperties": False
         }
         
-        # KORRIGERT HER: Endret fra item['label'] til item['name']
         entity_map = {
             entity_key: {item['name']: item['id'] for item in items}
             for entity_key, items in entities.items()

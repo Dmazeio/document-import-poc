@@ -212,6 +212,28 @@
         "id": "a98sdua-1ce2-422c-aced-b4edeb52fa42",
         "description": "This is a new action that has been identified and suggested for implementation.\r\n \r\nIf the action is decided to be implemented, an e-mail will be sent automatically to the person responsible."
       }
+    ],
+        "user": [
+      {
+        "name": "Ola Nordmann",
+        "id": "user-1-ola-nordmann-uuid",
+        "description": "Prosjektleder"
+      },
+      {
+        "name": "Kari Nordmann",
+        "id": "user-2-kari-normann-uuid",
+        "description": "Utvikler"
+      },
+      {
+        "name": "Arne Arnesen",
+        "id": "user-3-arne-arnesen-uuid",
+        "description": "Tester"
+      },
+      {
+        "name": "Lise Nilsen",
+        "id": "user-4-lise-nilsen-uuid",
+        "description": "Sikkerhetsansvarlig"
+      }
     ]
   }
 }
