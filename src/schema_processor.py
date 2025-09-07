@@ -57,7 +57,6 @@ def build_json_schema_from_tree(node: dict, entities: dict) -> dict:
         "additionalProperties": False
     }
 
-
 def process_template_hierarchically(template_path: str) -> dict:
     try:
         with open(template_path, 'r', encoding='utf-8') as f:
