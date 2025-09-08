@@ -1,25 +1,13 @@
-# File: src/openai_extractor.py
 import json
 from openai import OpenAI
 
-# WE DON'T NEED THIS FUNCTION ANYMORE!
-# def generate_prompt_from_schema_tree(node: dict) -> str: ...
-
 def extract_data_with_hierarchy(client: OpenAI, document_text: str, schema_package: dict) -> dict:
-    """
-    Uses a dynamically generated, strict JSON Schema to extract a deeply
-    nested JSON structure from a document.
-    """
-    # Get the two parts we created in the processor
-    schema_tree = schema_package['schema_tree']
     json_schema = schema_package['json_schema_for_api']
 
-    # The prompt can now be much simpler!
-    # We no longer need to explain the structure, just the task.
     system_prompt = """
     You are an expert assistant who analyzes documents and extracts key information.
     Structure the extracted content into the JSON format specified by the provided schema.
-    If you cannot find information for a field, use `null`.
+    If you cannot find information for a field, use `null`. Do not invent information.
     For any datetime fields, format them as ISO 8601 strings (YYYY-MM-DDTHH:MM:SSZ).
     """
 
@@ -27,7 +15,7 @@ def extract_data_with_hierarchy(client: OpenAI, document_text: str, schema_packa
 
     try:
         response = client.chat.completions.create(
-            model="gpt-5",
+            model="gpt-4o",
             response_format={
                 "type": "json_schema",
                 "json_schema": {

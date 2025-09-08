@@ -48,7 +48,7 @@
           "description": "List all participants who attended the meeting. This provides traceability and supports follow-up actions.\n\n🎯 Purpose: Document who was present and involved in decisions.\n\n👥 Roles: Compiled by minute taker or organiser.\n\n💡 Why this matters: Ensures accountability and accurate records.\n\n🚩 Tips: Include full names, roles, and note any absences or external attendees.\n\n📌 Examples:\n- \"Lina H. (Project Owner), Omar B. (Security Lead), Lisa N. (Consultant, Acme Corp)\"\n- \"Present: All team members. Absent: Finance representative (informed in advance).\"\n\n* Note: Selection options may be customised by your administrator.*",
           "label": "Attendees",
           "required": false,
-          "entitytype": "people"
+          "entitytype": "user"
         }
       ]
     },
@@ -233,6 +233,16 @@
         "name": "Lise Nilsen",
         "id": "user-4-lise-nilsen-uuid",
         "description": "Sikkerhetsansvarlig"
+      },
+      {
+        "name": "Arne Pettersen",
+        "id": "user-5-arne-pettersen-uuid",
+        "description": "Økonomiansvarlig"
+      },
+      {
+        "name": "Ola Hansen",
+        "id": "user-6-ola-hansen-uuid",
+        "description": "IT-ansvarlig"
       }
     ]
   }
