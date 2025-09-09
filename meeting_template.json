@@ -1,51 +1,51 @@
 {
-  "name": "Security Meeting Minutes",
+  "name": "Minutes of meeting",
   "types": [
     {
-      "description": "Overview of security meeting context, including purpose, participants, schedule, and security-related background information.\n\n🎯 Purpose: Document essential security context to aid transparency and accountability in cybersecurity matters.\n\n👥 Roles: Provided by security team lead or minute taker.\n\n💡 Why this matters: This info is reused in security reports, compliance audits, and incident tracking.\n\n🚩 Tips: Be concise but complete, especially regarding security implications.\n\n* Note: Selection options may be customised by your administrator.*",
+      "description": "Overview of general meeting context, including purpose, participants, schedule, and background information.\n\n🎯 Purpose: Document essential context to aid transparency and accountability.\n\n👥 Roles: Provided by meeting organiser or minute taker.\n\n💡 Why this matters: This info is reused in exports, reports, and audits.\n\n🚩 Tips: Be concise but complete.\n\n* Note: Selection options may be customised by your administrator.*",
       "isroot": true,
       "objectname": "mom",
       "fields": [
         {
           "fieldname": "title",
           "type": "string",
-          "description": "Provide a concise and specific title for the security meeting. This title will appear in security dashboards, compliance reports, and audit exports.\n\n🎯 Purpose: Clearly identify the security meeting type, incident response, or compliance context.\n\n👥 Roles: Created by the security team lead or administrator.\n\n💡 Why this matters: A specific title enables easy search and comparison with other security meetings.\n\n🚩 Tips: Include security focus areas like 'Incident Response', 'Compliance Review', or 'Risk Assessment'.\n\n📌 Examples:\n- \"Cybersecurity Quarterly Review – Q4 2025\"\n- \"Incident Response Team Meeting – Phishing Campaign\"\n- \"2FA Implementation Status Review\"\n\n* Note: Selection options may be customised by your administrator.*",
+          "description": "Provide a concise and specific title for the meeting. This title will appear in dashboards, reports, and exports, so clarity is essential.\n\n🎯 Purpose: Clearly identify the meeting type, project, or team context.\n\n👥 Roles: Created by the meeting organiser or administrator.\n\n💡 Why this matters: A specific title enables easy search and comparison with other meetings.\n\n🚩 Tips: Avoid vague titles like \"Meeting\" or \"Workshop\".\n\n📌 Examples:\n- \"IT Project Governance Meeting – Q2 2025\"\n- \"Weekly Team Sync – Digital Marketing\"\n- \"HR Policy Alignment – Kickoff\"\n\n* Note: Selection options may be customised by your administrator.*",
           "label": "Title",
-          "required": false
+          "required": true
         },
         {
           "fieldname": "description",
           "type": "string",
-          "description": "Describe the security purpose, scope, and context of the meeting in detail. This field helps readers quickly understand the security objectives and expected outcomes.\n\n🎯 Purpose: Provide security background, threat context, and outline main security goals or compliance requirements.\n\n👥 Roles: Typically completed by the security team lead or note taker.\n\n💡 Why this matters: Clear security context supports audit trails and helps align team members with security objectives.\n\n🚩 Tips: Include information about specific threats, incidents, or compliance requirements that triggered the meeting.\n\n📌 Examples:\n- \"Quarterly security review focusing on Q4 incidents, 2FA implementation status, and Q1 2026 security priorities.\"\n- \"Emergency response meeting following detected phishing campaign targeting executive leadership.\"\n\n* Note: Selection options may be customised by your administrator.*",
+          "description": "Describe the purpose, scope, and context of the meeting in detail. This field helps readers quickly understand why the meeting was held and what it aimed to achieve.\n\n🎯 Purpose: Provide background or triggers for the meeting and outline its main goals or expected outcomes.\n\n👥 Roles: Typically completed by the meeting organiser or note taker.\n\n💡 Why this matters: Clear context supports traceability and helps align attendees with meeting objectives.\n\n🚩 Tips: Add information if the meeting was called ad hoc or for specific issues.\n\n📌 Examples:\n- \"Monthly planning meeting for the customer onboarding project. Focus on risk tracking and resource allocation.\"\n- \"Internal compliance check-in for vendor due diligence and documentation requirements.\"\n\n* Note: Selection options may be customised by your administrator.*",
           "label": "Description",
           "required": true
         },
         {
           "fieldname": "startuptime",
           "type": "datetime",
-          "description": "Record the actual or scheduled start time of the security meeting. This supports security incident timeline tracking and meeting efficiency analysis.\n\n🎯 Purpose: Capture precise meeting start times for security documentation and response time tracking.\n\n👥 Roles: Logged by security team lead or minute taker.\n\n💡 Why this matters: Critical for incident response timelines and security process improvement.\n\n🚩 Tips: Especially important for incident response meetings where timing is crucial.\n\n* Note: Selection options may be customised by your administrator.*",
+          "description": "Record the actual or scheduled start time of the meeting in HH:MM format. This supports agenda planning and timing analysis.\n\n🎯 Purpose: Capture precise meeting start times for duration tracking.\n\n👥 Roles: Logged by meeting organiser or minute taker.\n\n💡 Why this matters: Helps identify meeting efficiency and timing trends.\n\n🚩 Tips: Reflect local time zones and update if the start was delayed.\n\n* Note: Selection options may be customised by your administrator.*",
           "label": "Start Time",
           "required": false
         },
         {
           "fieldname": "endtime",
           "type": "datetime",
-          "description": "Record the actual or planned end time of the security meeting. This completes the time frame for security documentation.\n\n🎯 Purpose: Define the security meeting duration for compliance reporting and process optimization.\n\n👥 Roles: Recorded by security team lead or minute taker.\n\n💡 Why this matters: Useful for monitoring security meeting efficiency and incident response times.\n\n🚩 Tips: Document any extensions due to critical security discussions or urgent incidents.\n\n* Note: Selection options may be customised by your administrator.*",
+          "description": "Record the actual or planned end time of the meeting in HH:MM format. This completes the time frame for the session.\n\n🎯 Purpose: Define the meeting duration for planning and reporting.\n\n👥 Roles: Recorded by meeting organiser or minute taker.\n\n💡 Why this matters: Useful for monitoring schedule adherence.\n\n🚩 Tips: Adjust for overruns or early endings as necessary.\n\n* Note: Selection options may be customised by your administrator.*",
           "label": "End time",
           "required": false
         },
         {
           "fieldname": "e_status_ids",
           "type": "entity",
-          "description": "Indicate the current lifecycle status of the security meeting record. This supports tracking whether security minutes are draft, finalised, or archived.\n\n🎯 Purpose: Manage the progress and visibility of security meeting documentation for compliance purposes.\n\n👥 Roles: Updated by the security minute taker or meeting owner.\n\n💡 Why this matters: Accurate status tracking supports security dashboard filtering and compliance audit trails.\n\n🚩 Tips: Security meetings should be finalized promptly to support incident response and compliance requirements.\n\n📌 Typical statuses:\n- Draft\n- Final\n- Closed\n\n* Note: Selection options may be customised by your administrator.*",
+          "description": "Indicate the current lifecycle status of the meeting record. This supports tracking whether minutes are draft, finalised, or archived.\n\n🎯 Purpose: Manage the progress and visibility of the meeting documentation.\n\n👥 Roles: Updated by the minute taker or meeting owner.\n\n💡 Why this matters: Accurate status tracking supports dashboard filtering and audit trails.\n\n🚩 Tips: Use status comments for additional context or clarifications.\n\n📌 Typical statuses:\n- Draft\n- Final\n- Closed\n\n* Note: Selection options may be customised by your administrator.*",
           "label": "Status",
-          "required": false,
+          "required": true,
           "entitytype": "momstatus"
         },
         {
           "fieldname": "e_attendees_ids",
           "type": "entity",
-          "description": "List all security team members and stakeholders who attended the meeting. This provides accountability and supports security follow-up actions.\n\n🎯 Purpose: Document who was present for security decisions and incident response discussions.\n\n👥 Roles: Compiled by security minute taker or team lead.\n\n💡 Why this matters: Ensures security accountability and accurate incident response records.\n\n🚩 Tips: Include full names, security roles, and note any security-critical absences.\n\n📌 Examples:\n- \"Kari N. (Security Lead), Arne P. (IT Security), Lise N. (Security Analyst), Ola H. (IT Manager)\"\n- \"Present: All security team members. Absent: CISO (informed of critical decisions).\"\n\n* Note: Selection options may be customised by your administrator.*",
+          "description": "List all participants who attended the meeting. This provides traceability and supports follow-up actions.\n\n🎯 Purpose: Document who was present and involved in decisions.\n\n👥 Roles: Compiled by minute taker or organiser.\n\n💡 Why this matters: Ensures accountability and accurate records.\n\n🚩 Tips: Include full names, roles, and note any absences or external attendees.\n\n📌 Examples:\n- \"Lina H. (Project Owner), Omar B. (Security Lead), Lisa N. (Consultant, Acme Corp)\"\n- \"Present: All team members. Absent: Finance representative (informed in advance).\"\n\n* Note: Selection options may be customised by your administrator.*",
           "label": "Attendees",
           "required": false,
           "entitytype": "people"
@@ -53,35 +53,35 @@
       ]
     },
     {
-      "description": "Capture each security agenda item, its discussion, presenter, and security outcomes to structure meeting content and support security follow-up.\n\n🎯 Purpose: Organise security discussions and assign security responsibilities.\n\n👥 Roles: Updated by security minute taker or agenda owner.\n\n💡 Why this matters: Drives clarity in security processes and systematic security follow-up.\n\n🚩 Tips: Be specific in security conclusions and threat assessments.\n\n* Note: Selection options may be customised by your administrator.*",
+      "description": "Capture each agenda item, its discussion, presenter, and outcomes to structure meeting content and support follow-up.\n\n🎯 Purpose: Organise meeting discussions and assign responsibilities.\n\n👥 Roles: Updated by minute taker or agenda owner.\n\n💡 Why this matters: Drives clarity and systematic follow-up.\n\n🚩 Tips: Be specific in conclusions and statuses.\n\n* Note: Selection options may be customised by your administrator.*",
       "isroot": false,
       "objectname": "agenda",
       "fields": [
         {
           "fieldname": "title",
           "type": "string",
-          "description": "Provide a short and clear title for the security agenda item. This structures the security meeting and aids security follow-up.\n\n🎯 Purpose: Clearly define security topics, incidents, or decisions.\n\n👥 Roles: Created by security meeting organisers or security presenters.\n\n💡 Why this matters: Facilitates security meeting flow and compliance reporting.\n\n🚩 Tips: Include specific security focus like 'Incident Review', 'Vulnerability Assessment', or 'Compliance Check'.\n\n* Note: Selection options may be customised by your administrator.*",
+          "description": "Provide a short and clear title for the agenda item. This structures the meeting and aids follow-up.\n\n🎯 Purpose: Clearly define topics or decisions.\n\n👥 Roles: Created by meeting organisers or presenters.\n\n💡 Why this matters: Facilitates meeting flow and reporting.\n\n🚩 Tips: Avoid vague titles like \"Discussion\" or \"Update\".\n\n* Note: Selection options may be customised by your administrator.*",
           "label": "Agenda point",
           "required": true
         },
         {
           "fieldname": "description",
           "type": "string",
-          "description": "Summarise the security discussion for each agenda item. This records security concerns, threat assessments, and mitigation strategies discussed.\n\n🎯 Purpose: Document key security points, threat intelligence, and risk assessments.\n\n👥 Roles: Captured by security minute takers or security presenters.\n\n💡 Why this matters: Provides a security record for compliance, audit trails, and threat tracking.\n\n🚩 Tips: Include specific security metrics, threat indicators, and risk levels discussed.\n\n* Note: Selection options may be customised by your administrator.*",
+          "description": "Summarise the discussion for each agenda item. This records what was said, clarified, or raised during the meeting.\n\n🎯 Purpose: Document key points and viewpoints.\n\n👥 Roles: Captured by minute takers or presenters.\n\n💡 Why this matters: Provides a record for transparency and follow-up.\n\n🚩 Tips: Use bullet points and separate discussion from conclusions.\n\n* Note: Selection options may be customised by your administrator.*",
           "label": "Discussion",
           "required": true
         },
         {
           "fieldname": "conclusion",
           "type": "string",
-          "description": "Capture the security outcome or decision for the agenda item. This clarifies security agreements and next security steps.\n\n🎯 Purpose: Document security resolutions, risk acceptance, and future security actions.\n\n👥 Roles: Entered by security minute takers or security agenda owners.\n\n💡 Why this matters: Enhances security accountability and compliance clarity.\n\n🚩 Tips: Be specific about security controls, risk mitigation, and compliance requirements.\n\n* Note: Selection options may be customised by your administrator.*",
+          "description": "Capture the outcome or decision for the agenda item. This clarifies agreements and next steps.\n\n🎯 Purpose: Document resolutions and future actions.\n\n👥 Roles: Entered by minute takers or agenda owners.\n\n💡 Why this matters: Enhances accountability and clarity.\n\n🚩 Tips: Be specific and avoid vague statements.\n\n* Note: Selection options may be customised by your administrator.*",
           "label": "Conclusions",
           "required": false
         },
         {
           "fieldname": "e_status_ids",
           "type": "entity",
-          "description": "Show the status of the security agenda item. Indicates if security issues were resolved, under investigation, deferred, or escalated.\n\n🎯 Purpose: Track progress of security agenda points during and after meetings.\n\n👥 Roles: Updated by security minute takers or security agenda owners.\n\n💡 Why this matters: Supports clear security documentation and compliance follow-up.\n\n🚩 Tips: Use with conclusion field to provide complete security traceability.\n\n* Note: Selection options may be customised by your administrator.*",
+          "description": "Show the status of the agenda item. Indicates if it was resolved, discussed, deferred, or postponed.\n\n🎯 Purpose: Track progress of agenda points during and after meetings.\n\n👥 Roles: Updated by minute takers or agenda owners.\n\n💡 Why this matters: Supports clear documentation and follow-up.\n\n🚩 Tips: Combine with conclusion field for full traceability.\n\n* Note: Selection options may be customised by your administrator.*",
           "label": "Status",
           "required": true,
           "entitytype": "agendastatus"
@@ -89,42 +89,42 @@
       ]
     },
     {
-      "description": "List all security actions linked to this agenda item. Provides an overview of security decisions and assigned security tasks.\n\n🎯 Purpose: Verify that security points have follow-up actions with clear security owners and compliance deadlines.\n\n👥 Roles: Updated by security minute takers or security task owners.\n\n💡 Why this matters: Supports security accountability and compliance progress tracking.\n\n🚩 Tips: Use this list to review outstanding security tasks and compliance requirements after meetings.\n\n* Note: Selection options may be customised by your administrator.*",
+      "description": "List all actions linked to this agenda item. Provides an overview of decisions and assigned tasks.\n\n🎯 Purpose: Verify that key points have follow-up actions with clear owners and deadlines.\n\n👥 Roles: Updated by minute takers or task owners.\n\n💡 Why this matters: Supports accountability and progress tracking.\n\n🚩 Tips: Use this list to review outstanding tasks after meetings.\n\n* Note: Selection options may be customised by your administrator.*",
       "isroot": false,
       "objectname": "measure",
       "fields": [
         {
           "fieldname": "title",
           "type": "string",
-          "description": "This field captures the title of the security action – a short and descriptive label that summarises the security purpose or intended security measure. The title helps security team members quickly understand the security objective.\n\n🎯 Purpose\n\nTo provide a clear, concise identifier for the security action that facilitates security communication, filtering, and compliance reporting.\n\n👥 Roles\n\n- Security Action Creator: Enters the title during security action creation.\n- Security Team: Use the title to identify, search for, or discuss the security action.\n\n💡 Why this matters\n\nEffective security titles improve clarity, reduce security miscommunication, and make it easier to track security progress across multiple actions.\n\n🚩 Tips\n\n- Use security-oriented phrasing (e.g., \"Implement CEO fraud training module\").\n- Avoid vague security terms like \"Fix security issue\" or \"Security follow up.\"\n- Keep it brief – ideally under 10 words.\n- Focus on the core security activity or compliance outcome.\n\n📌 Examples\n\n- \"Develop CEO fraud awareness training\"\n- \"Analyze Q4 phishing campaign trends\"\n- \"Complete 2FA cost-benefit analysis\"\n\n⚠️ Note: Security titles should be unique enough to avoid confusion in security dashboards or compliance reports.",
+          "description": "This field captures the title of the action – a short and descriptive label that summarises the purpose or intended action. The title helps users quickly understand what the action is about without reading the full description.\n\n&nbsp;\n\n🎯 Purpose\n\nTo provide a clear, concise identifier for the action that facilitates communication, filtering, and reporting.\n\n&nbsp;\n\n👥 Roles\n\n- Action Creator: Enters the title during action creation.\n- All Users: Use the title to identify, search for, or discuss the action.\n\n&nbsp;\n\n💡 Why this matters\n\nEffective titles improve clarity, reduce miscommunication, and make it easier to track progress across multiple actions.\n\n&nbsp;\n\n🚩 Tips\n\n- Use action-oriented phrasing (e.g., “Install new ventilation filters”).\n- Avoid vague or generic terms like “Fix issue” or “Follow up.”\n- Keep it brief – ideally under 10 words.\n- Focus on the core activity or outcome.\n\n&nbsp;\n\n📌 Examples\n\n- “Upgrade access control system”\n- “Document training procedure for new hires”\n- “Inspect fire extinguishers in warehouse”\n\n&nbsp;\n\n⚠️ Note: Titles should be unique enough to avoid confusion when viewed in dashboards or reports.",
           "label": "Action",
           "required": true
         },
         {
           "fieldname": "description",
           "type": "string",
-          "description": "This field captures a detailed explanation of the security action – what security objective it aims to achieve, how it will be implemented, and what security outcome is expected.\n\n🎯 Purpose\n\nTo document the full security scope, intent, and expected security results of the action.\n\n👥 Roles\n\n- Security Action Creator: Provides clear and complete security description.\n- Security Responsible Person: Uses the description as guidance for security implementation.\n- Security Reviewers: Refer to the description when evaluating security completion and effectiveness.\n\n💡 Why this matters\n\nA clear and specific security description reduces security misunderstandings and ensures all parties share the same understanding of security requirements.\n\n🚩 Tips\n\n- Focus on security objectives, threat mitigation, and compliance requirements.\n- Include relevant security procedures, standards, or compliance references.\n- Avoid vague statements – be security-action-oriented and measurable.\n- Break large security actions into smaller security milestones if needed.\n\n📌 Examples\n\n- \"Create interactive training module simulating advanced CEO fraud attempts targeting leadership.\"\n- \"Collect Q4 phishing data and produce detailed report on most prevalent attack types.\"\n- \"Collaborate with finance team to assess upgrade costs versus security risks of temporary solution.\"\n\n⚠️ Note: Security descriptions can be updated throughout the security action lifecycle if details evolve.",
+          "description": "This field captures a detailed explanation of the action – what it aims to achieve, how it will be implemented, and what outcome is expected. A well-written description ensures clarity for everyone involved and helps support follow-up, evaluation, and accountability.\n\n&nbsp;\n\n🎯 Purpose\n\nTo document the full scope, intent, and expected results of the action.\n\n&nbsp;\n\n👥 Roles\n\n- Action Creator or Owner: Provides a clear and complete description.\n- Responsible Person: Uses the description as guidance for implementation.\n- Reviewers: Refer to the description when evaluating completion and effectiveness.\n\n&nbsp;\n\n💡 Why this matters\n\nA clear and specific description reduces misunderstandings and ensures that all parties share the same understanding of what needs to be done.\n\n&nbsp;\n\n🚩 Tips\n\n- Focus on what will be done, by whom, and to what effect.\n- Include relevant procedures, standards, or references where appropriate.\n- Avoid vague statements like “Improve process” – be action-oriented and measurable.\n- Break large or complex actions into smaller steps or milestones if needed.\n\n&nbsp;\n\n📌 Examples\n\n- “Conduct cybersecurity training for all staff and document attendance by Q3.”\n- “Replace all fluorescent fixtures with LED lighting in building A and B.”\n- “Review and update data retention policy to align with regulatory changes.”\n\n&nbsp;\n\n⚠️ Note: This field can be updated throughout the lifecycle of the action if details evolve or clarification is needed.",
           "label": "Discussion",
           "required": true
         },
         {
           "fieldname": "descriptionimplementation",
           "type": "string",
-          "description": "Use this field to add security context regarding the current status of the security action. This enhances security transparency and clarifies security implementation progress.\n\n🎯 Purpose: Provide narrative security updates and explanations linked to the security action's progress.\n\n👥 Roles: Updated by the security responsible person or security task owner.\n\n💡 Why this matters: Clear security status comments reduce need for direct security follow-ups and improve security communication.\n\n🚩 Tips: Include reasons for security status changes, security blockers, or key security decisions.\n\n📌 Examples:\n- \"Awaiting security policy approval – extended deadline by 1 week.\"\n- \"Security training module completed, awaiting security manager sign-off.\"\n\n* Note: Selection options may be customised by your administrator.*",
+          "description": "Use this field to add context or explanation regarding the current status of the action. This enhances transparency and helps clarify reasons for delays, ongoing work, or completion.\n\n🎯 Purpose: Provide narrative updates and explanations linked to the action's progress.\n\n👥 Roles: Updated by the responsible person or task owner.\n\n💡 Why this matters: Clear status comments reduce the need for direct follow-ups and improve communication.\n\n🚩 Tips: Include reasons for changes in status, blockers encountered, or key decisions.\n\n📌 Examples:\n- \"Awaiting input from legal team — extended deadline by 1 week.\"\n- \"Completed, awaiting manager sign-off.\"\n\n* Note: Selection options may be customised by your administrator.*",
           "label": "Status comment",
-          "required": false
+          "required": true
         },
         {
           "fieldname": "deadline",
           "type": "datetime",
-          "description": "This field defines the exact date by which the security action must be completed. This is critical for compliance deadlines and security risk management.\n\n🎯 Purpose\n\nTo establish a clear and fixed target date for completing the security action, especially important for compliance and risk mitigation.\n\n👥 Roles\n\n- Security Action Creator: Sets realistic security deadline during action creation.\n- Security Responsible Person: Plans security work to meet the defined compliance or risk deadline.\n\n💡 Why this matters\n\nSecurity deadlines help ensure timely risk mitigation, support compliance tracking, and define security accountability.\n\n🚩 Tips\n\n- Consider compliance requirements and risk exposure when setting deadlines.\n- Use realistic dates that reflect security complexity and dependencies.\n- Monitor security deadlines closely using security dashboards.\n- Communicate security deadline changes clearly if adjustments are needed.\n\n📌 Examples\n\n- \"2026-02-01\" (CEO fraud training deadline)\n- \"2026-01-15\" (Phishing analysis deadline)\n\n⚠️ Note: Only absolute calendar dates are allowed (format: YYYY-MM-DD). Consider security urgency and compliance requirements.",
+          "description": "This field defines the exact date by which the action must be completed. This value is mandatory and must be set before the action can enter the implementation workflow. Relative time frames (e.g. 'within 30 days') are not supported – only calendar dates are allowed.\n\n&nbsp;\n\n🎯 Purpose\n\nTo establish a clear and fixed target date for completing the action.\n\n&nbsp;\n\n👥 Roles\n\n- Action Creator or Initiator: Sets the deadline during action creation.\n- Responsible Person: Plans work to meet the defined date.\n\n&nbsp;\n\n💡 Why this matters\n\nDeadlines help ensure timely action, support progress tracking, and define accountability. They are also required to trigger the next workflow steps.\n\n&nbsp;\n\n🚩 Tips\n\n- The deadline must be filled in before the action can be moved to implementation.\n- Use a realistic date that reflects the complexity, dependencies, and resource availability.\n- Communicate changes to deadlines clearly if adjustments are needed.\n- Monitor upcoming deadlines using reports, dashboards, or filters.\n\n&nbsp;\n\n📌 Examples\n\n- “2025-09-01”\n- “2025-12-15”\n\n&nbsp;\n\n⚠️ Note: Only absolute calendar dates are allowed (format: YYYY-MM-DD). Relative expressions like 'in two weeks' are not supported.",
           "label": "Due date",
           "required": true
         },
         {
           "fieldname": "e_status_ids",
           "type": "entity",
-          "description": "This field shows the current status of the security action, reflecting its progress from security identification to security closure. Critical for security compliance and risk management.\n\n🎯 Purpose\n\nTo track and manage the security lifecycle, ensure security stakeholders are aligned, and maintain control over security implementation and compliance.\n\n👥 Roles\n\n**Security Initiator**:\n- Creates security action and chooses implementation approach\n- Assigns security responsible person and sets compliance deadlines\n- Approves, cancels, or rejects completed security actions\n\n**Security Action Responsible**:\n- Accepts, declines, or manages security action status\n- Updates security progress during implementation\n- Marks security action as complete for approval\n\n💡 Why this matters\n\nA well-defined security status lifecycle ensures consistent handling of security actions, enables security transparency, and supports security compliance through automated notifications.\n\n🚩 Tips\n\n- Ensure 'Security Responsible' and 'Due Date' are filled before starting security implementation\n- Security actions are **closed** when status is: **Existing**, **Cancelled**, or **Completed (approved)**\n- Security emails are automatically sent at key security decision points\n- Critical for security audit trails and compliance reporting\n\n📌 Examples\n\n- Security training action approved → **Completed (approved)** → Security process complete\n- Security assessment cancelled → **Cancelled** → Security action closed\n\n💬 **Security Change Log**: Click **Change log** button to view full security action history\n\n⚠️ Note: Security status options may be customised for your organisation's security governance requirements.",
+          "description": "This field shows the current status of the action (task or action), reflecting its progress from creation to closure. The status updates automatically based on user decisions and system events, and determines when an action is considered closed. Email notifications are triggered at key decision points to keep responsible parties informed.\n\n&nbsp;\n\n🎯 Purpose\n\nTo track and manage the lifecycle of an action, ensure all stakeholders are aligned, and maintain control over implementation, acceptance, and completion.\n\n&nbsp;\n\n👥 Roles\n\n**Initiator** (e.g. process owner, risk owner, team lead):  \n- Creates the action and chooses between implementing, acknowledging it already exists, or cancelling it.  \n- Assigns a responsible person and sets a due date if implementation is selected.  \n- Approves, cancels, or rejects the completed action.\n\n**Action Responsible**:  \n- Accepts, declines, cancels, or closes the action as “Existing” or “Do not implement”.  \n- Updates progress status during implementation.  \n- Marks the action as complete for approval.\n\n&nbsp;\n\n💡 Why this matters\n\nA well-defined status lifecycle ensures consistent handling of all actions, enables transparency, automates follow-up through email notifications, and defines clear closure criteria. It supports accountability across different roles.\n\n&nbsp;\n\n🚩 Tips\n\n- Make sure 'Responsible' and 'Due Date' are filled in before starting implementation.  \n- Use “Exists” only when the action is already implemented and verifiable.  \n- Actions are considered **closed** when status is: **Existing**, **Cancelled**, or **Completed (100%) (approved)**.  \n- Emails are automatically sent when an action is assigned, declined, completed, cancelled, or approved.  \n- If an action is rejected after completion, the responsible person must continue working until it can be approved.\n\n&nbsp;\n\n📌 Examples\n\n- A user creates an action and selects “Do not implement”. The status becomes **Cancelled**, and the action is closed.  \n- A responsible user accepts an action, completes it, and the initiator approves it. The status becomes **Completed (100%) (approved)**, and the process is complete.\n\n💬 **Want to see the actual lifecycle for this action?**  \nClick the **Change log** button in the top-right corner above this field to view the full step-by-step history, including who made each change and when.\n\n&nbsp;\n\n📊 Status Lifecycle Overview\n\n1. **Action is created** → `Identified (pending decision)` *(System)*  \n2. **Initiator clicks**:\n   - *Implement* → Requires Responsible + Due date → `To be implemented (pending accept)` *(email sent to Responsible)*  \n   - *Exists* → `Existing` *(Closed)*  \n   - *Do not implement* → `Cancelled` *(Closed)*\n3. **Responsible user chooses**:\n   - *Decline* → `To be implemented (declined)` *(email sent to Initiator)*  \n   - *Accept* → `In progress (not started)` → Access to:\n     - `In progress (25%)`, `In progress (50%)`, `In progress (75%)`\n     - `Completed (100%) (for approval)` *(email sent to Initiator)*  \n     - *Cancel* → `In progress (cancelled)` *(email sent to Initiator)*  \n   - *Exists* → `Existing` *(Closed)*  \n   - *Do not implement* → `Cancelled` *(Closed)*\n4. **Initiator chooses**:\n   - *Approve* → `Completed (100%) (approved)` *(Closed)*  \n   - *Reject* → `Completed (100%) (not approved)` *(action reopens)*  \n   - *Cancel* → `In progress (cancelled)` *(Closed)*\n\n&nbsp;\n\n✅ When is an action considered closed?\n\n- `Existing`  \n- `Cancelled`  \n- `Completed (100%) (approved)`\n\n&nbsp;\n\n⚠️ Note: The list of selectable status options and transitions may be customised by your organisation’s administrator to reflect internal processes and governance.",
           "label": "Status",
           "required": true,
           "entitytype": "measurestate"
@@ -132,7 +132,7 @@
         {
           "fieldname": "e_responsible_ids",
           "type": "entity",
-          "description": "This field assigns the security team member responsible for implementing the security action. Critical for security accountability and compliance tracking.\n\n🎯 Purpose\n\nTo ensure clear security accountability for executing and reporting on security actions and compliance requirements.\n\n👥 Roles\n\n- Security Action Creator: Selects appropriate security team member from the list\n- Security Responsible User: Accepts or declines security task and updates security progress\n\n💡 Why this matters\n\nAssigning security responsibility ensures active security follow-up and enables automated security notifications for compliance tracking.\n\n🚩 Tips\n\n- Choose security team members with appropriate skills, security role, and authority\n- Ensure selected user has valid email for security notifications\n- Security responsible person receives email when action moves to implementation\n- Consider security expertise and workload when assigning\n\n📌 Examples\n\n- \"Kari Nordmann (Security Lead)\"\n- \"Lise Nilsen (Security Analyst)\"\n- \"Arne Pettersen (IT Security Specialist)\"\n\n⚠️ Note: Only active security team members registered in system can be assigned. Valid email required for security notifications.",
+          "description": "This field is used to assign the person responsible for implementing the action. The dropdown menu shows active Dmaze users by their full name (first and last). Assigning a responsible person is required before the action can be set to implementation.\n\n&nbsp;\n\n🎯 Purpose\n\nTo ensure clear accountability for executing and reporting on the action.\n\n&nbsp;\n\n👥 Roles\n\n- Action Creator or Initiator: Selects the responsible person from the list.\n- Responsible User: Accepts or declines the task and updates progress.\n\n&nbsp;\n\n💡 Why this matters\n\nAssigning responsibility ensures that the action is actively followed up. It also enables system-generated email notifications, improving communication and accountability.\n\n&nbsp;\n\n🚩 Tips\n\n- Choose someone with the right skills, role, and authority to carry out the action.\n- A valid email address is required to receive notifications – a warning icon will appear if the selected user is missing this.\n- The responsible person will receive an email when the action is moved to implementation status, asking them to accept or decline the task.\n\n&nbsp;\n\n📌 Examples\n\n- “Elena Rossi (IT Security Manager)”\n- “Jens Madsen (Facilities Team)”\n\n&nbsp;\n\n⚠️ Note: Only active users registered in Dmaze can be assigned. Email notifications require a valid address on the user profile.",
           "label": "Responsible",
           "required": false,
           "entitytype": "user"
@@ -146,14 +146,14 @@
       "child": "agenda",
       "type": "one-to-many",
       "childfieldname": "a_agenda_ids",
-      "description": "Link security agenda items to their parent security meeting record."
+      "description": "Link agenda items to their parent meeting record."
     },
     {
       "parent": "agenda",
       "child": "measure",
       "type": "one-to-many",
       "childfieldname": "a_measures_ids",
-      "description": "Link security actions to their parent security agenda item"
+      "description": "Link actions to their parent agenda item"
     }
   ],
   "entities": {
@@ -161,56 +161,88 @@
       {
         "name": "Closed",
         "id": "089de314-cd92-4887-9d58-a24d28531956",
-        "description": "Security meeting documentation is finalized and archived"
+        "description": ""
       },
       {
         "name": "Open",
         "id": "1a8d3cc0-3103-4813-b4e9-4e2b825e46eb",
-        "description": "Security meeting is active with ongoing follow-up actions"
+        "description": ""
       },
       {
         "name": "Draft",
         "id": "03c1bb26-1ce2-422c-aced-b4edeb52fa42",
-        "description": "Security meeting minutes are being prepared or reviewed"
+        "description": ""
       }
     ],
     "agendastatus": [
       {
         "name": "Closed",
         "id": "a7s67aa-cd92-4887-9d58-a24d28531956",
-        "description": "Security agenda item has been resolved and closed"
+        "description": ""
       },
       {
         "name": "Open",
         "id": "78a21hd-3103-4813-b4e9-4e2b825e46eb",
-        "description": "Security agenda item is active with ongoing actions"
+        "description": ""
       },
       {
         "name": "Draft",
         "id": "as897av-1ce2-422c-aced-b4edeb52fa42",
-        "description": "Security agenda item is being prepared or under review"
+        "description": ""
       }
     ],
     "measurestate": [
       {
         "name": "Existing",
         "id": "sad89a90s-cd92-4887-9d58-a24d28531956",
-        "description": "This security action is already implemented and verified (closed)."
+        "description": "This action is already existing and has been closed."
       },
       {
         "name": "Cancelled",
         "id": "b7s67aa-cd92-4887-9d58-a24d28531956",
-        "description": "This security action has been decided not to be implemented (closed)."
+        "description": "This action has been decided not to be implemented (closed)."
       },
       {
         "name": "Open",
         "id": "78a21hd-3103-4813-b4e9-4e2b825e46eb",
-        "description": "The implementation of this security action is in progress."
+        "description": "The implementation of this action is in progress."
       },
       {
         "name": "Identified (pending decision)",
         "id": "a98sdua-1ce2-422c-aced-b4edeb52fa42",
-        "description": "This is a new security action that has been identified and suggested for implementation.\r\n \r\nIf the security action is decided to be implemented, an e-mail will be sent automatically to the security responsible person."
+        "description": "This is a new action that has been identified and suggested for implementation.\r\n \r\nIf the action is decided to be implemented, an e-mail will be sent automatically to the person responsible."
+      }
+    ],
+        "user": [
+      {
+        "name": "Ola Nordmann",
+        "id": "user-1-ola-nordmann-uuid",
+        "description": "Prosjektleder"
+      },
+      {
+        "name": "Kari Nordmann",
+        "id": "user-2-kari-normann-uuid",
+        "description": "Utvikler"
+      },
+      {
+        "name": "Arne Arnesen",
+        "id": "user-3-arne-arnesen-uuid",
+        "description": "Tester"
+      },
+      {
+        "name": "Lise Nilsen",
+        "id": "user-4-lise-nilsen-uuid",
+        "description": "Sikkerhetsansvarlig"
+      },
+      {
+        "name": "Arne Pettersen",
+        "id": "user-5-arne-pettersen-uuid",
+        "description": "Økonomiansvarlig"
+      },
+      {
+        "name": "Ola Hansen",
+        "id": "user-6-ola-hansen-uuid",
+        "description": "IT-ansvarlig"
       }
     ]
   }
