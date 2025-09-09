@@ -8,6 +8,7 @@ def extract_data_with_hierarchy(client: OpenAI, document_text: str, schema_packa
     You are an expert assistant who analyzes documents and extracts key information.
     Structure the extracted content into the JSON format specified by the provided schema.
     If you cannot find information for a field, use `null`. Do not invent information.
+    Title can not be null.
     For any datetime fields, format them as ISO 8601 strings (YYYY-MM-DDTHH:MM:SSZ).
     For any fields that contain people's names (like attendees or responsible persons),
     you MUST extract ONLY their full name.
