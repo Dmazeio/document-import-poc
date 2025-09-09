@@ -13,7 +13,7 @@ from src.json_transformer import transform_to_dmaze_format_hierarchically
 from src.document_classifier import classify_document_type
 from src.document_splitter import split_document_into_meetings
 
-
+ 
 # --- CONFIGURATION ---
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
@@ -69,8 +69,7 @@ if __name__ == "__main__":
                             print(f"  ERROR: Could not process chunk for '{chunk.meeting_title}': {nested_data['error']}")
                             continue
                         
-                        # ENDRING HER: Send hele 'schema_package', ikke bare 'schema_tree'.
-                        # Dette gir transformatoren tilgang til 'entity_map'.
+
                         final_flat_data = transform_to_dmaze_format_hierarchically(nested_data, schema_package)
                         
                         safe_title = "".join(x for x in chunk.meeting_title if x.isalnum())[:50]
@@ -91,8 +90,7 @@ if __name__ == "__main__":
                 if "error" in nested_data:
                     print(f"ERROR: Could not process single meeting document: {nested_data['error']}")
                 else:
-                    # ENDRING HER: Send hele 'schema_package', ikke bare 'schema_tree'.
-                    # Dette gir transformatoren tilgang til 'entity_map'.
+
                     final_flat_data = transform_to_dmaze_format_hierarchically(nested_data, schema_package)
                     
                     base_name = os.path.splitext(os.path.basename(input_file_path))[0]

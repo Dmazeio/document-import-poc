@@ -1,9 +1,10 @@
-# File: src/json_transformer.py (ENDELIG, KORREKT HYBRID VERSJON)
+# File: src/json_transformer.py (UPDATED VERSION WITH ATTENDEES SUPPORT)
 
 import uuid
-from .tools import find_user_id_by_name # Importerer vår nye, smarte oppslagsfunksjon
+from .tools import find_user_id_by_name, find_user_ids_from_text  # Import both lookup functions
 
 def flatten_recursively(data_node: dict, schema_node: dict, parent_id: str, parent_type: str, flat_list: list, entity_map: dict):
+    
     object_name = schema_node['name']
     
     node_id = f"{object_name}-{uuid.uuid4()}"
@@ -17,18 +18,33 @@ def flatten_recursively(data_node: dict, schema_node: dict, parent_id: str, pare
         entity_key = field_info.get('entitytype')
         ai_value = data_node.get(field_name)
 
-        # === NY, HYBRID LOGIKK ===
-        if entity_key == 'user':
-            # Hvis feltet er en 'user', utfør et deterministisk oppslag.
-            # AI-en finner navnet, koden finner ID-en.
+        # === ENHANCED HYBRID LOGIC ===
+        if field_name == 'e_attendees_ids' and entity_key == 'people':
+            # Special handling for attendees field - parse multiple names
+            user_ids = find_user_ids_from_text(ai_value) if ai_value else []
+            if user_ids:
+                dmaze_object[field_name] = {
+                    "type": "user",
+                    "values": user_ids  # Already a list
+                }
+            else:
+                dmaze_object[field_name] = None
+        elif entity_key == 'user':
+            # Single user field (like e_responsible_ids)
             user_id = find_user_id_by_name(ai_value)
-            dmaze_object[field_name] = user_id # Blir ID-en eller None
+            if user_id:
+                dmaze_object[field_name] = {
+                    "type": "user",
+                    "values": [user_id]  # Single ID in a list
+                }
+            else:
+                dmaze_object[field_name] = None
         elif entity_key and ai_value is not None:
-            # For alle ANDRE entities (som 'momstatus'), bruk den gamle 'entity_map'-metoden.
+            # For all OTHER entities (like 'momstatus'), use the entity_map method
             final_value = entity_map.get(entity_key, {}).get(ai_value, ai_value) 
             dmaze_object[field_name] = final_value
         else:
-            # For vanlige felt, bruk verdien som den er.
+            # For regular fields, use the value as is
             dmaze_object[field_name] = ai_value
     
     for child_schema in schema_node.get('children', []):
@@ -38,7 +54,7 @@ def flatten_recursively(data_node: dict, schema_node: dict, parent_id: str, pare
         
         if child_items:
             for item in child_items:
-                # VIKTIG: Send entity_map med rekursivt
+                # IMPORTANT: Pass entity_map recursively
                 child_id = flatten_recursively(item, child_schema, node_id, object_name, flat_list, entity_map)
                 child_ids.append(child_id)
         
