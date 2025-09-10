@@ -151,22 +151,6 @@
           "required": true
         },
         {
-          "fieldname": "e_collaborationusers_ids",
-          "type": "multivalue",
-          "description": "In Dmaze you can have **collaboration users** who **only get access to objects where they are selected as collaboration users**. These will typically be external users who do not work in your organisation, but who have been invited into their Dmaze to collaborate on selected objects.\n\n&nbsp;\n\nTo be a **collaboration user**, the user must be **invited** into your Dmaze and must **only** be a **member of the collaboration users** access group.\n\n&nbsp;\n\nIf a collaboration user is to have access to the object you are currently standing in, **the user is added to** the field **collaboration users** below. You can add as many such collaboration users as you wish. If a collaboration user is no longer to have access to the object you are standing in, then the user is **removed from** the field.\n \n&nbsp;\n\n> Collaboration users only see objects where they have been added in this way.\n\n&nbsp;\n\nFor information, **a license for a user is only paid once**. If the collaboration user pays for a Dmaze license in his own organisation, you will not be charged for a license for this collaboration user.\n\n&nbsp;\n \nCollaboration users who have access to Dmaze through multiple organisations (their own plus others) will be able to switch between the organisations at the top right of the menu.",
-          "label": "Collaboration users",
-          "required": false,
-          "entitytype": "user"
-        },
-        {
-          "fieldname": "e_confidentialusers_ids",
-          "type": "multivalue",
-          "description": "",
-          "label": "",
-          "required": false,
-          "entitytype": "user"
-        },
-        {
           "fieldname": "e_location_ids",
           "type": "singlevalue",
           "description": "This field is used to specify the physical location, site, facility, or region associated with the record and its related activities. By defining the location, you provide important context that helps others understand where the record applies and ensures that follow-up actions, responsibilities, and reporting are aligned with the correct place.\n\n&nbsp;\n\n🎯 Purpose\n\nTo clearly identify the geographical or operational context for the record, ensuring that all associated activities and assessments are relevant to the specific location.\n\n&nbsp;\n\n👥 Roles\n\n- Initiator or Owner: Selects or specifies the location when creating or updating the record.\n- Contributors and Reviewers: Adjust input, decisions, and follow-up actions based on the defined location.\n\n&nbsp;\n\n💡 Why this matters\n\nCorrect and specific location data improves reporting, helps identify location-based risks or requirements, and ensures that relevant stakeholders are involved.\n\n&nbsp;\n\n🚩 Tips\n\n- The list of available locations is organized in a hierarchy (e.g., Country → Region → Site).\n- Use consistent and recognizable naming conventions.\n- Be as specific as needed — include building names, site numbers, or regions if relevant.\n- If the list of available locations is predefined in Dmaze, start typing at least two characters to search and filter options quickly.\n- The list of locations is managed by your Dmaze administrator and may reflect your organization's official site registry.\n\n&nbsp;\n\n📌 Examples\n\n- Headquarters – Oslo\n- Manufacturing Plant – Bergen\n- Data Center – Stavanger\n- Regional Office – Stockholm",
