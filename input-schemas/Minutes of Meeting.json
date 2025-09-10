@@ -43,30 +43,6 @@
           "entitytype": "people"
         },
         {
-          "fieldname": "e_collaborationusers_ids",
-          "type": "multivalue",
-          "description": "Collaboration users are external participants who only get access to specific objects where they are explicitly added. Typically, these users are not employees of your organization but have been invited to collaborate in selected areas of Dmaze.\n\n🎯 Purpose: Enable controlled external collaboration by restricting access to relevant objects only.\n\n👥 Roles: Collaboration users must be invited and belong exclusively to the Collaboration Users access group.\n\n💡 Why this matters: This access model secures sensitive data while facilitating cooperation with partners, suppliers, or consultants.\n\n🚩 Tips: Add or remove users carefully to control access and monitor invitations.\n\n📌 Note: A license is only charged once per user, even if they access multiple organizations.\n\n*Note: Selection options may be customized by your administrator.*",
-          "label": "Collaboration users",
-          "required": false,
-          "entitytype": "user"
-        },
-        {
-          "fieldname": "e_confidentialusers_ids",
-          "type": "multivalue",
-          "description": "",
-          "label": "",
-          "required": false,
-          "entitytype": "user"
-        },
-        {
-          "fieldname": "e_documentreferenceuri_ids",
-          "type": "multivalue",
-          "description": "Provide a URL or internal reference to supporting documentation stored elsewhere. Useful for linking external files or prior records.\n\n🎯 Purpose: Offer easy access to supplementary materials.\n\n👥 Roles: Added by meeting organizer or administrators.\n\n💡 Why this matters: Complements attachments and maintains consistency.\n\n🚩 Tips: Ensure links are stable and accessible to participants.\n\n*Note: Selection options may be customized by your administrator.*",
-          "label": "Links",
-          "required": false,
-          "entitytype": "documentreferenceuri"
-        },
-        {
           "fieldname": "e_meeting_frequency_ids",
           "type": "singlevalue",
           "description": "Document the planned or actual recurrence of this meeting. This supports governance and scheduling.\n\n🎯 Purpose: Clarify if the meeting is recurring or one-off.\n\n👥 Roles: Specified by meeting organizer or governance team.\n\n💡 Why this matters: Helps track meeting cadence and compliance with scheduling requirements.\n\n🚩 Tips: Use terms like One-off, Weekly, Monthly, Quarterly, or Annual.\n\n*Note: Selection options may be customized by your administrator.*",
@@ -167,14 +143,6 @@
           "entitytype": "user"
         },
         {
-          "fieldname": "e_documentreferenceuri_ids",
-          "type": "multivalue",
-          "description": "Add a link or reference to documents related to the agenda point. Useful for supporting materials.\n\n🎯 Purpose: Connect agenda items to relevant files or policies.\n\n👥 Roles: Added by meeting organizer or administrators.\n\n💡 Why this matters: Supports transparency and completeness.\n\n🚩 Tips: Ensure links are accessible and stable.\n\n*Note: Selection options may be customized by your administrator.*",
-          "label": "Links",
-          "required": false,
-          "entitytype": "documentreferenceuri"
-        },
-        {
           "fieldname": "e_status_ids",
           "type": "singlevalue",
           "description": "Show the status of the agenda item. Indicates if it was resolved, discussed, deferred, or postponed.\n\n🎯 Purpose: Track progress of agenda points during and after meetings.\n\n👥 Roles: Updated by minute takers or agenda owners.\n\n💡 Why this matters: Supports clear documentation and follow-up.\n\n🚩 Tips: Combine with conclusion field for full traceability.\n\n*Note: Selection options may be customized by your administrator.*",
@@ -224,14 +192,6 @@
           "description": "This field displays the title of the parent item to which this measure belongs. The link is automatically set based on where the measure was created and cannot be changed. It provides quick access back to the originating item, helping users understand the context in which the measure was established.\n\n&nbsp;\n\n🎯 Purpose\n\nTo show the source item this measure is associated with and allow easy navigation to it.\n\n&nbsp;\n\n👥 Roles\n\n- All users: Use the link to view the full context and rationale behind the measure.\n\n&nbsp;\n\n💡 Why this matters\n\nMeasures are always created as part of a specific record (e.g., an observation, risk, or incident). This link confirms where the measure originated and enables traceability.\n\n&nbsp;\n\n🚩 Tips\n\n- Click the link to go directly to the parent record.\n- Use the information in the parent to better understand the need for the measure.\n- Note that this connection is fixed and cannot be edited.\n\n&nbsp;\n\n📌 Examples\n\n- “Observation: Missing emergency lighting in corridor”\n- “Event #103: Data breach affecting payroll system”\n\n&nbsp;\n\n⚠️ Note: This field is system-controlled and reflects where the measure was created. It cannot be changed by users.",
           "label": "Case",
           "required": true
-        },
-        {
-          "fieldname": "e_documentreferenceuri_ids",
-          "type": "multivalue",
-          "description": "",
-          "label": "Links",
-          "required": false,
-          "entitytype": "documentreferenceuri"
         },
         {
           "fieldname": "e_measurepriority_ids",
