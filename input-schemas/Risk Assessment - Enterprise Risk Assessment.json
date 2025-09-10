@@ -1,0 +1,1736 @@
+{
+  "name": "Enterprise Risk Assessment (ERM)",
+  "types": {
+    "risk": {
+      "objectname": "risk",
+      "description": "",
+      "isroot": false,
+      "fields": [
+        {
+          "fieldname": "assumption",
+          "type": "text",
+          "description": "Document key assumptions related to the risk, such as expected conditions, resource availability, or external factors. These assumptions form the basis of risk estimates.\n\n&nbsp;\n\n### 🎯 Purpose\nClarifying assumptions improves the accuracy and transparency of risk assessments.\n\n&nbsp;\n\n### 👥 Roles\n* **Risk Owner or Contributor**  \n  → Records assumptions during risk analysis\n* **Reviewers and Decision Makers**  \n  → Use assumptions when interpreting risk data\n\n&nbsp;\n\n### 💡 Why this matters\nExplicit assumptions highlight areas of uncertainty and help guide monitoring.\n\n&nbsp;\n\n### 🚩 Tips\n* Be explicit and update as conditions change\n* Regularly review assumptions for ongoing relevance\n\n&nbsp;\n\n### 📌 Examples\n* \"Assumes stable supply chain conditions over next 12 months.\"\n* \"Assumes regulatory environment remains unchanged.\"\n* \"Data quality is based on last quarter’s reporting.\"",
+          "label": "Assumptions and causes",
+          "required": false
+        },
+        {
+          "fieldname": "consequence_justification",
+          "type": "text",
+          "description": "Explain the rationale for the chosen consequence rating, including data and expert judgment.\n\n&nbsp;\n\n### 🎯 Purpose\nJustifications improve transparency and auditability.\n\n&nbsp;\n\n### 👥 Roles\n* **Risk Owner or Analyst**  \n  → Documents the reasoning\n* **Reviewers and Auditors**  \n  → Evaluate justifications\n\n&nbsp;\n\n### 💡 Why this matters\nClear rationale supports informed reviews and decision-making.\n\n&nbsp;\n\n### 🚩 Tips\n* Be specific and reference sources\n* Update as new data emerges\n\n&nbsp;\n\n### 📌 Examples\n* \"Based on historical loss data.\"\n* \"Assessed using industry benchmarks.\"\n* \"Reflects regulatory fines and projected costs.\"",
+          "label": "Justification cons./prob.",
+          "required": false
+        },
+        {
+          "fieldname": "description",
+          "type": "text",
+          "description": "Provide a detailed explanation of the risk, describing what might happen, why it could occur, and what the potential impact would be. This helps build a shared understanding of the risk scenario.\n\n&nbsp;\n\n### 🎯 Purpose\nThe description provides essential context, allowing stakeholders to assess the nature, likelihood, and consequences of the risk.\n\n&nbsp;\n\n### 👥 Roles\n* **Risk Contributor or Participant**  \n  → Drafts the risk description based on their expertise\n* **Assessment Owner**  \n  → Reviews and ensures the description is complete and clear\n\n&nbsp;\n\n### 💡 Why this matters\nA thorough description is key for accurate risk evaluation, communication, and decision-making.\n\n&nbsp;\n\n### 🚩 Tips\n* Explain what might happen, why it could happen, and the potential impacts\n* Avoid unnecessary jargon; be clear and concise\n* Focus on the risk itself, not solutions\n\n&nbsp;\n\n### 📌 Examples\n* \"If backup routines are not followed, a ransomware attack or server failure could cause permanent loss of key financial data.\"\n* \"The supplier of high-voltage components has signaled 4–6 month delivery delays, which could postpone plant launch.\"\n* \"Currency fluctuations may increase import costs for key materials, affecting overall project budget.\"",
+          "label": "Description",
+          "required": false
+        },
+        {
+          "fieldname": "existingmeasuredescription",
+          "type": "text",
+          "description": "Describe the current controls or measures mitigating the risk.\n\n&nbsp;\n\n### 🎯 Purpose\nUnderstanding existing controls helps assess residual risk and treatment gaps.\n\n&nbsp;\n\n### 👥 Roles\n* **Risk Owner or Control Owner**  \n  → Documents controls and effectiveness\n* **Reviewers and Auditors**  \n  → Use for risk treatment evaluation\n\n&nbsp;\n\n### 💡 Why this matters\nKnowing current measures informs additional mitigation planning.\n\n&nbsp;\n\n### 🚩 Tips\n* Specify technical and organizational controls\n* Update descriptions as controls evolve\n\n&nbsp;\n\n### 📌 Examples\n* Firewall and intrusion detection systems\n* Employee training programs\n* Supplier vetting processes",
+          "label": "Existing measures / barriers",
+          "required": false
+        },
+        {
+          "fieldname": "matrixcolor",
+          "type": "text",
+          "description": "",
+          "label": "",
+          "required": false
+        },
+        {
+          "fieldname": "matrixscore",
+          "type": "number",
+          "description": "",
+          "label": "",
+          "required": false
+        },
+        {
+          "fieldname": "riskscore",
+          "type": "number",
+          "description": "",
+          "label": "",
+          "required": false
+        },
+        {
+          "fieldname": "title",
+          "type": "text",
+          "description": "Enter a short, precise title that captures the essence of the identified risk scenario. It should summarize the risk clearly enough to be understood at a glance.\n\n&nbsp;\n\n### 🎯 Purpose\nThis title identifies the risk in reports, dashboards, and lists to support effective tracking and prioritization.\n\n&nbsp;\n\n### 👥 Roles\n* **Risk Contributor or Assessment Participant**  \n  → Suggests the initial risk title during identification\n* **Assessment Owner**  \n  → Reviews and refines the title for clarity and consistency\n\n&nbsp;\n\n### 💡 Why this matters\nA specific and clear title helps stakeholders recognize and respond to risks appropriately.\n\n&nbsp;\n\n### 🚩 Tips\n* Use active language focusing on the risk's threat or consequence\n* Avoid generic titles such as “IT risk” or “External factors”\n\n&nbsp;\n\n### 📌 Examples\n* \"Data loss due to inadequate backup routines\"\n* \"Delayed delivery of critical equipment for Project Falcon\"\n* \"Increased cost due to volatile currency exchange rates\"",
+          "label": "Risk",
+          "required": true
+        },
+        {
+          "fieldname": "uncertainty_justification",
+          "type": "text",
+          "description": "Explain the reasoning for the assigned uncertainty level, including assumptions and data quality.\n\n&nbsp;\n\n### 🎯 Purpose\nDocumenting uncertainty enhances transparency and understanding of confidence in assessments.\n\n&nbsp;\n\n### 👥 Roles\n* **Risk Owner or Analyst**  \n  → Records justification\n* **Reviewers and Decision Makers**  \n  → Use justifications in review and audit\n\n&nbsp;\n\n### 💡 Why this matters\nClear justifications support informed risk management.\n\n&nbsp;\n\n### 🚩 Tips\n* Be specific and reference sources\n* Update with new information\n\n&nbsp;\n\n### 📌 Examples\n* \"Data quality issues limit confidence.\"\n* \"Expert judgment used due to lack of data.\"\n* \"Assumes stable market conditions.\"",
+          "label": "Justification knowledge strength ",
+          "required": false
+        },
+        {
+          "fieldname": "e_arena_ids",
+          "type": "multivalue",
+          "description": "This field specifies one or more forums, governance bodies, or decision-making groups that should be informed about, review, or act on the record. It ensures the right audience is engaged for oversight, guidance, or formal approval.\n\n&nbsp;\n\n🎯 Purpose\n\nTo route the record to the appropriate audience for visibility, discussion, decision-making, or follow-up.\n\n&nbsp;\n\n👥 Roles\n\n- **Record Owner / Editor** → Selects the relevant forum(s) or group(s).\n- **Designated Forum / Group** → Reviews, discusses, and/or takes action as needed.\n\n&nbsp;\n\n💡 Why this matters\n\nEngaging the right governance group ensures oversight is carried out at the correct organizational level, supports transparency, and aligns actions with strategic priorities.\n\n&nbsp;\n\n🚩 Tips\n\n- Select internal committees, working groups, or governance bodies that have a role in the matter.\n- Be clear whether the purpose is to inform, seek a decision, or request follow-up.\n- Use consistent naming to improve reporting and avoid confusion.\n- Review and update the selection if governance responsibilities change.\n\n&nbsp;\n\n📌 Examples\n\n- Health & Safety Committee\n- Risk Management Board\n- IT Security Steering Group",
+          "label": "Communicate to",
+          "required": false,
+          "entitytype": "arena"
+        },
+        {
+          "fieldname": "e_consequence_economy_ids",
+          "type": "singlevalue",
+          "description": "Evaluate the financial consequences, including downside losses and upside opportunities.\n\n&nbsp;\n\n### 🎯 Purpose\nUnderstanding financial impact supports balanced decision-making.\n\n&nbsp;\n\n### 👥 Roles\n* Risk Owner or Financial Analyst assesses impact\n* Management uses insights for planning\n\n&nbsp;\n\n### 💡 Why this matters\nBalances risk management and opportunity capitalization.\n\n&nbsp;\n\n### 🚩 Tips\n* Separate downside and upside clearly\n\n&nbsp;\n\n### 📌 Valid levels:\nDownside:\n* Insignificant\n* Moderate\n* Significant\n* Serious\n* Critical\nUpside:\n* Insignificant\n* Moderate\n* Significant\n* Serious\n* Critical\n\n&nbsp;\n\n### ℹ️ Note about taxonomy values\nThe selectable options for this field are configured by your organization's administrator and may vary. Please consult your administrator if you notice discrepancies or missing choices.",
+          "label": "Cost ($)",
+          "required": false,
+          "entitytype": "consequenceeconomy"
+        },
+        {
+          "fieldname": "e_consequence_environment_ids",
+          "type": "singlevalue",
+          "description": "Assess the environmental consequences, focusing on discharge or release extent.\n\n&nbsp;\n\n### 🎯 Purpose\nEnvironmental impacts have ecological and legal effects.\n\n&nbsp;\n\n### 👥 Roles\n* Environmental Specialist or Risk Owner evaluates severity\n* Management ensures compliance\n\n&nbsp;\n\n### 💡 Why this matters\nCareful management avoids damage and liabilities.\n\n&nbsp;\n\n### 🚩 Tips\n* Reference regulations and best practices\n* Update assessments regularly\n\n&nbsp;\n\n### 📌 Valid levels:\n* Insignificant\n* Moderate\n* Significant\n* Serious\n* Critical\n\n&nbsp;\n\n### ℹ️ Note about taxonomy values\nThe selectable options for this field are configured by your organization's administrator and may vary. Please consult your administrator if you notice discrepancies or missing choices.",
+          "label": "Environment",
+          "required": false,
+          "entitytype": "consequenceenvironment"
+        },
+        {
+          "fieldname": "e_consequence_probability_ids",
+          "type": "singlevalue",
+          "description": "Estimate the likelihood of the risk occurring.\n\n&nbsp;\n\n### 🎯 Purpose\nHelps prioritize risks and allocate resources.\n\n&nbsp;\n\n### 👥 Roles\n* Risk Owner or Analyst selects probability\n* Management uses for decision-making\n\n&nbsp;\n\n### 💡 Why this matters\nInforms risk treatment prioritization.\n\n&nbsp;\n\n### 🚩 Tips\n* Use data and scenarios\n* Review regularly\n\n&nbsp;\n\n### 📌 Valid levels:\n* Very low\n* Low\n* Medium\n* High\n* Very high\n\n&nbsp;\n\n### ℹ️ Note about taxonomy values\nThe selectable options for this field are configured by your organization's administrator and may vary. Please consult your administrator if you notice discrepancies or missing choices.",
+          "label": "Probability",
+          "required": false,
+          "entitytype": "consequenceprobability"
+        },
+        {
+          "fieldname": "e_consequence_reputation_ids",
+          "type": "singlevalue",
+          "description": "Evaluate the potential reputational consequences of the risk, including downside losses and upside gains.\n\n&nbsp;\n\n### 🎯 Purpose\nReputation affects trust and market position.\n\n&nbsp;\n\n### 👥 Roles\n* Communications team or Risk Owner assesses impact\n* Management develops strategies\n\n&nbsp;\n\n### 💡 Why this matters\nManaging reputation is critical for sustainability.\n\n&nbsp;\n\n### 🚩 Tips\n* Monitor sentiment and media\n* Prepare communication plans\n\n&nbsp;\n\n### 📌 Valid consequence levels:\nDownside:\n* Insignificant\n* Moderate\n* Significant\n* Serious\n* Critical\nUpside:\n* Insignificant\n* Moderate\n* Significant\n* Serious\n* Critical\n\n&nbsp;\n\n### ℹ️ Note about taxonomy values\nThe selectable options for this field are configured by your organization's administrator and may vary. Please consult your administrator if you notice discrepancies or missing choices.",
+          "label": "Reputation",
+          "required": false,
+          "entitytype": "consequencereputation"
+        },
+        {
+          "fieldname": "e_consequence_safety_ids",
+          "type": "singlevalue",
+          "description": "Assess health and safety consequences, focusing on severity of injury or harm.\n\n&nbsp;\n\n### 🎯 Purpose\nPrioritize controls to prevent serious injuries.\n\n&nbsp;\n\n### 👥 Roles\n* Safety Officer or Risk Owner evaluates severity\n* Management ensures compliance\n\n&nbsp;\n\n### 💡 Why this matters\nProtects employee health and legal compliance.\n\n&nbsp;\n\n### 🚩 Tips\n* Reference health and safety regulations\n* Update as new risks emerge\n\n&nbsp;\n\n### 📌 Valid levels:\n* Insignificant\n* Moderate\n* Significant\n* Serious\n* Critical\n\n&nbsp;\n\n### ℹ️ Note about taxonomy values\nThe selectable options for this field are configured by your organization's administrator and may vary. Please consult your administrator if you notice discrepancies or missing choices.",
+          "label": "Life and health",
+          "required": false,
+          "entitytype": "consequencesafety"
+        },
+        {
+          "fieldname": "e_manageability_ids",
+          "type": "singlevalue",
+          "description": "Assess how manageable the risk is using existing or planned measures.\n\n&nbsp;\n\n### 🎯 Purpose\nHelps prioritize risk treatment and resources.\n\n&nbsp;\n\n### 👥 Roles\n* Risk Owner or Analyst evaluates manageability\n* Management plans controls accordingly\n\n&nbsp;\n\n### 💡 Why this matters\nGuides feasibility of mitigation efforts.\n\n&nbsp;\n\n### 🚩 Tips\n* Consider complexity, cost, feasibility\n* Review regularly\n\n&nbsp;\n\n### 📌 Typical levels:\n* High\n* Medium\n* Low\n\n&nbsp;\n\n### ℹ️ Note about taxonomy values\nThe selectable options for this field are configured by your organization's administrator and may vary. Please consult your administrator if you notice discrepancies or missing choices.",
+          "label": "Manageability",
+          "required": false,
+          "entitytype": "manageability"
+        },
+        {
+          "fieldname": "e_phase_ids",
+          "type": "singlevalue",
+          "description": "Define the project or risk lifecycle phase most relevant to the risk.\n\n&nbsp;\n\n### 🎯 Purpose\nPhases focus risk management on critical periods.\n\n&nbsp;\n\n### 👥 Roles\n* **Risk Owner or Manager**  \n  → Assigns relevant phase\n* **Participants**  \n  → Use phase information to contextualize mitigation\n\n&nbsp;\n\n### 💡 Why this matters\nAccurate phasing supports prioritization and timing.\n\n&nbsp;\n\n### 🚩 Tips\n* Align with project or business phases\n* Update if risk context changes\n\n&nbsp;\n\n### 📌 Examples\n* Planning\n* Execution\n* Closeout",
+          "label": "Structure",
+          "required": false,
+          "entitytype": "phase"
+        },
+        {
+          "fieldname": "e_risk_owner_ids",
+          "type": "singlevalue",
+          "description": "Assign the person responsible for managing the risk and ensuring mitigation measures are implemented.\n\n&nbsp;\n\n### 🎯 Purpose\nClear ownership ensures accountability throughout the risk lifecycle.\n\n&nbsp;\n\n### 👥 Roles\n* **Risk Manager or Administrator**  \n  → Assigns risk owner\n* **Risk Owner**  \n  → Oversees monitoring and treatment\n\n&nbsp;\n\n### 💡 Why this matters\nEffective risk management depends on clear responsibility.\n\n&nbsp;\n\n### 🚩 Tips\n* Select knowledgeable and authorized individuals\n* Communicate responsibilities clearly\n* Update ownership as roles change\n\n&nbsp;\n\n### 📌 Examples\n* Department manager\n* Risk coordinator\n* Compliance officer",
+          "label": "Risk owner",
+          "required": true,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "e_riskstrategy_ids",
+          "type": "singlevalue",
+          "description": "Select the strategy for managing the risk from your organization’s predefined options.\n\n&nbsp;\n\n### 🎯 Purpose\nDetermines how the risk will be addressed.\n\n&nbsp;\n\n### 👥 Roles\n* Risk Owner selects strategy\n* Implementation Teams carry out actions\n\n&nbsp;\n\n### 💡 Why this matters\nAligns treatment with policies and appetite.\n\n&nbsp;\n\n### 🚩 Tips\n* Review and adjust as needed\n\n&nbsp;\n\n### 📌 Valid strategies:\n* Avoid\n* Reduce\n* Transfer\n* Accept\n\n&nbsp;\n\n### ℹ️ Note about taxonomy values\nThe selectable options for this field are configured by your organization's administrator and may vary. Please consult your administrator if you notice discrepancies or missing choices.",
+          "label": "Risk strategy",
+          "required": false,
+          "entitytype": "riskstrategy"
+        },
+        {
+          "fieldname": "e_status_ids",
+          "type": "singlevalue",
+          "description": "Indicates the current status of the risk throughout its lifecycle.\n\n&nbsp;\n\n### 🎯 Purpose\nMonitoring risk status supports effective management and communication.\n\n&nbsp;\n\n### 👥 Roles\n* Risk Owner updates status as risk evolves\n* Reviewers track status for oversight\n\n&nbsp;\n\n### 💡 Why this matters\nKeeping status current enables timely actions.\n\n&nbsp;\n\n### 🚩 Tips\n* Update regularly\n* Use status to trigger workflows\n\n&nbsp;\n\n### 📌 Valid statuses from your taxonomy:\n* Identified\n* In Progress\n* Closed\n\n&nbsp;\n\n### ℹ️ Note about taxonomy values\nThe selectable options for this field are configured by your organization's administrator and may vary. Please consult your administrator if you notice discrepancies or missing choices.",
+          "label": "Status",
+          "required": true,
+          "entitytype": "riskstatus"
+        },
+        {
+          "fieldname": "e_uncertainty_ids",
+          "type": "singlevalue",
+          "description": "Select the level of uncertainty regarding the risk’s likelihood or impact.\n\n&nbsp;\n\n### 🎯 Purpose\nUnderstanding uncertainty aids in evaluating confidence levels.\n\n&nbsp;\n\n### 👥 Roles\n* Risk Owner or Analyst assesses uncertainty\n* Management uses this info for decisions\n\n&nbsp;\n\n### 💡 Why this matters\nClarifies confidence in risk ratings.\n\n&nbsp;\n\n### 🚩 Tips\n* Document reasons\n* Update with new info\n\n&nbsp;\n\n### 📌 Valid uncertainty levels from your taxonomy:\n* Low\n* Medium\n* High\n\n&nbsp;\n\n### ℹ️ Note about taxonomy values\nThe selectable options for this field are configured by your organization's administrator and may vary. Please consult your administrator if you notice discrepancies or missing choices.",
+          "label": "Knowledge strength",
+          "required": false,
+          "entitytype": "uncertainty"
+        },
+        {
+          "fieldname": "a_measures_ids",
+          "type": "multivalue",
+          "description": "List the planned or recommended measures to reduce or manage the risk.\n\n&nbsp;\n\n### 🎯 Purpose\nDocumenting measures clarifies risk treatment strategy and supports tracking.\n\n&nbsp;\n\n### 👥 Roles\n* **Risk Owner or Treatment Coordinator**  \n  → Defines and documents mitigation measures\n* **Assessment Owner and Managers**  \n  → Monitor implementation\n\n&nbsp;\n\n### 💡 Why this matters\nClear measures enable focused risk reduction efforts.\n\n&nbsp;\n\n### 🚩 Tips\n* Be specific and actionable\n* Link measures clearly to risks\n* Update as measures evolve\n\n&nbsp;\n\n### 📌 Examples\n* Implement additional security controls\n* Conduct staff training\n* Update supplier contracts",
+          "label": "Measures",
+          "required": false,
+          "entitytype": "measure"
+        }
+      ]
+    },
+    "assessment": {
+      "objectname": "assessment",
+      "description": "",
+      "isroot": true,
+      "fields": [
+        {
+          "fieldname": "assumptions",
+          "type": "text",
+          "description": "Document the key assumptions made during this assessment, such as stable operating conditions, data availability, or resource commitments. Clear assumptions provide context for the analysis.\n\n&nbsp;\n\n### 🎯 Purpose\nAssumptions clarify the basis for risk evaluations and highlight factors that might affect validity.\n\n&nbsp;\n\n### 👥 Roles\n* **Assessment Owner or Facilitator**  \n  → Identifies and records assumptions\n* **Reviewers and Stakeholders**  \n  → Consider assumptions when interpreting results\n\n&nbsp;\n\n### 💡 Why this matters\nChanges in assumptions may require reassessment to maintain accuracy.\n\n&nbsp;\n\n### 🚩 Tips\n* Be explicit about assumptions\n* Review and update assumptions regularly\n* Document changes for audit trail\n\n&nbsp;\n\n### 📌 Examples\n* \"Assumes no major organizational restructuring during the next 12 months.\"\n* \"Data used is based on last year’s operational reports.\"\n* \"Resources for mitigation actions will be available as planned.\"",
+          "label": "Assumptions and limitations",
+          "required": true
+        },
+        {
+          "fieldname": "description",
+          "type": "text",
+          "description": "Describe the scope and background of the risk assessment, including what is covered, the reasons for conducting it, and any relevant context. This sets a foundation for all participants.\n\n&nbsp;\n\n### 🎯 Purpose\nThis description aligns everyone on the assessment’s focus, ensuring shared understanding and expectations.\n\n&nbsp;\n\n### 👥 Roles\n* **Assessment Owner**  \n  → Writes the initial description\n* **Participants**  \n  → Use the description to understand context and boundaries\n\n&nbsp;\n\n### 💡 Why this matters\nClear scope prevents misunderstandings and focuses efforts on relevant risks.\n\n&nbsp;\n\n### 🚩 Tips\n* Explain the why, what, and where of the assessment\n* Note any exclusions or assumptions\n* Reference policies, audits, or events triggering the assessment\n\n&nbsp;\n\n### 📌 Examples\n* \"Enterprise-wide assessment of strategic risks related to supply chain disruptions, covering all regions and vendors.\"\n* \"Focuses on environmental and safety risks for the new offshore facility, prior to start of operations.\"\n* \"Triggered by internal audit findings from Q1. Limited to IT systems under the Finance department.\"",
+          "label": "Description",
+          "required": true
+        },
+        {
+          "fieldname": "objective",
+          "type": "text",
+          "description": "State the primary objective of the assessment, detailing what the organization aims to achieve through this process.\n\n&nbsp;\n\n### 🎯 Purpose\nClear objectives focus efforts and enable evaluation of success after completion.\n\n&nbsp;\n\n### 👥 Roles\n* **Assessment Owner**  \n  → Defines the objective\n* **Reviewers or Approvers**  \n  → Validate that the objective aligns with organizational goals\n\n&nbsp;\n\n### 💡 Why this matters\nA focused objective supports alignment and accountability.\n\n&nbsp;\n\n### 🚩 Tips\n* Use action verbs such as “assess”, “identify”, or “prioritize”\n* Avoid vague phrases like “general overview”\n\n&nbsp;\n\n### 📌 Examples\n* \"Identify and evaluate operational risks related to expanding into new markets.\"\n* \"Assess strategic risks tied to vendor concentration and propose mitigation.\"\n* \"Meet regulatory requirement for annual enterprise-wide risk review.\"",
+          "label": "Objective",
+          "required": true
+        },
+        {
+          "fieldname": "title",
+          "type": "text",
+          "description": "Provide a concise and descriptive title that clearly summarizes the focus of the risk assessment. The title should immediately convey the purpose to all stakeholders involved.\n\n&nbsp;\n\n### 🎯 Purpose\nThe title acts as the primary identifier in dashboards, reports, and lists, allowing quick recognition of the assessment subject.\n\n&nbsp;\n\n### 👥 Roles\n* **Assessment Owner**  \n  → Proposes the initial title based on scope and context\n  → Updates the title as necessary throughout the assessment lifecycle\n\n&nbsp;\n\n### 💡 Why this matters\nA clear title enables stakeholders to quickly understand the assessment’s focus, improving communication and navigation within the system.\n\n&nbsp;\n\n### 🚩 Tips\n* Use active and descriptive wording\n* Include relevant project names, years, or organizational units\n* Avoid obscure abbreviations unless widely known\n\n&nbsp;\n\n### 📌 Examples\n* \"Risk assessment – migration to cloud platform\"\n* \"Strategic risk review – merger plans 2025\"\n* \"Project risk – new production facility, Plant B\"",
+          "label": "Title",
+          "required": true
+        },
+        {
+          "fieldname": "e_activity_ids",
+          "type": "singlevalue",
+          "description": "Select the activity or process relevant to this assessment, according to your organization's taxonomy.\n\n&nbsp;\n\n### 🎯 Purpose\nFocusing on the correct activity ensures appropriate scope coverage.\n\n&nbsp;\n\n### 👥 Roles\n* Assessment Owner selects activity\n* Participants use context for risk identification\n\n&nbsp;\n\n### 💡 Why this matters\nConsistency ensures aligned risk evaluation.\n\n&nbsp;\n\n### 🚩 Tips\n* Choose the best-matching activity\n* Use standardized terminology\n\n&nbsp;\n\n### 📌 Valid activities from your taxonomy:\n* Manufacturing\n* Sales\n* IT Operations\n\n&nbsp;\n\n### ℹ️ Note about taxonomy values\nThe selectable options for this field are configured by your organization's administrator and may vary. Please consult your administrator if you notice discrepancies or missing choices.",
+          "label": "Activity",
+          "required": false,
+          "entitytype": "activity"
+        },
+        {
+          "fieldname": "e_collaborationusers_ids",
+          "type": "multivalue",
+          "description": "This field lists users collaborating on the risk assessment or related activities.\n\n&nbsp;\n\n### 👥 What you do here\n* Add or remove collaborators contributing to assessment or treatment activities.\n* Manage user permissions and roles.\n\n&nbsp;\n\n### ⚠️ Important\nUsed to grant access only to selected users for this specific risk assessment, ensuring data confidentiality.\n\n&nbsp;\n\n### 💡 Why this matters\nFosters shared ownership and quality while maintaining controlled access.\n\n&nbsp;\n\n### 🚩 Tips\n* Include relevant internal and external stakeholders\n* Keep list updated\n* Communicate access restrictions clearly\n* Use to securely involve external experts without exposing other data.",
+          "label": "Collaboration users",
+          "required": false,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "e_confidentialusers_ids",
+          "type": "multivalue",
+          "description": "",
+          "label": "",
+          "required": false,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "e_location_ids",
+          "type": "singlevalue",
+          "description": "This field is used to specify the physical location, site, facility, or region associated with the record and its related activities. By defining the location, you provide important context that helps others understand where the record applies and ensures that follow-up actions, responsibilities, and reporting are aligned with the correct place.\n\n&nbsp;\n\n🎯 Purpose\n\nTo clearly identify the geographical or operational context for the record, ensuring that all associated activities and assessments are relevant to the specific location.\n\n&nbsp;\n\n👥 Roles\n\n- Initiator or Owner: Selects or specifies the location when creating or updating the record.\n- Contributors and Reviewers: Adjust input, decisions, and follow-up actions based on the defined location.\n\n&nbsp;\n\n💡 Why this matters\n\nCorrect and specific location data improves reporting, helps identify location-based risks or requirements, and ensures that relevant stakeholders are involved.\n\n&nbsp;\n\n🚩 Tips\n\n- The list of available locations is organized in a hierarchy (e.g., Country → Region → Site).\n- Use consistent and recognizable naming conventions.\n- Be as specific as needed — include building names, site numbers, or regions if relevant.\n- If the list of available locations is predefined in Dmaze, start typing at least two characters to search and filter options quickly.\n- The list of locations is managed by your Dmaze administrator and may reflect your organization's official site registry.\n\n&nbsp;\n\n📌 Examples\n\n- Headquarters – Oslo\n- Manufacturing Plant – Bergen\n- Data Center – Stavanger\n- Regional Office – Stockholm",
+          "label": "Location",
+          "required": false,
+          "entitytype": "location"
+        },
+        {
+          "fieldname": "e_projectowner_ids",
+          "type": "singlevalue",
+          "description": "Select the person responsible for overseeing the risk assessment process, ensuring progress and follow-ups are completed effectively.\n\n&nbsp;\n\n### 🎯 Purpose\nAssigning a project owner creates accountability and coordination throughout the assessment.\n\n&nbsp;\n\n### 👥 Roles\n* **Administrators or Risk Managers**  \n  → Assign the project owner\n* **Project Owner**  \n  → Manages assessment progress and stakeholder communication\n\n&nbsp;\n\n### 💡 Why this matters\nClear leadership supports timely completion and quality control.\n\n&nbsp;\n\n### 🚩 Tips\n* Choose someone with authority and capacity\n* Communicate roles clearly\n* Reassign promptly if unavailable\n\n&nbsp;\n\n### 📌 Notes\n* Project owners may need access to multiple system areas to fulfill duties",
+          "label": "Assessment Owner",
+          "required": true,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "e_responsible_unit_ids",
+          "type": "singlevalue",
+          "description": "This field is used to assign the single organizational unit that will be responsible for the record and any related follow-up activities. The unit is selected from a predefined hierarchical list in Dmaze, reflecting your organization’s structure. By default, this hierarchy mirrors your official unit setup, with top-level departments and any sub-units nested underneath.\n\n&nbsp;\n\n🎯 Purpose\n\nTo clearly define which part of the organization owns the record and is accountable for its implementation, monitoring, or resolution. Only one unit can be selected per record to maintain clear accountability.\n\n&nbsp;\n\n👥 Roles\n\n- Initiator or Owner: Selects the unit based on responsibility and scope.\n- Responsible Unit: Oversees required actions, ensures follow-up, and provides reporting.\n\n&nbsp;\n\n💡 Why this matters\n\nAssigning the correct unit ensures governance clarity, improves reporting accuracy, and aligns follow-up responsibilities with the right part of the organization.\n\n&nbsp;\n\n🚩 Tips\n\n- You can only select one unit for each record.\n- Select the unit with primary responsibility for the record.\n- Navigate the hierarchy to choose the most specific applicable unit.\n- The available units and hierarchy are managed by your Dmaze administrator.\n- Start typing at least two characters in the search box to filter and display all matching units, making it faster to find units in large hierarchies.\n\n&nbsp;\n\n📌 Examples\n\n- Finance Department\n- Operations Division\n- Compliance and Risk Management Unit",
+          "label": "Unit",
+          "required": false,
+          "entitytype": "unit"
+        },
+        {
+          "fieldname": "e_risk_category_ids",
+          "type": "singlevalue",
+          "description": "Select the risk category based on your organization's taxonomy.\n\n&nbsp;\n\n### 🎯 Purpose\nCategorizing risks helps organize analysis and prioritization.\n\n&nbsp;\n\n### 👥 Roles\n* Assessment Owner assigns category\n* Risk Managers use category for reporting\n\n&nbsp;\n\n### 💡 Why this matters\nConsistency improves risk management quality.\n\n&nbsp;\n\n### 🚩 Tips\n* Choose the most fitting category\n* Maintain category consistency\n\n&nbsp;\n\n### 📌 Valid categories from your taxonomy:\n* Strategic Risk\n* Operational Risk\n* Financial Risk\n\n&nbsp;\n\n### ℹ️ Note about taxonomy values\nThe selectable options for this field are configured by your organization's administrator and may vary. Please consult your administrator if you notice discrepancies or missing choices.",
+          "label": "Risk Category",
+          "required": false,
+          "entitytype": "riskcategory"
+        },
+        {
+          "fieldname": "e_status_ids",
+          "type": "singlevalue",
+          "description": "Indicates the current status of the assessment in its lifecycle.\n\n&nbsp;\n\n### 🎯 Purpose\nTracking status supports proper management and timely completion.\n\n&nbsp;\n\n### 👥 Roles\n* Assessment Owner updates status\n* Managers and Reviewers monitor progress\n\n&nbsp;\n\n### 💡 Why this matters\nKeeps assessment on track.\n\n&nbsp;\n\n### 🚩 Tips\n* Keep status accurate\n* Use status to trigger workflows\n\n&nbsp;\n\n### 📌 Valid statuses from your taxonomy:\n* Draft\n* Open\n* Closed\n\n&nbsp;\n\n### ℹ️ Note about taxonomy values\nThe selectable options for this field are configured by your organization's administrator and may vary. Please consult your administrator if you notice discrepancies or missing choices.",
+          "label": "Status",
+          "required": true,
+          "entitytype": "assessmentstatus"
+        },
+        {
+          "fieldname": "e_uri_link_ids",
+          "type": "multivalue",
+          "description": "This field allows you to add one or more URLs (links) to internal or external resources that provide additional context, reference material, or supporting information for this record. It is intended for linking to web-based resources — not to other records within Dmaze (for that, use the Related to field). When adding a link, you can also provide a human-readable description (link title) to clearly indicate what the link is for. This makes it easier for others to understand the purpose of the link without having to click on it.\n\n&nbsp;\n\n🎯 Purpose\n\nTo give users direct access to relevant online content that supports understanding, implementation, or verification of the record.\n\n&nbsp;\n\n👥 Roles\n\n- Record Owner or Contributor: Adds and maintains the list of links.\n- Participants and Reviewers: Use the links to access additional details, evidence, or background.\n\n&nbsp;\n\n💡 Why this matters\n\nLinks provide instant access to supporting materials, reducing the need for manual searches and ensuring all stakeholders work from the same trusted sources. Where possible, use this field instead of attaching documents directly — linked resources respect existing access permissions and security controls on the hosting platform.\n\n&nbsp;\n\n🚩 Tips\n\n- You can add multiple links.\n- Use complete, valid, and accessible URLs.\n- Always provide a short, meaningful description for each link so users know what to expect before clicking.\n- Regularly check and update links to avoid broken or outdated references.\n- If linking to documents that require controlled access, ensure permissions are properly managed on the hosting platform.\n- Prefer using links instead of attachments for resources that are maintained elsewhere — this helps ensure everyone always sees the latest version.\n\n&nbsp;\n\n📌 Examples\n\n- Data Protection Policy – https://intranet.example.com/policies/data-protection\n- Project 42 Overview – https://projects.example.com/initiative-42\n- Regulatory Guidelines – Section 5 – https://regulator.example.org/guidelines/section-5",
+          "label": "Links",
+          "required": false,
+          "entitytype": "urilink"
+        },
+        {
+          "fieldname": "a_risk_ids",
+          "type": "multivalue",
+          "description": "",
+          "label": "",
+          "required": false,
+          "entitytype": "risk"
+        }
+      ]
+    },
+    "measure": {
+      "objectname": "measure",
+      "description": "",
+      "isroot": false,
+      "fields": [
+        {
+          "fieldname": "deadline",
+          "type": "date",
+          "description": "This field defines the exact date by which the measure must be completed. This value is mandatory and must be set before the measure can enter the implementation workflow. Relative time frames (e.g. 'within 30 days') are not supported – only calendar dates are allowed.\n\n&nbsp;\n\n🎯 Purpose\n\nTo establish a clear and fixed target date for completing the measure.\n\n&nbsp;\n\n👥 Roles\n\n- Measure Creator or Initiator: Sets the deadline during measure creation.\n- Responsible Person: Plans work to meet the defined date.\n\n&nbsp;\n\n💡 Why this matters\n\nDeadlines help ensure timely action, support progress tracking, and define accountability. They are also required to trigger the next workflow steps.\n\n&nbsp;\n\n🚩 Tips\n\n- The deadline must be filled in before the measure can be moved to implementation.\n- Use a realistic date that reflects the complexity, dependencies, and resource availability.\n- Communicate changes to deadlines clearly if adjustments are needed.\n- Monitor upcoming deadlines using reports, dashboards, or filters.\n\n&nbsp;\n\n📌 Examples\n\n- “2025-09-01”\n- “2025-12-15”\n\n&nbsp;\n\n⚠️ Note: Only absolute calendar dates are allowed (format: YYYY-MM-DD). Relative expressions like 'in two weeks' are not supported.",
+          "label": "Due date",
+          "required": true
+        },
+        {
+          "fieldname": "description",
+          "type": "text",
+          "description": "This field captures a detailed explanation of the measure – what it aims to achieve, how it will be implemented, and what outcome is expected. A well-written description ensures clarity for everyone involved and helps support follow-up, evaluation, and accountability.\n\n&nbsp;\n\n🎯 Purpose\n\nTo document the full scope, intent, and expected results of the measure.\n\n&nbsp;\n\n👥 Roles\n\n- Measure Creator or Owner: Provides a clear and complete description.\n- Responsible Person: Uses the description as guidance for implementation.\n- Reviewers: Refer to the description when evaluating completion and effectiveness.\n\n&nbsp;\n\n💡 Why this matters\n\nA clear and specific description reduces misunderstandings and ensures that all parties share the same understanding of what needs to be done.\n\n&nbsp;\n\n🚩 Tips\n\n- Focus on what will be done, by whom, and to what effect.\n- Include relevant procedures, standards, or references where appropriate.\n- Avoid vague statements like “Improve process” – be action-oriented and measurable.\n- Break large or complex actions into smaller steps or milestones if needed.\n\n&nbsp;\n\n📌 Examples\n\n- “Conduct cybersecurity training for all staff and document attendance by Q3.”\n- “Replace all fluorescent fixtures with LED lighting in building A and B.”\n- “Review and update data retention policy to align with regulatory changes.”\n\n&nbsp;\n\n⚠️ Note: This field can be updated throughout the lifecycle of the measure if details evolve or clarification is needed.",
+          "label": "Description",
+          "required": false
+        },
+        {
+          "fieldname": "statusdescription",
+          "type": "text",
+          "description": "This field allows you to provide a free-text explanation or comment related to the current status of the measure. It is especially useful for elaborating on delays, obstacles, changes, or progress updates that are not captured by the status field alone.\n\n&nbsp;\n\n🎯 Purpose\n\nTo give contextual insight into the progress, challenges, or circumstances behind the current measure status.\n\n&nbsp;\n\n👥 Roles\n\n- Responsible Person: Updates the field during execution.\n- Supervisors and Stakeholders: Review to understand current progress.\n\n&nbsp;\n\n💡 Why this matters\n\nNarrative descriptions give life to the status value and help decision-makers act on informed insights.\n\n&nbsp;\n\n🚩 Tips\n\n- Explain any unexpected delays, re-scoping, or need for help.\n- Describe remaining work, risks, or dependencies.\n- Avoid vague phrases – be specific and actionable.\n\n&nbsp;\n\n📌 Examples\n\n- “Installation postponed due to late delivery. Rescheduled for next week.”\n- “Measure partially completed – pending legal review.”\n\n&nbsp;\n\n⚠️ Note: This field is optional but highly recommended for transparency and collaboration.",
+          "label": "Status comment",
+          "required": false
+        },
+        {
+          "fieldname": "title",
+          "type": "text",
+          "description": "This field displays the title of the parent item to which this measure belongs. The link is automatically set based on where the measure was created and cannot be changed. It provides quick access back to the originating item, helping users understand the context in which the measure was established.\n\n&nbsp;\n\n🎯 Purpose\n\nTo show the source item this measure is associated with and allow easy navigation to it.\n\n&nbsp;\n\n👥 Roles\n\n- All users: Use the link to view the full context and rationale behind the measure.\n\n&nbsp;\n\n💡 Why this matters\n\nMeasures are always created as part of a specific record (e.g., an observation, risk, or incident). This link confirms where the measure originated and enables traceability.\n\n&nbsp;\n\n🚩 Tips\n\n- Click the link to go directly to the parent record.\n- Use the information in the parent to better understand the need for the measure.\n- Note that this connection is fixed and cannot be edited.\n\n&nbsp;\n\n📌 Examples\n\n- “Observation: Missing emergency lighting in corridor”\n- “Event #103: Data breach affecting payroll system”\n\n&nbsp;\n\n⚠️ Note: This field is system-controlled and reflects where the measure was created. It cannot be changed by users.",
+          "label": "Parent",
+          "required": true
+        },
+        {
+          "fieldname": "e_measurepriority_ids",
+          "type": "singlevalue",
+          "description": "This field defines the priority level of the measure, indicating how urgent or important it is to act. Use this to help stakeholders and responsible users understand which measures should be addressed first.\n\n&nbsp;\n\n🎯 Purpose\n\nTo classify the urgency of the measure and support prioritised planning and resource allocation.\n\n&nbsp;\n\n💡 Why this matters\n\nClear prioritisation helps focus attention on the most critical actions and prevents important measures from being delayed.\n\n&nbsp;\n\n🚩 Tips\n\n- Use 'High' for time-sensitive or high-risk measures that require immediate attention.\n- Use 'Medium' for measures that are important but not urgent.\n- Use 'Low' for improvements or actions that can be scheduled later.\n- Review priority levels regularly and adjust if necessary.\n\n&nbsp;\n\n📊 Available options\n\n| Priority | Description                          |\n|----------|--------------------------------------|\n| High     | Immediate attention required         |\n| Medium   | Important, but not time-critical     |\n| Low      | Can be addressed when resources allow |\n\n&nbsp;\n\n⚠️ Note: These values may be customised by your organisation’s administrator.",
+          "label": "Priority",
+          "required": false,
+          "entitytype": "measurepriority"
+        },
+        {
+          "fieldname": "e_responsible_ids",
+          "type": "singlevalue",
+          "description": "This field is used to assign the person responsible for implementing the measure. The dropdown menu shows active Dmaze users by their full name (first and last). Assigning a responsible person is required before the measure can be set to implementation.\n\n&nbsp;\n\n🎯 Purpose\n\nTo ensure clear accountability for executing and reporting on the measure.\n\n&nbsp;\n\n👥 Roles\n\n- Measure Creator or Initiator: Selects the responsible person from the list.\n- Responsible User: Accepts or declines the task and updates progress.\n\n&nbsp;\n\n💡 Why this matters\n\nAssigning responsibility ensures that the measure is actively followed up. It also enables system-generated email notifications, improving communication and accountability.\n\n&nbsp;\n\n🚩 Tips\n\n- Choose someone with the right skills, role, and authority to carry out the measure.\n- A valid email address is required to receive notifications – a warning icon will appear if the selected user is missing this.\n- The responsible person will receive an email when the measure is moved to implementation status, asking them to accept or decline the task.\n\n&nbsp;\n\n📌 Examples\n\n- “Elena Rossi (IT Security Manager)”\n- “Jens Madsen (Facilities Team)”\n\n&nbsp;\n\n⚠️ Note: Only active users registered in Dmaze can be assigned. Email notifications require a valid address on the user profile.",
+          "label": "Responsible",
+          "required": true,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "e_status_ids",
+          "type": "singlevalue",
+          "description": "This field shows the current status of the measure (task or action), reflecting its progress from creation to closure. The status updates automatically based on user decisions and system events, and determines when a measure is considered closed. Email notifications are triggered at key decision points to keep responsible parties informed.\n\n&nbsp;\n\n🎯 Purpose\n\nTo track and manage the lifecycle of a measure, ensure all stakeholders are aligned, and maintain control over implementation, acceptance, and completion.\n\n&nbsp;\n\n👥 Roles\n\n**Initiator** (e.g. process owner, risk owner, team lead):  \n- Creates the measure and chooses between implementing, acknowledging it already exists, or cancelling it.  \n- Assigns a responsible person and sets a due date if implementation is selected.  \n- Approves, cancels, or rejects the completed measure.\n\n**Measure Responsible**:  \n- Accepts, declines, cancels, or closes the measure as “Existing” or “Do not implement”.  \n- Updates progress status during implementation.  \n- Marks the measure as complete for approval.\n\n&nbsp;\n\n💡 Why this matters\n\nA well-defined status lifecycle ensures consistent handling of all measures, enables transparency, automates follow-up through email notifications, and defines clear closure criteria. It supports accountability across different roles.\n\n&nbsp;\n\n🚩 Tips\n\n- Make sure 'Responsible' and 'Due Date' are filled in before starting implementation.  \n- Use “Exists” only when the action is already implemented and verifiable.  \n- Measures are considered **closed** when status is: **Existing**, **Cancelled**, or **Completed (100%) (approved)**.  \n- Emails are automatically sent when a measure is assigned, declined, completed, cancelled, or approved.  \n- If a measure is rejected after completion, the responsible person must continue working until it can be approved.\n\n&nbsp;\n\n📌 Examples\n\n- A user creates a measure and selects “Do not implement”. The status becomes **Cancelled**, and the measure is closed.  \n- A responsible user accepts a measure, completes it, and the initiator approves it. The status becomes **Completed (100%) (approved)**, and the process is complete.\n\n💬 **Want to see the actual lifecycle for this measure?**  \nClick the **Change log** button in the top-right corner above this field to view the full step-by-step history, including who made each change and when.\n\n&nbsp;\n\n📊 Status Lifecycle Overview\n\n1. **Measure is created** → `Identified (pending decision)` *(System)*  \n2. **Initiator clicks**:\n   - *Implement* → Requires Responsible + Due date → `To be implemented (pending accept)` *(email sent to Responsible)*  \n   - *Exists* → `Existing` *(Closed)*  \n   - *Do not implement* → `Cancelled` *(Closed)*\n3. **Responsible user chooses**:\n   - *Decline* → `To be implemented (declined)` *(email sent to Initiator)*  \n   - *Accept* → `In progress (not started)` → Access to:\n     - `In progress (25%)`, `In progress (50%)`, `In progress (75%)`\n     - `Completed (100%) (for approval)` *(email sent to Initiator)*  \n     - *Cancel* → `In progress (cancelled)` *(email sent to Initiator)*  \n   - *Exists* → `Existing` *(Closed)*  \n   - *Do not implement* → `Cancelled` *(Closed)*\n4. **Initiator chooses**:\n   - *Approve* → `Completed (100%) (approved)` *(Closed)*  \n   - *Reject* → `Completed (100%) (not approved)` *(measure reopens)*  \n   - *Cancel* → `In progress (cancelled)` *(Closed)*\n\n&nbsp;\n\n✅ When is a measure considered closed?\n\n- `Existing`  \n- `Cancelled`  \n- `Completed (100%) (approved)`\n\n&nbsp;\n\n⚠️ Note: The list of selectable status options and transitions may be customised by your organisation’s administrator to reflect internal processes and governance.",
+          "label": "Status",
+          "required": true,
+          "entitytype": "measurestate"
+        },
+        {
+          "fieldname": "e_uri_link_ids",
+          "type": "multivalue",
+          "description": "This field allows you to add one or more URLs (links) to internal or external resources that provide additional context, reference material, or supporting information for this record. It is intended for linking to web-based resources — not to other records within Dmaze (for that, use the Related to field). When adding a link, you can also provide a human-readable description (link title) to clearly indicate what the link is for. This makes it easier for others to understand the purpose of the link without having to click on it.\n\n&nbsp;\n\n🎯 Purpose\n\nTo give users direct access to relevant online content that supports understanding, implementation, or verification of the record.\n\n&nbsp;\n\n👥 Roles\n\n- Record Owner or Contributor: Adds and maintains the list of links.\n- Participants and Reviewers: Use the links to access additional details, evidence, or background.\n\n&nbsp;\n\n💡 Why this matters\n\nLinks provide instant access to supporting materials, reducing the need for manual searches and ensuring all stakeholders work from the same trusted sources. Where possible, use this field instead of attaching documents directly — linked resources respect existing access permissions and security controls on the hosting platform.\n\n&nbsp;\n\n🚩 Tips\n\n- You can add multiple links.\n- Use complete, valid, and accessible URLs.\n- Always provide a short, meaningful description for each link so users know what to expect before clicking.\n- Regularly check and update links to avoid broken or outdated references.\n- If linking to documents that require controlled access, ensure permissions are properly managed on the hosting platform.\n- Prefer using links instead of attachments for resources that are maintained elsewhere — this helps ensure everyone always sees the latest version.\n\n&nbsp;\n\n📌 Examples\n\n- Data Protection Policy – https://intranet.example.com/policies/data-protection\n- Project 42 Overview – https://projects.example.com/initiative-42\n- Regulatory Guidelines – Section 5 – https://regulator.example.org/guidelines/section-5",
+          "label": "Links",
+          "required": false,
+          "entitytype": "urilink"
+        }
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "parent": "risk",
+      "child": "measure",
+      "childfieldname": "a_measures_ids",
+      "description": "List the planned or recommended measures to reduce or manage the risk.\n\n&nbsp;\n\n### 🎯 Purpose\nDocumenting measures clarifies risk treatment strategy and supports tracking.\n\n&nbsp;\n\n### 👥 Roles\n* **Risk Owner or Treatment Coordinator**  \n  → Defines and documents mitigation measures\n* **Assessment Owner and Managers**  \n  → Monitor implementation\n\n&nbsp;\n\n### 💡 Why this matters\nClear measures enable focused risk reduction efforts.\n\n&nbsp;\n\n### 🚩 Tips\n* Be specific and actionable\n* Link measures clearly to risks\n* Update as measures evolve\n\n&nbsp;\n\n### 📌 Examples\n* Implement additional security controls\n* Conduct staff training\n* Update supplier contracts"
+    },
+    {
+      "parent": "assessment",
+      "child": "risk",
+      "childfieldname": "a_risk_ids",
+      "description": ""
+    }
+  ],
+  "entities": {
+    "expiration": [
+      {
+        "name": "Expired",
+        "description": "",
+        "id": "9"
+      },
+      {
+        "name": "Expired previous 180 days",
+        "description": "",
+        "id": "7"
+      },
+      {
+        "name": "Expired previous 30 days ",
+        "description": "",
+        "id": "6"
+      },
+      {
+        "name": "Expired previous 365 days",
+        "description": "",
+        "id": "8"
+      },
+      {
+        "name": "Expired previous 7 days",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "Expires in 180 days",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Expires in 30 days",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "Expires in 365 days",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "Expires in 7 days",
+        "description": "",
+        "id": "1"
+      }
+    ],
+    "matrixtemplate": [
+      {
+        "name": "Risk Assessment 1x3 - Seperate consequences",
+        "description": "Risk Assessment 1x3 - Seperate consequences",
+        "id": "7"
+      },
+      {
+        "name": "Risk Assessment 1x3 Upside - Seperate consequences",
+        "description": "Risk Assessment 1x3 Upside - Seperate consequences",
+        "id": "8"
+      },
+      {
+        "name": "Risk Assessment 3x3 - Seperate consequences",
+        "description": "Risk Assessment 3x3 - Seperate consequences",
+        "id": "9"
+      },
+      {
+        "name": "Risk Assessment 3x3 Upside - Seperate consequences",
+        "description": "Risk Assessment 3x3 Upside - Seperate consequences",
+        "id": "10"
+      },
+      {
+        "name": "Risk Assessment 5x5 - Seperate consequences",
+        "description": "Risk Assessment 5x5 - Seperate consequences",
+        "id": "11"
+      },
+      {
+        "name": "Risk Assessment 5x5 Upside - Seperate consequences",
+        "description": "Risk Assessment 5x5 Upside - Seperate consequences",
+        "id": "12"
+      },
+      {
+        "name": "Risk Assessment 6x6 - Seperate consequences",
+        "description": "Risk Assessment 6x6 - Seperate consequences",
+        "id": "13"
+      },
+      {
+        "name": "Risk Assessment 6x6 Upside - Seperate consequences",
+        "description": "Risk Assessment 6x6 Upside - Seperate consequences",
+        "id": "14"
+      }
+    ],
+    "assessmentstatus": [
+      {
+        "name": "Closed",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Draft",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Open",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "consequencesafety": [
+      {
+        "name": "3. Significant - Serious injury",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "1. Insignificant - Minor injury",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "4. Serious - Injury of a permanent character",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "5. Critical - Death",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "2. Moderate - Injury with absence",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "riskstrategy": [
+      {
+        "name": "Take",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Tolerate",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "Transfer",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Treat",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "uncertainty": [
+      {
+        "name": "High",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Low",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Medium",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "measurestate": [
+      {
+        "name": "In progress (75%)",
+        "description": "The implementation of this measure is in progress.",
+        "id": "9"
+      },
+      {
+        "name": "Cancelled",
+        "description": "This measure has been decided not to be implemented (closed).",
+        "id": "6"
+      },
+      {
+        "name": "Completed (100%) (not approved)",
+        "description": "The implementation of this measure is completed, but has not been approved.",
+        "id": "13"
+      },
+      {
+        "name": "Identified (pending decision)",
+        "description": "This is a new measure that has been identified and suggested for implementation.\r\n \r\nIf the measure is decided to be implemented, an e-mail will be sent automatically to the person responsible.",
+        "id": "1"
+      },
+      {
+        "name": "Existing",
+        "description": "This measure is already existing and has been closed.",
+        "id": "5"
+      },
+      {
+        "name": "In progress (cancelled)",
+        "description": "This measure has been decided to be implemented. However, the person assigned to the measure has cancelled.\n \nReconsider if the measure should be implemented or not.\r\n \r\nIf the measure is decided to be implemented, an e-mail will be sent automatically to the person responsible.",
+        "id": "11"
+      },
+      {
+        "name": "To be implemented (pending accept)",
+        "description": "This measure has been decided to be implemented and is pending acceptance from the assigned person for implementing the measure within the suggested due date.",
+        "id": "2"
+      },
+      {
+        "name": "To be implemented (declined)",
+        "description": "This measure has been decided to be implemented. However, the person assigned to the measure has declined.\n \nReconsider if the measure should be implemented or not.\r\n \r\nIf the measure is decided to be implemented, an e-mail will be sent automatically to the person responsible.",
+        "id": "3"
+      },
+      {
+        "name": "In progress (not started)",
+        "description": "This measure has been decided to be implemented, and the person assigned to the measure has accepted. However, the implementation of the measure has not yet started.",
+        "id": "4"
+      },
+      {
+        "name": "Completed (100%) (for approval)",
+        "description": "The implementation of this measure is completed, and is awaiting for approval.",
+        "id": "10"
+      },
+      {
+        "name": "In progress (25%)",
+        "description": "The implementation of this measure is in progress.",
+        "id": "7"
+      },
+      {
+        "name": "In progress (50%)",
+        "description": "The implementation of this measure is in progress.",
+        "id": "8"
+      },
+      {
+        "name": "Completed (100%) (approved)",
+        "description": "The implementation of this measure is completed and approved (closed).",
+        "id": "12"
+      }
+    ],
+    "consequencereputation": [
+      {
+        "name": "3. Significant - Reputation loss several key clients",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "2. Moderate - Reputation loss single key client",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "4. Serious - Reputation loss prioritised stakeholders",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "iv. Serious - Strengthened reputation prioritised stakeholders (upside)",
+        "description": "",
+        "id": "9"
+      },
+      {
+        "name": "1. Insignificant - Small change in reputation",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "iii. Significant - Strengthened reputation several key clients (upside)",
+        "description": "",
+        "id": "8"
+      },
+      {
+        "name": "ii. Moderate - Strengthened reputation single key client (upside)",
+        "description": "",
+        "id": "7"
+      },
+      {
+        "name": "v. Critical - Strengthened national reputation (upside)",
+        "description": "",
+        "id": "10"
+      },
+      {
+        "name": "i. Insignificant - Small change in reputation (upside)",
+        "description": "",
+        "id": "6"
+      },
+      {
+        "name": "5. Critical - National reputation loss",
+        "description": "",
+        "id": "5"
+      }
+    ],
+    "mobilequery": [
+      {
+        "name": "My open actions",
+        "description": "",
+        "id": "1"
+      }
+    ],
+    "riskcategory": [
+      {
+        "name": "Operational Risk",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "Strategic Risk",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Financial Risk",
+        "description": "",
+        "id": "3"
+      }
+    ],
+    "matrixcell": [
+      {
+        "name": "Cell Address: 3,2",
+        "description": "",
+        "id": "18"
+      },
+      {
+        "name": "Cell Address: 0,2",
+        "description": "",
+        "id": "74"
+      },
+      {
+        "name": "Cell Address: 2,1",
+        "description": "",
+        "id": "67"
+      },
+      {
+        "name": "Cell Address: 1,2",
+        "description": "",
+        "id": "8"
+      },
+      {
+        "name": "Cell Address: 0,0",
+        "description": "",
+        "id": "69"
+      },
+      {
+        "name": "Cell Address: 5,4",
+        "description": "",
+        "id": "143"
+      },
+      {
+        "name": "Cell Address: 1,1",
+        "description": "",
+        "id": "57"
+      },
+      {
+        "name": "Cell Address: 0,1",
+        "description": "",
+        "id": "71"
+      },
+      {
+        "name": "Cell Address: 4,1",
+        "description": "",
+        "id": "125"
+      },
+      {
+        "name": "Cell Address: 2,2",
+        "description": "",
+        "id": "38"
+      },
+      {
+        "name": "Cell Address: 2,5",
+        "description": "",
+        "id": "109"
+      },
+      {
+        "name": "Cell Address: 4,2",
+        "description": "",
+        "id": "48"
+      },
+      {
+        "name": "Cell Address: 2,3",
+        "description": "",
+        "id": "39"
+      },
+      {
+        "name": "Cell Address: 0,1",
+        "description": "",
+        "id": "77"
+      },
+      {
+        "name": "Cell Address: 5,2",
+        "description": "",
+        "id": "139"
+      },
+      {
+        "name": "Cell Address: 4,0",
+        "description": "",
+        "id": "123"
+      },
+      {
+        "name": "Cell Address: 0,5",
+        "description": "",
+        "id": "85"
+      },
+      {
+        "name": "Cell Address: 5,0",
+        "description": "",
+        "id": "135"
+      },
+      {
+        "name": "Cell Address: 4,2",
+        "description": "",
+        "id": "127"
+      },
+      {
+        "name": "Cell Address: 3,0",
+        "description": "",
+        "id": "41"
+      },
+      {
+        "name": "Cell Address: 1,2",
+        "description": "",
+        "id": "33"
+      },
+      {
+        "name": "Cell Address: 1,4",
+        "description": "",
+        "id": "95"
+      },
+      {
+        "name": "Cell Address: 0,2",
+        "description": "",
+        "id": "73"
+      },
+      {
+        "name": "Cell Address: 5,5",
+        "description": "",
+        "id": "145"
+      },
+      {
+        "name": "Cell Address: 1.4",
+        "description": "",
+        "id": "35"
+      },
+      {
+        "name": "Cell Address: 0,1",
+        "description": "",
+        "id": "27"
+      },
+      {
+        "name": "Cell Address: 1,5",
+        "description": "",
+        "id": "97"
+      },
+      {
+        "name": "Cell Address: 4,3",
+        "description": "",
+        "id": "129"
+      },
+      {
+        "name": "Cell Address: 2,3",
+        "description": "",
+        "id": "105"
+      },
+      {
+        "name": "Cell Address: 2,2",
+        "description": "",
+        "id": "68"
+      },
+      {
+        "name": "Cell Address: 0,3",
+        "description": "",
+        "id": "81"
+      },
+      {
+        "name": "Cell Address: 1,0",
+        "description": "",
+        "id": "87"
+      },
+      {
+        "name": "Cell Address: 4,1",
+        "description": "",
+        "id": "22"
+      },
+      {
+        "name": "Cell Address: 1,2",
+        "description": "",
+        "id": "91"
+      },
+      {
+        "name": "Cell Address: 0,2",
+        "description": "",
+        "id": "28"
+      },
+      {
+        "name": "Cell Address: 1,1",
+        "description": "",
+        "id": "64"
+      },
+      {
+        "name": "Cell Address: 1,0",
+        "description": "",
+        "id": "88"
+      },
+      {
+        "name": "Cell Address: 3,4",
+        "description": "",
+        "id": "45"
+      },
+      {
+        "name": "Cell Address: 2,3",
+        "description": "",
+        "id": "106"
+      },
+      {
+        "name": "Cell Address: 3,2",
+        "description": "",
+        "id": "115"
+      },
+      {
+        "name": "Cell Address: 2,2",
+        "description": "",
+        "id": "13"
+      },
+      {
+        "name": "Cell Address: 4,3",
+        "description": "",
+        "id": "130"
+      },
+      {
+        "name": "Cell Address: 2,5",
+        "description": "",
+        "id": "110"
+      },
+      {
+        "name": "Cell Address: 3,4",
+        "description": "",
+        "id": "119"
+      },
+      {
+        "name": "Cell Address: 5,5",
+        "description": "",
+        "id": "146"
+      },
+      {
+        "name": "Cell Address: 0,3",
+        "description": "",
+        "id": "82"
+      },
+      {
+        "name": "Cell Address: 0,0",
+        "description": "",
+        "id": "51"
+      },
+      {
+        "name": "Cell Address: 0,0",
+        "description": "",
+        "id": "52"
+      },
+      {
+        "name": "Cell Address: 3,2",
+        "description": "",
+        "id": "116"
+      },
+      {
+        "name": "Cell Address: 2,2",
+        "description": "",
+        "id": "103"
+      },
+      {
+        "name": "Cell Address: 4,4",
+        "description": "",
+        "id": "50"
+      },
+      {
+        "name": "Cell Address: 0,5",
+        "description": "",
+        "id": "86"
+      },
+      {
+        "name": "Cell Address: 4,1",
+        "description": "",
+        "id": "126"
+      },
+      {
+        "name": "Cell Address: 3,0",
+        "description": "",
+        "id": "111"
+      },
+      {
+        "name": "Cell Address: 0,1",
+        "description": "",
+        "id": "78"
+      },
+      {
+        "name": "Cell Address: 2,0",
+        "description": "",
+        "id": "99"
+      },
+      {
+        "name": "Cell Address: 0,3",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "Cell Address: 5,1",
+        "description": "",
+        "id": "137"
+      },
+      {
+        "name": "Cell Address: 0,1",
+        "description": "",
+        "id": "72"
+      },
+      {
+        "name": "Cell Address: 3,1",
+        "description": "",
+        "id": "42"
+      },
+      {
+        "name": "Cell Address: 4,0",
+        "description": "",
+        "id": "124"
+      },
+      {
+        "name": "Cell Address: 2,2",
+        "description": "",
+        "id": "104"
+      },
+      {
+        "name": "Cell Address: 1,3",
+        "description": "",
+        "id": "93"
+      },
+      {
+        "name": "Cell Address: 1,2",
+        "description": "",
+        "id": "58"
+      },
+      {
+        "name": "Cell Address: 1,5",
+        "description": "",
+        "id": "98"
+      },
+      {
+        "name": "Cell Address: 2,4",
+        "description": "",
+        "id": "40"
+      },
+      {
+        "name": "Cell Address: 0,2",
+        "description": "",
+        "id": "79"
+      },
+      {
+        "name": "Cell Address: 4,4",
+        "description": "",
+        "id": "25"
+      },
+      {
+        "name": "Cell Address: 2,4",
+        "description": "",
+        "id": "107"
+      },
+      {
+        "name": "Cell Address: 2,0",
+        "description": "",
+        "id": "100"
+      },
+      {
+        "name": "Cell Address: 0,3",
+        "description": "",
+        "id": "29"
+      },
+      {
+        "name": "Cell Address: 1.4",
+        "description": "",
+        "id": "10"
+      },
+      {
+        "name": "Cell Address: 0,4",
+        "description": "",
+        "id": "83"
+      },
+      {
+        "name": "Cell Address: 0,0",
+        "description": "",
+        "id": "75"
+      },
+      {
+        "name": "Cell Address: 4,5",
+        "description": "",
+        "id": "133"
+      },
+      {
+        "name": "Cell Address: 2,1",
+        "description": "",
+        "id": "60"
+      },
+      {
+        "name": "Cell Address: 2,1",
+        "description": "",
+        "id": "12"
+      },
+      {
+        "name": "Cell Address: 4,2",
+        "description": "",
+        "id": "128"
+      },
+      {
+        "name": "Cell Address: 0,4",
+        "description": "",
+        "id": "30"
+      },
+      {
+        "name": "Cell Address: 0,0",
+        "description": "",
+        "id": "70"
+      },
+      {
+        "name": "Cell Address: 1,0",
+        "description": "",
+        "id": "56"
+      },
+      {
+        "name": "Cell Address: 3,4",
+        "description": "",
+        "id": "120"
+      },
+      {
+        "name": "Cell Address: 0,2",
+        "description": "",
+        "id": "80"
+      },
+      {
+        "name": "Cell Address: 2,0",
+        "description": "",
+        "id": "66"
+      },
+      {
+        "name": "Cell Address: 0,1",
+        "description": "",
+        "id": "53"
+      },
+      {
+        "name": "Cell Address: 1,1",
+        "description": "",
+        "id": "7"
+      },
+      {
+        "name": "Cell Address: 1,0",
+        "description": "",
+        "id": "31"
+      },
+      {
+        "name": "Cell Address: 1,1",
+        "description": "",
+        "id": "32"
+      },
+      {
+        "name": "Cell Address: 2,2",
+        "description": "",
+        "id": "61"
+      },
+      {
+        "name": "Cell Address: 2,1",
+        "description": "",
+        "id": "101"
+      },
+      {
+        "name": "Cell Address: 3,5",
+        "description": "",
+        "id": "121"
+      },
+      {
+        "name": "Cell Address: 1,1",
+        "description": "",
+        "id": "89"
+      },
+      {
+        "name": "Cell Address: 4,3",
+        "description": "",
+        "id": "24"
+      },
+      {
+        "name": "Cell Address: 1,1",
+        "description": "",
+        "id": "90"
+      },
+      {
+        "name": "Cell Address: 1,2",
+        "description": "",
+        "id": "65"
+      },
+      {
+        "name": "Cell Address: 5,0",
+        "description": "",
+        "id": "136"
+      },
+      {
+        "name": "Cell Address: 3,3",
+        "description": "",
+        "id": "44"
+      },
+      {
+        "name": "Cell Address: 2,4",
+        "description": "",
+        "id": "15"
+      },
+      {
+        "name": "Cell Address: 4,0",
+        "description": "",
+        "id": "21"
+      },
+      {
+        "name": "Cell Address: 2,0",
+        "description": "",
+        "id": "11"
+      },
+      {
+        "name": "Cell Address: 3,1",
+        "description": "",
+        "id": "113"
+      },
+      {
+        "name": "Cell Address: 3,1",
+        "description": "",
+        "id": "17"
+      },
+      {
+        "name": "Cell Address: 3,4",
+        "description": "",
+        "id": "20"
+      },
+      {
+        "name": "Cell Address: 2,4",
+        "description": "",
+        "id": "108"
+      },
+      {
+        "name": "Cell Address: 3,1",
+        "description": "",
+        "id": "114"
+      },
+      {
+        "name": "Cell Address: 1,3",
+        "description": "",
+        "id": "34"
+      },
+      {
+        "name": "Cell Address: 0,2",
+        "description": "",
+        "id": "62"
+      },
+      {
+        "name": "Cell Address: 0,2",
+        "description": "",
+        "id": "55"
+      },
+      {
+        "name": "Cell Address: 4,1",
+        "description": "",
+        "id": "47"
+      },
+      {
+        "name": "Cell Address: 0,4",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "Cell Address: 0,0",
+        "description": "",
+        "id": "76"
+      },
+      {
+        "name": "Cell Address: 1,0",
+        "description": "",
+        "id": "6"
+      },
+      {
+        "name": "Cell Address: 0,4",
+        "description": "",
+        "id": "84"
+      },
+      {
+        "name": "Cell Address: 5,1",
+        "description": "",
+        "id": "138"
+      },
+      {
+        "name": "Cell Address: 3,0",
+        "description": "",
+        "id": "112"
+      },
+      {
+        "name": "Cell Address: 2,0",
+        "description": "",
+        "id": "59"
+      },
+      {
+        "name": "Cell Address: 4,5",
+        "description": "",
+        "id": "134"
+      },
+      {
+        "name": "Cell Address: 0,1",
+        "description": "",
+        "id": "54"
+      },
+      {
+        "name": "Cell Address: 2,1",
+        "description": "",
+        "id": "102"
+      },
+      {
+        "name": "Cell Address: 0,1",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "Cell Address: 4,0",
+        "description": "",
+        "id": "46"
+      },
+      {
+        "name": "Cell Address: 1,3",
+        "description": "",
+        "id": "94"
+      },
+      {
+        "name": "Cell Address: 4,3",
+        "description": "",
+        "id": "49"
+      },
+      {
+        "name": "Cell Address: 3,2",
+        "description": "",
+        "id": "43"
+      },
+      {
+        "name": "Cell Address: 0,0",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Cell Address: 5,2",
+        "description": "",
+        "id": "140"
+      },
+      {
+        "name": "Cell Address: 0,0",
+        "description": "",
+        "id": "26"
+      },
+      {
+        "name": "Cell Address: 4,4",
+        "description": "",
+        "id": "131"
+      },
+      {
+        "name": "Cell Address: 3,3",
+        "description": "",
+        "id": "117"
+      },
+      {
+        "name": "Cell Address: 1,0",
+        "description": "",
+        "id": "63"
+      },
+      {
+        "name": "Cell Address: 5,4",
+        "description": "",
+        "id": "144"
+      },
+      {
+        "name": "Cell Address: 2,0",
+        "description": "",
+        "id": "36"
+      },
+      {
+        "name": "Cell Address: 2,3",
+        "description": "",
+        "id": "14"
+      },
+      {
+        "name": "Cell Address: 5,3",
+        "description": "",
+        "id": "141"
+      },
+      {
+        "name": "Cell Address: 3,5",
+        "description": "",
+        "id": "122"
+      },
+      {
+        "name": "Cell Address: 3,0",
+        "description": "",
+        "id": "16"
+      },
+      {
+        "name": "Cell Address: 1,3",
+        "description": "",
+        "id": "9"
+      },
+      {
+        "name": "Cell Address: 1,2",
+        "description": "",
+        "id": "92"
+      },
+      {
+        "name": "Cell Address: 3,3",
+        "description": "",
+        "id": "19"
+      },
+      {
+        "name": "Cell Address: 0,2",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Cell Address: 2,1",
+        "description": "",
+        "id": "37"
+      },
+      {
+        "name": "Cell Address: 4,4",
+        "description": "",
+        "id": "132"
+      },
+      {
+        "name": "Cell Address: 4,2",
+        "description": "",
+        "id": "23"
+      },
+      {
+        "name": "Cell Address: 3,3",
+        "description": "",
+        "id": "118"
+      },
+      {
+        "name": "Cell Address: 1,4",
+        "description": "",
+        "id": "96"
+      },
+      {
+        "name": "Cell Address: 5,3",
+        "description": "",
+        "id": "142"
+      }
+    ],
+    "measurepriority": [
+      {
+        "name": "High",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Low",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Medium",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "matrixconstyperasep": [
+      {
+        "name": "Economy",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "Economy",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Environment",
+        "description": "",
+        "id": "11"
+      },
+      {
+        "name": "Production",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Production",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "Project Budget",
+        "description": "",
+        "id": "6"
+      },
+      {
+        "name": "Project Budget",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "Project Schedule",
+        "description": "",
+        "id": "7"
+      },
+      {
+        "name": "Project Schedule",
+        "description": "",
+        "id": "8"
+      },
+      {
+        "name": "Reputation",
+        "description": "",
+        "id": "9"
+      },
+      {
+        "name": "Reputation",
+        "description": "",
+        "id": "10"
+      },
+      {
+        "name": "Life and health",
+        "description": "",
+        "id": "12"
+      }
+    ],
+    "riskstatus": [
+      {
+        "name": "Closed",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Draft",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Open",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "consequenceeconomy": [
+      {
+        "name": "ii. Moderate - 50.000-500.000 NOK (upside)",
+        "description": "",
+        "id": "7"
+      },
+      {
+        "name": "i. Insignificant - 10.000-50.000 NOK (upside)",
+        "description": "",
+        "id": "6"
+      },
+      {
+        "name": "2. Moderate - 50.000-500.000 NOK",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "5. Critical - > 50 MNOK",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "1. Insignificant - 10.000-50.000 NOK",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "4. Serious - 5-50 MNOK",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "3. Significant - 0.5-5 MNOK",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "iv. Serious - 5-50 MNOK (upside)",
+        "description": "",
+        "id": "9"
+      },
+      {
+        "name": "iii. Significant - 0.5-5 MNOK (upside)",
+        "description": "",
+        "id": "8"
+      },
+      {
+        "name": "v. Critical - > 50 MNOK (upside)",
+        "description": "",
+        "id": "10"
+      }
+    ],
+    "creation": [
+      {
+        "name": "3. Last 7 days",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "1. Today",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "2. Yesterday",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "7. In 30 days",
+        "description": "",
+        "id": "7"
+      },
+      {
+        "name": "4. Last 30 days",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "5. Last 365 days",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "8. In 365 days",
+        "description": "",
+        "id": "8"
+      },
+      {
+        "name": "6. In 7 days",
+        "description": "",
+        "id": "6"
+      }
+    ],
+    "consequenceprobability": [
+      {
+        "name": "2. Low: 0.1%-1% per year",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "4. High: 10%-50% per year",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "1. Very low: <0.1% per year",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "3. Medium: 1%-10% per year",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "5. Very high: >50% per year",
+        "description": "",
+        "id": "5"
+      }
+    ],
+    "manageability": [
+      {
+        "name": "High",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Low",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Medium",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "arena": [
+      {
+        "name": "Management team meeting",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Project meeting",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "calendarshortcut": [
+      {
+        "name": "In 6 months",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "Next month",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "Next week",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Today",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Tomorrow",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "consequenceenvironment": [
+      {
+        "name": "3. Significant - Discharge of considerable amounts",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "5. Critical - Discharge of disastrous amounts",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "4. Serious - Discharge of large amounts",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "1. Insignificant - Discharge of very minor amounts",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "2. Moderate - Discharge of minor amounts",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "activity": [
+      {
+        "name": "Transformation",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "Transition",
+        "description": "",
+        "id": "1"
+      }
+    ]
+  }
+}
