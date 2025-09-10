@@ -1,0 +1,746 @@
+{
+  "name": "Emergency preparedness assessment and plan",
+  "types": {
+    "epresource": {
+      "objectname": "epresource",
+      "description": "",
+      "isroot": false,
+      "fields": [
+        {
+          "fieldname": "description",
+          "type": "text",
+          "description": "Additional description of the emergency preparedness resource",
+          "label": "Description",
+          "required": false
+        },
+        {
+          "fieldname": "title",
+          "type": "text",
+          "description": "Emergency preparedness situation",
+          "label": "Emergency preparedness situation",
+          "required": true
+        },
+        {
+          "fieldname": "e_epphase_ids",
+          "type": "singlevalue",
+          "description": "The **emergency preparedness phase** where the resource is relevant. \n\n&nbsp;\n\nTypical emergency preparedness phases can be:\n+ Notification and mobilisation\n+ Handling\n+ Normalisation",
+          "label": "Phase",
+          "required": true,
+          "entitytype": "epphase"
+        },
+        {
+          "fieldname": "e_epplanrole_ids",
+          "type": "singlevalue",
+          "description": "The role applicable for the emergency preparedness resource",
+          "label": "Role",
+          "required": true,
+          "entitytype": "epplanrole"
+        },
+        {
+          "fieldname": "e_epresource_category_ids",
+          "type": "singlevalue",
+          "description": "The resources typically fall within the following categories:\n\n+ **Personnel / manning**: Identify key personnel and specialized skills that are critical in an emergency preparedness situation.\n+ **Equipment and technology**: Map out which equipment and technological resources are necessary to handle the emergency preparedness situations.\n+ **Competence**: Assess the competence needed to support the emergency preparedness actions.\n+ **Cooperating partners**: Identify where resources are located and whether they are readily accessible in a crisis situation.",
+          "label": "Type of resource",
+          "required": true,
+          "entitytype": "epresourcecategory"
+        },
+        {
+          "fieldname": "e_status_ids",
+          "type": "singlevalue",
+          "description": "This field shows the current status of the record and reflects where it is in its lifecycle. Status values help users understand whether the work is still being prepared, actively handled, or completed.\n\n&nbsp;\n\n🎯 Purpose\n\nTo track and communicate progress in a consistent way across all types of records.\n\n&nbsp;\n\n👥 Roles\n\n- Responsible Users: Update the status based on progress.\n- Stakeholders and Reviewers: Use the status to monitor and coordinate activities.\n\n&nbsp;\n\n💡 Why this matters\n\nUsing defined status stages improves transparency, ensures structured follow-up, and supports auditability and quality control.\n\n&nbsp;\n\n🚩 Tips\n\n- Use 'Draft' while preparing or collecting input.\n- Set to 'Open' only when the record is ready to begin – in most cases, this means that a Responsible person must be selected first.\n- Only use 'Closed' when all related actions, measures, or follow-ups are finalized.\n- Confirm closure conditions and responsibilities before changing status.\n\n&nbsp;\n\n📌 Status definitions (default setup)\n\n| Status | Meaning |\n|--------|---------|\n| Draft  | The record is in preparation and not yet started. |\n| Open   | The record is active and being worked on. |\n| Closed | All related content is finalized, and the record is formally completed. |\n\n&nbsp;\n\n⚠️ Note: Your template may require that certain fields (such as Responsible) are filled in before status can be set to Open or Closed. These conditions are configured by your system administrator and may vary depending on setup.",
+          "label": "Status",
+          "required": true,
+          "entitytype": "epresourcestatus"
+        }
+      ]
+    },
+    "epassessment": {
+      "objectname": "epassessment",
+      "description": "",
+      "isroot": true,
+      "fields": [
+        {
+          "fieldname": "description",
+          "type": "text",
+          "description": "The background and scope of the emergency preparedness assessment is described here, including any limitations.\n\n&nbsp;\n\nThis may include:\n+ what should the work on the preparedness assessment include and not include, including temporal, organizational and geographical conditions\n+ what special risk conditions or topics the assessment should cover\n\n&nbsp;\n\n> It is important that the emergency preparedness assessment is based on the risk and vulnerability picture.",
+          "label": "Background and scope",
+          "required": true
+        },
+        {
+          "fieldname": "descriptioncompliance",
+          "type": "text",
+          "description": "Assessment of whether the preparedness is in accordance with regulatory requirements and demands / expectations from relevant stakeholders.",
+          "label": "Compliance assessment",
+          "required": false
+        },
+        {
+          "fieldname": "descriptionevents",
+          "type": "text",
+          "description": "Rationale for selection of emergency preparedness situations:\n\n+ Identification of potential emergency preparedness situations: Based on previous risk assessments and external factors.\n+ Assessment criteria: Use probability, severity, and the organisation's ability to respond as a basis for the selection of emergency preparedness situations.\n+ Selection of the most critical emergency preparedness situations: Prioritize those that have the greatest consequences for the organization, both operationally and strategically.",
+          "label": "Rationale for selection of emergency preparedness situations",
+          "required": false
+        },
+        {
+          "fieldname": "descriptionfollowup",
+          "type": "text",
+          "description": "Define a plan for regular follow-up and revision of the emergency preparedness plan, including updating emergency preparedness situations, action cards, and resource needs.",
+          "label": "Follow-up of the emergency preparedness assessment",
+          "required": false
+        },
+        {
+          "fieldname": "descriptionframework",
+          "type": "text",
+          "description": "**The frameworks for the emergency preparedness assessment** should be mapped, clarified, and documented.\n\n&nbsp;\n\nHere the **basis for the emergency preparedness assessment** is described, which must be taken into account when the emergency preparedness assessment is carried out and the emergency preparedness for the business or facility is to be established.\n\n&nbsp;\n\nThis may include:\n+ **External requirements and conditions**, such as authority requirements, standards and best practices of importance for the preparedness of the current business / facility\n+ **Internal requirements and conditions*', such as company-specific requirements and guidelines, governing documentation, etc. that must be taken into account in the preparedness process\n+ **Existing basis**, this can be both analyzes and documentation relevant to the preparedness process, as well as any existing preparedness organisation, resources and equipment\n+ The **risk picture** that the enterprise must contend with, **emergency preparedness objectives**, and **evaluation criteria for emergency preparedness solutions**  \n\n&nbsp;\n\n> Preparedness objectives should be determined based on the expectations for preparedness and should be detailed enough to be used as assessment criteria for what constitutes adequate preparedness, while the evaluation criteria indicate properties that decision-makers should emphasize when choosing preparedness solutions.  ",
+          "label": "Basis for the assessment",
+          "required": false
+        },
+        {
+          "fieldname": "descriptiongapanalysis",
+          "type": "text",
+          "description": "A holistic assessment of whether existing measures and emergency preparedness resources are sufficient to handle the identified emergency preparedness situations, and where there may be gaps.",
+          "label": "Gap analysis",
+          "required": false
+        },
+        {
+          "fieldname": "descriptionmethod",
+          "type": "text",
+          "description": "Description of the method and process for conducting the emergency preparedness assessment",
+          "label": "Method and process",
+          "required": false
+        },
+        {
+          "fieldname": "descriptionobjectsystem",
+          "type": "text",
+          "description": "Here the **organisation / system / facility** forming the basis for the assessment is described. ",
+          "label": "What should we be prepared for?",
+          "required": false
+        },
+        {
+          "fieldname": "descriptionorganisation",
+          "type": "text",
+          "description": "Description of the different actors, organisation and involvement in the emergency preparedness assessment. \n\n&nbsp;\n\nMap, clarify and describe organisation, involvement and anchoring related to the work with the emergency preparedness assessment, including:\n+ the approval and support of the management, users and other stakeholders for the work\n+ management's, users' and other stakeholders' facilitation of the work\n+ common understanding of involvement and expectations among involved parties\n+ common understanding of organization and roles related to the work\n+ common understanding of work processes, methods, expected progression and results\n\n&nbsp;\n\nThere may be a need to create a more detailed **mandate or a project description** for the work.\n\n&nbsp;\n\n![Example on relevant actors from a municipality point of view 800x](https://cdn.dmaze.com/helhetlig_ros/helhetlig_ros_hoveddeler_gjennomfoere_detaljert_large.png)",
+          "label": "Actors, organisation and involvement",
+          "required": false
+        },
+        {
+          "fieldname": "descriptionresult",
+          "type": "text",
+          "description": "Review of the emergency preparedness assessment, findings, and plan as a basis for future follow-up and implementation, as well as an exercise plan.",
+          "label": "Discussion of results",
+          "required": false
+        },
+        {
+          "fieldname": "descriptionspecialfeatures",
+          "type": "text",
+          "description": "Here **special conditions** and **learning points** are described:\n+ **Special conditions** at the business / facility to which the preparedness must be adapted\n+ **Learning points** from previous emergency preparedness incidents, training and exercises",
+          "label": "Special conditions and learning points",
+          "required": false
+        },
+        {
+          "fieldname": "objective",
+          "type": "text",
+          "description": "**Purpose and objectives** of the emergency preparedness assessment must be determined and documented.\n\n&nbsp;\n\n> What should the preparedness assessment help answer?\n\n&nbsp;\n\nThis may include thinking through and describing:\n+ which **needs** should the preparedness assessment cover?\n+ which **decisions** should the preparedness assessment form the basis for?\n+ are there any **special issues** that the preparedness assessment should highlight?\n+ what **gains** should the preparedness assessment provide?\n+ what **results** should the preparedness assessment produce within the established framework?\n\n&nbsp;\n\nThe objective must be adapted based on whether it is a revision of an existing analysis, whether a new business is to be established, or whether only a part of the business is to be analyzed (geographically or by service).\n\n&nbsp;\n\n> The purpose of a preparedness analysis can, for example, be to establish a decision-making basis for the fire and rescue services and the municipality in order to be able to dimension, and thus organize and equip, a preparedness which meets the expectations, goals, and requirements that are set.",
+          "label": "Purpose and objective",
+          "required": true
+        },
+        {
+          "fieldname": "title",
+          "type": "text",
+          "description": "This field defines the title of the emergency preparedness assessment. It should include important information relevant to the subject of the assessment. Example: Emergency preparedness assessment of xxx year yyyy.",
+          "label": "Emergency preparedness assessment",
+          "required": true
+        },
+        {
+          "fieldname": "e_collaborationusers_ids",
+          "type": "multivalue",
+          "description": "In Dmaze you can have **collaboration users** who **only get access to objects where they are selected as collaboration users**. These will typically be external users who do not work in your organisation, but who have been invited into their Dmaze to collaborate on selected objects.\n\n&nbsp;\n\nTo be a **collaboration user**, the user must be **invited** into your Dmaze and must **only** be a **member of the collaboration users** access group.\n\n&nbsp;\n\nIf a collaboration user is to have access to the object you are currently standing in, **the user is added to** the field **collaboration users** below. You can add as many such collaboration users as you wish. If a collaboration user is no longer to have access to the object you are standing in, then the user is **removed from** the field.\n \n&nbsp;\n\n> Collaboration users only see objects where they have been added in this way.\n\n&nbsp;\n\nFor information, **a license for a user is only paid once**. If the collaboration user pays for a Dmaze license in his own organisation, you will not be charged for a license for this collaboration user.\n\n&nbsp;\n \nCollaboration users who have access to Dmaze through multiple organisations (their own plus others) will be able to switch between the organisations at the top right of the menu.",
+          "label": "Collaboration users",
+          "required": false,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "e_confidentialusers_ids",
+          "type": "multivalue",
+          "description": "",
+          "label": "",
+          "required": false,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "e_location_ids",
+          "type": "singlevalue",
+          "description": "This field is used to specify the physical location, site, facility, or region associated with the record and its related activities. By defining the location, you provide important context that helps others understand where the record applies and ensures that follow-up actions, responsibilities, and reporting are aligned with the correct place.\n\n&nbsp;\n\n🎯 Purpose\n\nTo clearly identify the geographical or operational context for the record, ensuring that all associated activities and assessments are relevant to the specific location.\n\n&nbsp;\n\n👥 Roles\n\n- Initiator or Owner: Selects or specifies the location when creating or updating the record.\n- Contributors and Reviewers: Adjust input, decisions, and follow-up actions based on the defined location.\n\n&nbsp;\n\n💡 Why this matters\n\nCorrect and specific location data improves reporting, helps identify location-based risks or requirements, and ensures that relevant stakeholders are involved.\n\n&nbsp;\n\n🚩 Tips\n\n- The list of available locations is organized in a hierarchy (e.g., Country → Region → Site).\n- Use consistent and recognizable naming conventions.\n- Be as specific as needed — include building names, site numbers, or regions if relevant.\n- If the list of available locations is predefined in Dmaze, start typing at least two characters to search and filter options quickly.\n- The list of locations is managed by your Dmaze administrator and may reflect your organization's official site registry.\n\n&nbsp;\n\n📌 Examples\n\n- Headquarters – Oslo\n- Manufacturing Plant – Bergen\n- Data Center – Stavanger\n- Regional Office – Stockholm",
+          "label": "Location",
+          "required": false,
+          "entitytype": "location"
+        },
+        {
+          "fieldname": "e_projectowner_ids",
+          "type": "singlevalue",
+          "description": "This field is used to assign a Responsible person who will carry out or oversee the required actions related to this record. The selected person must be a registered user in Dmaze and is chosen from a dropdown list showing their full name (first and last). By default, the person who creates the record is often pre-selected as Responsible.\n\n&nbsp;\n\n🎯 Purpose\n\nTo clearly define ownership and accountability for the record, ensuring that actions are not left unassigned.\n\n&nbsp;\n\n👥 Roles\n\n- Initiator or Owner: Selects the responsible user.\n- Responsible Person: Executes tasks, updates progress, and responds to workflow events.\n\n&nbsp;\n\n💡 Why this matters\n\nAssigning responsibility is critical for driving progress, managing expectations, and enabling automated workflows such as notifications and approvals.\n\n&nbsp;\n\n🚩 Tips\n\n- The selected person will receive email notifications when specific actions are required (e.g., accepting a measure).\n- If the user has no email registered, a warning icon will appear next to their name.\n- Only users who have access to Dmaze will appear in the list.\n\n&nbsp;\n\n📌 Examples\n\n- “Maria Jensen – Quality Manager”\n- “Ola Nordmann – IT Coordinator”\n\n&nbsp;\n\n⚠️ Note: This field becomes mandatory when the status is set to Open or Closed. If no Responsible person is selected, the record cannot be saved and the field will be highlighted with a validation error.",
+          "label": "Responsible",
+          "required": true,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "e_responsible_unit_ids",
+          "type": "singlevalue",
+          "description": "This field is used to assign the single organizational unit that will be responsible for the record and any related follow-up activities. The unit is selected from a predefined hierarchical list in Dmaze, reflecting your organization’s structure. By default, this hierarchy mirrors your official unit setup, with top-level departments and any sub-units nested underneath.\n\n&nbsp;\n\n🎯 Purpose\n\nTo clearly define which part of the organization owns the record and is accountable for its implementation, monitoring, or resolution. Only one unit can be selected per record to maintain clear accountability.\n\n&nbsp;\n\n👥 Roles\n\n- Initiator or Owner: Selects the unit based on responsibility and scope.\n- Responsible Unit: Oversees required actions, ensures follow-up, and provides reporting.\n\n&nbsp;\n\n💡 Why this matters\n\nAssigning the correct unit ensures governance clarity, improves reporting accuracy, and aligns follow-up responsibilities with the right part of the organization.\n\n&nbsp;\n\n🚩 Tips\n\n- You can only select one unit for each record.\n- Select the unit with primary responsibility for the record.\n- Navigate the hierarchy to choose the most specific applicable unit.\n- The available units and hierarchy are managed by your Dmaze administrator.\n- Start typing at least two characters in the search box to filter and display all matching units, making it faster to find units in large hierarchies.\n\n&nbsp;\n\n📌 Examples\n\n- Finance Department\n- Operations Division\n- Compliance and Risk Management Unit",
+          "label": "Organisational unit",
+          "required": false,
+          "entitytype": "unit"
+        },
+        {
+          "fieldname": "e_status_ids",
+          "type": "singlevalue",
+          "description": "This field shows the current status of the record and reflects where it is in its lifecycle. Status values help users understand whether the work is still being prepared, actively handled, or completed.\n\n&nbsp;\n\n🎯 Purpose\n\nTo track and communicate progress in a consistent way across all types of records.\n\n&nbsp;\n\n👥 Roles\n\n- Responsible Users: Update the status based on progress.\n- Stakeholders and Reviewers: Use the status to monitor and coordinate activities.\n\n&nbsp;\n\n💡 Why this matters\n\nUsing defined status stages improves transparency, ensures structured follow-up, and supports auditability and quality control.\n\n&nbsp;\n\n🚩 Tips\n\n- Use 'Draft' while preparing or collecting input.\n- Set to 'Open' only when the record is ready to begin – in most cases, this means that a Responsible person must be selected first.\n- Only use 'Closed' when all related actions, measures, or follow-ups are finalized.\n- Confirm closure conditions and responsibilities before changing status.\n\n&nbsp;\n\n📌 Status definitions (default setup)\n\n| Status | Meaning |\n|--------|---------|\n| Draft  | The record is in preparation and not yet started. |\n| Open   | The record is active and being worked on. |\n| Closed | All related content is finalized, and the record is formally completed. |\n\n&nbsp;\n\n⚠️ Note: Your template may require that certain fields (such as Responsible) are filled in before status can be set to Open or Closed. These conditions are configured by your system administrator and may vary depending on setup.",
+          "label": "Status",
+          "required": true,
+          "entitytype": "epassessmentstatus"
+        },
+        {
+          "fieldname": "e_uri_link_ids",
+          "type": "multivalue",
+          "description": "This field allows you to add one or more URLs (links) to internal or external resources that provide additional context, reference material, or supporting information for this record. It is intended for linking to web-based resources — not to other records within Dmaze (for that, use the Related to field). When adding a link, you can also provide a human-readable description (link title) to clearly indicate what the link is for. This makes it easier for others to understand the purpose of the link without having to click on it.\n\n&nbsp;\n\n🎯 Purpose\n\nTo give users direct access to relevant online content that supports understanding, implementation, or verification of the record.\n\n&nbsp;\n\n👥 Roles\n\n- Record Owner or Contributor: Adds and maintains the list of links.\n- Participants and Reviewers: Use the links to access additional details, evidence, or background.\n\n&nbsp;\n\n💡 Why this matters\n\nLinks provide instant access to supporting materials, reducing the need for manual searches and ensuring all stakeholders work from the same trusted sources. Where possible, use this field instead of attaching documents directly — linked resources respect existing access permissions and security controls on the hosting platform.\n\n&nbsp;\n\n🚩 Tips\n\n- You can add multiple links.\n- Use complete, valid, and accessible URLs.\n- Always provide a short, meaningful description for each link so users know what to expect before clicking.\n- Regularly check and update links to avoid broken or outdated references.\n- If linking to documents that require controlled access, ensure permissions are properly managed on the hosting platform.\n- Prefer using links instead of attachments for resources that are maintained elsewhere — this helps ensure everyone always sees the latest version.\n\n&nbsp;\n\n📌 Examples\n\n- Data Protection Policy – https://intranet.example.com/policies/data-protection\n- Project 42 Overview – https://projects.example.com/initiative-42\n- Regulatory Guidelines – Section 5 – https://regulator.example.org/guidelines/section-5",
+          "label": "Links",
+          "required": false,
+          "entitytype": "urilink"
+        },
+        {
+          "fieldname": "a_epscenario_ids",
+          "type": "multivalue",
+          "description": "Here, one must assess which **emergency preparedness situations** the business must be prepared for, focusing on **events outside of normal operating conditions**. The emergency preparedness situations form the basis for **dimensioning the emergency preparedness** and **ensuring that necessary measures and resources are in place to handle potential crises**.",
+          "label": "Emergency preparedness situations",
+          "required": false,
+          "entitytype": "epscenario"
+        }
+      ]
+    },
+    "epscenario": {
+      "objectname": "epscenario",
+      "description": "",
+      "isroot": false,
+      "fields": [
+        {
+          "fieldname": "assumptiondescription",
+          "type": "text",
+          "description": "Document **assumptions and premises** that have been made in connection with the emergency preparedness assessment",
+          "label": "Assumptions and premises",
+          "required": false
+        },
+        {
+          "fieldname": "causedescription",
+          "type": "text",
+          "description": "Causes and other contributing factors to how the unwanted event may occur or develop. These can help make it easier to identify preventive measures.",
+          "label": "Causes / contributing factors",
+          "required": false
+        },
+        {
+          "fieldname": "consequencedescription",
+          "type": "text",
+          "description": "Consequences",
+          "label": "Consequences",
+          "required": false
+        },
+        {
+          "fieldname": "description",
+          "type": "text",
+          "description": "This field gives a more detailed description of the emergency preparedness situation. ",
+          "label": "Description of the situation",
+          "required": false
+        },
+        {
+          "fieldname": "escalationdescription",
+          "type": "text",
+          "description": "Description of escalating factors, i.e. which factors and uncertainties can contribute to an incident escalating / developing for the worse if it occurs.",
+          "label": "Escalating factors",
+          "required": false
+        },
+        {
+          "fieldname": "evaluationdescription",
+          "type": "text",
+          "description": "Evaluation of the emergency preparedness resources, in terms of assessing the required equipment, competence and manning",
+          "label": "Evaluation",
+          "required": false
+        },
+        {
+          "fieldname": "existingmeasuredescription",
+          "type": "text",
+          "description": "Existing measures / barriers",
+          "label": "Existing measures / barriers",
+          "required": false
+        },
+        {
+          "fieldname": "statuscomment",
+          "type": "text",
+          "description": "Comment to status",
+          "label": "Status comment",
+          "required": false
+        },
+        {
+          "fieldname": "strategydescription",
+          "type": "text",
+          "description": "Describe what kind of **strategy** will be used for handling the emergency preparedness situation",
+          "label": "Emergency response strategy",
+          "required": false
+        },
+        {
+          "fieldname": "title",
+          "type": "text",
+          "description": "Short description of the main aspects of the emergency preparedness situation",
+          "label": "Emergency preparedness situation",
+          "required": true
+        },
+        {
+          "fieldname": "e_epscenariocategory_ids",
+          "type": "singlevalue",
+          "description": "Relevant category for the emergency preparedness situation",
+          "label": "Category",
+          "required": false,
+          "entitytype": "epscenariocategory"
+        },
+        {
+          "fieldname": "e_status_ids",
+          "type": "singlevalue",
+          "description": "This field shows the current status of the record and reflects where it is in its lifecycle. Status values help users understand whether the work is still being prepared, actively handled, or completed.\n\n&nbsp;\n\n🎯 Purpose\n\nTo track and communicate progress in a consistent way across all types of records.\n\n&nbsp;\n\n👥 Roles\n\n- Responsible Users: Update the status based on progress.\n- Stakeholders and Reviewers: Use the status to monitor and coordinate activities.\n\n&nbsp;\n\n💡 Why this matters\n\nUsing defined status stages improves transparency, ensures structured follow-up, and supports auditability and quality control.\n\n&nbsp;\n\n🚩 Tips\n\n- Use 'Draft' while preparing or collecting input.\n- Set to 'Open' only when the record is ready to begin – in most cases, this means that a Responsible person must be selected first.\n- Only use 'Closed' when all related actions, measures, or follow-ups are finalized.\n- Confirm closure conditions and responsibilities before changing status.\n\n&nbsp;\n\n📌 Status definitions (default setup)\n\n| Status | Meaning |\n|--------|---------|\n| Draft  | The record is in preparation and not yet started. |\n| Open   | The record is active and being worked on. |\n| Closed | All related content is finalized, and the record is formally completed. |\n\n&nbsp;\n\n⚠️ Note: Your template may require that certain fields (such as Responsible) are filled in before status can be set to Open or Closed. These conditions are configured by your system administrator and may vary depending on setup.",
+          "label": "Status",
+          "required": true,
+          "entitytype": "epscenariostatus"
+        },
+        {
+          "fieldname": "e_uri_link_ids",
+          "type": "multivalue",
+          "description": "This field allows you to add one or more URLs (links) to internal or external resources that provide additional context, reference material, or supporting information for this record. It is intended for linking to web-based resources — not to other records within Dmaze (for that, use the Related to field). When adding a link, you can also provide a human-readable description (link title) to clearly indicate what the link is for. This makes it easier for others to understand the purpose of the link without having to click on it.\n\n&nbsp;\n\n🎯 Purpose\n\nTo give users direct access to relevant online content that supports understanding, implementation, or verification of the record.\n\n&nbsp;\n\n👥 Roles\n\n- Record Owner or Contributor: Adds and maintains the list of links.\n- Participants and Reviewers: Use the links to access additional details, evidence, or background.\n\n&nbsp;\n\n💡 Why this matters\n\nLinks provide instant access to supporting materials, reducing the need for manual searches and ensuring all stakeholders work from the same trusted sources. Where possible, use this field instead of attaching documents directly — linked resources respect existing access permissions and security controls on the hosting platform.\n\n&nbsp;\n\n🚩 Tips\n\n- You can add multiple links.\n- Use complete, valid, and accessible URLs.\n- Always provide a short, meaningful description for each link so users know what to expect before clicking.\n- Regularly check and update links to avoid broken or outdated references.\n- If linking to documents that require controlled access, ensure permissions are properly managed on the hosting platform.\n- Prefer using links instead of attachments for resources that are maintained elsewhere — this helps ensure everyone always sees the latest version.\n\n&nbsp;\n\n📌 Examples\n\n- Data Protection Policy – https://intranet.example.com/policies/data-protection\n- Project 42 Overview – https://projects.example.com/initiative-42\n- Regulatory Guidelines – Section 5 – https://regulator.example.org/guidelines/section-5",
+          "label": "Links",
+          "required": false,
+          "entitytype": "urilink"
+        },
+        {
+          "fieldname": "a_epresources_ids",
+          "type": "multivalue",
+          "description": "Identify and quantify which resources need to be allocated to the most critical emergency preparedness situations to ensure sufficient response capacity.",
+          "label": "Resources",
+          "required": false,
+          "entitytype": "epresource"
+        },
+        {
+          "fieldname": "a_eptasks_ids",
+          "type": "multivalue",
+          "description": "Determine which tasks / actions are required to minimize the consequences of each emergency preparedness situation.",
+          "label": "Tasks",
+          "required": false,
+          "entitytype": "eptask"
+        }
+      ]
+    },
+    "eptask": {
+      "objectname": "eptask",
+      "description": "",
+      "isroot": false,
+      "fields": [
+        {
+          "fieldname": "description",
+          "type": "text",
+          "description": "Additional description of the emergency preparedness resource",
+          "label": "Description",
+          "required": false
+        },
+        {
+          "fieldname": "title",
+          "type": "text",
+          "description": "Emergency preparedness situation",
+          "label": "Emergency preparedness situation",
+          "required": true
+        },
+        {
+          "fieldname": "e_epphase_ids",
+          "type": "singlevalue",
+          "description": "The **emergency preparedness phase** where the task is relevant. \n\n&nbsp;\n\nTypical emergency preparedness phases can be:\n+ Notification and mobilisation\n+ Handling\n+ Normalisation",
+          "label": "Phase",
+          "required": true,
+          "entitytype": "epphase"
+        },
+        {
+          "fieldname": "e_epplanrole_ids",
+          "type": "singlevalue",
+          "description": "The role responsible for the task",
+          "label": "Role",
+          "required": true,
+          "entitytype": "epplanrole"
+        },
+        {
+          "fieldname": "e_eptimeline_ids",
+          "type": "singlevalue",
+          "description": "The time line relevant for the task",
+          "label": "Time line",
+          "required": false,
+          "entitytype": "eptimeline"
+        },
+        {
+          "fieldname": "e_status_ids",
+          "type": "singlevalue",
+          "description": "This field shows the current status of the record and reflects where it is in its lifecycle. Status values help users understand whether the work is still being prepared, actively handled, or completed.\n\n&nbsp;\n\n🎯 Purpose\n\nTo track and communicate progress in a consistent way across all types of records.\n\n&nbsp;\n\n👥 Roles\n\n- Responsible Users: Update the status based on progress.\n- Stakeholders and Reviewers: Use the status to monitor and coordinate activities.\n\n&nbsp;\n\n💡 Why this matters\n\nUsing defined status stages improves transparency, ensures structured follow-up, and supports auditability and quality control.\n\n&nbsp;\n\n🚩 Tips\n\n- Use 'Draft' while preparing or collecting input.\n- Set to 'Open' only when the record is ready to begin – in most cases, this means that a Responsible person must be selected first.\n- Only use 'Closed' when all related actions, measures, or follow-ups are finalized.\n- Confirm closure conditions and responsibilities before changing status.\n\n&nbsp;\n\n📌 Status definitions (default setup)\n\n| Status | Meaning |\n|--------|---------|\n| Draft  | The record is in preparation and not yet started. |\n| Open   | The record is active and being worked on. |\n| Closed | All related content is finalized, and the record is formally completed. |\n\n&nbsp;\n\n⚠️ Note: Your template may require that certain fields (such as Responsible) are filled in before status can be set to Open or Closed. These conditions are configured by your system administrator and may vary depending on setup.",
+          "label": "Status",
+          "required": true,
+          "entitytype": "eptaskstatus"
+        }
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "parent": "epassessment",
+      "child": "epscenario",
+      "childfieldname": "a_epscenario_ids",
+      "description": "Here, one must assess which **emergency preparedness situations** the business must be prepared for, focusing on **events outside of normal operating conditions**. The emergency preparedness situations form the basis for **dimensioning the emergency preparedness** and **ensuring that necessary measures and resources are in place to handle potential crises**."
+    },
+    {
+      "parent": "epscenario",
+      "child": "epresource",
+      "childfieldname": "a_epresources_ids",
+      "description": "Identify and quantify which resources need to be allocated to the most critical emergency preparedness situations to ensure sufficient response capacity."
+    },
+    {
+      "parent": "epscenario",
+      "child": "eptask",
+      "childfieldname": "a_eptasks_ids",
+      "description": "Determine which tasks / actions are required to minimize the consequences of each emergency preparedness situation."
+    }
+  ],
+  "entities": {
+    "expiration": [
+      {
+        "name": "Expired",
+        "description": "",
+        "id": "9"
+      },
+      {
+        "name": "Expired previous 180 days",
+        "description": "",
+        "id": "7"
+      },
+      {
+        "name": "Expired previous 30 days ",
+        "description": "",
+        "id": "6"
+      },
+      {
+        "name": "Expired previous 365 days",
+        "description": "",
+        "id": "8"
+      },
+      {
+        "name": "Expired previous 7 days",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "Expires in 180 days",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Expires in 30 days",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "Expires in 365 days",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "Expires in 7 days",
+        "description": "",
+        "id": "1"
+      }
+    ],
+    "epscenariostatus": [
+      {
+        "name": "Identified",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Not analysed",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Analysed",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "eptimeline": [
+      {
+        "name": "Subsequent shift",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "When needed",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "Consecutively",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Immediately",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "As soon as possible",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "epscenariocategory": [
+      {
+        "name": "Intentional event",
+        "description": "",
+        "id": "6"
+      },
+      {
+        "name": "Failure i critical infra structure",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "Transport event",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Incident",
+        "description": "",
+        "id": "7"
+      },
+      {
+        "name": "Other event",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "Acute polution",
+        "description": "",
+        "id": "9"
+      },
+      {
+        "name": "Violence",
+        "description": "",
+        "id": "8"
+      },
+      {
+        "name": "Natural event",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Fire event",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "epassessmentstatus": [
+      {
+        "name": "Closed",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Draft",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Open",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "epresourcecategory": [
+      {
+        "name": "Cooperative partner",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Competence",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "Manning",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Equipment",
+        "description": "",
+        "id": "4"
+      }
+    ],
+    "epresourcestatus": [
+      {
+        "name": "Not relevant",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "Identified",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Part of today's preparedness",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "Not part of today's preparedness",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "Partially part of today's preparedness",
+        "description": "",
+        "id": "3"
+      }
+    ],
+    "epphase": [
+      {
+        "name": "Normalisation",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Notification and mobilisation",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Handling",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "creation": [
+      {
+        "name": "3. Last 7 days",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "1. Today",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "2. Yesterday",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "7. In 30 days",
+        "description": "",
+        "id": "7"
+      },
+      {
+        "name": "4. Last 30 days",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "5. Last 365 days",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "8. In 365 days",
+        "description": "",
+        "id": "8"
+      },
+      {
+        "name": "6. In 7 days",
+        "description": "",
+        "id": "6"
+      }
+    ],
+    "eptaskstatus": [
+      {
+        "name": "Partially part of today's preparedness",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Not relevant",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "Part of today's preparedness",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "Identified",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Not part of today's preparedness",
+        "description": "",
+        "id": "4"
+      }
+    ],
+    "calendarshortcut": [
+      {
+        "name": "In 6 months",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "Next month",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "Next week",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Today",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Tomorrow",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "epplanrole": [
+      {
+        "name": "Fire response leader",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Emergency manager",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Emergency manager",
+        "description": "",
+        "id": "2"
+      }
+    ]
+  }
+}

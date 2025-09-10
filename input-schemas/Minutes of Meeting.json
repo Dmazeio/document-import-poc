@@ -1,0 +1,591 @@
+{
+  "name": "Minutes of Meeting",
+  "types": {
+    "mom": {
+      "objectname": "mom",
+      "description": "",
+      "isroot": true,
+      "fields": [
+        {
+          "fieldname": "description",
+          "type": "text",
+          "description": "Describe the purpose, scope, and context of the meeting in detail. This field helps readers quickly understand why the meeting was held and what it aimed to achieve.\n\n🎯 Purpose: Provide background or triggers for the meeting and outline its main goals or expected outcomes.\n\n👥 Roles: Typically completed by the meeting organizer or note taker.\n\n💡 Why this matters: Clear context supports traceability and helps align attendees with meeting objectives.\n\n🚩 Tips: Add information if the meeting was called ad hoc or for specific issues.\n\n📌 Examples:\n- \"Monthly planning meeting for the customer onboarding project. Focus on risk tracking and resource allocation.\"\n- \"Internal compliance check-in for vendor due diligence and documentation requirements.\"\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Description",
+          "required": true
+        },
+        {
+          "fieldname": "endtime",
+          "type": "datetime",
+          "description": "Record the actual or planned end time of the meeting in HH:MM format. This completes the time frame for the session.\n\n🎯 Purpose: Define the meeting duration for planning and reporting.\n\n👥 Roles: Recorded by meeting organizer or minute taker.\n\n💡 Why this matters: Useful for monitoring schedule adherence.\n\n🚩 Tips: Adjust for overruns or early endings as necessary.\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "End time",
+          "required": false
+        },
+        {
+          "fieldname": "startuptime",
+          "type": "datetime",
+          "description": "Record the actual or scheduled start time of the meeting in HH:MM format. This supports agenda planning and timing analysis.\n\n🎯 Purpose: Capture precise meeting start times for duration tracking.\n\n👥 Roles: Logged by meeting organizer or minute taker.\n\n💡 Why this matters: Helps identify meeting efficiency and timing trends.\n\n🚩 Tips: Reflect local time zones and update if the start was delayed.\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Startup time",
+          "required": false
+        },
+        {
+          "fieldname": "title",
+          "type": "text",
+          "description": "Provide a concise and specific title for the meeting. This title will appear in dashboards, reports, and exports, so clarity is essential.\n\n🎯 Purpose: Clearly identify the meeting type, project, or team context.\n\n👥 Roles: Created by the meeting organizer or administrator.\n\n💡 Why this matters: A specific title enables easy search and comparison with other meetings.\n\n🚩 Tips: Avoid vague titles like \"Meeting\" or \"Workshop\".\n\n📌 Examples:\n- \"IT Project Governance Meeting – Q2 2025\"\n- \"Weekly Team Sync – Digital Marketing\"\n- \"HR Policy Alignment – Kickoff\"\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Title",
+          "required": true
+        },
+        {
+          "fieldname": "e_attendees_ids",
+          "type": "multivalue",
+          "description": "List all participants who attended the meeting. This provides traceability and supports follow-up actions.\n\n🎯 Purpose: Document who was present and involved in decisions.\n\n👥 Roles: Compiled by minute taker or organizer.\n\n💡 Why this matters: Ensures accountability and accurate records.\n\n🚩 Tips: Include full names, roles, and note any absences or external attendees.\n\n📌 Examples:\n- \"Lina H. (Project Owner), Omar B. (Security Lead), Lisa N. (Consultant, Acme Corp)\"\n- \"Present: All team members. Absent: Finance representative (informed in advance).\"\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Attendees",
+          "required": false,
+          "entitytype": "people"
+        },
+        {
+          "fieldname": "e_collaborationusers_ids",
+          "type": "multivalue",
+          "description": "Collaboration users are external participants who only get access to specific objects where they are explicitly added. Typically, these users are not employees of your organization but have been invited to collaborate in selected areas of Dmaze.\n\n🎯 Purpose: Enable controlled external collaboration by restricting access to relevant objects only.\n\n👥 Roles: Collaboration users must be invited and belong exclusively to the Collaboration Users access group.\n\n💡 Why this matters: This access model secures sensitive data while facilitating cooperation with partners, suppliers, or consultants.\n\n🚩 Tips: Add or remove users carefully to control access and monitor invitations.\n\n📌 Note: A license is only charged once per user, even if they access multiple organizations.\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Collaboration users",
+          "required": false,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "e_confidentialusers_ids",
+          "type": "multivalue",
+          "description": "",
+          "label": "",
+          "required": false,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "e_documentreferenceuri_ids",
+          "type": "multivalue",
+          "description": "Provide a URL or internal reference to supporting documentation stored elsewhere. Useful for linking external files or prior records.\n\n🎯 Purpose: Offer easy access to supplementary materials.\n\n👥 Roles: Added by meeting organizer or administrators.\n\n💡 Why this matters: Complements attachments and maintains consistency.\n\n🚩 Tips: Ensure links are stable and accessible to participants.\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Links",
+          "required": false,
+          "entitytype": "documentreferenceuri"
+        },
+        {
+          "fieldname": "e_meeting_frequency_ids",
+          "type": "singlevalue",
+          "description": "Document the planned or actual recurrence of this meeting. This supports governance and scheduling.\n\n🎯 Purpose: Clarify if the meeting is recurring or one-off.\n\n👥 Roles: Specified by meeting organizer or governance team.\n\n💡 Why this matters: Helps track meeting cadence and compliance with scheduling requirements.\n\n🚩 Tips: Use terms like One-off, Weekly, Monthly, Quarterly, or Annual.\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Meeting frequency",
+          "required": false,
+          "entitytype": "meetingfrequency"
+        },
+        {
+          "fieldname": "e_project_ids",
+          "type": "singlevalue",
+          "description": "Identify the project this meeting relates to. This links the meeting to organizational initiatives for traceability.\n\n🎯 Purpose: Organize meetings within project governance frameworks.\n\n👥 Roles: Assigned by meeting organizer or portfolio manager.\n\n💡 Why this matters: Supports consistent reporting and filtering.\n\n🚩 Tips: Use official project names or IDs.\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Doc./Proj. ID",
+          "required": false,
+          "entitytype": "project"
+        },
+        {
+          "fieldname": "e_projectowner_ids",
+          "type": "singlevalue",
+          "description": "Identify the main person responsible for the meeting context, often the project or process owner. This person holds overall accountability for the initiative discussed.\n\n🎯 Purpose: Clarify ownership and escalation pathways.\n\n👥 Roles: Assigned by meeting organizer or governance manager.\n\n💡 Why this matters: Ensures follow-up and accountability beyond the meeting.\n\n🚩 Tips: This person may not be the meeting chair or facilitator.\n\n📌 Examples:\n- \"Eva H. – Project Manager, Supplier Risk System\"\n- \"Thomas L. – Compliance Lead, Internal Audit Stream\"\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Facilitator",
+          "required": true,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "e_responsible_unit_ids",
+          "type": "singlevalue",
+          "description": "This field is used to assign the single organizational unit that will be responsible for the record and any related follow-up activities. The unit is selected from a predefined hierarchical list in Dmaze, reflecting your organization’s structure. By default, this hierarchy mirrors your official unit setup, with top-level departments and any sub-units nested underneath.\n\n&nbsp;\n\n🎯 Purpose\n\nTo clearly define which part of the organization owns the record and is accountable for its implementation, monitoring, or resolution. Only one unit can be selected per record to maintain clear accountability.\n\n&nbsp;\n\n👥 Roles\n\n- Initiator or Owner: Selects the unit based on responsibility and scope.\n- Responsible Unit: Oversees required actions, ensures follow-up, and provides reporting.\n\n&nbsp;\n\n💡 Why this matters\n\nAssigning the correct unit ensures governance clarity, improves reporting accuracy, and aligns follow-up responsibilities with the right part of the organization.\n\n&nbsp;\n\n🚩 Tips\n\n- You can only select one unit for each record.\n- Select the unit with primary responsibility for the record.\n- Navigate the hierarchy to choose the most specific applicable unit.\n- The available units and hierarchy are managed by your Dmaze administrator.\n- Start typing at least two characters in the search box to filter and display all matching units, making it faster to find units in large hierarchies.\n\n&nbsp;\n\n📌 Examples\n\n- Finance Department\n- Operations Division\n- Compliance and Risk Management Unit",
+          "label": "Unit",
+          "required": false,
+          "entitytype": "unit"
+        },
+        {
+          "fieldname": "e_responsiblemanager_ids",
+          "type": "singlevalue",
+          "description": "Assign the person responsible for oversight of the meeting’s content or outcome. Usually a manager or formal owner with decision authority.\n\n🎯 Purpose: Ensure accountability for decisions and follow-up.\n\n👥 Roles: Assigned by governance or meeting organizer.\n\n💡 Why this matters: Clarifies responsibility for escalation and implementation.\n\n🚩 Tips: This person may differ from the meeting chair or minute taker.\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Responsible manager",
+          "required": true,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "e_status_ids",
+          "type": "singlevalue",
+          "description": "Indicate the current lifecycle status of the meeting record. This supports tracking whether minutes are draft, finalized, or archived.\n\n🎯 Purpose: Manage the progress and visibility of the meeting documentation.\n\n👥 Roles: Updated by the minute taker or meeting owner.\n\n💡 Why this matters: Accurate status tracking supports dashboard filtering and audit trails.\n\n🚩 Tips: Use status comments for additional context or clarifications.\n\n📌 Typical statuses:\n- Draft\n- Final\n- Closed\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Status",
+          "required": true,
+          "entitytype": "momstatus"
+        },
+        {
+          "fieldname": "e_typeofmeeting_ids",
+          "type": "singlevalue",
+          "description": "Select the type of meeting from predefined options. Classification supports filtering, templates, and consistent documentation.\n\n🎯 Purpose: Categorize the meeting according to format and decision authority.\n\n👥 Roles: Selected by meeting organizer or governance lead.\n\n💡 Why this matters: Enables better report structure, filtering, and scheduling.\n\n🚩 Tips: Choose the option best reflecting the meeting's format and decision-making level.\n\n📌 Available types:\n- Board meeting\n- Department meeting\n- Information meeting\n- Project meeting\n- Risk meeting\n- Staff meeting\n- Steering group\n- Strategy meeting\n- Team meeting\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Type of meeting",
+          "required": false,
+          "entitytype": "typeofmeeting"
+        },
+        {
+          "fieldname": "a_agenda_ids",
+          "type": "multivalue",
+          "description": "Provide a concise and specific title for the meeting. This title will appear in dashboards, reports, and exports, so clarity is essential.\n\n🎯 Purpose: Clearly identify the meeting type, project, or team context.\n\n👥 Roles: Created by the meeting organizer or administrator.\n\n💡 Why this matters: A specific title enables easy search and comparison with other meetings.\n\n🚩 Tips: Avoid vague titles like \"Meeting\" or \"Workshop\".\n\n📌 Examples:\n- \"IT Project Governance Meeting – Q2 2025\"\n- \"Weekly Team Sync – Digital Marketing\"\n- \"HR Policy Alignment – Kickoff\"\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Title",
+          "required": false,
+          "entitytype": "agenda"
+        }
+      ]
+    },
+    "agenda": {
+      "objectname": "agenda",
+      "description": "",
+      "isroot": false,
+      "fields": [
+        {
+          "fieldname": "conclusion",
+          "type": "text",
+          "description": "Capture the outcome or decision for the agenda item. This clarifies agreements and next steps.\n\n🎯 Purpose: Document resolutions and future actions.\n\n👥 Roles: Entered by minute takers or agenda owners.\n\n💡 Why this matters: Enhances accountability and clarity.\n\n🚩 Tips: Be specific and avoid vague statements.\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Conclusions",
+          "required": false
+        },
+        {
+          "fieldname": "description",
+          "type": "text",
+          "description": "Summarize the discussion for each agenda item. This records what was said, clarified, or raised during the meeting.\n\n🎯 Purpose: Document key points and viewpoints.\n\n👥 Roles: Captured by minute takers or presenters.\n\n💡 Why this matters: Provides a record for transparency and follow-up.\n\n🚩 Tips: Use bullet points and separate discussion from conclusions.\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Discussion",
+          "required": false
+        },
+        {
+          "fieldname": "title",
+          "type": "text",
+          "description": "Provide a short and clear title for the agenda item. This structures the meeting and aids follow-up.\n\n🎯 Purpose: Clearly define topics or decisions.\n\n👥 Roles: Created by meeting organizers or presenters.\n\n💡 Why this matters: Facilitates meeting flow and reporting.\n\n🚩 Tips: Avoid vague titles like \"Discussion\" or \"Update\".\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Agenda point",
+          "required": true
+        },
+        {
+          "fieldname": "e_agenda_owner_ids",
+          "type": "singlevalue",
+          "description": "Assign the person responsible for the agenda item. This person owns the topic and may follow up on related actions.\n\n🎯 Purpose: Establish accountability for agenda points.\n\n👥 Roles: Designated by meeting organizer or group leader.\n\n💡 Why this matters: Ensures ownership of discussions and decisions.\n\n🚩 Tips: Use full name and role for clarity.\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Agenda point owner",
+          "required": true,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "e_documentreferenceuri_ids",
+          "type": "multivalue",
+          "description": "Add a link or reference to documents related to the agenda point. Useful for supporting materials.\n\n🎯 Purpose: Connect agenda items to relevant files or policies.\n\n👥 Roles: Added by meeting organizer or administrators.\n\n💡 Why this matters: Supports transparency and completeness.\n\n🚩 Tips: Ensure links are accessible and stable.\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Links",
+          "required": false,
+          "entitytype": "documentreferenceuri"
+        },
+        {
+          "fieldname": "e_status_ids",
+          "type": "singlevalue",
+          "description": "Show the status of the agenda item. Indicates if it was resolved, discussed, deferred, or postponed.\n\n🎯 Purpose: Track progress of agenda points during and after meetings.\n\n👥 Roles: Updated by minute takers or agenda owners.\n\n💡 Why this matters: Supports clear documentation and follow-up.\n\n🚩 Tips: Combine with conclusion field for full traceability.\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Status",
+          "required": true,
+          "entitytype": "agendastatus"
+        },
+        {
+          "fieldname": "a_measures_ids",
+          "type": "multivalue",
+          "description": "List all actions linked to this agenda item. Provides an overview of decisions and assigned tasks.\n\n🎯 Purpose: Verify that key points have follow-up measures with clear owners and deadlines.\n\n👥 Roles: Updated by minute takers or task owners.\n\n💡 Why this matters: Supports accountability and progress tracking.\n\n🚩 Tips: Use this list to review outstanding tasks after meetings.\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Actions",
+          "required": false,
+          "entitytype": "measure"
+        }
+      ]
+    },
+    "measure": {
+      "objectname": "measure",
+      "description": "",
+      "isroot": false,
+      "fields": [
+        {
+          "fieldname": "deadline",
+          "type": "date",
+          "description": "This field defines the exact date by which the measure must be completed. This value is mandatory and must be set before the measure can enter the implementation workflow. Relative time frames (e.g. 'within 30 days') are not supported – only calendar dates are allowed.\n\n&nbsp;\n\n🎯 Purpose\n\nTo establish a clear and fixed target date for completing the measure.\n\n&nbsp;\n\n👥 Roles\n\n- Measure Creator or Initiator: Sets the deadline during measure creation.\n- Responsible Person: Plans work to meet the defined date.\n\n&nbsp;\n\n💡 Why this matters\n\nDeadlines help ensure timely action, support progress tracking, and define accountability. They are also required to trigger the next workflow steps.\n\n&nbsp;\n\n🚩 Tips\n\n- The deadline must be filled in before the measure can be moved to implementation.\n- Use a realistic date that reflects the complexity, dependencies, and resource availability.\n- Communicate changes to deadlines clearly if adjustments are needed.\n- Monitor upcoming deadlines using reports, dashboards, or filters.\n\n&nbsp;\n\n📌 Examples\n\n- “2025-09-01”\n- “2025-12-15”\n\n&nbsp;\n\n⚠️ Note: Only absolute calendar dates are allowed (format: YYYY-MM-DD). Relative expressions like 'in two weeks' are not supported.",
+          "label": "Due date",
+          "required": true
+        },
+        {
+          "fieldname": "description",
+          "type": "text",
+          "description": "This field captures a detailed explanation of the measure – what it aims to achieve, how it will be implemented, and what outcome is expected. A well-written description ensures clarity for everyone involved and helps support follow-up, evaluation, and accountability.\n\n&nbsp;\n\n🎯 Purpose\n\nTo document the full scope, intent, and expected results of the measure.\n\n&nbsp;\n\n👥 Roles\n\n- Measure Creator or Owner: Provides a clear and complete description.\n- Responsible Person: Uses the description as guidance for implementation.\n- Reviewers: Refer to the description when evaluating completion and effectiveness.\n\n&nbsp;\n\n💡 Why this matters\n\nA clear and specific description reduces misunderstandings and ensures that all parties share the same understanding of what needs to be done.\n\n&nbsp;\n\n🚩 Tips\n\n- Focus on what will be done, by whom, and to what effect.\n- Include relevant procedures, standards, or references where appropriate.\n- Avoid vague statements like “Improve process” – be action-oriented and measurable.\n- Break large or complex actions into smaller steps or milestones if needed.\n\n&nbsp;\n\n📌 Examples\n\n- “Conduct cybersecurity training for all staff and document attendance by Q3.”\n- “Replace all fluorescent fixtures with LED lighting in building A and B.”\n- “Review and update data retention policy to align with regulatory changes.”\n\n&nbsp;\n\n⚠️ Note: This field can be updated throughout the lifecycle of the measure if details evolve or clarification is needed.",
+          "label": "Description",
+          "required": false
+        },
+        {
+          "fieldname": "descriptionimplementation",
+          "type": "text",
+          "description": "Use this field to add context or explanation regarding the current status of the measure. This enhances transparency and helps clarify reasons for delays, ongoing work, or completion.\n\n🎯 Purpose: Provide narrative updates and explanations linked to the measure's progress.\n\n👥 Roles: Updated by the responsible person or task owner.\n\n💡 Why this matters: Clear status comments reduce the need for direct follow-ups and improve communication.\n\n🚩 Tips: Include reasons for changes in status, blockers encountered, or key decisions.\n\n📌 Examples:\n- \"Awaiting input from legal team — extended deadline by 1 week.\"\n- \"Completed, awaiting manager sign-off.\"\n\n*Note: Selection options may be customized by your administrator.*",
+          "label": "Status comment",
+          "required": false
+        },
+        {
+          "fieldname": "title",
+          "type": "text",
+          "description": "This field displays the title of the parent item to which this measure belongs. The link is automatically set based on where the measure was created and cannot be changed. It provides quick access back to the originating item, helping users understand the context in which the measure was established.\n\n&nbsp;\n\n🎯 Purpose\n\nTo show the source item this measure is associated with and allow easy navigation to it.\n\n&nbsp;\n\n👥 Roles\n\n- All users: Use the link to view the full context and rationale behind the measure.\n\n&nbsp;\n\n💡 Why this matters\n\nMeasures are always created as part of a specific record (e.g., an observation, risk, or incident). This link confirms where the measure originated and enables traceability.\n\n&nbsp;\n\n🚩 Tips\n\n- Click the link to go directly to the parent record.\n- Use the information in the parent to better understand the need for the measure.\n- Note that this connection is fixed and cannot be edited.\n\n&nbsp;\n\n📌 Examples\n\n- “Observation: Missing emergency lighting in corridor”\n- “Event #103: Data breach affecting payroll system”\n\n&nbsp;\n\n⚠️ Note: This field is system-controlled and reflects where the measure was created. It cannot be changed by users.",
+          "label": "Case",
+          "required": true
+        },
+        {
+          "fieldname": "e_documentreferenceuri_ids",
+          "type": "multivalue",
+          "description": "",
+          "label": "Links",
+          "required": false,
+          "entitytype": "documentreferenceuri"
+        },
+        {
+          "fieldname": "e_measurepriority_ids",
+          "type": "singlevalue",
+          "description": "This field defines the priority level of the measure, indicating how urgent or important it is to act. Use this to help stakeholders and responsible users understand which measures should be addressed first.\n\n&nbsp;\n\n🎯 Purpose\n\nTo classify the urgency of the measure and support prioritised planning and resource allocation.\n\n&nbsp;\n\n💡 Why this matters\n\nClear prioritisation helps focus attention on the most critical actions and prevents important measures from being delayed.\n\n&nbsp;\n\n🚩 Tips\n\n- Use 'High' for time-sensitive or high-risk measures that require immediate attention.\n- Use 'Medium' for measures that are important but not urgent.\n- Use 'Low' for improvements or actions that can be scheduled later.\n- Review priority levels regularly and adjust if necessary.\n\n&nbsp;\n\n📊 Available options\n\n| Priority | Description                          |\n|----------|--------------------------------------|\n| High     | Immediate attention required         |\n| Medium   | Important, but not time-critical     |\n| Low      | Can be addressed when resources allow |\n\n&nbsp;\n\n⚠️ Note: These values may be customised by your organisation’s administrator.",
+          "label": "Priority",
+          "required": false,
+          "entitytype": "measurepriority"
+        },
+        {
+          "fieldname": "e_responsible_ids",
+          "type": "singlevalue",
+          "description": "This field is used to assign the person responsible for implementing the measure. The dropdown menu shows active Dmaze users by their full name (first and last). Assigning a responsible person is required before the measure can be set to implementation.\n\n&nbsp;\n\n🎯 Purpose\n\nTo ensure clear accountability for executing and reporting on the measure.\n\n&nbsp;\n\n👥 Roles\n\n- Measure Creator or Initiator: Selects the responsible person from the list.\n- Responsible User: Accepts or declines the task and updates progress.\n\n&nbsp;\n\n💡 Why this matters\n\nAssigning responsibility ensures that the measure is actively followed up. It also enables system-generated email notifications, improving communication and accountability.\n\n&nbsp;\n\n🚩 Tips\n\n- Choose someone with the right skills, role, and authority to carry out the measure.\n- A valid email address is required to receive notifications – a warning icon will appear if the selected user is missing this.\n- The responsible person will receive an email when the measure is moved to implementation status, asking them to accept or decline the task.\n\n&nbsp;\n\n📌 Examples\n\n- “Elena Rossi (IT Security Manager)”\n- “Jens Madsen (Facilities Team)”\n\n&nbsp;\n\n⚠️ Note: Only active users registered in Dmaze can be assigned. Email notifications require a valid address on the user profile.",
+          "label": "Responsible",
+          "required": true,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "e_status_ids",
+          "type": "singlevalue",
+          "description": "This field shows the current status of the measure (task or action), reflecting its progress from creation to closure. The status updates automatically based on user decisions and system events, and determines when a measure is considered closed. Email notifications are triggered at key decision points to keep responsible parties informed.\n\n&nbsp;\n\n🎯 Purpose\n\nTo track and manage the lifecycle of a measure, ensure all stakeholders are aligned, and maintain control over implementation, acceptance, and completion.\n\n&nbsp;\n\n👥 Roles\n\n**Initiator** (e.g. process owner, risk owner, team lead):  \n- Creates the measure and chooses between implementing, acknowledging it already exists, or cancelling it.  \n- Assigns a responsible person and sets a due date if implementation is selected.  \n- Approves, cancels, or rejects the completed measure.\n\n**Measure Responsible**:  \n- Accepts, declines, cancels, or closes the measure as “Existing” or “Do not implement”.  \n- Updates progress status during implementation.  \n- Marks the measure as complete for approval.\n\n&nbsp;\n\n💡 Why this matters\n\nA well-defined status lifecycle ensures consistent handling of all measures, enables transparency, automates follow-up through email notifications, and defines clear closure criteria. It supports accountability across different roles.\n\n&nbsp;\n\n🚩 Tips\n\n- Make sure 'Responsible' and 'Due Date' are filled in before starting implementation.  \n- Use “Exists” only when the action is already implemented and verifiable.  \n- Measures are considered **closed** when status is: **Existing**, **Cancelled**, or **Completed (100%) (approved)**.  \n- Emails are automatically sent when a measure is assigned, declined, completed, cancelled, or approved.  \n- If a measure is rejected after completion, the responsible person must continue working until it can be approved.\n\n&nbsp;\n\n📌 Examples\n\n- A user creates a measure and selects “Do not implement”. The status becomes **Cancelled**, and the measure is closed.  \n- A responsible user accepts a measure, completes it, and the initiator approves it. The status becomes **Completed (100%) (approved)**, and the process is complete.\n\n💬 **Want to see the actual lifecycle for this measure?**  \nClick the **Change log** button in the top-right corner above this field to view the full step-by-step history, including who made each change and when.\n\n&nbsp;\n\n📊 Status Lifecycle Overview\n\n1. **Measure is created** → `Identified (pending decision)` *(System)*  \n2. **Initiator clicks**:\n   - *Implement* → Requires Responsible + Due date → `To be implemented (pending accept)` *(email sent to Responsible)*  \n   - *Exists* → `Existing` *(Closed)*  \n   - *Do not implement* → `Cancelled` *(Closed)*\n3. **Responsible user chooses**:\n   - *Decline* → `To be implemented (declined)` *(email sent to Initiator)*  \n   - *Accept* → `In progress (not started)` → Access to:\n     - `In progress (25%)`, `In progress (50%)`, `In progress (75%)`\n     - `Completed (100%) (for approval)` *(email sent to Initiator)*  \n     - *Cancel* → `In progress (cancelled)` *(email sent to Initiator)*  \n   - *Exists* → `Existing` *(Closed)*  \n   - *Do not implement* → `Cancelled` *(Closed)*\n4. **Initiator chooses**:\n   - *Approve* → `Completed (100%) (approved)` *(Closed)*  \n   - *Reject* → `Completed (100%) (not approved)` *(measure reopens)*  \n   - *Cancel* → `In progress (cancelled)` *(Closed)*\n\n&nbsp;\n\n✅ When is a measure considered closed?\n\n- `Existing`  \n- `Cancelled`  \n- `Completed (100%) (approved)`\n\n&nbsp;\n\n⚠️ Note: The list of selectable status options and transitions may be customised by your organisation’s administrator to reflect internal processes and governance.",
+          "label": "Status",
+          "required": true,
+          "entitytype": "measurestate"
+        }
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "parent": "mom",
+      "child": "agenda",
+      "childfieldname": "a_agenda_ids",
+      "description": "Provide a concise and specific title for the meeting. This title will appear in dashboards, reports, and exports, so clarity is essential.\n\n🎯 Purpose: Clearly identify the meeting type, project, or team context.\n\n👥 Roles: Created by the meeting organizer or administrator.\n\n💡 Why this matters: A specific title enables easy search and comparison with other meetings.\n\n🚩 Tips: Avoid vague titles like \"Meeting\" or \"Workshop\".\n\n📌 Examples:\n- \"IT Project Governance Meeting – Q2 2025\"\n- \"Weekly Team Sync – Digital Marketing\"\n- \"HR Policy Alignment – Kickoff\"\n\n*Note: Selection options may be customized by your administrator.*"
+    },
+    {
+      "parent": "agenda",
+      "child": "measure",
+      "childfieldname": "a_measures_ids",
+      "description": "List all actions linked to this agenda item. Provides an overview of decisions and assigned tasks.\n\n🎯 Purpose: Verify that key points have follow-up measures with clear owners and deadlines.\n\n👥 Roles: Updated by minute takers or task owners.\n\n💡 Why this matters: Supports accountability and progress tracking.\n\n🚩 Tips: Use this list to review outstanding tasks after meetings.\n\n*Note: Selection options may be customized by your administrator.*"
+    }
+  ],
+  "entities": {
+    "expiration": [
+      {
+        "name": "Expired",
+        "description": "",
+        "id": "9"
+      },
+      {
+        "name": "Expired previous 180 days",
+        "description": "",
+        "id": "7"
+      },
+      {
+        "name": "Expired previous 30 days ",
+        "description": "",
+        "id": "6"
+      },
+      {
+        "name": "Expired previous 365 days",
+        "description": "",
+        "id": "8"
+      },
+      {
+        "name": "Expired previous 7 days",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "Expires in 180 days",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Expires in 30 days",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "Expires in 365 days",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "Expires in 7 days",
+        "description": "",
+        "id": "1"
+      }
+    ],
+    "typeofmeeting": [
+      {
+        "name": "Management meeting",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Status meeting",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "agendastatus": [
+      {
+        "name": "Closed",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Draft",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Open",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "measurestate": [
+      {
+        "name": "In progress (75%)",
+        "description": "The implementation of this measure is in progress.",
+        "id": "9"
+      },
+      {
+        "name": "Cancelled",
+        "description": "This measure has been decided not to be implemented (closed).",
+        "id": "6"
+      },
+      {
+        "name": "Completed (100%) (not approved)",
+        "description": "The implementation of this measure is completed, but has not been approved.",
+        "id": "13"
+      },
+      {
+        "name": "Identified (pending decision)",
+        "description": "This is a new measure that has been identified and suggested for implementation.\r\n \r\nIf the measure is decided to be implemented, an e-mail will be sent automatically to the person responsible.",
+        "id": "1"
+      },
+      {
+        "name": "Existing",
+        "description": "This measure is already existing and has been closed.",
+        "id": "5"
+      },
+      {
+        "name": "In progress (cancelled)",
+        "description": "This measure has been decided to be implemented. However, the person assigned to the measure has cancelled.\n \nReconsider if the measure should be implemented or not.\r\n \r\nIf the measure is decided to be implemented, an e-mail will be sent automatically to the person responsible.",
+        "id": "11"
+      },
+      {
+        "name": "To be implemented (pending accept)",
+        "description": "This measure has been decided to be implemented and is pending acceptance from the assigned person for implementing the measure within the suggested due date.",
+        "id": "2"
+      },
+      {
+        "name": "To be implemented (declined)",
+        "description": "This measure has been decided to be implemented. However, the person assigned to the measure has declined.\n \nReconsider if the measure should be implemented or not.\r\n \r\nIf the measure is decided to be implemented, an e-mail will be sent automatically to the person responsible.",
+        "id": "3"
+      },
+      {
+        "name": "In progress (not started)",
+        "description": "This measure has been decided to be implemented, and the person assigned to the measure has accepted. However, the implementation of the measure has not yet started.",
+        "id": "4"
+      },
+      {
+        "name": "Completed (100%) (for approval)",
+        "description": "The implementation of this measure is completed, and is awaiting for approval.",
+        "id": "10"
+      },
+      {
+        "name": "In progress (25%)",
+        "description": "The implementation of this measure is in progress.",
+        "id": "7"
+      },
+      {
+        "name": "In progress (50%)",
+        "description": "The implementation of this measure is in progress.",
+        "id": "8"
+      },
+      {
+        "name": "Completed (100%) (approved)",
+        "description": "The implementation of this measure is completed and approved (closed).",
+        "id": "12"
+      }
+    ],
+    "mobilequery": [
+      {
+        "name": "My open actions",
+        "description": "",
+        "id": "1"
+      }
+    ],
+    "momstatus": [
+      {
+        "name": "Closed",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Draft",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Open",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "meetingfrequency": [
+      {
+        "name": "One-off",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "Recurring",
+        "description": "",
+        "id": "1"
+      }
+    ],
+    "measurepriority": [
+      {
+        "name": "High",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Low",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Medium",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "creation": [
+      {
+        "name": "3. Last 7 days",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "1. Today",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "2. Yesterday",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "7. In 30 days",
+        "description": "",
+        "id": "7"
+      },
+      {
+        "name": "4. Last 30 days",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "5. Last 365 days",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "8. In 365 days",
+        "description": "",
+        "id": "8"
+      },
+      {
+        "name": "6. In 7 days",
+        "description": "",
+        "id": "6"
+      }
+    ],
+    "project": [
+      {
+        "name": "Admin",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "Communication",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "External/Partner",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "HR",
+        "description": "",
+        "id": "6"
+      },
+      {
+        "name": "IT",
+        "description": "",
+        "id": "7"
+      },
+      {
+        "name": "Management",
+        "description": "",
+        "id": "8"
+      },
+      {
+        "name": "Production",
+        "description": "",
+        "id": "9"
+      },
+      {
+        "name": "R&D",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "Sale",
+        "description": "",
+        "id": "10"
+      }
+    ],
+    "calendarshortcut": [
+      {
+        "name": "In 6 months",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "Next month",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "Next week",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Today",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Tomorrow",
+        "description": "",
+        "id": "2"
+      }
+    ]
+  }
+}

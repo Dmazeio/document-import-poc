@@ -1,0 +1,664 @@
+{
+  "name": "Audit",
+  "types": {
+    "audit": {
+      "objectname": "audit",
+      "description": "",
+      "isroot": true,
+      "fields": [
+        {
+          "fieldname": "auditbasicandreferencedocumentation",
+          "type": "text",
+          "description": "",
+          "label": "",
+          "required": false
+        },
+        {
+          "fieldname": "description",
+          "type": "text",
+          "description": "",
+          "label": "",
+          "required": true
+        },
+        {
+          "fieldname": "enddate",
+          "type": "date",
+          "description": "",
+          "label": "",
+          "required": false
+        },
+        {
+          "fieldname": "e_collaborationusers_ids",
+          "type": "multivalue",
+          "description": "🎯 Purpose:\nManage external users granted access only to specific objects.\n\n👥 Roles:\nAdd or remove partners, suppliers, or consultants collaborating on audits.\n\n💡 Why this matters:\nSecure, limited access ensures confidentiality and controlled collaboration.\n\n🚩 Tips:\nUsers must be invited and belong to the Collaboration Users group.\n\n*Note:* Access controls and licensing managed by your administrator.",
+          "label": "Collaboration users",
+          "required": false,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "objective",
+          "type": "text",
+          "description": "",
+          "label": "",
+          "required": true
+        },
+        {
+          "fieldname": "scope",
+          "type": "text",
+          "description": "",
+          "label": "",
+          "required": true
+        },
+        {
+          "fieldname": "startdate",
+          "type": "date",
+          "description": "",
+          "label": "",
+          "required": false
+        },
+        {
+          "fieldname": "title",
+          "type": "text",
+          "description": "",
+          "label": "",
+          "required": true
+        },
+        {
+          "fieldname": "e_auditdocument_ids",
+          "type": "multivalue",
+          "description": "",
+          "label": "",
+          "required": false,
+          "entitytype": "auditdocument"
+        },
+        {
+          "fieldname": "e_audittype_ids",
+          "type": "singlevalue",
+          "description": "",
+          "label": "",
+          "required": false,
+          "entitytype": "audittype"
+        },
+        {
+          "fieldname": "e_auditverifyer_ids",
+          "type": "singlevalue",
+          "description": "",
+          "label": "",
+          "required": true,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "e_confidentialusers_ids",
+          "type": "multivalue",
+          "description": "",
+          "label": "",
+          "required": false,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "e_contactperson_ids",
+          "type": "singlevalue",
+          "description": "",
+          "label": "",
+          "required": false,
+          "entitytype": "person"
+        },
+        {
+          "fieldname": "e_documentreferenceuri_ids",
+          "type": "multivalue",
+          "description": "",
+          "label": "",
+          "required": false,
+          "entitytype": "documentreferenceuri"
+        },
+        {
+          "fieldname": "e_personsinterviewed_ids",
+          "type": "multivalue",
+          "description": "",
+          "label": "",
+          "required": false,
+          "entitytype": "person"
+        },
+        {
+          "fieldname": "e_projectowner_ids",
+          "type": "singlevalue",
+          "description": "",
+          "label": "",
+          "required": true,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "e_requestedby_ids",
+          "type": "singlevalue",
+          "description": "",
+          "label": "",
+          "required": false,
+          "entitytype": "person"
+        },
+        {
+          "fieldname": "e_responsible_unit_ids",
+          "type": "singlevalue",
+          "description": "",
+          "label": "",
+          "required": false,
+          "entitytype": "unit"
+        },
+        {
+          "fieldname": "e_status_ids",
+          "type": "singlevalue",
+          "description": "",
+          "label": "",
+          "required": true,
+          "entitytype": "auditstatus"
+        },
+        {
+          "fieldname": "a_findings_ids",
+          "type": "multivalue",
+          "description": "",
+          "label": "",
+          "required": false,
+          "entitytype": "finding"
+        }
+      ]
+    },
+    "measure": {
+      "objectname": "measure",
+      "description": "",
+      "isroot": false,
+      "fields": [
+        {
+          "fieldname": "deadline",
+          "type": "date",
+          "description": "This field defines the exact date by which the measure must be completed. This value is mandatory and must be set before the measure can enter the implementation workflow. Relative time frames (e.g. 'within 30 days') are not supported – only calendar dates are allowed.\n\n&nbsp;\n\n🎯 Purpose\n\nTo establish a clear and fixed target date for completing the measure.\n\n&nbsp;\n\n👥 Roles\n\n- Measure Creator or Initiator: Sets the deadline during measure creation.\n- Responsible Person: Plans work to meet the defined date.\n\n&nbsp;\n\n💡 Why this matters\n\nDeadlines help ensure timely action, support progress tracking, and define accountability. They are also required to trigger the next workflow steps.\n\n&nbsp;\n\n🚩 Tips\n\n- The deadline must be filled in before the measure can be moved to implementation.\n- Use a realistic date that reflects the complexity, dependencies, and resource availability.\n- Communicate changes to deadlines clearly if adjustments are needed.\n- Monitor upcoming deadlines using reports, dashboards, or filters.\n\n&nbsp;\n\n📌 Examples\n\n- “2025-09-01”\n- “2025-12-15”\n\n&nbsp;\n\n⚠️ Note: Only absolute calendar dates are allowed (format: YYYY-MM-DD). Relative expressions like 'in two weeks' are not supported.",
+          "label": "Due date",
+          "required": true
+        },
+        {
+          "fieldname": "description",
+          "type": "text",
+          "description": "This field captures a detailed explanation of the measure – what it aims to achieve, how it will be implemented, and what outcome is expected. A well-written description ensures clarity for everyone involved and helps support follow-up, evaluation, and accountability.\n\n&nbsp;\n\n🎯 Purpose\n\nTo document the full scope, intent, and expected results of the measure.\n\n&nbsp;\n\n👥 Roles\n\n- Measure Creator or Owner: Provides a clear and complete description.\n- Responsible Person: Uses the description as guidance for implementation.\n- Reviewers: Refer to the description when evaluating completion and effectiveness.\n\n&nbsp;\n\n💡 Why this matters\n\nA clear and specific description reduces misunderstandings and ensures that all parties share the same understanding of what needs to be done.\n\n&nbsp;\n\n🚩 Tips\n\n- Focus on what will be done, by whom, and to what effect.\n- Include relevant procedures, standards, or references where appropriate.\n- Avoid vague statements like “Improve process” – be action-oriented and measurable.\n- Break large or complex actions into smaller steps or milestones if needed.\n\n&nbsp;\n\n📌 Examples\n\n- “Conduct cybersecurity training for all staff and document attendance by Q3.”\n- “Replace all fluorescent fixtures with LED lighting in building A and B.”\n- “Review and update data retention policy to align with regulatory changes.”\n\n&nbsp;\n\n⚠️ Note: This field can be updated throughout the lifecycle of the measure if details evolve or clarification is needed.",
+          "label": "Description",
+          "required": false
+        },
+        {
+          "fieldname": "title",
+          "type": "text",
+          "description": "This field displays the title of the parent item to which this measure belongs. The link is automatically set based on where the measure was created and cannot be changed. It provides quick access back to the originating item, helping users understand the context in which the measure was established.\n\n&nbsp;\n\n🎯 Purpose\n\nTo show the source item this measure is associated with and allow easy navigation to it.\n\n&nbsp;\n\n👥 Roles\n\n- All users: Use the link to view the full context and rationale behind the measure.\n\n&nbsp;\n\n💡 Why this matters\n\nMeasures are always created as part of a specific record (e.g., an observation, risk, or incident). This link confirms where the measure originated and enables traceability.\n\n&nbsp;\n\n🚩 Tips\n\n- Click the link to go directly to the parent record.\n- Use the information in the parent to better understand the need for the measure.\n- Note that this connection is fixed and cannot be edited.\n\n&nbsp;\n\n📌 Examples\n\n- “Observation: Missing emergency lighting in corridor”\n- “Event #103: Data breach affecting payroll system”\n\n&nbsp;\n\n⚠️ Note: This field is system-controlled and reflects where the measure was created. It cannot be changed by users.",
+          "label": "Finding",
+          "required": true
+        },
+        {
+          "fieldname": "e_documentreferenceuri_ids",
+          "type": "multivalue",
+          "description": "",
+          "label": "Links",
+          "required": false,
+          "entitytype": "documentreferenceuri"
+        },
+        {
+          "fieldname": "e_measurepriority_ids",
+          "type": "singlevalue",
+          "description": "This field defines the priority level of the measure, indicating how urgent or important it is to act. Use this to help stakeholders and responsible users understand which measures should be addressed first.\n\n&nbsp;\n\n🎯 Purpose\n\nTo classify the urgency of the measure and support prioritised planning and resource allocation.\n\n&nbsp;\n\n💡 Why this matters\n\nClear prioritisation helps focus attention on the most critical actions and prevents important measures from being delayed.\n\n&nbsp;\n\n🚩 Tips\n\n- Use 'High' for time-sensitive or high-risk measures that require immediate attention.\n- Use 'Medium' for measures that are important but not urgent.\n- Use 'Low' for improvements or actions that can be scheduled later.\n- Review priority levels regularly and adjust if necessary.\n\n&nbsp;\n\n📊 Available options\n\n| Priority | Description                          |\n|----------|--------------------------------------|\n| High     | Immediate attention required         |\n| Medium   | Important, but not time-critical     |\n| Low      | Can be addressed when resources allow |\n\n&nbsp;\n\n⚠️ Note: These values may be customised by your organisation’s administrator.",
+          "label": "Priority",
+          "required": false,
+          "entitytype": "measurepriority"
+        },
+        {
+          "fieldname": "e_responsible_ids",
+          "type": "singlevalue",
+          "description": "This field is used to assign the person responsible for implementing the measure. The dropdown menu shows active Dmaze users by their full name (first and last). Assigning a responsible person is required before the measure can be set to implementation.\n\n&nbsp;\n\n🎯 Purpose\n\nTo ensure clear accountability for executing and reporting on the measure.\n\n&nbsp;\n\n👥 Roles\n\n- Measure Creator or Initiator: Selects the responsible person from the list.\n- Responsible User: Accepts or declines the task and updates progress.\n\n&nbsp;\n\n💡 Why this matters\n\nAssigning responsibility ensures that the measure is actively followed up. It also enables system-generated email notifications, improving communication and accountability.\n\n&nbsp;\n\n🚩 Tips\n\n- Choose someone with the right skills, role, and authority to carry out the measure.\n- A valid email address is required to receive notifications – a warning icon will appear if the selected user is missing this.\n- The responsible person will receive an email when the measure is moved to implementation status, asking them to accept or decline the task.\n\n&nbsp;\n\n📌 Examples\n\n- “Elena Rossi (IT Security Manager)”\n- “Jens Madsen (Facilities Team)”\n\n&nbsp;\n\n⚠️ Note: Only active users registered in Dmaze can be assigned. Email notifications require a valid address on the user profile.",
+          "label": "Responsible",
+          "required": true,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "e_status_ids",
+          "type": "singlevalue",
+          "description": "This field shows the current status of the measure (task or action), reflecting its progress from creation to closure. The status updates automatically based on user decisions and system events, and determines when a measure is considered closed. Email notifications are triggered at key decision points to keep responsible parties informed.\n\n&nbsp;\n\n🎯 Purpose\n\nTo track and manage the lifecycle of a measure, ensure all stakeholders are aligned, and maintain control over implementation, acceptance, and completion.\n\n&nbsp;\n\n👥 Roles\n\n**Initiator** (e.g. process owner, risk owner, team lead):  \n- Creates the measure and chooses between implementing, acknowledging it already exists, or cancelling it.  \n- Assigns a responsible person and sets a due date if implementation is selected.  \n- Approves, cancels, or rejects the completed measure.\n\n**Measure Responsible**:  \n- Accepts, declines, cancels, or closes the measure as “Existing” or “Do not implement”.  \n- Updates progress status during implementation.  \n- Marks the measure as complete for approval.\n\n&nbsp;\n\n💡 Why this matters\n\nA well-defined status lifecycle ensures consistent handling of all measures, enables transparency, automates follow-up through email notifications, and defines clear closure criteria. It supports accountability across different roles.\n\n&nbsp;\n\n🚩 Tips\n\n- Make sure 'Responsible' and 'Due Date' are filled in before starting implementation.  \n- Use “Exists” only when the action is already implemented and verifiable.  \n- Measures are considered **closed** when status is: **Existing**, **Cancelled**, or **Completed (100%) (approved)**.  \n- Emails are automatically sent when a measure is assigned, declined, completed, cancelled, or approved.  \n- If a measure is rejected after completion, the responsible person must continue working until it can be approved.\n\n&nbsp;\n\n📌 Examples\n\n- A user creates a measure and selects “Do not implement”. The status becomes **Cancelled**, and the measure is closed.  \n- A responsible user accepts a measure, completes it, and the initiator approves it. The status becomes **Completed (100%) (approved)**, and the process is complete.\n\n💬 **Want to see the actual lifecycle for this measure?**  \nClick the **Change log** button in the top-right corner above this field to view the full step-by-step history, including who made each change and when.\n\n&nbsp;\n\n📊 Status Lifecycle Overview\n\n1. **Measure is created** → `Identified (pending decision)` *(System)*  \n2. **Initiator clicks**:\n   - *Implement* → Requires Responsible + Due date → `To be implemented (pending accept)` *(email sent to Responsible)*  \n   - *Exists* → `Existing` *(Closed)*  \n   - *Do not implement* → `Cancelled` *(Closed)*\n3. **Responsible user chooses**:\n   - *Decline* → `To be implemented (declined)` *(email sent to Initiator)*  \n   - *Accept* → `In progress (not started)` → Access to:\n     - `In progress (25%)`, `In progress (50%)`, `In progress (75%)`\n     - `Completed (100%) (for approval)` *(email sent to Initiator)*  \n     - *Cancel* → `In progress (cancelled)` *(email sent to Initiator)*  \n   - *Exists* → `Existing` *(Closed)*  \n   - *Do not implement* → `Cancelled` *(Closed)*\n4. **Initiator chooses**:\n   - *Approve* → `Completed (100%) (approved)` *(Closed)*  \n   - *Reject* → `Completed (100%) (not approved)` *(measure reopens)*  \n   - *Cancel* → `In progress (cancelled)` *(Closed)*\n\n&nbsp;\n\n✅ When is a measure considered closed?\n\n- `Existing`  \n- `Cancelled`  \n- `Completed (100%) (approved)`\n\n&nbsp;\n\n⚠️ Note: The list of selectable status options and transitions may be customised by your organisation’s administrator to reflect internal processes and governance.",
+          "label": "Status",
+          "required": true,
+          "entitytype": "measurestate"
+        }
+      ]
+    },
+    "finding": {
+      "objectname": "finding",
+      "description": "",
+      "isroot": false,
+      "fields": [
+        {
+          "fieldname": "description",
+          "type": "text",
+          "description": "🎯 Purpose:\nDetail the finding, including observations, evidence, and significance.\n\n👥 Roles:\nGuides understanding and remediation.\n\n💡 Why this matters:\nEnsures clarity and supports effective action.\n\n🚩 Tips:\nBe objective; reference policies or standards.\n\n📌 Example:\n\"The system allows administrative access without MFA, violating policy 4.2.\"\n\n*Note:* Content standards may be adapted by your administrator.",
+          "label": "Description",
+          "required": false
+        },
+        {
+          "fieldname": "identifieddate",
+          "type": "date",
+          "description": "🎯 Purpose:\nRecord when the finding was identified or logged.\n\n👥 Roles:\nUsed for timeline tracking and reporting.\n\n💡 Why this matters:\nSupports audit responsiveness and management.\n\n🚩 Tips:\nUse the audit observation or report date.\n\n*Note:* Date usage may vary by system settings.",
+          "label": "Identified date",
+          "required": false
+        },
+        {
+          "fieldname": "targetcompletedate",
+          "type": "date",
+          "description": "🎯 Purpose:\nSet the target date for resolving the finding.\n\n👥 Roles:\nCommunicates deadlines to responsible parties.\n\n💡 Why this matters:\nEncourages timely remediation.\n\n🚩 Tips:\nReflect risk and resource availability when setting dates.\n\n*Note:* Deadline policies may be configured by your administrator.",
+          "label": "Target date",
+          "required": false
+        },
+        {
+          "fieldname": "title",
+          "type": "text",
+          "description": "🎯 Purpose:\nProvide a concise and clear title summarizing the audit finding.\n\n👥 Roles:\nUsed for referencing and tracking issues.\n\n💡 Why this matters:\nFacilitates clear communication and prioritization.\n\n🚩 Tips:\nInclude affected system or process.\n\n📌 Examples:\n- \"Access logs not retained beyond 30 days\"\n- \"Unapproved third-party data transfer\"\n\n*Note:* Titles may be tailored by your administrator.",
+          "label": "Finding",
+          "required": true
+        },
+        {
+          "fieldname": "e_finding_owner_ids",
+          "type": "singlevalue",
+          "description": "🎯 Purpose:\nAssign accountability for managing the finding’s resolution.\n\n👥 Roles:\nCoordinates response and confirms closure.\n\n💡 Why this matters:\nClarifies ownership and drives completion.\n\n🚩 Tips:\nNot necessarily the task executor.\n\n*Note:* Ownership assignments may be defined by your administrator.",
+          "label": "Responsible",
+          "required": true,
+          "entitytype": "user"
+        },
+        {
+          "fieldname": "e_phase_ids",
+          "type": "singlevalue",
+          "description": "🎯 Purpose:\nIdentify the process phase related to the finding.\n\n👥 Roles:\nHelps analyze patterns across audits.\n\n💡 Why this matters:\nSupports root cause analysis and improvements.\n\n🚩 Tips:\nCommon phases include Planning, Execution, Monitoring, Closure.\n\n*Note:* Phase definitions may be managed by your administrator.",
+          "label": "Structure",
+          "required": false,
+          "entitytype": "auditphase"
+        },
+        {
+          "fieldname": "e_responsibleunit_ids",
+          "type": "singlevalue",
+          "description": "🎯 Purpose:\nAssign the team responsible for resolving the finding.\n\n👥 Roles:\nEnsures operational control over remediation.\n\n💡 Why this matters:\nImproves coordination and accountability.\n\n🚩 Tips:\nCoordinate with measure owners.\n\n*Note:* Unit options may be customized by your administrator.",
+          "label": "Responsible unit",
+          "required": false,
+          "entitytype": "unit"
+        },
+        {
+          "fieldname": "e_rulesandregulations_ids",
+          "type": "singlevalue",
+          "description": "🎯 Purpose:\nReference laws, standards, or policies related to the finding.\n\n👥 Roles:\nSupports audit validity and compliance.\n\n💡 Why this matters:\nProvides legal and procedural context.\n\n🚩 Tips:\nInclude relevant articles and clauses.\n\n*Note:* Referenced regulations may be updated by your administrator.",
+          "label": "Rules & regulations",
+          "required": false,
+          "entitytype": "rulesandregulations"
+        },
+        {
+          "fieldname": "e_status_ids",
+          "type": "singlevalue",
+          "description": "🎯 Purpose:\nTrack the current status of the finding.\n\n👥 Roles:\nSupports monitoring and reporting.\n\n💡 Why this matters:\nFacilitates timely action.\n\n🚩 Tips:\nUpdate statuses regularly.\n\n| Status     | Meaning                              |\n|------------|------------------------------------|\n| Open       | Newly registered finding            |\n| In progress| Measures underway                   |\n| Closed     | Issue resolved and verified        |\n| Accepted   | Risk accepted, no further action   |\n\n*Note:* Status options may be customized by your administrator.",
+          "label": "Status",
+          "required": true,
+          "entitytype": "findingstatus"
+        },
+        {
+          "fieldname": "e_typeoffinding_ids",
+          "type": "singlevalue",
+          "description": "🎯 Purpose:\nCategorize the nature of the audit finding to support analysis and prioritization.\n\n👥 Roles:\nGuides audit teams in classifying findings consistently.\n\n💡 Why this matters:\nConsistent categories aid reporting, root cause analysis, and trend identification.\n\n🚩 Tips:\nTypical categories include Non-conformity, Observation, Opportunity for Improvement, and Noteworthy Effort.\n\n*Note:* Categories may be customized by your administrator.",
+          "label": "Type of finding",
+          "required": false,
+          "entitytype": "typeoffinding"
+        },
+        {
+          "fieldname": "e_typeofrequirement_ids",
+          "type": "multivalue",
+          "description": "🎯 Purpose:\nDefine the requirement type related to the finding for grouping and analysis.\n\n👥 Roles:\nSupports auditors and management in understanding compliance contexts.\n\n💡 Why this matters:\nCategorization helps identify systemic issues and compliance gaps.\n\n🚩 Tips:\nCommon types include Internal, Regulatory, Contractual, Customer, and Management System.\n\n*Note:* Requirement types may be configured by your administrator.",
+          "label": "Type of requirement",
+          "required": false,
+          "entitytype": "typeofrequirement"
+        },
+        {
+          "fieldname": "a_measures_ids",
+          "type": "multivalue",
+          "description": "🎯 Purpose:\nList actions addressing the finding.\n\n👥 Roles:\nTracks corrective efforts.\n\n💡 Why this matters:\nEnsures timely resolution.\n\n🚩 Tips:\nLink actionable, relevant measures.\n\n*Note:* Tracking methods may be customized by your administrator.",
+          "label": "Actions",
+          "required": false,
+          "entitytype": "measure"
+        }
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "parent": "audit",
+      "child": "finding",
+      "childfieldname": "a_findings_ids",
+      "description": ""
+    },
+    {
+      "parent": "finding",
+      "child": "measure",
+      "childfieldname": "a_measures_ids",
+      "description": "🎯 Purpose:\nList actions addressing the finding.\n\n👥 Roles:\nTracks corrective efforts.\n\n💡 Why this matters:\nEnsures timely resolution.\n\n🚩 Tips:\nLink actionable, relevant measures.\n\n*Note:* Tracking methods may be customized by your administrator."
+    }
+  ],
+  "entities": {
+    "expiration": [
+      {
+        "name": "Expired",
+        "description": "",
+        "id": "9"
+      },
+      {
+        "name": "Expired previous 180 days",
+        "description": "",
+        "id": "7"
+      },
+      {
+        "name": "Expired previous 30 days ",
+        "description": "",
+        "id": "6"
+      },
+      {
+        "name": "Expired previous 365 days",
+        "description": "",
+        "id": "8"
+      },
+      {
+        "name": "Expired previous 7 days",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "Expires in 180 days",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Expires in 30 days",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "Expires in 365 days",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "Expires in 7 days",
+        "description": "",
+        "id": "1"
+      }
+    ],
+    "findingstatus": [
+      {
+        "name": "Closed",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Draft",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Open",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "measurestate": [
+      {
+        "name": "In progress (75%)",
+        "description": "The implementation of this measure is in progress.",
+        "id": "9"
+      },
+      {
+        "name": "Cancelled",
+        "description": "This measure has been decided not to be implemented (closed).",
+        "id": "6"
+      },
+      {
+        "name": "Completed (100%) (not approved)",
+        "description": "The implementation of this measure is completed, but has not been approved.",
+        "id": "13"
+      },
+      {
+        "name": "Identified (pending decision)",
+        "description": "This is a new measure that has been identified and suggested for implementation.\r\n \r\nIf the measure is decided to be implemented, an e-mail will be sent automatically to the person responsible.",
+        "id": "1"
+      },
+      {
+        "name": "Existing",
+        "description": "This measure is already existing and has been closed.",
+        "id": "5"
+      },
+      {
+        "name": "In progress (cancelled)",
+        "description": "This measure has been decided to be implemented. However, the person assigned to the measure has cancelled.\n \nReconsider if the measure should be implemented or not.\r\n \r\nIf the measure is decided to be implemented, an e-mail will be sent automatically to the person responsible.",
+        "id": "11"
+      },
+      {
+        "name": "To be implemented (pending accept)",
+        "description": "This measure has been decided to be implemented and is pending acceptance from the assigned person for implementing the measure within the suggested due date.",
+        "id": "2"
+      },
+      {
+        "name": "To be implemented (declined)",
+        "description": "This measure has been decided to be implemented. However, the person assigned to the measure has declined.\n \nReconsider if the measure should be implemented or not.\r\n \r\nIf the measure is decided to be implemented, an e-mail will be sent automatically to the person responsible.",
+        "id": "3"
+      },
+      {
+        "name": "In progress (not started)",
+        "description": "This measure has been decided to be implemented, and the person assigned to the measure has accepted. However, the implementation of the measure has not yet started.",
+        "id": "4"
+      },
+      {
+        "name": "Completed (100%) (for approval)",
+        "description": "The implementation of this measure is completed, and is awaiting for approval.",
+        "id": "10"
+      },
+      {
+        "name": "In progress (25%)",
+        "description": "The implementation of this measure is in progress.",
+        "id": "7"
+      },
+      {
+        "name": "In progress (50%)",
+        "description": "The implementation of this measure is in progress.",
+        "id": "8"
+      },
+      {
+        "name": "Completed (100%) (approved)",
+        "description": "The implementation of this measure is completed and approved (closed).",
+        "id": "12"
+      }
+    ],
+    "auditstatus": [
+      {
+        "name": "Closed",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Draft",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Open",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "mobilequery": [
+      {
+        "name": "My open actions",
+        "description": "",
+        "id": "1"
+      }
+    ],
+    "typeofrequirement": [
+      {
+        "name": "Contractual requirement",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Customer requirement",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "Management system requirement",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Regulatory requirement",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "Statutory requirement",
+        "description": "",
+        "id": "5"
+      }
+    ],
+    "audittype": [
+      {
+        "name": "3rd party audit",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "External audit",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "Internal audit",
+        "description": "",
+        "id": "1"
+      }
+    ],
+    "typeoffinding": [
+      {
+        "name": "Non-conformance",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "Noteworthy effort",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Observation",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "Opportunitiy for improvement",
+        "description": "",
+        "id": "3"
+      }
+    ],
+    "measurepriority": [
+      {
+        "name": "High",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Low",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Medium",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "findingcategory": [
+      {
+        "name": "Major",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Minor",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Moderate",
+        "description": "",
+        "id": "2"
+      }
+    ],
+    "creation": [
+      {
+        "name": "3. Last 7 days",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "1. Today",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "2. Yesterday",
+        "description": "",
+        "id": "2"
+      },
+      {
+        "name": "7. In 30 days",
+        "description": "",
+        "id": "7"
+      },
+      {
+        "name": "4. Last 30 days",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "5. Last 365 days",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "8. In 365 days",
+        "description": "",
+        "id": "8"
+      },
+      {
+        "name": "6. In 7 days",
+        "description": "",
+        "id": "6"
+      }
+    ],
+    "calendarshortcut": [
+      {
+        "name": "In 6 months",
+        "description": "",
+        "id": "5"
+      },
+      {
+        "name": "Next month",
+        "description": "",
+        "id": "4"
+      },
+      {
+        "name": "Next week",
+        "description": "",
+        "id": "3"
+      },
+      {
+        "name": "Today",
+        "description": "",
+        "id": "1"
+      },
+      {
+        "name": "Tomorrow",
+        "description": "",
+        "id": "2"
+      }
+    ]
+  }
+}
