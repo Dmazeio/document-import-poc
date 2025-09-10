@@ -9,153 +9,129 @@
         {
           "fieldname": "auditbasicandreferencedocumentation",
           "type": "text",
-          "description": "",
-          "label": "",
+          "description": "🎯 Purpose:\nList key documents forming the audit basis or referenced.\n\n👥 Roles:\nSupports understanding of audit framework.\n\n💡 Why this matters:\nStrengthens findings and audit validity.\n\n🚩 Tips:\nInclude laws, standards, policies, and previous audits.\n\n*Note:* Document lists may be adapted by your administrator.",
+          "label": "Audit basic & reference documentation",
           "required": false
         },
         {
           "fieldname": "description",
           "type": "text",
-          "description": "",
-          "label": "",
+          "description": "🎯 Purpose:\nSummarize the background and reason for conducting the audit.\n\n👥 Roles:\nProvides context to auditors, management, and stakeholders.\n\n💡 Why this matters:\nClear background information ensures transparency and supports stakeholder understanding.\n\n🚩 Tips:\nExplain the trigger, risk, or routine basis without detailing scope or objectives.\n\n📌 Examples:\n- \"Routine audit of system access management across departments.\"\n- \"Requested by DPO following changes to the marketing CRM vendor.\"\n\n*Note:* Content may be tailored by your system administrator.",
+          "label": "Description",
           "required": true
         },
         {
           "fieldname": "enddate",
           "type": "date",
-          "description": "",
-          "label": "",
+          "description": "🎯 Purpose:\nIndicate when the audit was completed or formally closed.\n\n👥 Roles:\nSupports reporting and closure tracking by auditors and management.\n\n💡 Why this matters:\nHelps assess audit cycle times and effectiveness.\n\n🚩 Tips:\nMay represent final report delivery or completion of fieldwork.\n\n*Note:* Date handling may vary depending on system settings.",
+          "label": "End date",
           "required": false
-        },
-        {
-          "fieldname": "e_collaborationusers_ids",
-          "type": "multivalue",
-          "description": "🎯 Purpose:\nManage external users granted access only to specific objects.\n\n👥 Roles:\nAdd or remove partners, suppliers, or consultants collaborating on audits.\n\n💡 Why this matters:\nSecure, limited access ensures confidentiality and controlled collaboration.\n\n🚩 Tips:\nUsers must be invited and belong to the Collaboration Users group.\n\n*Note:* Access controls and licensing managed by your administrator.",
-          "label": "Collaboration users",
-          "required": false,
-          "entitytype": "user"
         },
         {
           "fieldname": "objective",
           "type": "text",
-          "description": "",
-          "label": "",
+          "description": "🎯 Purpose:\nDefine what the audit aims to evaluate or verify.\n\n👥 Roles:\nGuides auditors and informs stakeholders about audit goals.\n\n💡 Why this matters:\nClear objectives focus audit efforts and define success criteria.\n\n🚩 Tips:\nLink objectives to risks, policies, or standards.\n\n📌 Examples:\n- \"Confirm GDPR compliance in onboarding external consultants.\"\n- \"Verify documentation of data retention policies in finance systems.\"\n\n*Note:* Objectives can be adapted by your administrator.",
+          "label": "Objective",
           "required": true
         },
         {
           "fieldname": "scope",
           "type": "text",
-          "description": "",
-          "label": "",
+          "description": "🎯 Purpose:\nClearly define the boundaries of the audit, including inclusions and exclusions.\n\n👥 Roles:\nHelps auditors, auditees, and management understand the audit limits.\n\n💡 Why this matters:\nA well-defined scope improves audit efficiency and accountability.\n\n🚩 Tips:\nSpecify time periods, systems, units covered, and any exclusions.\n\n📌 Examples:\n- \"Scope limited to supplier risk evaluations during 2024.\"\n- \"Does not include operational security testing or penetration tests.\"\n\n*Note:* Scope definitions may be customized by your administrator.",
+          "label": "Scope",
           "required": true
         },
         {
           "fieldname": "startdate",
           "type": "date",
-          "description": "",
-          "label": "",
+          "description": "🎯 Purpose:\nRecord the official start date of the audit process.\n\n👥 Roles:\nUsed by audit teams and managers for scheduling and tracking.\n\n💡 Why this matters:\nEnables timeline analysis and helps measure audit duration.\n\n🚩 Tips:\nTypically marks the beginning of planning or fieldwork.\n\n*Note:* Date formats and validation may be configured by your administrator.",
+          "label": "Start date",
           "required": false
         },
         {
           "fieldname": "title",
           "type": "text",
-          "description": "",
-          "label": "",
+          "description": "🎯 Purpose:\nProvide a clear and descriptive title for the audit that accurately reflects what is being examined.\n\n👥 Roles:\nUsed by auditors, managers, and stakeholders to identify and reference the audit.\n\n💡 Why this matters:\nA specific and informative title aids in searchability and reporting.\n\n🚩 Tips:\nInclude the system, process, or unit name, and optionally timeframe or location.\n\n📌 Examples:\n- \"Audit – Vendor Risk Management (Q1 2025)\"\n- \"Internal Audit – Data Retention Procedures in HR\"\n\n*Note:* Title options may be customized by your system administrator.",
+          "label": "Title",
           "required": true
         },
         {
           "fieldname": "e_auditdocument_ids",
           "type": "multivalue",
-          "description": "",
-          "label": "",
+          "description": "🎯 Purpose:\nLink or upload the finalized audit report.\n\n👥 Roles:\nShared with stakeholders and decision-makers.\n\n💡 Why this matters:\nDocuments audit results and supports accountability.\n\n🚩 Tips:\nEnsure the report is reviewed, approved, and version-controlled.\n\n*Note:* Document handling may be customized by your administrator.",
+          "label": "Documents reviewed",
           "required": false,
           "entitytype": "auditdocument"
         },
         {
           "fieldname": "e_audittype_ids",
           "type": "singlevalue",
-          "description": "",
-          "label": "",
+          "description": "🎯 Purpose:\nSpecify the type of audit being conducted to support classification and reporting.\n\n👥 Roles:\nHelps auditors and managers understand audit context and requirements.\n\n💡 Why this matters:\nAudit types influence documentation, workflows, and approval processes.\n\n🚩 Tips:\nCommon types include Internal, External, and Self-assessment.\n\n*Note:* Audit types can be configured by your system administrator.",
+          "label": "Audit type",
           "required": false,
           "entitytype": "audittype"
         },
         {
           "fieldname": "e_auditverifyer_ids",
           "type": "singlevalue",
-          "description": "",
-          "label": "",
+          "description": "🎯 Purpose:\nSpecify who verifies and approves the audit conclusions and report.\n\n👥 Roles:\nOften a compliance officer or audit supervisor.\n\n💡 Why this matters:\nEnsures quality control and formal closure of the audit.\n\n🚩 Tips:\nRequired in regulated environments for compliance.\n\n*Note:* Verifier roles may be customized by your administrator.",
+          "label": "Audit verifyer",
           "required": true,
-          "entitytype": "user"
-        },
-        {
-          "fieldname": "e_confidentialusers_ids",
-          "type": "multivalue",
-          "description": "",
-          "label": "",
-          "required": false,
           "entitytype": "user"
         },
         {
           "fieldname": "e_contactperson_ids",
           "type": "singlevalue",
-          "description": "",
-          "label": "",
+          "description": "Contact person for the audit",
+          "label": "Contact person",
           "required": false,
           "entitytype": "person"
         },
         {
-          "fieldname": "e_documentreferenceuri_ids",
-          "type": "multivalue",
-          "description": "",
-          "label": "",
-          "required": false,
-          "entitytype": "documentreferenceuri"
-        },
-        {
           "fieldname": "e_personsinterviewed_ids",
           "type": "multivalue",
-          "description": "",
-          "label": "",
+          "description": "🎯 Purpose:\nList individuals interviewed or consulted during the audit.\n\n👥 Roles:\nSupports traceability and evidentiary requirements.\n\n💡 Why this matters:\nHelps document input sources and accountability.\n\n🚩 Tips:\nInclude names, roles, departments, and interview purposes if possible.\n\n*Note:* Privacy considerations may influence what is recorded.",
+          "label": "Persons interviewed",
           "required": false,
           "entitytype": "person"
         },
         {
           "fieldname": "e_projectowner_ids",
           "type": "singlevalue",
-          "description": "",
-          "label": "",
+          "description": "🎯 Purpose:\nIdentify the manager accountable for the audited process or unit.\n\n👥 Roles:\nSupports audit access and oversees implementation of corrective actions.\n\n💡 Why this matters:\nEnsures accountability and smooth audit cooperation.\n\n🚩 Tips:\nThe project owner is distinct from the auditor.\n\n*Note:* Ownership definitions may be adjusted by your administrator.",
+          "label": "Audit responsible",
           "required": true,
           "entitytype": "user"
         },
         {
           "fieldname": "e_requestedby_ids",
           "type": "singlevalue",
-          "description": "",
-          "label": "",
+          "description": "🎯 Purpose:\nDocument who requested or authorized the audit.\n\n👥 Roles:\nProvides traceability of audit initiation.\n\n💡 Why this matters:\nClarifies audit mandate and supports governance.\n\n🚩 Tips:\nCould be a person, role, or unit (e.g., DPO, Compliance Officer).\n\n*Note:* Requester options may be configured by your administrator.",
+          "label": "Requested by",
           "required": false,
           "entitytype": "person"
         },
         {
           "fieldname": "e_responsible_unit_ids",
           "type": "singlevalue",
-          "description": "",
-          "label": "",
+          "description": "This field is used to assign the single organizational unit that will be responsible for the record and any related follow-up activities. The unit is selected from a predefined hierarchical list in Dmaze, reflecting your organization’s structure. By default, this hierarchy mirrors your official unit setup, with top-level departments and any sub-units nested underneath.\n\n&nbsp;\n\n🎯 Purpose\n\nTo clearly define which part of the organization owns the record and is accountable for its implementation, monitoring, or resolution. Only one unit can be selected per record to maintain clear accountability.\n\n&nbsp;\n\n👥 Roles\n\n- Initiator or Owner: Selects the unit based on responsibility and scope.\n- Responsible Unit: Oversees required actions, ensures follow-up, and provides reporting.\n\n&nbsp;\n\n💡 Why this matters\n\nAssigning the correct unit ensures governance clarity, improves reporting accuracy, and aligns follow-up responsibilities with the right part of the organization.\n\n&nbsp;\n\n🚩 Tips\n\n- You can only select one unit for each record.\n- Select the unit with primary responsibility for the record.\n- Navigate the hierarchy to choose the most specific applicable unit.\n- The available units and hierarchy are managed by your Dmaze administrator.\n- Start typing at least two characters in the search box to filter and display all matching units, making it faster to find units in large hierarchies.\n\n&nbsp;\n\n📌 Examples\n\n- Finance Department\n- Operations Division\n- Compliance and Risk Management Unit",
+          "label": "Unit audited",
           "required": false,
           "entitytype": "unit"
         },
         {
           "fieldname": "e_status_ids",
           "type": "singlevalue",
-          "description": "",
-          "label": "",
+          "description": "🎯 Purpose:\nTrack the current status of the audit to provide visibility on progress.\n\n👥 Roles:\nUsed by audit teams, managers, and stakeholders for oversight.\n\n💡 Why this matters:\nAccurate status updates improve planning and resource allocation.\n\n🚩 Tips:\nCommon statuses include Planned, Ongoing, Completed, and Closed.\n\n| Status    | Meaning                                   |\n|-----------|-------------------------------------------|\n| Planned   | Scheduled, not yet started                 |\n| Ongoing   | Fieldwork or assessment in progress       |\n| Completed | Fieldwork done, report created             |\n| Closed    | Measures followed up and verified          |\n\n*Note:* Status values may be customized by your administrator.",
+          "label": "Status",
           "required": true,
           "entitytype": "auditstatus"
         },
         {
           "fieldname": "a_findings_ids",
           "type": "multivalue",
-          "description": "",
-          "label": "",
+          "description": "🎯 Purpose:\nExplain how findings were identified during the audit.\n\n👥 Roles:\nInforms stakeholders about evidence collection methods.\n\n💡 Why this matters:\nPromotes transparency and supports credibility of findings.\n\n🚩 Tips:\nInclude interviews, document reviews, sampling, and referenced standards.\n\n*Note:* Method descriptions may be adapted by your administrator.",
+          "label": "Findings",
           "required": false,
           "entitytype": "finding"
         }
@@ -186,14 +162,6 @@
           "description": "This field displays the title of the parent item to which this measure belongs. The link is automatically set based on where the measure was created and cannot be changed. It provides quick access back to the originating item, helping users understand the context in which the measure was established.\n\n&nbsp;\n\n🎯 Purpose\n\nTo show the source item this measure is associated with and allow easy navigation to it.\n\n&nbsp;\n\n👥 Roles\n\n- All users: Use the link to view the full context and rationale behind the measure.\n\n&nbsp;\n\n💡 Why this matters\n\nMeasures are always created as part of a specific record (e.g., an observation, risk, or incident). This link confirms where the measure originated and enables traceability.\n\n&nbsp;\n\n🚩 Tips\n\n- Click the link to go directly to the parent record.\n- Use the information in the parent to better understand the need for the measure.\n- Note that this connection is fixed and cannot be edited.\n\n&nbsp;\n\n📌 Examples\n\n- “Observation: Missing emergency lighting in corridor”\n- “Event #103: Data breach affecting payroll system”\n\n&nbsp;\n\n⚠️ Note: This field is system-controlled and reflects where the measure was created. It cannot be changed by users.",
           "label": "Finding",
           "required": true
-        },
-        {
-          "fieldname": "e_documentreferenceuri_ids",
-          "type": "multivalue",
-          "description": "",
-          "label": "Links",
-          "required": false,
-          "entitytype": "documentreferenceuri"
         },
         {
           "fieldname": "e_measurepriority_ids",
@@ -326,7 +294,7 @@
       "parent": "audit",
       "child": "finding",
       "childfieldname": "a_findings_ids",
-      "description": ""
+      "description": "🎯 Purpose:\nExplain how findings were identified during the audit.\n\n👥 Roles:\nInforms stakeholders about evidence collection methods.\n\n💡 Why this matters:\nPromotes transparency and supports credibility of findings.\n\n🚩 Tips:\nInclude interviews, document reviews, sampling, and referenced standards.\n\n*Note:* Method descriptions may be adapted by your administrator."
     },
     {
       "parent": "finding",

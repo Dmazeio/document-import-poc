@@ -217,22 +217,6 @@
           "entitytype": "activity"
         },
         {
-          "fieldname": "e_collaborationusers_ids",
-          "type": "multivalue",
-          "description": "This field lists users collaborating on the risk assessment or related activities.\n\n&nbsp;\n\n### 👥 What you do here\n* Add or remove collaborators contributing to assessment or treatment activities.\n* Manage user permissions and roles.\n\n&nbsp;\n\n### ⚠️ Important\nUsed to grant access only to selected users for this specific risk assessment, ensuring data confidentiality.\n\n&nbsp;\n\n### 💡 Why this matters\nFosters shared ownership and quality while maintaining controlled access.\n\n&nbsp;\n\n### 🚩 Tips\n* Include relevant internal and external stakeholders\n* Keep list updated\n* Communicate access restrictions clearly\n* Use to securely involve external experts without exposing other data.",
-          "label": "Collaboration users",
-          "required": false,
-          "entitytype": "user"
-        },
-        {
-          "fieldname": "e_confidentialusers_ids",
-          "type": "multivalue",
-          "description": "",
-          "label": "",
-          "required": false,
-          "entitytype": "user"
-        },
-        {
           "fieldname": "e_location_ids",
           "type": "singlevalue",
           "description": "This field is used to specify the physical location, site, facility, or region associated with the record and its related activities. By defining the location, you provide important context that helps others understand where the record applies and ensures that follow-up actions, responsibilities, and reporting are aligned with the correct place.\n\n&nbsp;\n\n🎯 Purpose\n\nTo clearly identify the geographical or operational context for the record, ensuring that all associated activities and assessments are relevant to the specific location.\n\n&nbsp;\n\n👥 Roles\n\n- Initiator or Owner: Selects or specifies the location when creating or updating the record.\n- Contributors and Reviewers: Adjust input, decisions, and follow-up actions based on the defined location.\n\n&nbsp;\n\n💡 Why this matters\n\nCorrect and specific location data improves reporting, helps identify location-based risks or requirements, and ensures that relevant stakeholders are involved.\n\n&nbsp;\n\n🚩 Tips\n\n- The list of available locations is organized in a hierarchy (e.g., Country → Region → Site).\n- Use consistent and recognizable naming conventions.\n- Be as specific as needed — include building names, site numbers, or regions if relevant.\n- If the list of available locations is predefined in Dmaze, start typing at least two characters to search and filter options quickly.\n- The list of locations is managed by your Dmaze administrator and may reflect your organization's official site registry.\n\n&nbsp;\n\n📌 Examples\n\n- Headquarters – Oslo\n- Manufacturing Plant – Bergen\n- Data Center – Stavanger\n- Regional Office – Stockholm",
