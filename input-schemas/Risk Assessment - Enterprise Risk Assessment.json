@@ -258,14 +258,6 @@
           "entitytype": "assessmentstatus"
         },
         {
-          "fieldname": "e_uri_link_ids",
-          "type": "multivalue",
-          "description": "This field allows you to add one or more URLs (links) to internal or external resources that provide additional context, reference material, or supporting information for this record. It is intended for linking to web-based resources — not to other records within Dmaze (for that, use the Related to field). When adding a link, you can also provide a human-readable description (link title) to clearly indicate what the link is for. This makes it easier for others to understand the purpose of the link without having to click on it.\n\n&nbsp;\n\n🎯 Purpose\n\nTo give users direct access to relevant online content that supports understanding, implementation, or verification of the record.\n\n&nbsp;\n\n👥 Roles\n\n- Record Owner or Contributor: Adds and maintains the list of links.\n- Participants and Reviewers: Use the links to access additional details, evidence, or background.\n\n&nbsp;\n\n💡 Why this matters\n\nLinks provide instant access to supporting materials, reducing the need for manual searches and ensuring all stakeholders work from the same trusted sources. Where possible, use this field instead of attaching documents directly — linked resources respect existing access permissions and security controls on the hosting platform.\n\n&nbsp;\n\n🚩 Tips\n\n- You can add multiple links.\n- Use complete, valid, and accessible URLs.\n- Always provide a short, meaningful description for each link so users know what to expect before clicking.\n- Regularly check and update links to avoid broken or outdated references.\n- If linking to documents that require controlled access, ensure permissions are properly managed on the hosting platform.\n- Prefer using links instead of attachments for resources that are maintained elsewhere — this helps ensure everyone always sees the latest version.\n\n&nbsp;\n\n📌 Examples\n\n- Data Protection Policy – https://intranet.example.com/policies/data-protection\n- Project 42 Overview – https://projects.example.com/initiative-42\n- Regulatory Guidelines – Section 5 – https://regulator.example.org/guidelines/section-5",
-          "label": "Links",
-          "required": false,
-          "entitytype": "urilink"
-        },
-        {
           "fieldname": "a_risk_ids",
           "type": "multivalue",
           "description": "",
@@ -331,14 +323,6 @@
           "label": "Status",
           "required": true,
           "entitytype": "measurestate"
-        },
-        {
-          "fieldname": "e_uri_link_ids",
-          "type": "multivalue",
-          "description": "This field allows you to add one or more URLs (links) to internal or external resources that provide additional context, reference material, or supporting information for this record. It is intended for linking to web-based resources — not to other records within Dmaze (for that, use the Related to field). When adding a link, you can also provide a human-readable description (link title) to clearly indicate what the link is for. This makes it easier for others to understand the purpose of the link without having to click on it.\n\n&nbsp;\n\n🎯 Purpose\n\nTo give users direct access to relevant online content that supports understanding, implementation, or verification of the record.\n\n&nbsp;\n\n👥 Roles\n\n- Record Owner or Contributor: Adds and maintains the list of links.\n- Participants and Reviewers: Use the links to access additional details, evidence, or background.\n\n&nbsp;\n\n💡 Why this matters\n\nLinks provide instant access to supporting materials, reducing the need for manual searches and ensuring all stakeholders work from the same trusted sources. Where possible, use this field instead of attaching documents directly — linked resources respect existing access permissions and security controls on the hosting platform.\n\n&nbsp;\n\n🚩 Tips\n\n- You can add multiple links.\n- Use complete, valid, and accessible URLs.\n- Always provide a short, meaningful description for each link so users know what to expect before clicking.\n- Regularly check and update links to avoid broken or outdated references.\n- If linking to documents that require controlled access, ensure permissions are properly managed on the hosting platform.\n- Prefer using links instead of attachments for resources that are maintained elsewhere — this helps ensure everyone always sees the latest version.\n\n&nbsp;\n\n📌 Examples\n\n- Data Protection Policy – https://intranet.example.com/policies/data-protection\n- Project 42 Overview – https://projects.example.com/initiative-42\n- Regulatory Guidelines – Section 5 – https://regulator.example.org/guidelines/section-5",
-          "label": "Links",
-          "required": false,
-          "entitytype": "urilink"
         }
       ]
     }
