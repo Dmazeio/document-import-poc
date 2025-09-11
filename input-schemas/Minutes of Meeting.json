@@ -1,5 +1,6 @@
 {
   "name": "Minutes of Meeting",
+  "description": "**Minutes of Meeting** is a structured method for **documenting discussions, decisions, and action points from meetings**. It can be used to ensure clarity, accountability, and follow-up across teams, projects, and organizational levels.\n\n\n\n**Minutes of Meeting** is based on your meeting context, agenda, and participants and provides a framework for recording outcomes and assigning responsibilities. In this template you can capture key information from the meeting. For each meeting, you can document:\n\n\n\n*   Date, time, and participants\n\n*   Agenda topics and summaries of discussions\n\n*   Decisions made and rationale\n\n*   Assigned actions, deadlines, and responsible persons\n\n*   Status updates and follow-up comments\n\n\n\nWith this template, you get a complete meeting documentation process — from preparing and recording discussions, to tracking actions and ensuring follow-through — supporting transparency, alignment, and efficient collaboration.",
   "types": {
     "mom": {
       "objectname": "mom",
@@ -235,53 +236,6 @@
     }
   ],
   "entities": {
-    "expiration": [
-      {
-        "name": "Expired",
-        "description": "",
-        "id": "9"
-      },
-      {
-        "name": "Expired previous 180 days",
-        "description": "",
-        "id": "7"
-      },
-      {
-        "name": "Expired previous 30 days ",
-        "description": "",
-        "id": "6"
-      },
-      {
-        "name": "Expired previous 365 days",
-        "description": "",
-        "id": "8"
-      },
-      {
-        "name": "Expired previous 7 days",
-        "description": "",
-        "id": "5"
-      },
-      {
-        "name": "Expires in 180 days",
-        "description": "",
-        "id": "3"
-      },
-      {
-        "name": "Expires in 30 days",
-        "description": "",
-        "id": "2"
-      },
-      {
-        "name": "Expires in 365 days",
-        "description": "",
-        "id": "4"
-      },
-      {
-        "name": "Expires in 7 days",
-        "description": "",
-        "id": "1"
-      }
-    ],
     "typeofmeeting": [
       {
         "name": "Management meeting",
@@ -378,13 +332,6 @@
         "id": "12"
       }
     ],
-    "mobilequery": [
-      {
-        "name": "My open actions",
-        "description": "",
-        "id": "1"
-      }
-    ],
     "momstatus": [
       {
         "name": "Closed",
@@ -429,48 +376,6 @@
         "name": "Medium",
         "description": "",
         "id": "2"
-      }
-    ],
-    "creation": [
-      {
-        "name": "3. Last 7 days",
-        "description": "",
-        "id": "3"
-      },
-      {
-        "name": "1. Today",
-        "description": "",
-        "id": "1"
-      },
-      {
-        "name": "2. Yesterday",
-        "description": "",
-        "id": "2"
-      },
-      {
-        "name": "7. In 30 days",
-        "description": "",
-        "id": "7"
-      },
-      {
-        "name": "4. Last 30 days",
-        "description": "",
-        "id": "4"
-      },
-      {
-        "name": "5. Last 365 days",
-        "description": "",
-        "id": "5"
-      },
-      {
-        "name": "8. In 365 days",
-        "description": "",
-        "id": "8"
-      },
-      {
-        "name": "6. In 7 days",
-        "description": "",
-        "id": "6"
       }
     ],
     "project": [
@@ -518,33 +423,6 @@
         "name": "Sale",
         "description": "",
         "id": "10"
-      }
-    ],
-    "calendarshortcut": [
-      {
-        "name": "In 6 months",
-        "description": "",
-        "id": "5"
-      },
-      {
-        "name": "Next month",
-        "description": "",
-        "id": "4"
-      },
-      {
-        "name": "Next week",
-        "description": "",
-        "id": "3"
-      },
-      {
-        "name": "Today",
-        "description": "",
-        "id": "1"
-      },
-      {
-        "name": "Tomorrow",
-        "description": "",
-        "id": "2"
       }
     ]
   }
