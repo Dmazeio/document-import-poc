@@ -18,7 +18,7 @@ def extract_data_with_hierarchy(client: OpenAI, document_text: str, schema_packa
 
     try:
         response = client.chat.completions.create(
-            model="gpt-5",
+            model="gpt-4o",
             response_format={
                 "type": "json_schema",
                 "json_schema": {

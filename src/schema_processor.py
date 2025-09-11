@@ -1,7 +1,9 @@
-# File: src/schema_processor.py (FINAL, CORRECT HYBRID VERSION)
+# File: src/schema_processor.py (UNIVERSAL VERSION)
 
 import json
 
+# Denne funksjonen trenger ingen endringer. Den jobber med den standardiserte
+# datastrukturen vi skal lage i hovedfunksjonen.
 def build_schema_tree(object_name: str, types_map: dict, relationships: list, entities: dict) -> dict:
     """Recursively builds a hierarchical tree from the template's flat relationships."""
     object_info = types_map.get(object_name)
@@ -9,6 +11,7 @@ def build_schema_tree(object_name: str, types_map: dict, relationships: list, en
 
     node = { "name": object_name, "fields": object_info['fields'], "children": [] }
     
+    # Denne løkken fungerer perfekt så lenge 'relationships' er en komplett liste.
     for rel in relationships:
         if rel['parent'] == object_name:
             child_name = rel['child']
@@ -18,6 +21,7 @@ def build_schema_tree(object_name: str, types_map: dict, relationships: list, en
                 node['children'].append(child_node)
     return node
 
+# Denne funksjonen trenger heller ingen endringer ennå. Den er generell nok.
 def build_json_schema_from_tree(node: dict, entities: dict) -> dict:
     """Converts the internal schema tree into a formal JSON Schema for the OpenAI API."""
     properties = {}
@@ -26,22 +30,20 @@ def build_json_schema_from_tree(node: dict, entities: dict) -> dict:
         field_type = field_info.get('type')
         entity_key = field_info.get('entitytype')
 
-        # HYBRID LOGIC:
-        # For most entities, build an enum to guide the AI. For 'user', ask for plain text.
-        if entity_key and entity_key in entities and entity_key != 'user':
+        # Denne logikken fungerer fortsatt bra for å guide AI-en.
+        if entity_key and entity_key in entities and entity_key not in ['user', 'people']: # Unngår å lage enum for brukere
             valid_names = [item['name'] for item in entities[entity_key]]
             properties[field_name] = {
                 "type": ["string", "null"],
                 "description": f"Must be one of: {', '.join(valid_names)}. If not mentioned, use null.",
                 "enum": valid_names + [None]
             }
-        elif field_type == 'datetime':
+        elif field_type in ['datetime', 'date']:
             properties[field_name] = {"type": ["string", "null"], "format": "date-time"}
         else:
-            # Applies to 'user' fields and regular string fields.
             properties[field_name] = {
                 "type": ["string", "null"],
-                "description": f"The {field_name}. Extract the value as plain text from the document. For people, extract their full name."
+                "description": f"The {field_name}. Extract the value as plain text. For people, extract their full name or names."
             }
 
     for child in node.get('children', []):
@@ -51,42 +53,84 @@ def build_json_schema_from_tree(node: dict, entities: dict) -> dict:
 
     return { "type": "object", "properties": properties, "required": required_fields, "additionalProperties": False }
 
+
 def process_template_hierarchically(template_path: str) -> dict:
     """
-    Main function to read a template file and generate the schema tree, the JSON schema for the API, and an entity map.
+    Main function to read ANY template file and generate the necessary schema artifacts.
     """
     try:
         with open(template_path, 'r', encoding='utf-8') as f:
             template = json.load(f)
 
-        types_map = {t['objectname']: t for t in template.get('types', [])}
-        relationships = template.get('relationships', [])
+        # === ENDRING 1: Fleksibel "types"-håndtering ===
+        types_data = template.get('types', [])
+        types_map = {}
+
+        if isinstance(types_data, dict):
+            # Håndterer det nye formatet der 'types' er et objekt/ordbok
+            print("  - Schema format detected: 'types' is a dictionary.")
+            types_map = {t['objectname']: t for t in types_data.values()}
+        elif isinstance(types_data, list):
+            # Håndterer det gamle formatet der 'types' er en liste
+            print("  - Schema format detected: 'types' is a list.")
+            types_map = {t['objectname']: t for t in types_data}
+        else:
+            return {"error": "'types' key in template is neither a list nor a dictionary."}
+
+        # === ENDRING 2: Relasjonsdetektiven - Finn ALLE relasjoner ===
+        print("  - Discovering relationships...")
+        # Start med de eksplisitte relasjonene
+        unified_relationships = template.get('relationships', [])
+        
+        # Finn implisitte relasjoner definert i feltene
+        for object_name, object_info in types_map.items():
+            for field in object_info.get('fields', []):
+                field_entity_type = field.get('entitytype')
+                # En implisitt relasjon eksisterer hvis et felts 'entitytype'
+                # matcher navnet på et annet kjent objekt (f.eks. 'agenda').
+                if field_entity_type and field_entity_type in types_map:
+                    print(f"    - Found implicit relationship: {object_name} -> {field_entity_type}")
+                    new_rel = {
+                        "parent": object_name,
+                        "child": field_entity_type,
+                        "childfieldname": field['fieldname']
+                    }
+                    # Unngå duplikater hvis relasjonen allerede er definert
+                    if not any(r['parent'] == new_rel['parent'] and r['child'] == new_rel['child'] for r in unified_relationships):
+                        unified_relationships.append(new_rel)
+
+        # Resten av logikken bruker nå den komplette, forente listen med relasjoner
         entities = template.get('entities', {})
 
-        root_object_info = next((t for t in template['types'] if t.get('isroot')), None)
-        if not root_object_info: return {"error": "Could not find a root object in the template."}
+        root_object_info = next((t for t in types_map.values() if t.get('isroot')), None)
+        if not root_object_info:
+            return {"error": "Could not find a root object with 'isroot: true' in the template."}
 
         root_name = root_object_info['objectname']
         
-        # 1. Build the internal hierarchical tree representation.
-        schema_tree = build_schema_tree(root_name, types_map, relationships, entities)
+        # 1. Bygg treet ved hjelp av den nye, komplette relasjonslisten
+        schema_tree = build_schema_tree(root_name, types_map, unified_relationships, entities)
 
-        # 2. Convert the tree into a formal JSON Schema for the API call.
+        # 2. Konverter treet til en formell JSON Schema for AI-kallet (som før)
         formal_json_schema = build_json_schema_from_tree(schema_tree, entities)
         final_schema_for_api = {
             "type": "object",
-            "properties": { root_name: formal_json_schema },
+            "properties": {root_name: formal_json_schema},
             "required": [root_name],
             "additionalProperties": False
         }
         
-        # 3. Create a map for quick name-to-ID lookups for entities.
+        # 3. Lag oppslagstabell for statiske entiteter (som før)
         entity_map = {
             entity_key: {item['name']: item['id'] for item in items}
             for entity_key, items in entities.items()
         }
 
-        # Return a package with all the generated artifacts.
-        return { "schema_tree": schema_tree, "json_schema_for_api": final_schema_for_api, "entity_map": entity_map }
+        # Returner den komplette pakken
+        return {
+            "schema_tree": schema_tree,
+            "json_schema_for_api": final_schema_for_api,
+            "entity_map": entity_map
+        }
     except Exception as e:
          return {"error": f"Template file has a malformed key/structure: {e}"}
