@@ -1,5 +1,6 @@
 {
   "name": "Audit",
+  "description": "An **Audit** is a structured method for **evaluating compliance, performance, and improvement areas** within systems, operations, or processes. It can be used to verify adherence to internal procedures, regulatory requirements, or industry standards, and to support learning and accountability across the organization.\n\n\n\nAn **Audit** is based on your business area, process, system or activity and provides a framework for planning, conducting, and documenting audit findings. In this template you can define the audit scope, register audit items, and track deviations or observations. For each audit item, you can describe:\n\n\n\n*   Area or topic reviewed\n\n*   Observations or non-conformities\n\n*   References to requirements or standards\n\n*   Recommended actions and responsible persons\n\n\n\nWith this template, you get a complete audit process — from planning and conducting the audit, to recording findings, assigning corrective actions, and ensuring systematic follow-up and closure.",
   "types": {
     "audit": {
       "objectname": "audit",
@@ -304,53 +305,6 @@
     }
   ],
   "entities": {
-    "expiration": [
-      {
-        "name": "Expired",
-        "description": "",
-        "id": "9"
-      },
-      {
-        "name": "Expired previous 180 days",
-        "description": "",
-        "id": "7"
-      },
-      {
-        "name": "Expired previous 30 days ",
-        "description": "",
-        "id": "6"
-      },
-      {
-        "name": "Expired previous 365 days",
-        "description": "",
-        "id": "8"
-      },
-      {
-        "name": "Expired previous 7 days",
-        "description": "",
-        "id": "5"
-      },
-      {
-        "name": "Expires in 180 days",
-        "description": "",
-        "id": "3"
-      },
-      {
-        "name": "Expires in 30 days",
-        "description": "",
-        "id": "2"
-      },
-      {
-        "name": "Expires in 365 days",
-        "description": "",
-        "id": "4"
-      },
-      {
-        "name": "Expires in 7 days",
-        "description": "",
-        "id": "1"
-      }
-    ],
     "findingstatus": [
       {
         "name": "Closed",
@@ -452,13 +406,6 @@
         "id": "2"
       }
     ],
-    "mobilequery": [
-      {
-        "name": "My open actions",
-        "description": "",
-        "id": "1"
-      }
-    ],
     "typeofrequirement": [
       {
         "name": "Contractual requirement",
@@ -538,92 +485,6 @@
       },
       {
         "name": "Medium",
-        "description": "",
-        "id": "2"
-      }
-    ],
-    "findingcategory": [
-      {
-        "name": "Major",
-        "description": "",
-        "id": "3"
-      },
-      {
-        "name": "Minor",
-        "description": "",
-        "id": "1"
-      },
-      {
-        "name": "Moderate",
-        "description": "",
-        "id": "2"
-      }
-    ],
-    "creation": [
-      {
-        "name": "3. Last 7 days",
-        "description": "",
-        "id": "3"
-      },
-      {
-        "name": "1. Today",
-        "description": "",
-        "id": "1"
-      },
-      {
-        "name": "2. Yesterday",
-        "description": "",
-        "id": "2"
-      },
-      {
-        "name": "7. In 30 days",
-        "description": "",
-        "id": "7"
-      },
-      {
-        "name": "4. Last 30 days",
-        "description": "",
-        "id": "4"
-      },
-      {
-        "name": "5. Last 365 days",
-        "description": "",
-        "id": "5"
-      },
-      {
-        "name": "8. In 365 days",
-        "description": "",
-        "id": "8"
-      },
-      {
-        "name": "6. In 7 days",
-        "description": "",
-        "id": "6"
-      }
-    ],
-    "calendarshortcut": [
-      {
-        "name": "In 6 months",
-        "description": "",
-        "id": "5"
-      },
-      {
-        "name": "Next month",
-        "description": "",
-        "id": "4"
-      },
-      {
-        "name": "Next week",
-        "description": "",
-        "id": "3"
-      },
-      {
-        "name": "Today",
-        "description": "",
-        "id": "1"
-      },
-      {
-        "name": "Tomorrow",
         "description": "",
         "id": "2"
       }

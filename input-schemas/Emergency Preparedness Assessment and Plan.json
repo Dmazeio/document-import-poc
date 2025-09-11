@@ -1,5 +1,6 @@
 {
   "name": "Emergency preparedness assessment and plan",
+  "description": "An **Emergency Preparedness Assessment and Plan** is a structured method for **evaluating emergency scenarios and establishing plans to prevent, respond to, and recover from critical incidents**. It can be used to improve organizational resilience and ensure compliance with safety and emergency regulations across locations and operations.\n\n\n\nAn **Emergency Preparedness Assessment and Plan** is based on your facilities, activities, risk scenarios, or regulatory requirements and provides a framework for assessing vulnerabilities and developing appropriate response measures. In this template you can describe the emergency context and plan corresponding actions. For each scenario or preparedness area, you can describe:\n\n\n\n*   Potential emergency events and triggers\n\n*   Critical assets, personnel, and exposure areas\n\n*   Existing emergency systems and resources\n\n*   Planned actions, procedures, and drills\n\n*   Responsible roles and follow-up activities\n\n\n\nWith this template, you get a complete emergency preparedness process — from identifying potential scenarios and evaluating readiness, to developing response plans, assigning responsibilities, and ensuring follow-up and continual improvement.",
   "types": {
     "epresource": {
       "objectname": "epresource",
@@ -392,53 +393,6 @@
     }
   ],
   "entities": {
-    "expiration": [
-      {
-        "name": "Expired",
-        "description": "",
-        "id": "9"
-      },
-      {
-        "name": "Expired previous 180 days",
-        "description": "",
-        "id": "7"
-      },
-      {
-        "name": "Expired previous 30 days ",
-        "description": "",
-        "id": "6"
-      },
-      {
-        "name": "Expired previous 365 days",
-        "description": "",
-        "id": "8"
-      },
-      {
-        "name": "Expired previous 7 days",
-        "description": "",
-        "id": "5"
-      },
-      {
-        "name": "Expires in 180 days",
-        "description": "",
-        "id": "3"
-      },
-      {
-        "name": "Expires in 30 days",
-        "description": "",
-        "id": "2"
-      },
-      {
-        "name": "Expires in 365 days",
-        "description": "",
-        "id": "4"
-      },
-      {
-        "name": "Expires in 7 days",
-        "description": "",
-        "id": "1"
-      }
-    ],
     "epscenariostatus": [
       {
         "name": "Identified",
@@ -613,48 +567,6 @@
         "id": "2"
       }
     ],
-    "creation": [
-      {
-        "name": "3. Last 7 days",
-        "description": "",
-        "id": "3"
-      },
-      {
-        "name": "1. Today",
-        "description": "",
-        "id": "1"
-      },
-      {
-        "name": "2. Yesterday",
-        "description": "",
-        "id": "2"
-      },
-      {
-        "name": "7. In 30 days",
-        "description": "",
-        "id": "7"
-      },
-      {
-        "name": "4. Last 30 days",
-        "description": "",
-        "id": "4"
-      },
-      {
-        "name": "5. Last 365 days",
-        "description": "",
-        "id": "5"
-      },
-      {
-        "name": "8. In 365 days",
-        "description": "",
-        "id": "8"
-      },
-      {
-        "name": "6. In 7 days",
-        "description": "",
-        "id": "6"
-      }
-    ],
     "eptaskstatus": [
       {
         "name": "Partially part of today's preparedness",
@@ -680,33 +592,6 @@
         "name": "Not part of today's preparedness",
         "description": "",
         "id": "4"
-      }
-    ],
-    "calendarshortcut": [
-      {
-        "name": "In 6 months",
-        "description": "",
-        "id": "5"
-      },
-      {
-        "name": "Next month",
-        "description": "",
-        "id": "4"
-      },
-      {
-        "name": "Next week",
-        "description": "",
-        "id": "3"
-      },
-      {
-        "name": "Today",
-        "description": "",
-        "id": "1"
-      },
-      {
-        "name": "Tomorrow",
-        "description": "",
-        "id": "2"
       }
     ],
     "epplanrole": [
