@@ -2,8 +2,7 @@
 
 import json
 
-# Denne funksjonen trenger ingen endringer. Den jobber med den standardiserte
-# datastrukturen vi skal lage i hovedfunksjonen.
+#Denne funksjonen transformerer de flate listene med objekter og relasjoner om til én enkelt, hierarkisk trestruktur.
 def build_schema_tree(object_name: str, types_map: dict, relationships: list, entities: dict) -> dict:
     """Recursively builds a hierarchical tree from the template's flat relationships."""
     object_info = types_map.get(object_name)
@@ -21,7 +20,8 @@ def build_schema_tree(object_name: str, types_map: dict, relationships: list, en
                 node['children'].append(child_node)
     return node
 
-# Denne funksjonen trenger heller ingen endringer ennå. Den er generell nok.
+
+# Denne funksjonen oversetter den interne, forenklede trestrukturen (schema_tree) til et strengt og formelt JSON Schema, som fungerer som en detaljert teknisk instruks for AI-modellen 
 def build_json_schema_from_tree(node: dict, entities: dict) -> dict:
     """Converts the internal schema tree into a formal JSON Schema for the OpenAI API."""
     properties = {}
@@ -53,7 +53,7 @@ def build_json_schema_from_tree(node: dict, entities: dict) -> dict:
 
     return { "type": "object", "properties": properties, "required": required_fields, "additionalProperties": False }
 
-
+#Denne hovedfunksjonen orkestrerer lesingen av en JSON-mal, bygger en intern hierarkisk trestruktur (schema_tree), og genererer deretter et formelt JSON Schema som brukes til å instruere AI-modellen nøyaktig hvordan den skal formatere sitt svar.
 def process_template_hierarchically(template_path: str) -> dict:
     """
     Main function to read ANY template file and generate the necessary schema artifacts.
@@ -65,7 +65,7 @@ def process_template_hierarchically(template_path: str) -> dict:
         # === ENDRING 1: Fleksibel "types"-håndtering ===
         types_data = template.get('types', [])
         types_map = {}
-
+    
         if isinstance(types_data, dict):
             # Håndterer det nye formatet der 'types' er et objekt/ordbok
             print("  - Schema format detected: 'types' is a dictionary.")
@@ -109,10 +109,10 @@ def process_template_hierarchically(template_path: str) -> dict:
         root_name = root_object_info['objectname']
         
         # 1. Bygg treet ved hjelp av den nye, komplette relasjonslisten
-        schema_tree = build_schema_tree(root_name, types_map, unified_relationships, entities)
+        schema_tree = build_schema_tree(root_name, types_map, unified_relationships, entities) #  Lengre opp i filen (2) 
 
         # 2. Konverter treet til en formell JSON Schema for AI-kallet (som før)
-        formal_json_schema = build_json_schema_from_tree(schema_tree, entities)
+        formal_json_schema = build_json_schema_from_tree(schema_tree, entities)  #   Lengre opp i filen (3) 
         final_schema_for_api = {
             "type": "object",
             "properties": {root_name: formal_json_schema},
@@ -134,3 +134,5 @@ def process_template_hierarchically(template_path: str) -> dict:
         }
     except Exception as e:
          return {"error": f"Template file has a malformed key/structure: {e}"}
+    
+    #  tilabake til main.py (4)

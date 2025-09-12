@@ -28,3 +28,4 @@ def convert_file_to_markdown(file_path: str) -> str:
         return {"error": f"File not found at: {file_path}"}
     except Exception as e:
         return {"error": f"An error occurred while converting the file to Markdown: {e}"}
+    

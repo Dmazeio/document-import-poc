@@ -4,6 +4,8 @@ from openai import OpenAI
 # Importer de nye, generelle modellene
 from .models import DocumentAnalysis, DocumentStructureType
 
+#Denne funksjonen fungerer som en 'sorteringsmekanisme' som sender en liten prøve av dokumentet til en AI-modell for å avgjøre om det inneholder ett enkelt element eller flere, og returnerer deretter enten 'single_item' eller 'multiple_items' basert på analysen.
+
 def classify_document_type(client: OpenAI, markdown_content: str, root_object_name: str) -> DocumentStructureType:
     """
     Bruker AI til å klassifisere om et dokument inneholder ett enkelt

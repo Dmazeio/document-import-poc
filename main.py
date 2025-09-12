@@ -31,8 +31,8 @@ if __name__ == "__main__":
 
     # STEP 0: Prosesser malen
     print(f"--- Step 0: Processing template: {template_file_path} ---")
-    schema_package = process_template_hierarchically(template_file_path) 
-    
+    schema_package = process_template_hierarchically(template_file_path)    #->  Schema processor filen 1 
+  
     if "error" in schema_package:
         print(f"CRITICAL ERROR processing template: {schema_package['error']}")
     else:
@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
         # STEP 1: Konverter til Markdown
         print(f"\n--- Step 1: Converting file to Markdown: {input_file_path} ---")
-        markdown_content = convert_file_to_markdown(input_file_path)
+        markdown_content = convert_file_to_markdown(input_file_path) #->  Document converter filen (5)
         
         if isinstance(markdown_content, dict) and "error" in markdown_content:
             print(f"ERROR: {markdown_content['error']}")
@@ -50,12 +50,12 @@ if __name__ == "__main__":
             
             # STEP 2: Klassifiser dokumentet på en generell måte
             print("\n--- Step 2: Classifying document structure... ---")
-            doc_type = classify_document_type(client, markdown_content, root_object_name)
+            doc_type = classify_document_type(client, markdown_content, root_object_name) #->  Document classifier filen (6)
 
             # STEP 3: Betinget ruting basert på generell struktur
             if doc_type == "multiple_items":
                 print("\n--- Step 3: Document contains multiple items. Splitting into chunks... ---")
-                item_chunks = split_document_into_items(client, markdown_content, root_object_name)
+                item_chunks = split_document_into_items(client, markdown_content, root_object_name) #->  Document splitter filen (7)
                 
                 if not item_chunks:
                     print("Processing stopped: No items were found or an error occurred during splitting.")
