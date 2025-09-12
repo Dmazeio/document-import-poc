@@ -1,11 +1,11 @@
 [
     {
-        "id": "mom-272f0a46-eaa5-401d-9ce3-07e72734c3b4",
+        "id": "mom-3f4fda35-3956-4a55-80e1-432b005af6b6",
         "objectname": "mom",
         "description": "Gjennomgå sikkerhetshendelser fra Q4, evaluere status på pågående tiltak, og planlegge prioriteringer for Q1 2026. Møtet har som mål å sikre at selskapets digitale verdier er tilstrekkelig beskyttet mot nye og eksisterende trusler.",
         "endtime": "2025-12-05T12:00:00Z",
         "startuptime": "2025-12-05T10:00:00Z",
-        "title": "Sikkerhetsmøte Q4 Gjennomgang",
+        "title": "Sikkerhetsmøte - Q4 Evaluering",
         "e_attendees_ids": {
             "type": "user",
             "values": [
@@ -14,64 +14,64 @@
                 "user-5-arne-pettersen-uuid"
             ]
         },
-        "e_meeting_frequency_ids": null,
-        "e_project_ids": null,
-        "e_projectowner_ids": null,
-        "e_responsible_unit_ids": null,
+        "e_meeting_frequency_ids": "",
+        "e_project_ids": "7",
+        "e_projectowner_ids": "",
+        "e_responsible_unit_ids": "",
         "e_responsiblemanager_ids": {
             "type": "user",
             "values": [
                 "user-2-kari-normann-uuid"
             ]
         },
-        "e_status_ids": null,
-        "e_typeofmeeting_ids": null,
+        "e_status_ids": "2",
+        "e_typeofmeeting_ids": "2",
         "a_agenda_ids": {
             "type": "agenda",
             "values": [
-                "agenda-d76f3409-dc27-468f-8f9a-875851de7f4a",
-                "agenda-6ff0dba1-ab83-489d-8bce-e323a35a16bc"
+                "agenda-f375a377-0d89-4b16-a6e4-e5016c94b784",
+                "agenda-9b3fb18b-f149-424d-8435-790dfcbbf7c0"
             ]
         }
     },
     {
-        "id": "measure-912630fc-c46d-4616-a560-295fe2ee49da",
+        "id": "measure-4324d1f5-94da-47e9-af65-4004ea7489ba",
         "objectname": "measure",
-        "parentid": "agenda-d76f3409-dc27-468f-8f9a-875851de7f4a",
+        "parentid": "agenda-f375a377-0d89-4b16-a6e4-e5016c94b784",
         "parenttype": "agenda",
         "deadline": "2026-02-01T00:00:00Z",
-        "description": "Utvikle ny opplæringsmodul om 'CEO fraud'. Sikkerhetsteamet skal lage en interaktiv modul som simulerer avanserte svindelforsøk rettet mot ledelsen.",
-        "descriptionimplementation": null,
-        "title": "Utvikle ny opplæringsmodul",
-        "e_measurepriority_ids": null,
+        "description": "Sikkerhetsteamet skal lage en interaktiv modul som simulerer avanserte svindelforsøk rettet mot ledelsen.",
+        "descriptionimplementation": "",
+        "title": "Utvikle ny opplæringsmodul om \"CEO fraud\"",
+        "e_measurepriority_ids": "",
         "e_responsible_ids": {
             "type": "user",
             "values": [
                 "user-6-ola-hansen-uuid"
             ]
         },
-        "e_status_ids": null
+        "e_status_ids": "1"
     },
     {
-        "id": "measure-c315489a-6904-4116-a5d1-b6244692878e",
+        "id": "measure-20949622-7b61-4c41-98bf-a707ea6cc2d7",
         "objectname": "measure",
-        "parentid": "agenda-d76f3409-dc27-468f-8f9a-875851de7f4a",
+        "parentid": "agenda-f375a377-0d89-4b16-a6e4-e5016c94b784",
         "parenttype": "agenda",
         "deadline": "2026-01-15T00:00:00Z",
-        "description": "Analysere og rapportere phishing-trender. Samle inn data fra Q4 og lage en detaljert rapport om hvilke typer phishing som er mest utbredt.",
-        "descriptionimplementation": null,
-        "title": "Analysere phishing-trender",
-        "e_measurepriority_ids": null,
-        "e_responsible_ids": null,
-        "e_status_ids": null
+        "description": "Samle inn data fra Q4 og lage en detaljert rapport om hvilke typer phishing som er mest utbredt.",
+        "descriptionimplementation": "",
+        "title": "Analysere og rapportere phishing-trender",
+        "e_measurepriority_ids": "",
+        "e_responsible_ids": "",
+        "e_status_ids": "12"
     },
     {
-        "id": "agenda-d76f3409-dc27-468f-8f9a-875851de7f4a",
+        "id": "agenda-f375a377-0d89-4b16-a6e4-e5016c94b784",
         "objectname": "agenda",
-        "parentid": "mom-272f0a46-eaa5-401d-9ce3-07e72734c3b4",
+        "parentid": "mom-3f4fda35-3956-4a55-80e1-432b005af6b6",
         "parenttype": "mom",
         "conclusion": "Phishing-opplæringen anses som en suksess og skal videreføres med en ny modul i februar. Rutinene for tap av utstyr fungerer, og ingen endringer er nødvendig.",
-        "description": "Kari Nordmann presenterte rapporten for siste kvartal, diskusjon om phishing-forsøk og firmatelefoner mistet.",
+        "description": "Kari Nordmann presenterte rapporten for siste kvartal. Det ble registrert en økning på 15% i phishing-forsøk sammenlignet med Q3, men antall vellykkede angrep var null. Dette skyldes trolig den nye obligatoriske opplæringen som ble rullet ut i oktober. Det ble også diskutert en mindre hendelse der en ansatt mistet en firmatelefon, men enheten ble fjernslettet innen 10 minutter i henhold til prosedyre. Teamet var enige om at rutinene fungerer som de skal. Status er ikke påbegynt.",
         "title": "Gjennomgang av hendelsesrapport for Q4",
         "e_agenda_owner_ids": {
             "type": "user",
@@ -79,40 +79,39 @@
                 "user-2-kari-normann-uuid"
             ]
         },
-        "e_status_ids": null,
         "a_measures_ids": {
             "type": "measure",
             "values": [
-                "measure-912630fc-c46d-4616-a560-295fe2ee49da",
-                "measure-c315489a-6904-4116-a5d1-b6244692878e"
+                "measure-4324d1f5-94da-47e9-af65-4004ea7489ba",
+                "measure-20949622-7b61-4c41-98bf-a707ea6cc2d7"
             ]
         }
     },
     {
-        "id": "measure-717e2191-9546-43a6-848b-f61ea4d27689",
+        "id": "measure-0c890b25-3ae7-494a-aa10-d540fd3e683d",
         "objectname": "measure",
-        "parentid": "agenda-6ff0dba1-ab83-489d-8bce-e323a35a16bc",
+        "parentid": "agenda-9b3fb18b-f149-424d-8435-790dfcbbf7c0",
         "parenttype": "agenda",
         "deadline": "2026-01-31T00:00:00Z",
-        "description": "Lage en kost/nytte-analyse for oppgradering av eldre applikasjon. Arne Pettersen, i samarbeid med økonomiavdelingen, skal utrede kostnadene ved en full oppgradering versus risikoen ved å fortsette med den midlertidige løsningen.",
-        "descriptionimplementation": null,
-        "title": "Kost/nytte analyse for applikasjonsoppgradering",
-        "e_measurepriority_ids": null,
+        "description": "Arne Pettersen, i samarbeid med økonomiavdelingen, skal utrede kostnadene ved en full oppgradering versus risikoen ved å fortsette med den midlertidige løsningen.",
+        "descriptionimplementation": "",
+        "title": "Lage en kost/nytte-analyse for oppgradering av eldre applikasjon",
+        "e_measurepriority_ids": "",
         "e_responsible_ids": {
             "type": "user",
             "values": [
                 "user-5-arne-pettersen-uuid"
             ]
         },
-        "e_status_ids": null
+        "e_status_ids": "1"
     },
     {
-        "id": "agenda-6ff0dba1-ab83-489d-8bce-e323a35a16bc",
+        "id": "agenda-9b3fb18b-f149-424d-8435-790dfcbbf7c0",
         "objectname": "agenda",
-        "parentid": "mom-272f0a46-eaa5-401d-9ce3-07e72734c3b4",
+        "parentid": "mom-3f4fda35-3956-4a55-80e1-432b005af6b6",
         "parenttype": "mom",
         "conclusion": "Prosjektet er i rute. Det må lages en plan for å fase ut den eldre applikasjonen eller oppgradere den for full 2FA-støtte.",
-        "description": "Arne Pettersen ga en status på utrullingen av 2FA for alle kritiske systemer.",
+        "description": "Arne Pettersen ga en status på utrullingen av 2FA for alle kritiske systemer. Per i dag har 95% av brukerne aktivert 2FA. De resterende 5% er primært konsulenter og deltidsansatte. Det har vært noen tekniske utfordringer med en eldre applikasjon som ikke har innebygd støtte for moderne autentiseringsmetoder. En midlertidig løsning er på plass, men en permanent oppgradering må planlegges. Status er ikke påbegynt.",
         "title": "Status for implementering av 2-faktor autentisering (2FA)",
         "e_agenda_owner_ids": {
             "type": "user",
@@ -120,11 +119,10 @@
                 "user-5-arne-pettersen-uuid"
             ]
         },
-        "e_status_ids": null,
         "a_measures_ids": {
             "type": "measure",
             "values": [
-                "measure-717e2191-9546-43a6-848b-f61ea4d27689"
+                "measure-0c890b25-3ae7-494a-aa10-d540fd3e683d"
             ]
         }
     }

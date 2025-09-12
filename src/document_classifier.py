@@ -1,17 +1,16 @@
-# File: src/document_classifier.py
+# File: src/document_classifier.py (GENERALIZED VERSION)
 import instructor
 from openai import OpenAI
-from .models import DocumentAnalysis, DocumentType
+# Importer de nye, generelle modellene
+from .models import DocumentAnalysis, DocumentStructureType
 
-def classify_document_type(client: OpenAI, markdown_content: str) -> DocumentType:
+def classify_document_type(client: OpenAI, markdown_content: str, root_object_name: str) -> DocumentStructureType:
     """
-    Uses a fast AI call with Pydantic to classify if a document contains
-    one or multiple meetings. This version uses a "sandwich" sample
-    (start and end) for better accuracy on long documents.
+    Bruker AI til å klassifisere om et dokument inneholder ett enkelt
+    eller flere distinkte "elementer", basert på rot-objektet i malen.
     """
     instructor_client = instructor.patch(client)
     
-    # Create a representative sample of the document
     sample_size = 4000
     if len(markdown_content) > sample_size * 2:
         document_sample = (
@@ -22,12 +21,14 @@ def classify_document_type(client: OpenAI, markdown_content: str) -> DocumentTyp
     else:
         document_sample = markdown_content
 
-    system_prompt = """
+    # GENERALISERT PROMPT:
+    system_prompt = f"""
     You are a document classification expert. Your task is to determine if a document
-    contains minutes from a single meeting or multiple, distinct meetings.
-    Multiple meetings are often separated by top-level Markdown headings
-    like '# Meeting Title' or '# Protokoll'.
-    You will receive a sample of the document which includes the beginning and the end.
+    contains a single, coherent '{root_object_name}' item or a collection of multiple, distinct '{root_object_name}' items.
+    
+    Multiple items are almost always separated by top-level Markdown headings (e.g., '# Title of Item 1', '# Title of Item 2').
+    If you see multiple top-level headings that seem to describe separate, self-contained entries, classify it as 'multiple_items'.
+    Otherwise, classify it as 'single_item'.
     """
     
     try:
@@ -42,5 +43,5 @@ def classify_document_type(client: OpenAI, markdown_content: str) -> DocumentTyp
         print(f"  - Document classified as: {analysis.document_type}. Reasoning: {analysis.reasoning}")
         return analysis.document_type
     except Exception as e:
-        print(f"  - WARNING: Document classification failed: {e}. Defaulting to 'single_meeting' mode.")
-        return "single_meeting"
+        print(f"  - WARNING: Document classification failed: {e}. Defaulting to 'single_item' mode.")
+        return "single_item"

@@ -1,22 +1,22 @@
-# File: src/models.py
+# File: src/models.py (GENERALIZED VERSION)
 from pydantic import BaseModel, Field
 from typing import List, Literal
 
-# This is like a multiple-choice question for the AI. The answer MUST be one of these two.
-DocumentType = Literal["single_meeting", "multiple_meetings"]
+# Endre navn fra DocumentType til noe mer generelt
+DocumentStructureType = Literal["single_item", "multiple_items"]
 
 class DocumentAnalysis(BaseModel):
-    # The AI MUST return an object that has these two fields:
-    document_type: DocumentType # The answer to the multiple-choice question.
-    reasoning: str             # A brief explanation.
+    # Bruk den nye, generelle typen
+    document_type: DocumentStructureType
+    reasoning: str
 
+# Endre navn fra MeetingChunk til DocumentChunk
+class DocumentChunk(BaseModel):
+    # Endre feltnavn for å være generelle
+    item_title: str
+    item_content: str
 
-class MeetingChunk(BaseModel):
-    # Each section MUST have a title and the actual content.
-    meeting_title: str
-    meeting_content: str
-
-class MultiMeetingDocument(BaseModel):
-    # The entire response from the AI MUST be a single object with one field:
-    # 'meetings', which is a LIST of 'MeetingChunk' objects.
-    meetings: List[MeetingChunk]
+# Endre navn fra MultiMeetingDocument til MultiItemDocument
+class MultiItemDocument(BaseModel):
+    # Bruk den nye DocumentChunk og et generelt feltnavn
+    items: List[DocumentChunk]
