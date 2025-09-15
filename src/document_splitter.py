@@ -5,6 +5,7 @@ from typing import List
 # Importer de nye, generelle modellene
 from .models import MultiItemDocument, DocumentChunk
 
+#Denne funksjonen fungerer som en 'digital saks' som ber en AI-modell om å lese gjennom hele dokumentet og klippe det opp i en liste av logisk separate deler, basert på hvor den finner store overskrifter.
 def split_document_into_items(client: OpenAI, markdown_content: str, root_object_name: str) -> List[DocumentChunk]:
     """
     Splitter et dokument i en liste av "elementer", der hvert element

@@ -1,6 +1,8 @@
 import json
 from openai import OpenAI
 
+#Denne funksjonen er selve 'motoren' i programmet; den sender dokumentteksten og en streng, teknisk mal (JSON Schema) til OpenAI-modellen og tvinger den til å returnere strukturert data som er nøyaktig hentet ut fra teksten og formatert i henhold til malen.
+
 def extract_data_with_hierarchy(client: OpenAI, document_text: str, schema_package: dict) -> dict:
     json_schema = schema_package['json_schema_for_api']
 

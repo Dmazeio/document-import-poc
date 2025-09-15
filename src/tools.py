@@ -5,6 +5,8 @@ from openai import OpenAI
 from pydantic import BaseModel, Field
 from typing import Optional, List, Dict
 
+#Denne funksjonen fungerer som en intelligent 'mellommann' som tar en uklar tekst fra dokumentet, sammenligner den med en liste av gyldige systemdata, og bruker en AI-modell til å finne den mest sannsynlige matchen og returnere den korrekte, unike ID-en med en høy grad av sikkerhet.
+
 # Pydantic-modell for å sikre et pålitelig, strukturert svar fra AI-en
 class BestMatch(BaseModel):
     best_match_id: Optional[str] = Field(

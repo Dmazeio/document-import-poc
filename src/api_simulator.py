@@ -143,3 +143,5 @@ def get_entity_schema_from_api(entity_type: str) -> dict | None:
         "dmaze_format_wrapper": None
     }
     return SIMULATED_META_DATABASE.get(entity_type.lower(), default_schema)
+
+#Heller ha en søkestring og få aien til å finne den beste matchen i stedet for å gjøre det manuelt, så må vi bruke ai til å finne den beste matchen

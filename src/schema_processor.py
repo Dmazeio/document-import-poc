@@ -45,6 +45,8 @@ def build_json_schema_from_tree(node: dict, entities: dict) -> dict:
                 "type": ["string", "null"],
                 "description": f"The {field_name}. Extract the value as plain text. For people, extract their full name or names."
             }
+        #Gjøre slik at vi ikke ser på field_name man at vi heller ser på desciription
+        
 
     for child in node.get('children', []):
         properties[child['name']] = { "type": "array", "items": build_json_schema_from_tree(child, entities) }
