@@ -1,10 +1,6 @@
-# File: src/schema_processor.py (FINAL, 100% AUTONOMOUS VERSION)
+# File: src/schema_processor.py (MODIFIED TO PRIORITIZE FIELD DESCRIPTIONS)
 
 import json
-
-# Definer en global terskel. Hvis en liste med valg i malen er lengre enn dette,
-# lager vi ikke en fast valgliste (enum) for AI-en.
-ENUM_THRESHOLD = 25
 
 #Denne funksjonen transformerer de flate listene med objekter og relasjoner om til én enkelt, hierarkisk trestruktur.
 def build_schema_tree(object_name: str, types_map: dict, relationships: list, entities: dict) -> dict:
@@ -14,6 +10,7 @@ def build_schema_tree(object_name: str, types_map: dict, relationships: list, en
 
     node = { "name": object_name, "fields": object_info['fields'], "children": [] }
     
+    # Denne løkken fungerer perfekt så lenge 'relationships' er en komplett liste.
     for rel in relationships:
         if rel['parent'] == object_name:
             child_name = rel['child']
@@ -23,38 +20,49 @@ def build_schema_tree(object_name: str, types_map: dict, relationships: list, en
                 node['children'].append(child_node)
     return node
 
-# Denne funksjonen oversetter den interne, forenklede trestrukturen (schema_tree) til et strengt og formelt JSON Schema.
+
+# ######################## START OF MODIFIED FUNCTION ########################
+
+# Denne funksjonen oversetter den interne, forenklede trestrukturen (schema_tree) til et strengt og formelt JSON Schema, som fungerer som en detaljert teknisk instruks for AI-modellen 
 def build_json_schema_from_tree(node: dict, entities: dict) -> dict:
-    """Converts the internal schema tree into a formal JSON Schema for the OpenAI API."""
+    """
+    Converts the internal schema tree into a formal JSON Schema for the OpenAI API.
+    This version PRIORITIZES the rich 'description' from the template as the main instruction for the AI.
+    """
     properties = {}
     for field_info in node.get('fields', []):
         field_name = field_info['fieldname']
         field_type = field_info.get('type')
         entity_key = field_info.get('entitytype')
 
-        # --- START PÅ DEN NYE, AUTONOME LOGIKKEN ---
-        # Lag en fast valgliste (enum) KUN HVIS:
-        # 1. Det er en entitetstype som finnes i 'entities'-blokken i malen.
-        # 2. Antallet valgmuligheter for den entiteten er UNDER vår definerte terskel.
-        if entity_key and entity_key in entities and len(entities[entity_key]) <= ENUM_THRESHOLD:
-            print(f"    - Creating enum for '{entity_key}' (found {len(entities[entity_key])} items, threshold is {ENUM_THRESHOLD}).")
+        # === KJERNEENDRINGEN: Bruk den rike beskrivelsen fra malen som hovedinstruks ===
+        # Dette gir AI-en best mulig kontekst for HVA den skal lete etter.
+        ai_instruction = field_info.get('description', f"Extract data for the field named '{field_name}'.")
+
+        # Start med en basis-definisjon for feltet i JSON Schemaet
+        schema_field = {
+            "type": ["string", "null"],
+            "description": ai_instruction  # Her settes den rike beskrivelsen!
+        }
+
+        # Legg til spesifikke, tekniske krav PÅ TOPPEN av den rike beskrivelsen.
+        # Dette gir AI-en både kontekst (hva) og format (hvordan).
+        
+        # For felt som peker til en liste med forhåndsdefinerte valg (entities)
+        if entity_key and entity_key in entities and entity_key not in ['user', 'people']:
             valid_names = [item['name'] for item in entities[entity_key]]
-            properties[field_name] = {
-                "type": ["string", "null"],
-                "description": f"Must be one of: {', '.join(valid_names)}. If not mentioned, use null.",
-                "enum": valid_names + [None]
-            }
-       
+            # Legg til en presis instruksjon om de gyldige valgene
+            schema_field['description'] += f"\n\nIMPORTANT: The value MUST be one of the following, or null: {', '.join(valid_names)}."
+            schema_field['enum'] = valid_names + [None]
+        
+        # For dato- og tidsfelter
         elif field_type in ['datetime', 'date']:
-            properties[field_name] = {"type": ["string", "null"], "format": "date-time"}
-        else:
-            # For alle andre felter (inkludert 'user' som ikke er i 'entities', eller lister som er for lange), be om ren tekst.
-            if entity_key:
-                 print(f"    - Skipping enum for '{entity_key}' (list not found in template or too long). Treating as free text.")
-            properties[field_name] = {
-                "type": ["string", "null"],
-                "description": f"The {field_name}. Extract the value as plain text. For entities like people, extract their full name or names."
-            }
+            schema_field['format'] = "date-time"
+            schema_field['description'] += "\n\nIMPORTANT: Format the value as a valid ISO 8601 date-time string (e.g., YYYY-MM-DDTHH:MM:SSZ)."
+
+        # For alle andre felter (vanlig tekst), er standarddefinisjonen allerede perfekt.
+        
+        properties[field_name] = schema_field
 
     for child in node.get('children', []):
         properties[child['name']] = { "type": "array", "items": build_json_schema_from_tree(child, entities) }
@@ -63,7 +71,10 @@ def build_json_schema_from_tree(node: dict, entities: dict) -> dict:
 
     return { "type": "object", "properties": properties, "required": required_fields, "additionalProperties": False }
 
-#Denne hovedfunksjonen orkestrerer lesingen av en JSON-mal...
+# ######################### END OF MODIFIED FUNCTION #########################
+
+
+#Denne hovedfunksjonen orkestrerer lesingen av en JSON-mal, bygger en intern hierarkisk trestruktur (schema_tree), og genererer deretter et formelt JSON Schema som brukes til å instruere AI-modellen nøyaktig hvordan den skal formatere sitt svar.
 def process_template_hierarchically(template_path: str) -> dict:
     """
     Main function to read ANY template file and generate the necessary schema artifacts.
@@ -72,30 +83,44 @@ def process_template_hierarchically(template_path: str) -> dict:
         with open(template_path, 'r', encoding='utf-8') as f:
             template = json.load(f)
 
+        # === ENDRING 1: Fleksibel "types"-håndtering ===
         types_data = template.get('types', [])
         types_map = {}
     
         if isinstance(types_data, dict):
+            # Håndterer det nye formatet der 'types' er et objekt/ordbok
             print("  - Schema format detected: 'types' is a dictionary.")
             types_map = {t['objectname']: t for t in types_data.values()}
         elif isinstance(types_data, list):
+            # Håndterer det gamle formatet der 'types' er en liste
             print("  - Schema format detected: 'types' is a list.")
             types_map = {t['objectname']: t for t in types_data}
         else:
             return {"error": "'types' key in template is neither a list nor a dictionary."}
 
+        # === ENDRING 2: Relasjonsdetektiven - Finn ALLE relasjoner ===
         print("  - Discovering relationships...")
+        # Start med de eksplisitte relasjonene
         unified_relationships = template.get('relationships', [])
         
+        # Finn implisitte relasjoner definert i feltene
         for object_name, object_info in types_map.items():
             for field in object_info.get('fields', []):
                 field_entity_type = field.get('entitytype')
+                # En implisitt relasjon eksisterer hvis et felts 'entitytype'
+                # matcher navnet på et annet kjent objekt (f.eks. 'agenda').
                 if field_entity_type and field_entity_type in types_map:
                     print(f"    - Found implicit relationship: {object_name} -> {field_entity_type}")
-                    new_rel = {"parent": object_name, "child": field_entity_type, "childfieldname": field['fieldname']}
+                    new_rel = {
+                        "parent": object_name,
+                        "child": field_entity_type,
+                        "childfieldname": field['fieldname']
+                    }
+                    # Unngå duplikater hvis relasjonen allerede er definert
                     if not any(r['parent'] == new_rel['parent'] and r['child'] == new_rel['child'] for r in unified_relationships):
                         unified_relationships.append(new_rel)
 
+        # Resten av logikken bruker nå den komplette, forente listen med relasjoner
         entities = template.get('entities', {})
 
         root_object_info = next((t for t in types_map.values() if t.get('isroot')), None)
@@ -104,10 +129,11 @@ def process_template_hierarchically(template_path: str) -> dict:
 
         root_name = root_object_info['objectname']
         
-        print("  - Building schema for AI...")
-        schema_tree = build_schema_tree(root_name, types_map, unified_relationships, entities)
-        formal_json_schema = build_json_schema_from_tree(schema_tree, entities)
-        
+        # 1. Bygg treet ved hjelp av den nye, komplette relasjonslisten
+        schema_tree = build_schema_tree(root_name, types_map, unified_relationships, entities) #  Lengre opp i filen (2) 
+
+        # 2. Konverter treet til en formell JSON Schema for AI-kallet (som før)
+        formal_json_schema = build_json_schema_from_tree(schema_tree, entities)  #   Lengre opp i filen (3) 
         final_schema_for_api = {
             "type": "object",
             "properties": {root_name: formal_json_schema},
@@ -115,8 +141,17 @@ def process_template_hierarchically(template_path: str) -> dict:
             "additionalProperties": False
         }
         
-        entity_map = { entity_key: {item['name']: item['id'] for item in items} for entity_key, items in entities.items()}
+        # 3. Lag oppslagstabell for statiske entiteter (som før)
+        entity_map = {
+            entity_key: {item['name']: item['id'] for item in items}
+            for entity_key, items in entities.items()
+        }
 
-        return {"schema_tree": schema_tree, "json_schema_for_api": final_schema_for_api, "entity_map": entity_map}
+        # Returner den komplette pakken
+        return {
+            "schema_tree": schema_tree,
+            "json_schema_for_api": final_schema_for_api,
+            "entity_map": entity_map
+        }
     except Exception as e:
          return {"error": f"Template file has a malformed key/structure: {e}"}
