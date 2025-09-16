@@ -1,22 +1,28 @@
 [
     {
-        "id": "mom-ccf52429-a9dc-4d37-93a1-a9b265731fd0",
+        "id": "mom-5bc992ff-e0d0-4758-b281-521aaf1193bc",
         "objectname": "mom",
-        "description": "Offisielt starte \"Prosjekt Phoenix\", en ny digital markedsføringskampanje rettet mot å øke merkekjennskapen med 20% i segmentet 25-40 år. Målet for møtet var å definere nøkkelbudskap, tildele ansvar og sette en overordnet tidslinje for de neste 6 ukene.",
+        "description": "Officially launch 'Project Phoenix', a new digital marketing campaign aimed at increasing brand awareness by 20% in the 25-40 age segment. The meeting's goal was to define key messages, assign responsibilities, and set an overarching timeline for the next 6 weeks.",
         "endtime": "2025-12-06T14:30:00Z",
         "startuptime": "2025-12-06T13:00:00Z",
-        "title": "Oppstartsmøte for Prosjekt Phoenix",
+        "title": "Project Phoenix Kickstarter Meeting",
         "e_attendees_ids": {
             "type": "user",
-            "values": []
+            "values": [
+                "user-6-ola-hansen-uuid"
+            ]
         },
         "e_meeting_frequency_ids": {
             "type": "meetingfrequency",
-            "values": []
+            "values": [
+                "2"
+            ]
         },
         "e_project_ids": {
             "type": "project",
-            "values": []
+            "values": [
+                "3"
+            ]
         },
         "e_projectowner_ids": {
             "type": "user",
@@ -32,7 +38,9 @@
         },
         "e_status_ids": {
             "type": "momstatus",
-            "values": []
+            "values": [
+                "2"
+            ]
         },
         "e_typeofmeeting_ids": {
             "type": "typeofmeeting",
@@ -41,20 +49,20 @@
         "a_agenda_ids": {
             "type": "agenda",
             "values": [
-                "agenda-04b881af-2b69-43f2-86c5-99dd38059ae2",
-                "agenda-30c32f12-c1c5-4283-bb60-feb901a17942"
+                "agenda-2a6466bf-a331-46de-bd72-2a78ed582529",
+                "agenda-0a987ef6-4f52-4d04-ae04-502cf3384f46"
             ]
         }
     },
     {
-        "id": "measure-5cb7a65f-99b8-49db-a006-f2b810f990b8",
+        "id": "measure-6e32464a-5a43-4c08-8698-41767fa2c110",
         "objectname": "measure",
-        "parentid": "agenda-04b881af-2b69-43f2-86c5-99dd38059ae2",
+        "parentid": "agenda-2a6466bf-a331-46de-bd72-2a78ed582529",
         "parenttype": "agenda",
         "deadline": "2025-12-15T00:00:00Z",
-        "description": "Lise Berg og Jonas Fredriksen skal samarbeide om å lage detaljerte storyboards for videokonseptene.",
-        "descriptionimplementation": "",
-        "title": "Utvikle storyboard for 5 kampanjevideoer",
+        "description": "Lise Berg and Jonas Fredriksen to collaborate on creating detailed storyboards for the video concepts.",
+        "descriptionimplementation": "Not started.",
+        "title": "Develop storyboard for 5 campaign videos",
         "e_measurepriority_ids": {
             "type": "measurepriority",
             "values": []
@@ -71,37 +79,39 @@
         }
     },
     {
-        "id": "agenda-04b881af-2b69-43f2-86c5-99dd38059ae2",
+        "id": "agenda-2a6466bf-a331-46de-bd72-2a78ed582529",
         "objectname": "agenda",
-        "parentid": "mom-ccf52429-a9dc-4d37-93a1-a9b265731fd0",
+        "parentid": "mom-5bc992ff-e0d0-4758-b281-521aaf1193bc",
         "parenttype": "mom",
-        "conclusion": "Hovedbudskapet blir \"Enkelhet i hverdagen\". Kampanjen vil primært fokusere på Instagram (Reels) og TikTok. En serie på 5 korte videoer skal produseres.",
-        "description": "Teamet gjennomførte en workshop for å spikre hovedbudskapet. Diskusjonen landet på tre kjernekonsepter: \"Enkelhet i hverdagen\", \"Bærekraftig valg\" og \"Moderne design\". Jonas presenterte data som viser at målgruppen responderer best på visuelt innhold på Instagram og TikTok. Lise Berg foreslo å produsere en serie korte videoklipp som viser produktet i bruk i reelle situasjoner.",
-        "title": "Definisjon av kjernebudskap og målgruppe",
+        "conclusion": "The main message will be 'Simplicity in Everyday Life'. The campaign will focus primarily on Instagram (Reels) and TikTok. A series of 5 short videos will be produced.",
+        "description": "The team conducted a workshop to finalize the main messages, landing on three core concepts: 'Simplicity in Everyday Life', 'Sustainable Choice', and 'Modern Design'. Jonas presented data showing that the audience responds best to visual content on Instagram and TikTok. Lise Berg suggested producing a series of short video clips demonstrating the product in real-life situations.",
+        "title": "Definition of Core Message and Target Audience",
         "e_agenda_owner_ids": {
             "type": "user",
             "values": []
         },
         "e_status_ids": {
             "type": "agendastatus",
-            "values": []
+            "values": [
+                "2"
+            ]
         },
         "a_measures_ids": {
             "type": "measure",
             "values": [
-                "measure-5cb7a65f-99b8-49db-a006-f2b810f990b8"
+                "measure-6e32464a-5a43-4c08-8698-41767fa2c110"
             ]
         }
     },
     {
-        "id": "measure-973bd228-8c94-43b9-bfe5-a70853495218",
+        "id": "measure-932602ba-f0b5-4b29-b029-e3c778cdfd0d",
         "objectname": "measure",
-        "parentid": "agenda-30c32f12-c1c5-4283-bb60-feb901a17942",
+        "parentid": "agenda-0a987ef6-4f52-4d04-ae04-502cf3384f46",
         "parenttype": "agenda",
         "deadline": "2025-12-10T00:00:00Z",
-        "description": "Silje Dahl skal sende en formell forespørsel til ledelsen for å få godkjent det økte budsjettet på 100 000 NOK.",
-        "descriptionimplementation": "",
-        "title": "Få godkjenning for revidert budsjett",
+        "description": "Silje Dahl to send a formal request to management to approve the increased budget of 100,000 NOK.",
+        "descriptionimplementation": "Waiting for final figures from Erik.",
+        "title": "Get approval for revised budget",
         "e_measurepriority_ids": {
             "type": "measurepriority",
             "values": []
@@ -118,25 +128,27 @@
         }
     },
     {
-        "id": "agenda-30c32f12-c1c5-4283-bb60-feb901a17942",
+        "id": "agenda-0a987ef6-4f52-4d04-ae04-502cf3384f46",
         "objectname": "agenda",
-        "parentid": "mom-ccf52429-a9dc-4d37-93a1-a9b265731fd0",
+        "parentid": "mom-5bc992ff-e0d0-4758-b281-521aaf1193bc",
         "parenttype": "mom",
-        "conclusion": "Budsjettet økes til 600 000 NOK. Silje Dahl tar ansvaret for å få den formelle godkjenningen. Lanseringsdato er bekreftet.",
-        "description": "Silje Dahl presenterte det foreløpige budsjettet på 500 000 NOK. Beløpet skal dekke produksjon, annonsering og honorar til byrået. Erik Larsen mente at annonsebudsjettet burde økes med 100 000 NOK for å sikre tilstrekkelig rekkevidde på TikTok, noe som kan hentes fra reisebudsjettet som har mindre forbruk. Tidslinjen ble satt med lansering i uke 3, 2026.",
-        "title": "Budsjett og tidslinje",
+        "conclusion": "The budget is increased to 600,000 NOK. Silje Dahl is responsible for obtaining formal approval. Launch date is confirmed.",
+        "description": "Silje Dahl presented the preliminary budget of 500,000 NOK. Erik Larsen suggested increasing the ad budget by 100,000 NOK to ensure sufficient reach on TikTok. The timeline was set with launch in week 3, 2026.",
+        "title": "Budget and Timeline",
         "e_agenda_owner_ids": {
             "type": "user",
             "values": []
         },
         "e_status_ids": {
             "type": "agendastatus",
-            "values": []
+            "values": [
+                "2"
+            ]
         },
         "a_measures_ids": {
             "type": "measure",
             "values": [
-                "measure-973bd228-8c94-43b9-bfe5-a70853495218"
+                "measure-932602ba-f0b5-4b29-b029-e3c778cdfd0d"
             ]
         }
     }
