@@ -5,14 +5,14 @@ SIMULATED_DATABASE = {
     # --- DATA FROM 'Minutes of Meeting' ---
     "user": [
         {"id": "user-1-ola-nordmann-uuid", "name": "Ola Nordmann", "email": "ola@example.com"},
-        {"id": "user-2-kari-normann-uuid", "name": "Kari Nordmann", "email": "kari@example.com"},
+        {"id": "user-2-kari-nordmann-uuid", "name": "Kari Nordmann", "email": "kari@example.com"},
         {"id": "user-3-arne-arnesen-uuid", "name": "Arne Arnesen", "email": "arne@example.com"},
         {"id": "user-4-lise-nilsen-uuid", "name": "Lise Nilsen", "email": "lise@example.com"},
         {"id": "user-5-arne-pettersen-uuid", "name": "Arne Pettersen", "email": "arne.p@example.com"},
         {"id": "user-6-ola-hansen-uuid", "name": "Ola Hansen", "email": "ola.hansen@example.com"},
     ],
     "people": [ # 'people' er et alias for 'user' og har samme data
-        {"id": "user-1-ola-nordmann-uuid", "name": "Ola Nordmann"}, {"id": "user-2-kari-normann-uuid", "name": "Kari Nordmann"},
+        {"id": "user-1-ola-nordmann-uuid", "name": "Ola Nordmann"}, {"id": "user-2-kari-nordmann-uuid", "name": "Kari Nordmann"},
         {"id": "user-3-arne-arnesen-uuid", "name": "Arne Arnesen"}, {"id": "user-4-lise-nilsen-uuid", "name": "Lise Nilsen"},
         {"id": "user-5-arne-pettersen-uuid", "name": "Arne Pettersen"}, {"id": "user-6-ola-hansen-uuid", "name": "Ola Hansen"},
     ],

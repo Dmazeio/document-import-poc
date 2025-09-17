@@ -71,8 +71,6 @@ def build_json_schema_from_tree(node: dict, entities: dict) -> dict:
 
     return { "type": "object", "properties": properties, "required": required_fields, "additionalProperties": False }
 
-# ######################### END OF MODIFIED FUNCTION #########################
-
 
 #Denne hovedfunksjonen orkestrerer lesingen av en JSON-mal, bygger en intern hierarkisk trestruktur (schema_tree), og genererer deretter et formelt JSON Schema som brukes til å instruere AI-modellen nøyaktig hvordan den skal formatere sitt svar.
 def process_template_hierarchically(template_path: str) -> dict:

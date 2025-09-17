@@ -1,14 +1,37 @@
-# File: src/json_transformer.py (MODIFIED FOR STEP 2 - FINAL VERSION)
+# File: src/json_transformer.py (FINAL, BATCH-OPTIMIZED VERSION)
 
 import uuid
 import re
+import json
 from openai import OpenAI
 from .api_simulator import get_entities_from_api, get_entity_schema_from_api
-from .tools import find_best_entity_match_with_ai
+from .tools import find_best_entity_matches_in_batch
 
-#Denne rekursive funksjonen er den sentrale 'arbeidshesten' som navigerer gjennom den nestede datastrukturen, bygger et flatt objekt for hvert element, og bruker en avansert AI-matching for å konvertere tekstverdier som personnavn til deres korrekte system-ID-er.
-def flatten_recursively(client: OpenAI, data_node: dict, schema_node: dict, parent_id: str, parent_type: str, flat_list: list):
-    
+# --- NY HJELPEFUNKSJON FOR Å SAMLE INN "ARBEID" ---
+def collect_entities_to_match(data_node: dict, schema_node: dict, items_to_match: dict):
+    """Recursively traverses the data and schema to find all unique text values that need an ID lookup."""
+    for field_info in schema_node.get('fields', []):
+        entity_type = field_info.get('entitytype')
+        if entity_type:
+            raw_text_value = data_node.get(field_info['fieldname'])
+            if raw_text_value:
+                if entity_type not in items_to_match:
+                    items_to_match[entity_type] = set()
+                
+                texts = re.split(r'[,;\n]|(?:\s+og\s+)|(?:\s+and\s+)', str(raw_text_value)) if field_info.get('type') == "multivalue" else [str(raw_text_value)]
+                for text in texts:
+                    cleaned_text = text.strip()
+                    if cleaned_text:
+                        items_to_match[entity_type].add(cleaned_text)
+
+    for child_schema in schema_node.get('children', []):
+        child_items = data_node.get(child_schema['name'], [])
+        for item in child_items:
+            collect_entities_to_match(item, child_schema, items_to_match)
+
+
+# --- MODIFISERT FOR Å BRUKE ET FERDIG OPPSLAGSKART ---
+def flatten_recursively(client: OpenAI, data_node: dict, schema_node: dict, parent_id: str, parent_type: str, flat_list: list, id_lookup_map: dict):
     object_name = schema_node['name']
     node_id = f"{object_name}-{uuid.uuid4()}"
     dmaze_object = {"id": node_id, "objectname": object_name}
@@ -19,92 +42,53 @@ def flatten_recursively(client: OpenAI, data_node: dict, schema_node: dict, pare
     for field_info in schema_node['fields']:
         field_name = field_info['fieldname']
         raw_text_value = data_node.get(field_name)
-        
         field_type = field_info.get('type')
         entity_type = field_info.get('entitytype')
 
-        # Beregn 'final_value' først, med None som standard
-        final_value = None
-
-        if entity_type and raw_text_value and field_type in ["singlevalue", "multivalue", "entity"]:
-            
+        if entity_type:
             entity_schema = get_entity_schema_from_api(entity_type)
             if not entity_schema:
-                print(f"  - WARNING: No metadata schema for type '{entity_type}'. Skipping.")
+                dmaze_object[field_name] = {"type": entity_type, "values": []}
                 continue
 
-            valid_entities = get_entities_from_api(entity_type)
-            if not valid_entities:
-                print(f"  - WARNING: No entity data for type '{entity_type}'. Skipping.")
-                continue
-
-            display_field = entity_schema['primary_display_field']
-            id_field = entity_schema['id_field']
-            
             found_ids = []
-            texts_to_match = re.split(r'[,;\n]|(?:\s+og\s+)|(?:\s+and\s+)', raw_text_value) if field_type == "multivalue" else [raw_text_value]
+            if raw_text_value:
+                texts_to_match = re.split(r'[,;\n]|(?:\s+og\s+)|(?:\s+and\s+)', str(raw_text_value)) if field_type == "multivalue" else [str(raw_text_value)]
+                for text in texts_to_match:
+                    cleaned_text = text.strip()
+                    if cleaned_text:
+                        # RASKT OPPSLAG I KARTET - INGEN AI-KALL HER!
+                        found_id = id_lookup_map.get(entity_type, {}).get(cleaned_text)
+                        if found_id:
+                            found_ids.append(found_id)
             
-            for text_part in texts_to_match:
-                cleaned_text = text_part.strip()    
-                if cleaned_text:
-                    best_id = find_best_entity_match_with_ai(
-                        client, cleaned_text, valid_entities, entity_type, display_field, id_field
-                    )
-                    if best_id:
-                        found_ids.append(best_id)
+            type_name = entity_schema.get('dmaze_format_wrapper') or entity_type
+            values_list = found_ids
+            if field_type in ["singlevalue", "entity"] and len(values_list) > 1:
+                values_list = [values_list[0]]
+            
+            dmaze_object[field_name] = {"type": type_name, "values": values_list}
 
-            if found_ids:
-                output_type = entity_schema.get('dmaze_format_wrapper') or entity_type
-                values_list = found_ids if field_type == "multivalue" else [found_ids[0]]
-                final_value = { "type": output_type, "values": values_list }
-        
-        elif raw_text_value is not None:
-             final_value = raw_text_value
-
-        # ######################## START OF CHANGE FOR STEP 2 ########################
-        # Håndter den endelige verdien som skal legges til i objektet.
-
-        # Hvis vi har en verdi (enten fra AI-matching eller direkte tekst), bruk den.
-        if final_value is not None:
-            dmaze_object[field_name] = final_value
-
-        # Hvis det IKKE ble funnet en verdi...
         else:
-            # ...sjekk om dette er et entitetsfelt.
-            if entity_type:
-                # Hvis ja, lag den korrekte tomme strukturen.
-                entity_schema = get_entity_schema_from_api(entity_type)
-                output_type = entity_type # Default
-                if entity_schema: # Sikkerhetssjekk
-                    output_type = entity_schema.get('dmaze_format_wrapper') or entity_type
-                
-                dmaze_object[field_name] = {
-                    "type": output_type,
-                    "values": []
-                }
-            else:
-                # Hvis det er et vanlig tekstfelt, bruk en tom streng.
-                dmaze_object[field_name] = ""
-        # ######################### END OF CHANGE FOR STEP 2 #########################
-            
-    # Rekursjon for barn-objekter (relasjoner)
+            dmaze_object[field_name] = raw_text_value if raw_text_value is not None else ""
+
     for child_schema in schema_node.get('children', []):
-        child_name = child_schema['name']
-        child_items = data_node.get(child_name, [])
+        child_name = child_schema['name']  # <-- LEGG TIL DENNE DEFINISJONEN
+        child_items = data_node.get(child_name, []) # <-- BRUK VARIABELEN HER
         child_ids = []
         if child_items:
             for item in child_items:
-                child_id = flatten_recursively(client, item, child_schema, node_id, object_name, flat_list)
+                child_id = flatten_recursively(client, item, child_schema, node_id, object_name, flat_list, id_lookup_map)
                 child_ids.append(child_id)
         
         relationship_field = child_schema['relationship_field']
-        # Vi vil alltid ha med relasjonsfelt, selv om de er tomme
         dmaze_object[relationship_field] = {"type": child_name, "values": child_ids}
 
     flat_list.append(dmaze_object)
     return node_id
 
-#Denne funksjonen fungerer som en 'omorganiserer' som tar den hierarkiske, nestede JSON-dataen og transformerer den om til en flat liste av objekter, hvor hvert objekt er koblet til sin forelder via en ID – et format som ofte kreves av dataimportsystemer
+
+# --- HOVEDFUNKSJONEN SOM NÅ ORKESTRERER ALT ---
 def transform_to_dmaze_format_hierarchically(client: OpenAI, nested_data: dict, schema_package: dict) -> list:
     final_list = []
     schema_tree = schema_package['schema_tree']
@@ -112,7 +96,24 @@ def transform_to_dmaze_format_hierarchically(client: OpenAI, nested_data: dict, 
 
     if root_name not in nested_data:
         return [{"error": f"Input from AI is missing the root key '{root_name}'."}]
+
+    # --- STEG 1: SAMLE ALT ARBEID ---
+    print("\n--- Step 4a: Collecting all entities to be matched... ---")
+    items_to_match = {}
+    collect_entities_to_match(nested_data[root_name], schema_tree, items_to_match)
     
+    # --- STEG 2: HENT ALLE NØDVENDIGE "FASITER" FRA API ---
+    valid_entities_map = {
+        entity_type: get_entities_from_api(entity_type)
+        for entity_type in items_to_match.keys()
+    }
+
+    # --- STEG 3: KJØR ETT ENESTE, STORT AI-KALL ---
+    print("\n--- Step 4b: Finding all ID matches in a single batch call... ---")
+    id_lookup_map = find_best_entity_matches_in_batch(client, items_to_match, valid_entities_map)
+
+    # --- STEG 4: BYGG DEN ENDELIGE STRUKTUREN ---
+    print("\n--- Step 4c: Transforming data using the lookup map... ---")
     flatten_recursively(
         client=client,
         data_node=nested_data[root_name],
@@ -120,9 +121,9 @@ def transform_to_dmaze_format_hierarchically(client: OpenAI, nested_data: dict, 
         parent_id=None,
         parent_type=None,
         flat_list=final_list,
+        id_lookup_map=id_lookup_map # Send med det ferdige oppslagskartet
     )
 
-    # Sørg for at rot-objektet alltid er først i listen
     root_index = next((i for i, obj in enumerate(final_list) if obj.get('objectname') == root_name), -1)
     if root_index != -1:
         root_obj = final_list.pop(root_index)

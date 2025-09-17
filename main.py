@@ -1,5 +1,3 @@
-# File: main.py (FULLY GENERALIZED VERSION)
-
 import os
 import json
 from openai import OpenAI
@@ -9,7 +7,6 @@ from src.document_converter import convert_file_to_markdown
 from src.schema_processor import process_template_hierarchically
 from src.openai_extractor import extract_data_with_hierarchy
 from src.json_transformer import transform_to_dmaze_format_hierarchically
-# Importer de oppdaterte funksjonene
 from src.document_classifier import classify_document_type
 from src.document_splitter import split_document_into_items
 
