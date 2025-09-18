@@ -16,6 +16,8 @@ else:
     print("API-nøkkel funnet. Prøver å koble til OpenAI...")
     
     try:
+        if not api_key.endswith("68510mYLQA"):
+            print("Feil API nøkkel")
         # 2. Initialiser klienten
         client = OpenAI(api_key=api_key)
 
@@ -36,6 +38,8 @@ else:
         print(f"   Svar fra AI: '{ai_message}'")
         print("-----------------------------------------")
 
+        print(response)
+
     ### ENDRING: Fang den spesifikke feilen for å få tilgang til respons-objektet ###
     except APIStatusError as e:
         print("\n-----------------------------------------")
@@ -48,6 +52,7 @@ else:
         for key, value in e.response.headers.items():
             print(f"   {key}: {value}")
         print("-----------------------------------------")
+        print(e)
 
     except Exception as e:
         # Fanger opp andre, generelle feil (f.eks. nettverksproblemer)
