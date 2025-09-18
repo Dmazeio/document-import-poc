@@ -1,139 +1,248 @@
-[
-    {
-        "id": "assessment-81adfbdc-7fa7-4f45-b0ac-0047651f6caf",
-        "objectname": "assessment",
-        "assumptions": "",
-        "description": "Dette dokumentet beskriver de viktigste operasjonelle og finansielle risikoene knyttet til migreringen av vår primære kundedatabase til AWS-skyplattformen. Målet er å identifisere, vurdere og planlegge tiltak for de mest kritiske risikoene.",
-        "objective": "",
-        "title": "Risikovurdering for Sky-migreringsprosjektet - Q4 2025",
-        "e_activity_ids": "",
-        "e_location_ids": "loc-3-stavanger-uuid",
-        "e_projectowner_ids": {
-            "type": "user",
-            "values": [
-                "user-4-lise-nilsen-uuid"
-            ]
-        },
-        "e_responsible_unit_ids": "",
-        "e_status_ids": "2",
-        "a_risk_ids": {
-            "type": "risk",
-            "values": [
-                "risk-c1649a81-637b-42ec-8fc4-4080feb8e720",
-                "risk-2fcefa2d-d775-4533-af05-0cf5305ba8ce"
-            ]
+{
+    "summary": {
+        "inputFile": "input_documents/risk_assessment_sample.txt",
+        "templateUsed": "input-schemas/Risk Assessment - Enterprise Risk Assessment.json",
+        "overallStatus": "Success",
+        "processingTimestamp": "2025-09-18T09:01:48.863919",
+        "processingLog": {
+            "Template Processing": "Success (0.00s)",
+            "Document Conversion": "Success (0.12s)",
+            "Document Classification": "Success (4.36s)",
+            "AI Data Extraction": "Success (20.42s)",
+            "Data Transformation": "Success (8.57s)"
         }
     },
-    {
-        "id": "measure-3dbf3ba5-4fae-4dd2-8ee4-ff3e39061383",
-        "objectname": "measure",
-        "parentid": "risk-c1649a81-637b-42ec-8fc4-4080feb8e720",
-        "parenttype": "risk",
-        "deadline": "2025-10-15T00:00:00Z",
-        "description": "Implementere og verifisere en fullstendig backup- og tilbakeføringsplan før migreringen starter.",
-        "statusdescription": "",
-        "title": "Implementere og verifisere backup-plan",
-        "e_measurepriority_ids": "",
-        "e_responsible_ids": {
-            "type": "user",
-            "values": [
-                "user-2-kari-normann-uuid"
-            ]
+    "dmaze_data": [
+        {
+            "id": "assessment-a93f9ad0-dc8f-4c26-ab14-4429e4c1e4f0",
+            "objectname": "assessment",
+            "assumptions": "",
+            "description": "Dette dokumentet beskriver de viktigste operasjonelle og finansielle risikoene knyttet til migreringen av vår primære kundedatabase til AWS-skyplattformen. Målet er å identifisere, vurdere og planlegge tiltak for de mest kritiske risikoene.",
+            "objective": "Målet er å identifisere, vurdere og planlegge tiltak for de mest kritiske risikoene.",
+            "title": "Risikovurdering for Sky-migreringsprosjektet - Q4 2025",
+            "e_activity_ids": {
+                "type": "activity",
+                "values": []
+            },
+            "e_location_ids": {
+                "type": "location",
+                "values": []
+            },
+            "e_projectowner_ids": {
+                "type": "user",
+                "values": [
+                    "user-4-lise-nilsen-uuid"
+                ]
+            },
+            "e_responsible_unit_ids": {
+                "type": "unit",
+                "values": []
+            },
+            "e_risk_category_ids": {
+                "type": "riskcategory",
+                "values": []
+            },
+            "e_status_ids": {
+                "type": "assessmentstatus",
+                "values": []
+            },
+            "a_risk_ids": {
+                "type": "risk",
+                "values": [
+                    "risk-ad53cb71-a149-4e4f-80dc-83a9cea4b3d1",
+                    "risk-1b0fe7a4-466b-40e8-a852-50b92ae8e451"
+                ]
+            }
         },
-        "e_status_ids": ""
-    },
-    {
-        "id": "risk-c1649a81-637b-42ec-8fc4-4080feb8e720",
-        "objectname": "risk",
-        "parentid": "assessment-81adfbdc-7fa7-4f45-b0ac-0047651f6caf",
-        "parenttype": "assessment",
-        "assumption": "",
-        "consequence_justification": "",
-        "description": "Hvis migreringsskriptene feiler eller det oppstår nettverksbrudd, kan vi miste kritisk kundedata. Dette kan føre til brudd på personvernlovgivningen.",
-        "existingmeasuredescription": "",
-        "matrixcolor": "",
-        "matrixscore": "",
-        "riskscore": "",
-        "title": "Datatap under migrering",
-        "uncertainty_justification": "",
-        "e_arena_ids": "",
-        "e_consequence_economy_ids": "3",
-        "e_consequence_environment_ids": "",
-        "e_consequence_probability_ids": "2",
-        "e_consequence_reputation_ids": "4",
-        "e_consequence_safety_ids": "",
-        "e_manageability_ids": "",
-        "e_phase_ids": "",
-        "e_risk_owner_ids": {
-            "type": "user",
-            "values": [
-                "user-6-ola-hansen-uuid"
-            ]
+        {
+            "id": "measure-c3045d2e-a93e-4d76-b660-45d786c7d638",
+            "objectname": "measure",
+            "parentid": "risk-ad53cb71-a149-4e4f-80dc-83a9cea4b3d1",
+            "parenttype": "risk",
+            "deadline": "2025-10-15T00:00:00Z",
+            "description": "Implementere og verifisere en fullstendig backup- og tilbakeføringsplan før migreringen starter.",
+            "statusdescription": "",
+            "title": "Datatap under migrering",
+            "e_measurepriority_ids": {
+                "type": "measurepriority",
+                "values": []
+            },
+            "e_responsible_ids": {
+                "type": "user",
+                "values": [
+                    "user-2-kari-nordmann-uuid"
+                ]
+            },
+            "e_status_ids": {
+                "type": "measurestate",
+                "values": []
+            }
         },
-        "e_riskstrategy_ids": "",
-        "e_status_ids": "2",
-        "e_uncertainty_ids": "",
-        "a_measures_ids": {
-            "type": "measure",
-            "values": [
-                "measure-3dbf3ba5-4fae-4dd2-8ee4-ff3e39061383"
-            ]
+        {
+            "id": "risk-ad53cb71-a149-4e4f-80dc-83a9cea4b3d1",
+            "objectname": "risk",
+            "parentid": "assessment-a93f9ad0-dc8f-4c26-ab14-4429e4c1e4f0",
+            "parenttype": "assessment",
+            "assumption": "",
+            "consequence_justification": "",
+            "description": "Hvis migreringsskriptene feiler eller det oppstår nettverksbrudd, kan vi miste kritisk kundedata. Dette kan føre til brudd på personvernlovgivningen.",
+            "existingmeasuredescription": "",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Datatap under migrering",
+            "uncertainty_justification": "",
+            "e_arena_ids": {
+                "type": "arena",
+                "values": []
+            },
+            "e_consequence_economy_ids": {
+                "type": "consequenceeconomy",
+                "values": []
+            },
+            "e_consequence_environment_ids": {
+                "type": "consequenceenvironment",
+                "values": []
+            },
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": []
+            },
+            "e_consequence_reputation_ids": {
+                "type": "consequencereputation",
+                "values": []
+            },
+            "e_consequence_safety_ids": {
+                "type": "consequencesafety",
+                "values": []
+            },
+            "e_manageability_ids": {
+                "type": "manageability",
+                "values": []
+            },
+            "e_phase_ids": {
+                "type": "phase",
+                "values": []
+            },
+            "e_risk_owner_ids": {
+                "type": "user",
+                "values": [
+                    "user-6-ola-hansen-uuid"
+                ]
+            },
+            "e_riskstrategy_ids": {
+                "type": "riskstrategy",
+                "values": []
+            },
+            "e_status_ids": {
+                "type": "riskstatus",
+                "values": []
+            },
+            "e_uncertainty_ids": {
+                "type": "uncertainty",
+                "values": []
+            },
+            "a_measures_ids": {
+                "type": "measure",
+                "values": [
+                    "measure-c3045d2e-a93e-4d76-b660-45d786c7d638"
+                ]
+            }
+        },
+        {
+            "id": "measure-26c3b92a-581b-4423-b0f0-49bb07f0ede8",
+            "objectname": "measure",
+            "parentid": "risk-1b0fe7a4-466b-40e8-a852-50b92ae8e451",
+            "parenttype": "risk",
+            "deadline": "2025-10-01T00:00:00Z",
+            "description": "Innhente et fastpristilbud fra en ekstern leverandør for de mest komplekse delene av migreringen.",
+            "statusdescription": "",
+            "title": "Uforutsette kostnader",
+            "e_measurepriority_ids": {
+                "type": "measurepriority",
+                "values": []
+            },
+            "e_responsible_ids": {
+                "type": "user",
+                "values": [
+                    "user-5-arne-pettersen-uuid"
+                ]
+            },
+            "e_status_ids": {
+                "type": "measurestate",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-1b0fe7a4-466b-40e8-a852-50b92ae8e451",
+            "objectname": "risk",
+            "parentid": "assessment-a93f9ad0-dc8f-4c26-ab14-4429e4c1e4f0",
+            "parenttype": "assessment",
+            "assumption": "",
+            "consequence_justification": "",
+            "description": "Prosjektet kan overskride budsjettet på grunn av ukjente tekniske utfordringer eller behov for ekstern konsulenthjelp.",
+            "existingmeasuredescription": "",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Uforutsette kostnader",
+            "uncertainty_justification": "",
+            "e_arena_ids": {
+                "type": "arena",
+                "values": []
+            },
+            "e_consequence_economy_ids": {
+                "type": "consequenceeconomy",
+                "values": []
+            },
+            "e_consequence_environment_ids": {
+                "type": "consequenceenvironment",
+                "values": []
+            },
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": []
+            },
+            "e_consequence_reputation_ids": {
+                "type": "consequencereputation",
+                "values": []
+            },
+            "e_consequence_safety_ids": {
+                "type": "consequencesafety",
+                "values": []
+            },
+            "e_manageability_ids": {
+                "type": "manageability",
+                "values": []
+            },
+            "e_phase_ids": {
+                "type": "phase",
+                "values": []
+            },
+            "e_risk_owner_ids": {
+                "type": "user",
+                "values": [
+                    "user-5-arne-pettersen-uuid"
+                ]
+            },
+            "e_riskstrategy_ids": {
+                "type": "riskstrategy",
+                "values": []
+            },
+            "e_status_ids": {
+                "type": "riskstatus",
+                "values": []
+            },
+            "e_uncertainty_ids": {
+                "type": "uncertainty",
+                "values": []
+            },
+            "a_measures_ids": {
+                "type": "measure",
+                "values": [
+                    "measure-26c3b92a-581b-4423-b0f0-49bb07f0ede8"
+                ]
+            }
         }
-    },
-    {
-        "id": "measure-c726b1b6-e851-4d0b-9717-b3137c1c6e8f",
-        "objectname": "measure",
-        "parentid": "risk-2fcefa2d-d775-4533-af05-0cf5305ba8ce",
-        "parenttype": "risk",
-        "deadline": "2025-10-01T00:00:00Z",
-        "description": "Innhente et fastpristilbud fra en ekstern leverandør for de mest komplekse delene av migreringen.",
-        "statusdescription": "",
-        "title": "Innhente fastpristilbud fra ekstern leverandør",
-        "e_measurepriority_ids": "",
-        "e_responsible_ids": {
-            "type": "user",
-            "values": [
-                "user-5-arne-pettersen-uuid"
-            ]
-        },
-        "e_status_ids": ""
-    },
-    {
-        "id": "risk-2fcefa2d-d775-4533-af05-0cf5305ba8ce",
-        "objectname": "risk",
-        "parentid": "assessment-81adfbdc-7fa7-4f45-b0ac-0047651f6caf",
-        "parenttype": "assessment",
-        "assumption": "",
-        "consequence_justification": "",
-        "description": "Prosjektet kan overskride budsjettet på grunn av ukjente tekniske utfordringer eller behov for ekstern konsulenthjelp.",
-        "existingmeasuredescription": "",
-        "matrixcolor": "",
-        "matrixscore": "",
-        "riskscore": "",
-        "title": "Uforutsette kostnader",
-        "uncertainty_justification": "",
-        "e_arena_ids": "",
-        "e_consequence_economy_ids": "2",
-        "e_consequence_environment_ids": "",
-        "e_consequence_probability_ids": "3",
-        "e_consequence_reputation_ids": "",
-        "e_consequence_safety_ids": "",
-        "e_manageability_ids": "",
-        "e_phase_ids": "",
-        "e_risk_owner_ids": {
-            "type": "user",
-            "values": [
-                "user-5-arne-pettersen-uuid"
-            ]
-        },
-        "e_riskstrategy_ids": "",
-        "e_status_ids": "1",
-        "e_uncertainty_ids": "",
-        "a_measures_ids": {
-            "type": "measure",
-            "values": [
-                "measure-c726b1b6-e851-4d0b-9717-b3137c1c6e8f"
-            ]
-        }
-    }
-]
+    ]
+}
