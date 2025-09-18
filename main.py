@@ -10,7 +10,6 @@ import time
 # import sys
 # from io import StringIO
 
-# ... (alle de andre importene dine er de samme)
 from src.document_converter import convert_file_to_markdown
 from src.schema_processor import process_template_hierarchically
 from src.openai_extractor import extract_data_with_hierarchy
@@ -19,7 +18,6 @@ from src.document_classifier import classify_document_type
 from src.document_splitter import split_document_into_items
 
 # --- KONFIGURASJON ---
-# ... (uendret)
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
@@ -27,7 +25,6 @@ if not api_key:
 client = OpenAI(api_key=api_key)
 
 
-### ENDRING: Forenklet logg-funksjon som lager en kompakt streng ###
 def log_step(processing_log, step_name, function_to_run):
     """
     Kjører en funksjon, printer detaljer til konsollen, og legger til
@@ -77,7 +74,7 @@ if __name__ == "__main__":
     os.makedirs("output", exist_ok=True)
 
     try:
-        # Loggen er nå en ordbok (dictionary), ikke en liste
+
         initial_log = {} 
         
         schema_package = log_step(initial_log, "Template Processing", 
