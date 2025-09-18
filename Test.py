@@ -16,7 +16,7 @@ else:
     print("API-nøkkel funnet. Prøver å koble til OpenAI...")
     
     try:
-        if not api_key.endswith("68510mYLQA"):
+        if not api_key.startswith("sk-svcacct-2n3S8A1") and not api_key.endswith("68510mYLQA"):
             print("Feil API nøkkel")
         # 2. Initialiser klienten
         client = OpenAI(api_key=api_key)
