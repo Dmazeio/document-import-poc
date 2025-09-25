@@ -4,24 +4,26 @@
         "templateUsed": "input-schemas/Minutes of Meeting.json",
         "overallStatus": "Success",
         "itemTitle": "Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"",
-        "processingTimestamp": "2025-09-25T11:28:26.660522",
+        "processingTimestamp": "2025-09-25T13:32:49.127506",
         "processingLog": {
             "Template Processing": "Success (0.00s)",
-            "Document Conversion": "Success (0.10s)",
-            "Document Classification": "Success (6.43s)",
-            "Document Splitting": "Success (10.13s)",
-            "AI Data Extraction": "Success (10.13s)",
-            "Data Transformation": "Success (6.40s)"
-        }
+            "Document Conversion": "Success (0.08s)",
+            "Document Classification": "Success (3.07s)",
+            "Document Splitting": "Success (21.22s)",
+            "AI Data Extraction": "Success (13.92s)",
+            "Data Transformation": "Success (7.99s)"
+        },
+        "errorsEncountered": [],
+        "humanReadableSummary": "Oppsummering av importprosessen for dokumentdel 'Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"' fra filen 'sample_4.docx', basert på malen 'Minutes of Meeting.json'.\n\n**Overordnet status:** ✅ Vellykket\nDet ble generert totalt 4 Dmaze-objekter, hvorav 1 er hovedobjekter av typen 'mom'.\n\n**Vellykkede steg:** Template Processing, Document Conversion, Document Classification, Document Splitting, AI Data Extraction, Data Transformation.\n\nIngen spesifikke feil ble registrert under behandlingen."
     },
     "dmaze_data": [
         {
-            "id": "mom-3266384d-a340-4421-8f8b-375d3c69403f",
+            "id": "mom-1f2014be-f7b6-48ff-9665-b8f0230daa92",
             "objectname": "mom",
             "description": "Offisielt starte \"Prosjekt Phoenix\", en ny digital markedsføringskampanje rettet mot å øke merkekjennskapen med 20% i segmentet 25-40 år. Målet for møtet var å definere nøkkelbudskap, tildele ansvar og sette en overordnet tidslinje for de neste 6 ukene.",
             "endtime": "2025-12-06T14:30:00Z",
             "startuptime": "2025-12-06T13:00:00Z",
-            "title": "Oppstartsmøte for Prosjekt Phoenix",
+            "title": "Startmøte for Prosjekt Phoenix",
             "e_attendees_ids": {
                 "type": "user",
                 "values": [
@@ -65,23 +67,50 @@
             "a_agenda_ids": {
                 "type": "agenda",
                 "values": [
-                    "agenda-26425d70-9baa-4169-9eae-a735045b1d35",
-                    "agenda-93e8dcef-3f3a-4e75-835b-470059d18654"
+                    "agenda-221287ec-c700-43af-a371-97b1ae182fb2"
                 ]
             }
         },
         {
-            "id": "measure-403722d9-c74e-45fb-8f2b-5e24a2de98bf",
+            "id": "measure-ad71778e-6eb6-401d-8249-33d84de25589",
             "objectname": "measure",
-            "parentid": "agenda-26425d70-9baa-4169-9eae-a735045b1d35",
+            "parentid": "agenda-221287ec-c700-43af-a371-97b1ae182fb2",
             "parenttype": "agenda",
             "deadline": "2025-12-15T00:00:00Z",
             "description": "Lise Berg og Jonas Fredriksen skal samarbeide om å lage detaljerte storyboards for videokonseptene.",
             "descriptionimplementation": "Ikke påbegynt.",
-            "title": "Utvikle storyboard for 5 kampanjevideoer.",
+            "title": "",
             "e_measurepriority_ids": {
                 "type": "measurepriority",
+                "values": [
+                    "1"
+                ]
+            },
+            "e_responsible_ids": {
+                "type": "user",
                 "values": []
+            },
+            "e_status_ids": {
+                "type": "measurestate",
+                "values": [
+                    "4"
+                ]
+            }
+        },
+        {
+            "id": "measure-14ce938d-2548-47d4-859c-5429ad9699b8",
+            "objectname": "measure",
+            "parentid": "agenda-221287ec-c700-43af-a371-97b1ae182fb2",
+            "parenttype": "agenda",
+            "deadline": "2025-12-10T00:00:00Z",
+            "description": "Silje Dahl skal sende en formell forespørsel til ledelsen for å få godkjent det økte budsjettet på 100 000 NOK.",
+            "descriptionimplementation": "Venter på endelig tallgrunnlag fra Erik.",
+            "title": "",
+            "e_measurepriority_ids": {
+                "type": "measurepriority",
+                "values": [
+                    "1"
+                ]
             },
             "e_responsible_ids": {
                 "type": "user",
@@ -95,9 +124,9 @@
             }
         },
         {
-            "id": "agenda-26425d70-9baa-4169-9eae-a735045b1d35",
+            "id": "agenda-221287ec-c700-43af-a371-97b1ae182fb2",
             "objectname": "agenda",
-            "parentid": "mom-3266384d-a340-4421-8f8b-375d3c69403f",
+            "parentid": "mom-1f2014be-f7b6-48ff-9665-b8f0230daa92",
             "parenttype": "mom",
             "conclusion": "Hovedbudskapet blir \"Enkelhet i hverdagen\". Kampanjen vil primært fokusere på Instagram (Reels) og TikTok. En serie på 5 korte videoer skal produseres.",
             "description": "Teamet gjennomførte en workshop for å spikre hovedbudskapet. Diskusjonen landet på tre kjernekonsepter: \"Enkelhet i hverdagen\", \"Bærekraftig valg\" og \"Moderne design\". Jonas presenterte data som viser at målgruppen responderer best på visuelt innhold på Instagram og TikTok. Lise Berg foreslo å produsere en serie korte videoklipp som viser produktet i bruk i reelle situasjoner.",
@@ -115,56 +144,8 @@
             "a_measures_ids": {
                 "type": "measure",
                 "values": [
-                    "measure-403722d9-c74e-45fb-8f2b-5e24a2de98bf"
-                ]
-            }
-        },
-        {
-            "id": "measure-47c92a24-dc44-43d2-8dc4-9b8bff018362",
-            "objectname": "measure",
-            "parentid": "agenda-93e8dcef-3f3a-4e75-835b-470059d18654",
-            "parenttype": "agenda",
-            "deadline": "2025-12-10T00:00:00Z",
-            "description": "Silje Dahl skal sende en formell forespørsel til ledelsen for å få godkjent det økte budsjettet på 100 000 NOK.",
-            "descriptionimplementation": "Venter på endelig tallgrunnlag fra Erik.",
-            "title": "Få godkjenning for revidert budsjett.",
-            "e_measurepriority_ids": {
-                "type": "measurepriority",
-                "values": []
-            },
-            "e_responsible_ids": {
-                "type": "user",
-                "values": []
-            },
-            "e_status_ids": {
-                "type": "measurestate",
-                "values": [
-                    "1"
-                ]
-            }
-        },
-        {
-            "id": "agenda-93e8dcef-3f3a-4e75-835b-470059d18654",
-            "objectname": "agenda",
-            "parentid": "mom-3266384d-a340-4421-8f8b-375d3c69403f",
-            "parenttype": "mom",
-            "conclusion": "Budsjettet økes til 600 000 NOK. Silje Dahl tar ansvaret for å få den formelle godkjenningen. Lanseringsdato er bekreftet.",
-            "description": "Silje Dahl presenterte det foreløpige budsjettet på 500 000 NOK. Beløpet skal dekke produksjon, annonsering og honorar til byrået. Erik Larsen mente at annonsebudsjettet burde økes med 100 000 NOK for å sikre tilstrekkelig rekkevidde på TikTok, noe som kan hentes fra reisebudsjettet som har mindre forbruk. Tidslinjen ble satt med lansering i uke 3, 2026.",
-            "title": "Budsjett og tidslinje",
-            "e_agenda_owner_ids": {
-                "type": "user",
-                "values": []
-            },
-            "e_status_ids": {
-                "type": "agendastatus",
-                "values": [
-                    "2"
-                ]
-            },
-            "a_measures_ids": {
-                "type": "measure",
-                "values": [
-                    "measure-47c92a24-dc44-43d2-8dc4-9b8bff018362"
+                    "measure-ad71778e-6eb6-401d-8249-33d84de25589",
+                    "measure-14ce938d-2548-47d4-859c-5429ad9699b8"
                 ]
             }
         }
