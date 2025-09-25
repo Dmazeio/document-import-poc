@@ -4,24 +4,24 @@
         "templateUsed": "input-schemas/Minutes of Meeting.json",
         "overallStatus": "Success",
         "itemTitle": "Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"",
-        "processingTimestamp": "2025-09-18T09:47:46.740264",
+        "processingTimestamp": "2025-09-24T09:15:26.907443",
         "processingLog": {
             "Template Processing": "Success (0.00s)",
-            "Document Conversion": "Success (0.18s)",
-            "Document Classification": "Success (2.65s)",
-            "Document Splitting": "Success (15.10s)",
-            "AI Data Extraction": "Success (10.83s)",
-            "Data Transformation": "Success (8.58s)"
+            "Document Conversion": "Success (0.10s)",
+            "Document Classification": "Success (4.09s)",
+            "Document Splitting": "Success (13.30s)",
+            "AI Data Extraction": "Success (11.62s)",
+            "Data Transformation": "Success (9.68s)"
         }
     },
     "dmaze_data": [
         {
-            "id": "mom-df0fbdc1-355e-4b0d-b9e7-ac8ab88780e6",
+            "id": "mom-bbdce1f5-4b30-4464-8867-5fac44464302",
             "objectname": "mom",
             "description": "Offisielt starte \"Prosjekt Phoenix\", en ny digital markedsføringskampanje rettet mot å øke merkekjennskapen med 20% i segmentet 25-40 år. Målet for møtet var å definere nøkkelbudskap, tildele ansvar og sette en overordnet tidslinje for de neste 6 ukene.",
             "endtime": "2025-12-06T14:30:00Z",
             "startuptime": "2025-12-06T13:00:00Z",
-            "title": "Prosjekt Phoenix Kickoff Meeting",
+            "title": "Oppstartsmøte: Prosjekt Phoenix",
             "e_attendees_ids": {
                 "type": "user",
                 "values": [
@@ -54,7 +54,9 @@
             },
             "e_status_ids": {
                 "type": "momstatus",
-                "values": []
+                "values": [
+                    "2"
+                ]
             },
             "e_typeofmeeting_ids": {
                 "type": "typeofmeeting",
@@ -65,25 +67,23 @@
             "a_agenda_ids": {
                 "type": "agenda",
                 "values": [
-                    "agenda-3288c39d-b0ad-4766-878e-c3395fcbde5c",
-                    "agenda-61a443a9-3c15-49b4-bb21-4e052cf465bd"
+                    "agenda-02055cad-2f2d-47f7-9672-1daae73bb930",
+                    "agenda-13207b02-3555-4975-be34-d82ba9b4fd07"
                 ]
             }
         },
         {
-            "id": "measure-a12577c6-f7f6-4649-a73c-3ea20659b3e6",
+            "id": "measure-5e60b817-2b9c-4e0e-a2b4-2411961ac0a7",
             "objectname": "measure",
-            "parentid": "agenda-3288c39d-b0ad-4766-878e-c3395fcbde5c",
+            "parentid": "agenda-02055cad-2f2d-47f7-9672-1daae73bb930",
             "parenttype": "agenda",
             "deadline": "2025-12-15T00:00:00Z",
             "description": "Lise Berg og Jonas Fredriksen skal samarbeide om å lage detaljerte storyboards for videokonseptene.",
             "descriptionimplementation": "Ikke påbegynt.",
-            "title": "Utvikle storyboard for 5 kampanjevideoer",
+            "title": "Utvikle storyboard for 5 kampanjevideoer.",
             "e_measurepriority_ids": {
                 "type": "measurepriority",
-                "values": [
-                    "1"
-                ]
+                "values": []
             },
             "e_responsible_ids": {
                 "type": "user",
@@ -92,14 +92,14 @@
             "e_status_ids": {
                 "type": "measurestate",
                 "values": [
-                    "1"
+                    "4"
                 ]
             }
         },
         {
-            "id": "agenda-3288c39d-b0ad-4766-878e-c3395fcbde5c",
+            "id": "agenda-02055cad-2f2d-47f7-9672-1daae73bb930",
             "objectname": "agenda",
-            "parentid": "mom-df0fbdc1-355e-4b0d-b9e7-ac8ab88780e6",
+            "parentid": "mom-bbdce1f5-4b30-4464-8867-5fac44464302",
             "parenttype": "mom",
             "conclusion": "Hovedbudskapet blir \"Enkelhet i hverdagen\". Kampanjen vil primært fokusere på Instagram (Reels) og TikTok. En serie på 5 korte videoer skal produseres.",
             "description": "Teamet gjennomførte en workshop for å spikre hovedbudskapet. Diskusjonen landet på tre kjernekonsepter: \"Enkelhet i hverdagen\", \"Bærekraftig valg\" og \"Moderne design\". Jonas presenterte data som viser at målgruppen responderer best på visuelt innhold på Instagram og TikTok. Lise Berg foreslo å produsere en serie korte videoklipp som viser produktet i bruk i reelle situasjoner.",
@@ -117,24 +117,22 @@
             "a_measures_ids": {
                 "type": "measure",
                 "values": [
-                    "measure-a12577c6-f7f6-4649-a73c-3ea20659b3e6"
+                    "measure-5e60b817-2b9c-4e0e-a2b4-2411961ac0a7"
                 ]
             }
         },
         {
-            "id": "measure-9365335f-69dc-4f25-9ad8-8486442baa72",
+            "id": "measure-85c74e26-0d51-42f0-ae7b-283f7a4e0276",
             "objectname": "measure",
-            "parentid": "agenda-61a443a9-3c15-49b4-bb21-4e052cf465bd",
+            "parentid": "agenda-13207b02-3555-4975-be34-d82ba9b4fd07",
             "parenttype": "agenda",
             "deadline": "2025-12-10T00:00:00Z",
             "description": "Silje Dahl skal sende en formell forespørsel til ledelsen for å få godkjent det økte budsjettet på 100 000 NOK.",
             "descriptionimplementation": "Venter på endelig tallgrunnlag fra Erik.",
-            "title": "Få godkjenning for revidert budsjett",
+            "title": "Få godkjenning for revidert budsjett.",
             "e_measurepriority_ids": {
                 "type": "measurepriority",
-                "values": [
-                    "1"
-                ]
+                "values": []
             },
             "e_responsible_ids": {
                 "type": "user",
@@ -142,15 +140,13 @@
             },
             "e_status_ids": {
                 "type": "measurestate",
-                "values": [
-                    "1"
-                ]
+                "values": []
             }
         },
         {
-            "id": "agenda-61a443a9-3c15-49b4-bb21-4e052cf465bd",
+            "id": "agenda-13207b02-3555-4975-be34-d82ba9b4fd07",
             "objectname": "agenda",
-            "parentid": "mom-df0fbdc1-355e-4b0d-b9e7-ac8ab88780e6",
+            "parentid": "mom-bbdce1f5-4b30-4464-8867-5fac44464302",
             "parenttype": "mom",
             "conclusion": "Budsjettet økes til 600 000 NOK. Silje Dahl tar ansvaret for å få den formelle godkjenningen. Lanseringsdato er bekreftet.",
             "description": "Silje Dahl presenterte det foreløpige budsjettet på 500 000 NOK. Beløpet skal dekke produksjon, annonsering og honorar til byrået. Erik Larsen mente at annonsebudsjettet burde økes med 100 000 NOK for å sikre tilstrekkelig rekkevidde på TikTok, noe som kan hentes fra reisebudsjettet som har mindre forbruk. Tidslinjen ble satt med lansering i uke 3, 2026.",
@@ -162,13 +158,13 @@
             "e_status_ids": {
                 "type": "agendastatus",
                 "values": [
-                    "3"
+                    "2"
                 ]
             },
             "a_measures_ids": {
                 "type": "measure",
                 "values": [
-                    "measure-9365335f-69dc-4f25-9ad8-8486442baa72"
+                    "measure-85c74e26-0d51-42f0-ae7b-283f7a4e0276"
                 ]
             }
         }
