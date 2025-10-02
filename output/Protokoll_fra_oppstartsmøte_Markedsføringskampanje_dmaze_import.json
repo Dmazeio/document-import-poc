@@ -2,28 +2,37 @@
     "summary": {
         "inputFile": "input_documents/sample_4.docx",
         "templateUsed": "input-schemas/Minutes of Meeting.json",
-        "overallStatus": "Success",
+        "overallStatus": "SuccessWithWarnings",
         "itemTitle": "Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"",
-        "processingTimestamp": "2025-09-25T13:32:49.127506",
+        "processingTimestamp": "2025-10-02T10:36:46.498573",
         "processingLog": {
-            "Template Processing": "Success (0.00s)",
-            "Document Conversion": "Success (0.08s)",
-            "Document Classification": "Success (3.07s)",
-            "Document Splitting": "Success (21.22s)",
-            "AI Data Extraction": "Success (13.92s)",
-            "Data Transformation": "Success (7.99s)"
+            "Template Processing": "Success (0.01s)",
+            "Document Conversion": "Success (0.20s)",
+            "Document Classification": "Success (5.39s)",
+            "Document Splitting": "Success (18.37s)",
+            "AI Data Extraction": "Success (9.32s)",
+            "Data Transformation": "Success (5.91s)"
         },
         "errorsEncountered": [],
-        "humanReadableSummary": "Oppsummering av importprosessen for dokumentdel 'Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"' fra filen 'sample_4.docx', basert på malen 'Minutes of Meeting.json'.\n\n**Overordnet status:** ✅ Vellykket\nDet ble generert totalt 4 Dmaze-objekter, hvorav 1 er hovedobjekter av typen 'mom'.\n\n**Vellykkede steg:** Template Processing, Document Conversion, Document Classification, Document Splitting, AI Data Extraction, Data Transformation.\n\nIngen spesifikke feil ble registrert under behandlingen."
+        "warningsEncountered": [
+            "Match not found for 'Lise Berg' (Type: people). The value was ignored.",
+            "Match not found for 'Silje Dahl' (Type: people). The value was ignored.",
+            "Match not found for 'Jonas Fredriksen' (Type: people). The value was ignored.",
+            "Match not found for 'Erik Larsen' (Type: people). The value was ignored.",
+            "Match not found for 'One-off' (Type: meetingfrequency). The value was ignored.",
+            "Match not found for 'Lise Berg' (Type: user). The value was ignored.",
+            "Match not found for 'Silje Dahl' (Type: user). The value was ignored."
+        ],
+        "humanReadableSummary": "Summary of the import process for document part 'Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"' from the file 'sample_4.docx', based on the template 'Minutes of Meeting.json'.\n\n**Overall status:** ⚠️ Success, but with warnings requiring manual review.\nA total of 5 Dmaze objects were generated, of which 1 are main objects of type 'mom'.\n\n**Successful steps:** Template Processing, Document Conversion, Document Classification, Document Splitting, AI Data Extraction, Data Transformation.\n\n**⚠️ Warnings (require manual review):**\n- Match not found for 'Lise Berg' (Type: people). The value was ignored.\n- Match not found for 'Silje Dahl' (Type: people). The value was ignored.\n- Match not found for 'Jonas Fredriksen' (Type: people). The value was ignored.\n- Match not found for 'Erik Larsen' (Type: people). The value was ignored.\n- Match not found for 'One-off' (Type: meetingfrequency). The value was ignored.\n- Match not found for 'Lise Berg' (Type: user). The value was ignored.\n- Match not found for 'Silje Dahl' (Type: user). The value was ignored."
     },
     "dmaze_data": [
         {
-            "id": "mom-1f2014be-f7b6-48ff-9665-b8f0230daa92",
+            "id": "mom-f2d715b2-9817-46ba-bdb1-3f516ab219f8",
             "objectname": "mom",
             "description": "Offisielt starte \"Prosjekt Phoenix\", en ny digital markedsføringskampanje rettet mot å øke merkekjennskapen med 20% i segmentet 25-40 år. Målet for møtet var å definere nøkkelbudskap, tildele ansvar og sette en overordnet tidslinje for de neste 6 ukene.",
             "endtime": "2025-12-06T14:30:00Z",
             "startuptime": "2025-12-06T13:00:00Z",
-            "title": "Startmøte for Prosjekt Phoenix",
+            "title": "Prosjekt Phoenix Kickoff Meeting",
             "e_attendees_ids": {
                 "type": "user",
                 "values": [
@@ -67,14 +76,15 @@
             "a_agenda_ids": {
                 "type": "agenda",
                 "values": [
-                    "agenda-221287ec-c700-43af-a371-97b1ae182fb2"
+                    "agenda-c0177de9-3611-415d-afb9-91fcf6a36ea3",
+                    "agenda-189e1ce8-de22-4843-8ce7-5bf97823c328"
                 ]
             }
         },
         {
-            "id": "measure-ad71778e-6eb6-401d-8249-33d84de25589",
+            "id": "measure-1528d2a0-26d3-4c1d-85ec-137113aa5e35",
             "objectname": "measure",
-            "parentid": "agenda-221287ec-c700-43af-a371-97b1ae182fb2",
+            "parentid": "agenda-c0177de9-3611-415d-afb9-91fcf6a36ea3",
             "parenttype": "agenda",
             "deadline": "2025-12-15T00:00:00Z",
             "description": "Lise Berg og Jonas Fredriksen skal samarbeide om å lage detaljerte storyboards for videokonseptene.",
@@ -93,14 +103,39 @@
             "e_status_ids": {
                 "type": "measurestate",
                 "values": [
-                    "4"
+                    "1"
                 ]
             }
         },
         {
-            "id": "measure-14ce938d-2548-47d4-859c-5429ad9699b8",
+            "id": "agenda-c0177de9-3611-415d-afb9-91fcf6a36ea3",
+            "objectname": "agenda",
+            "parentid": "mom-f2d715b2-9817-46ba-bdb1-3f516ab219f8",
+            "parenttype": "mom",
+            "conclusion": "Hovedbudskapet blir \"Enkelhet i hverdagen\". Kampanjen vil primært fokusere på Instagram (Reels) og TikTok. En serie på 5 korte videoer skal produseres.",
+            "description": "Teamet gjennomførte en workshop for å spikre hovedbudskapet. Diskusjonen landet på tre kjernekonsepter: \"Enkelhet i hverdagen\", \"Bærekraftig valg\" og \"Moderne design\". Jonas presenterte data som viser at målgruppen responderer best på visuelt innhold på Instagram og TikTok. Lise Berg foreslo å produsere en serie korte videoklipp som viser produktet i bruk i reelle situasjoner.",
+            "title": "Definisjon av kjernebudskap og målgruppe",
+            "e_agenda_owner_ids": {
+                "type": "user",
+                "values": []
+            },
+            "e_status_ids": {
+                "type": "agendastatus",
+                "values": [
+                    "2"
+                ]
+            },
+            "a_measures_ids": {
+                "type": "measure",
+                "values": [
+                    "measure-1528d2a0-26d3-4c1d-85ec-137113aa5e35"
+                ]
+            }
+        },
+        {
+            "id": "measure-b963e116-af15-4bf9-b42b-6c4eedbb6c97",
             "objectname": "measure",
-            "parentid": "agenda-221287ec-c700-43af-a371-97b1ae182fb2",
+            "parentid": "agenda-189e1ce8-de22-4843-8ce7-5bf97823c328",
             "parenttype": "agenda",
             "deadline": "2025-12-10T00:00:00Z",
             "description": "Silje Dahl skal sende en formell forespørsel til ledelsen for å få godkjent det økte budsjettet på 100 000 NOK.",
@@ -124,13 +159,13 @@
             }
         },
         {
-            "id": "agenda-221287ec-c700-43af-a371-97b1ae182fb2",
+            "id": "agenda-189e1ce8-de22-4843-8ce7-5bf97823c328",
             "objectname": "agenda",
-            "parentid": "mom-1f2014be-f7b6-48ff-9665-b8f0230daa92",
+            "parentid": "mom-f2d715b2-9817-46ba-bdb1-3f516ab219f8",
             "parenttype": "mom",
-            "conclusion": "Hovedbudskapet blir \"Enkelhet i hverdagen\". Kampanjen vil primært fokusere på Instagram (Reels) og TikTok. En serie på 5 korte videoer skal produseres.",
-            "description": "Teamet gjennomførte en workshop for å spikre hovedbudskapet. Diskusjonen landet på tre kjernekonsepter: \"Enkelhet i hverdagen\", \"Bærekraftig valg\" og \"Moderne design\". Jonas presenterte data som viser at målgruppen responderer best på visuelt innhold på Instagram og TikTok. Lise Berg foreslo å produsere en serie korte videoklipp som viser produktet i bruk i reelle situasjoner.",
-            "title": "Definisjon av kjernebudskap og målgruppe",
+            "conclusion": "Budsjettet økes til 600 000 NOK. Silje Dahl tar ansvaret for å få den formelle godkjenningen. Lanseringsdato er bekreftet.",
+            "description": "Silje Dahl presenterte det foreløpige budsjettet på 500 000 NOK. Beløpet skal dekke produksjon, annonsering og honorar til byrået. Erik Larsen mente at annonsebudsjettet burde økes med 100 000 NOK for å sikre tilstrekkelig rekkevidde på TikTok, noe som kan hentes fra reisebudsjettet som har mindre forbruk. Tidslinjen ble satt med lansering i uke 3, 2026.",
+            "title": "Budsjett og tidslinje",
             "e_agenda_owner_ids": {
                 "type": "user",
                 "values": []
@@ -144,8 +179,7 @@
             "a_measures_ids": {
                 "type": "measure",
                 "values": [
-                    "measure-ad71778e-6eb6-401d-8249-33d84de25589",
-                    "measure-14ce938d-2548-47d4-859c-5429ad9699b8"
+                    "measure-b963e116-af15-4bf9-b42b-6c4eedbb6c97"
                 ]
             }
         }

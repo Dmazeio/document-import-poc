@@ -26,7 +26,8 @@ SIMULATED_DATABASE = {
     "unit": [{"id": "unit-1", "name": "Finance Department"}, {"id": "unit-2", "name": "Operations Division"}],
     "measurestate": [{"id": "1", "name": "Identified (pending decision)"}, {"id": "4", "name": "In progress (not started)"}, {"id": "12", "name": "Completed (100%) (approved)"}],
     "location": [{"id": "loc-1-oslo-uuid", "name": "Møterom Oslo"}, {"id": "loc-2-bergen-uuid", "name": "Prosjektrom Bergen"}],
-    "meetingfrequency": [{"id": "2", "name": "One-off"}, {"id": "1", "name": "Recurring"}],
+    "meetingfrequency": [{"id": "2", "name": "One-off"}, 
+                         {"id": "1", "name": "Recurring"}],
     "agendastatus": [{"id": "3", "name": "Closed"}, {"id": "1", "name": "Draft"}, {"id": "2", "name": "Open"}],
     "measurepriority": [{"id": "1", "name": "High"}, {"id": "3", "name": "Low"}, {"id": "2", "name": "Medium"}],
 
