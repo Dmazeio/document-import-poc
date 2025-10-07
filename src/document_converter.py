@@ -1,31 +1,27 @@
-# File: src/document_converter.py
+# ETTER (denne koden skal du lime inn)
 
-from markitdown import MarkItDown
+import io  # VIKTIG: Importer io-biblioteket
+import mammoth # Eller det biblioteket du bruker
 
-def convert_file_to_markdown(file_path: str) -> str:
+def convert_file_to_markdown(document_bytes: bytes, filename: str) -> str:
     """
-    Converts any supported file (PDF, DOCX, etc.) to a structured
-    Markdown string using the MarkItDown library.
+    Konverterer in-memory bytes av et .docx-dokument til markdown.
+
+    Args:
+        document_bytes: Rå bytes av .docx-filen.
+        filename: Det originale filnavnet (brukes ikke her, men er god praksis å ha med).
     
-    This function replaces the old PDF-specific processor.
+    Returns:
+        En string med markdown-innhold.
     """
-    try:
-        # Initialize the converter
-        converter = MarkItDown()
-        
-        # Convert the file to Markdown
-        markdown_object = converter.convert(file_path)
-        
-        # Convert the result to a plain text string before returning it.
-        markdown_content = str(markdown_object)
-        
-        return markdown_content
-        
-    except FileNotFoundError:
-        # Returns a dictionary with an error message for consistent error handling
-        # We return a dictionary here to avoid a crash if the file is not found.
-        # This is technically not a string, but main.py checks for this.
-        return {"error": f"File not found at: {file_path}"}
-    except Exception as e:
-        return {"error": f"An error occurred while converting the file to Markdown: {e}"}
+    # Steg 1: Fjern `with open(...)` blokken.
+    # Steg 2: Lag et "fil-lignende objekt" i minnet fra bytes.
+    document_stream = io.BytesIO(document_bytes)
+
+    # Steg 3: Send dette minne-objektet til konverteringsbiblioteket.
+    # Koden herfra er sannsynligvis identisk med den du hadde før.
+    result = mammoth.convert_to_markdown(document_stream)
+    markdown_text = result.value
     
+    # Kan være mer logikk her...
+    return markdown_text

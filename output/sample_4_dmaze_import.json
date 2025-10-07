@@ -1,0 +1,398 @@
+[
+    {
+        "summary": {
+            "inputFile": "sample_4.docx",
+            "templateUsed": "In-memory schema",
+            "overallStatus": "SuccessWithWarnings",
+            "itemTitle": "Møtereferat: Kvartalsvis IT-sikkerhetsgjennomgang Q4 2025",
+            "processingTimestamp": "2025-10-06T14:08:18.137144",
+            "processingLog": {
+                "Template Processing": "Success (0.00s)",
+                "Document Conversion": "Success (0.05s)",
+                "Document Classification": "Success (5.99s)",
+                "Document Splitting": "Success (78.04s)",
+                "AI Data Extraction for 'Møtereferat: Kvartalsvis IT-sikkerhetsgjennomgang Q4 2025'": "Success (58.24s)",
+                "Data Transformation for 'Møtereferat: Kvartalsvis IT-sikkerhetsgjennomgang Q4 2025'": "Success (8.61s)",
+                "AI Data Extraction for 'Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"'": "Success (11.07s)",
+                "Data Transformation for 'Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"'": "Success (5.56s)"
+            },
+            "errorsEncountered": [],
+            "warningsEncountered": [
+                "Match not found for 'Pia Jensen' (Type: people). The value was ignored."
+            ],
+            "humanReadableSummary": "Summary of the import process for document part 'Møtereferat: Kvartalsvis IT-sikkerhetsgjennomgang Q4 2025' from the file 'sample_4.docx'."
+        },
+        "dmaze_data": [
+            {
+                "id": "mom-b0226499-1d66-45c1-a003-4d385c5c0a16",
+                "objectname": "mom",
+                "description": "Gjennomgå sikkerhetshendelser fra Q4, evaluere status på pågående tiltak, og planlegge prioriteringer for Q1 2026. Møtet har som mål å sikre at selskapets digitale verdier er tilstrekkelig beskyttet mot nye og eksisterende trusler.",
+                "endtime": "2025-12-05T12:00:00Z",
+                "startuptime": "2025-12-05T10:00:00Z",
+                "title": "Sikkerhetsgjennomgang Q4-2025",
+                "e_attendees_ids": {
+                    "type": "user",
+                    "values": [
+                        "user-2-kari-nordmann-uuid",
+                        "user-6-ola-hansen-uuid",
+                        "user-5-arne-pettersen-uuid"
+                    ]
+                },
+                "e_meeting_frequency_ids": {
+                    "type": "meetingfrequency",
+                    "values": [
+                        "2"
+                    ]
+                },
+                "e_project_ids": {
+                    "type": "project",
+                    "values": [
+                        "7"
+                    ]
+                },
+                "e_projectowner_ids": {
+                    "type": "user",
+                    "values": [
+                        "user-2-kari-nordmann-uuid"
+                    ]
+                },
+                "e_responsible_unit_ids": {
+                    "type": "unit",
+                    "values": []
+                },
+                "e_responsiblemanager_ids": {
+                    "type": "user",
+                    "values": [
+                        "user-2-kari-nordmann-uuid"
+                    ]
+                },
+                "e_status_ids": {
+                    "type": "momstatus",
+                    "values": [
+                        "3"
+                    ]
+                },
+                "e_typeofmeeting_ids": {
+                    "type": "typeofmeeting",
+                    "values": [
+                        "2"
+                    ]
+                },
+                "a_agenda_ids": {
+                    "type": "agenda",
+                    "values": [
+                        "agenda-2af2f7ab-2864-4b73-aabb-995ba68d76a5",
+                        "agenda-96081017-5813-4402-8310-346b039de874"
+                    ]
+                }
+            },
+            {
+                "id": "measure-141df2a1-6e46-4df9-bc8b-4a2b3939ca4f",
+                "objectname": "measure",
+                "parentid": "agenda-2af2f7ab-2864-4b73-aabb-995ba68d76a5",
+                "parenttype": "agenda",
+                "deadline": "2026-02-01T00:00:00Z",
+                "description": "Sikkerhetsteamet skal lage en interaktiv modul som simulerer avanserte svindelforsøk rettet mot ledelsen.",
+                "descriptionimplementation": "Tildelt til Ola Hansen. Ikke påbegynt.",
+                "title": "Utvikle ny opplæringsmodul om \"CEO fraud\".",
+                "e_measurepriority_ids": {
+                    "type": "measurepriority",
+                    "values": []
+                },
+                "e_responsible_ids": {
+                    "type": "user",
+                    "values": [
+                        "user-6-ola-hansen-uuid"
+                    ]
+                },
+                "e_status_ids": {
+                    "type": "measurestate",
+                    "values": [
+                        "4"
+                    ]
+                }
+            },
+            {
+                "id": "measure-1362b8a5-d0d0-49c7-8a88-b2404db11e48",
+                "objectname": "measure",
+                "parentid": "agenda-2af2f7ab-2864-4b73-aabb-995ba68d76a5",
+                "parenttype": "agenda",
+                "deadline": "2026-01-15T00:00:00Z",
+                "description": "Samle inn data fra Q4 og lage en detaljert rapport om hvilke typer phishing som er mest utbredt.",
+                "descriptionimplementation": "lukket.",
+                "title": "Analysere og rapportere phishing-trender.",
+                "e_measurepriority_ids": {
+                    "type": "measurepriority",
+                    "values": []
+                },
+                "e_responsible_ids": {
+                    "type": "user",
+                    "values": []
+                },
+                "e_status_ids": {
+                    "type": "measurestate",
+                    "values": [
+                        "12"
+                    ]
+                }
+            },
+            {
+                "id": "agenda-2af2f7ab-2864-4b73-aabb-995ba68d76a5",
+                "objectname": "agenda",
+                "parentid": "mom-b0226499-1d66-45c1-a003-4d385c5c0a16",
+                "parenttype": "mom",
+                "conclusion": "Phishing-opplæringen anses som en suksess og skal videreføres med en ny modul i februar. Rutinene for tap av utstyr fungerer, og ingen endringer er nødvendig.",
+                "description": "Kari Nordmann presenterte rapporten for siste kvartal. Det ble registrert en økning på 15% i phishing-forsøk sammenlignet med Q3, men antall vellykkede angrep var null. Dette skyldes trolig den nye obligatoriske opplæringen som ble rullet ut i oktober. Det ble også diskutert en mindre hendelse der en ansatt mistet en firmatelefon, men enheten ble fjernslettet innen 10 minutter i henhold til prosedyre. Teamet var enige om at rutinene fungerer som de skal.",
+                "title": "Gjennomgang av hendelsesrapport for Q4",
+                "e_agenda_owner_ids": {
+                    "type": "user",
+                    "values": [
+                        "user-2-kari-nordmann-uuid"
+                    ]
+                },
+                "e_status_ids": {
+                    "type": "agendastatus",
+                    "values": [
+                        "2"
+                    ]
+                },
+                "a_measures_ids": {
+                    "type": "measure",
+                    "values": [
+                        "measure-141df2a1-6e46-4df9-bc8b-4a2b3939ca4f",
+                        "measure-1362b8a5-d0d0-49c7-8a88-b2404db11e48"
+                    ]
+                }
+            },
+            {
+                "id": "measure-68cf5e25-d151-450f-93af-bbb5d1de5fc1",
+                "objectname": "measure",
+                "parentid": "agenda-96081017-5813-4402-8310-346b039de874",
+                "parenttype": "agenda",
+                "deadline": "2026-01-31T00:00:00Z",
+                "description": "Arne Pettersen, i samarbeid med økonomiavdelingen, skal utrede kostnadene ved en full oppgradering versus risikoen ved å fortsette med den midlertidige løsningen.",
+                "descriptionimplementation": "Ikke påbegynt.",
+                "title": "Lage en kost/nytte-analyse for oppgradering av eldre applikasjon.",
+                "e_measurepriority_ids": {
+                    "type": "measurepriority",
+                    "values": []
+                },
+                "e_responsible_ids": {
+                    "type": "user",
+                    "values": [
+                        "user-5-arne-pettersen-uuid"
+                    ]
+                },
+                "e_status_ids": {
+                    "type": "measurestate",
+                    "values": [
+                        "4"
+                    ]
+                }
+            },
+            {
+                "id": "agenda-96081017-5813-4402-8310-346b039de874",
+                "objectname": "agenda",
+                "parentid": "mom-b0226499-1d66-45c1-a003-4d385c5c0a16",
+                "parenttype": "mom",
+                "conclusion": "Prosjektet er i rute. Det må lages en plan for å fase ut den eldre applikasjonen eller oppgradere den for full 2FA-støtte.",
+                "description": "Arne Pettersen ga en status på utrullingen av 2FA for alle kritiske systemer. Per i dag har 95% av brukerne aktivert 2FA. De resterende 5% er primært konsulenter og deltidsansatte. Det har vært noen tekniske utfordringer med en eldre applikasjon som ikke har innebygd støtte for moderne autentiseringsmetoder. En midlertidig løsning er på plass, men en permanent oppgradering må planlegges.",
+                "title": "Status for implementering av 2-faktor autentisering (2FA)",
+                "e_agenda_owner_ids": {
+                    "type": "user",
+                    "values": [
+                        "user-5-arne-pettersen-uuid"
+                    ]
+                },
+                "e_status_ids": {
+                    "type": "agendastatus",
+                    "values": [
+                        "2"
+                    ]
+                },
+                "a_measures_ids": {
+                    "type": "measure",
+                    "values": [
+                        "measure-68cf5e25-d151-450f-93af-bbb5d1de5fc1"
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "summary": {
+            "inputFile": "sample_4.docx",
+            "templateUsed": "In-memory schema",
+            "overallStatus": "SuccessWithWarnings",
+            "itemTitle": "Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"",
+            "processingTimestamp": "2025-10-06T14:08:34.764072",
+            "processingLog": {
+                "Template Processing": "Success (0.00s)",
+                "Document Conversion": "Success (0.05s)",
+                "Document Classification": "Success (5.99s)",
+                "Document Splitting": "Success (78.04s)",
+                "AI Data Extraction for 'Møtereferat: Kvartalsvis IT-sikkerhetsgjennomgang Q4 2025'": "Success (58.24s)",
+                "Data Transformation for 'Møtereferat: Kvartalsvis IT-sikkerhetsgjennomgang Q4 2025'": "Success (8.61s)",
+                "AI Data Extraction for 'Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"'": "Success (11.07s)",
+                "Data Transformation for 'Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"'": "Success (5.56s)"
+            },
+            "errorsEncountered": [],
+            "warningsEncountered": [
+                "Match not found for 'Silje Dahl' (Type: people). The value was ignored.",
+                "Match not found for 'Lise Berg' (Type: people). The value was ignored.",
+                "Match not found for 'Jonas Fredriksen' (Type: people). The value was ignored.",
+                "Match not found for 'Erik Larsen' (Type: people). The value was ignored.",
+                "Match not found for 'Silje Dahl' (Type: user). The value was ignored.",
+                "Match not found for 'Jonas Fredriksen' (Type: user). The value was ignored."
+            ],
+            "humanReadableSummary": "Summary of the import process for document part 'Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"' from the file 'sample_4.docx'."
+        },
+        "dmaze_data": [
+            {
+                "id": "mom-0efd893d-a075-4299-91e3-e18aff39ac50",
+                "objectname": "mom",
+                "description": "Offisielt starte \"Prosjekt Phoenix\", en ny digital markedsføringskampanje rettet mot å øke merkekjennskapen med 20% i segmentet 25-40 år. Målet for møtet var å definere nøkkelbudskap, tildele ansvar og sette en overordnet tidslinje for de neste 6 ukene.",
+                "endtime": "2025-12-06T14:30:00Z",
+                "startuptime": "2025-12-06T13:00:00Z",
+                "title": "Oppstartsmøte for Prosjekt Phoenix",
+                "e_attendees_ids": {
+                    "type": "user",
+                    "values": [
+                        "user-6-ola-hansen-uuid"
+                    ]
+                },
+                "e_meeting_frequency_ids": {
+                    "type": "meetingfrequency",
+                    "values": []
+                },
+                "e_project_ids": {
+                    "type": "project",
+                    "values": [
+                        "3"
+                    ]
+                },
+                "e_projectowner_ids": {
+                    "type": "user",
+                    "values": []
+                },
+                "e_responsible_unit_ids": {
+                    "type": "unit",
+                    "values": []
+                },
+                "e_responsiblemanager_ids": {
+                    "type": "user",
+                    "values": []
+                },
+                "e_status_ids": {
+                    "type": "momstatus",
+                    "values": []
+                },
+                "e_typeofmeeting_ids": {
+                    "type": "typeofmeeting",
+                    "values": []
+                },
+                "a_agenda_ids": {
+                    "type": "agenda",
+                    "values": [
+                        "agenda-149c2ee0-cf72-4d4b-b509-9879f61ac272",
+                        "agenda-078461c7-62e1-49e5-a28c-8df3db021047"
+                    ]
+                }
+            },
+            {
+                "id": "measure-84b7610e-b21d-4f98-bdd2-5c63c5c985da",
+                "objectname": "measure",
+                "parentid": "agenda-149c2ee0-cf72-4d4b-b509-9879f61ac272",
+                "parenttype": "agenda",
+                "deadline": "2025-12-15T00:00:00Z",
+                "description": "Lise Berg og Jonas Fredriksen skal samarbeide om å lage detaljerte storyboards for videokonseptene.",
+                "descriptionimplementation": "Ikke påbegynt.",
+                "title": "",
+                "e_measurepriority_ids": {
+                    "type": "measurepriority",
+                    "values": []
+                },
+                "e_responsible_ids": {
+                    "type": "user",
+                    "values": []
+                },
+                "e_status_ids": {
+                    "type": "measurestate",
+                    "values": [
+                        "4"
+                    ]
+                }
+            },
+            {
+                "id": "agenda-149c2ee0-cf72-4d4b-b509-9879f61ac272",
+                "objectname": "agenda",
+                "parentid": "mom-0efd893d-a075-4299-91e3-e18aff39ac50",
+                "parenttype": "mom",
+                "conclusion": "Hovedbudskapet blir \"Enkelhet i hverdagen\". Kampanjen vil primært fokusere på Instagram (Reels) og TikTok. En serie på 5 korte videoer skal produseres.",
+                "description": "Teamet gjennomførte en workshop for å spikre hovedbudskapet. Diskusjonen landet på tre kjernekonsepter: \"Enkelhet i hverdagen\", \"Bærekraftig valg\" og \"Moderne design\". Jonas presenterte data som viser at målgruppen responderer best på visuelt innhold på Instagram og TikTok. Lise Berg foreslo å produsere en serie korte videoklipp som viser produktet i bruk i reelle situasjoner.",
+                "title": "Definisjon av kjernebudskap og målgruppe",
+                "e_agenda_owner_ids": {
+                    "type": "user",
+                    "values": []
+                },
+                "e_status_ids": {
+                    "type": "agendastatus",
+                    "values": []
+                },
+                "a_measures_ids": {
+                    "type": "measure",
+                    "values": [
+                        "measure-84b7610e-b21d-4f98-bdd2-5c63c5c985da"
+                    ]
+                }
+            },
+            {
+                "id": "measure-4b0c5bc3-00db-4d9e-ae5d-a76c0f3f6570",
+                "objectname": "measure",
+                "parentid": "agenda-078461c7-62e1-49e5-a28c-8df3db021047",
+                "parenttype": "agenda",
+                "deadline": "2025-12-10T00:00:00Z",
+                "description": "Silje Dahl skal sende en formell forespørsel til ledelsen for å få godkjent det økte budsjettet på 100 000 NOK.",
+                "descriptionimplementation": "Venter på endelig tallgrunnlag fra Erik.",
+                "title": "",
+                "e_measurepriority_ids": {
+                    "type": "measurepriority",
+                    "values": []
+                },
+                "e_responsible_ids": {
+                    "type": "user",
+                    "values": []
+                },
+                "e_status_ids": {
+                    "type": "measurestate",
+                    "values": [
+                        "1"
+                    ]
+                }
+            },
+            {
+                "id": "agenda-078461c7-62e1-49e5-a28c-8df3db021047",
+                "objectname": "agenda",
+                "parentid": "mom-0efd893d-a075-4299-91e3-e18aff39ac50",
+                "parenttype": "mom",
+                "conclusion": "Budsjettet økes til 600 000 NOK. Silje Dahl tar ansvaret for å få den formelle godkjenningen. Lanseringsdato er bekreftet.",
+                "description": "Silje Dahl presenterte det foreløpige budsjettet på 500 000 NOK. Beløpet skal dekke produksjon, annonsering og honorar til byrået. Erik Larsen mente at annonsebudsjettet burde økes med 100 000 NOK for å sikre tilstrekkelig rekkevidde på TikTok, noe som kan hentes fra reisebudsjettet som har mindre forbruk. Tidslinjen ble satt med lansering i uke 3, 2026.",
+                "title": "Budsjett og tidslinje",
+                "e_agenda_owner_ids": {
+                    "type": "user",
+                    "values": []
+                },
+                "e_status_ids": {
+                    "type": "agendastatus",
+                    "values": []
+                },
+                "a_measures_ids": {
+                    "type": "measure",
+                    "values": [
+                        "measure-4b0c5bc3-00db-4d9e-ae5d-a76c0f3f6570"
+                    ]
+                }
+            }
+        ]
+    }
+]

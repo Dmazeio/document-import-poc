@@ -1,5 +1,3 @@
-# File: src/api_simulator.py (FINAL, CLEANED UP VERSION)
-
 # Denne ordboken simulerer hele Dmaze-databasen med data.
 SIMULATED_DATABASE = {
     # --- DATA FROM 'Minutes of Meeting' ---

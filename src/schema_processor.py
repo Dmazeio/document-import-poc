@@ -21,7 +21,6 @@ def build_schema_tree(object_name: str, types_map: dict, relationships: list, en
     return node
 
 
-# ######################## START OF MODIFIED FUNCTION ########################
 
 # Denne funksjonen oversetter den interne, forenklede trestrukturen (schema_tree) til et strengt og formelt JSON Schema, som fungerer som en detaljert teknisk instruks for AI-modellen 
 def build_json_schema_from_tree(node: dict, entities: dict) -> dict:
@@ -73,16 +72,14 @@ def build_json_schema_from_tree(node: dict, entities: dict) -> dict:
 
 
 #Denne hovedfunksjonen orkestrerer lesingen av en JSON-mal, bygger en intern hierarkisk trestruktur (schema_tree), og genererer deretter et formelt JSON Schema som brukes til å instruere AI-modellen nøyaktig hvordan den skal formatere sitt svar.
-def process_template_hierarchically(template_path: str) -> dict:
+def process_template_hierarchically(schema_content: dict):
     """
     Main function to read ANY template file and generate the necessary schema artifacts.
     """
     try:
-        with open(template_path, 'r', encoding='utf-8') as f:
-            template = json.load(f)
 
         # === ENDRING 1: Fleksibel "types"-håndtering ===
-        types_data = template.get('types', [])
+        types_data = schema_content.get('types', [])
         types_map = {}
     
         if isinstance(types_data, dict):
@@ -99,7 +96,7 @@ def process_template_hierarchically(template_path: str) -> dict:
         # === ENDRING 2: Relasjonsdetektiven - Finn ALLE relasjoner ===
         print("  - Discovering relationships...")
         # Start med de eksplisitte relasjonene
-        unified_relationships = template.get('relationships', [])
+        unified_relationships = schema_content.get('relationships', [])
         
         # Finn implisitte relasjoner definert i feltene
         for object_name, object_info in types_map.items():
@@ -119,7 +116,7 @@ def process_template_hierarchically(template_path: str) -> dict:
                         unified_relationships.append(new_rel)
 
         # Resten av logikken bruker nå den komplette, forente listen med relasjoner
-        entities = template.get('entities', {})
+        entities = schema_content.get('entities', {})
 
         root_object_info = next((t for t in types_map.values() if t.get('isroot')), None)
         if not root_object_info:
@@ -128,10 +125,10 @@ def process_template_hierarchically(template_path: str) -> dict:
         root_name = root_object_info['objectname']
         
         # 1. Bygg treet ved hjelp av den nye, komplette relasjonslisten
-        schema_tree = build_schema_tree(root_name, types_map, unified_relationships, entities) #  Lengre opp i filen (2) 
+        schema_tree = build_schema_tree(root_name, types_map, unified_relationships, entities) 
 
         # 2. Konverter treet til en formell JSON Schema for AI-kallet (som før)
-        formal_json_schema = build_json_schema_from_tree(schema_tree, entities)  #   Lengre opp i filen (3) 
+        formal_json_schema = build_json_schema_from_tree(schema_tree, entities)  
         final_schema_for_api = {
             "type": "object",
             "properties": {root_name: formal_json_schema},

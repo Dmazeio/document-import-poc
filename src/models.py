@@ -10,13 +10,12 @@ class DocumentAnalysis(BaseModel):
     document_type: DocumentStructureType
     reasoning: str
 
-# Endre navn fra MeetingChunk til DocumentChunk
+
 class DocumentChunk(BaseModel):
     # Endre feltnavn for å være generelle
     item_title: str
     item_content: str
 
-# Endre navn fra MultiMeetingDocument til MultiItemDocument
 class MultiItemDocument(BaseModel):
     # Bruk den nye DocumentChunk og et generelt feltnavn
     items: List[DocumentChunk]

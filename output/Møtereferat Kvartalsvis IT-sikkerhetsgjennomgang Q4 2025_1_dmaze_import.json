@@ -1,34 +1,35 @@
 {
     "summary": {
-        "inputFile": "input_documents/sample_4.docx",
-        "templateUsed": "input-schemas/Minutes of Meeting.json",
+        "inputFile": "sample_4.docx",
+        "templateUsed": "In-memory schema",
         "overallStatus": "SuccessWithWarnings",
         "itemTitle": "Møtereferat: Kvartalsvis IT-sikkerhetsgjennomgang Q4 2025",
-        "processingTimestamp": "2025-10-02T10:35:42.963792",
+        "processingTimestamp": "2025-10-07T14:33:20.116822",
         "processingLog": {
-            "Template Processing": "Success (0.01s)",
-            "Document Conversion": "Success (0.20s)",
-            "Document Classification": "Success (5.39s)",
-            "Document Splitting": "Success (18.37s)",
-            "AI Data Extraction": "Success (42.32s)",
-            "Data Transformation": "Success (21.21s)"
+            "Template Processing": "Success (0.00s)",
+            "Document Conversion": "Success (0.06s)",
+            "Document Classification": "Success (5.47s)",
+            "Document Splitting": "Success (99.83s)",
+            "AI Data Extraction for 'Møtereferat: Kvartalsvis IT-sikkerhetsgjennomgang Q4 2025'": "Success (29.41s)",
+            "Data Transformation for 'Møtereferat: Kvartalsvis IT-sikkerhetsgjennomgang Q4 2025'": "Success (8.09s)",
+            "AI Data Extraction for 'Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"'": "Success (10.30s)",
+            "Data Transformation for 'Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"'": "Success (9.33s)"
         },
         "errorsEncountered": [],
         "warningsEncountered": [
             "Match not found for 'Pia Jensen (Personvernombud)' (Type: people). The value was ignored.",
-            "Match not found for 'IT-sikkerhet)' (Type: people). The value was ignored.",
-            "Match not found for 'One-off' (Type: meetingfrequency). The value was ignored."
+            "Match not found for 'IT-sikkerhet)' (Type: people). The value was ignored."
         ],
-        "humanReadableSummary": "Summary of the import process for document part 'Møtereferat: Kvartalsvis IT-sikkerhetsgjennomgang Q4 2025' from the file 'sample_4.docx', based on the template 'Minutes of Meeting.json'.\n\n**Overall status:** ⚠️ Success, but with warnings requiring manual review.\nA total of 6 Dmaze objects were generated, of which 1 are main objects of type 'mom'.\n\n**Successful steps:** Template Processing, Document Conversion, Document Classification, Document Splitting, AI Data Extraction, Data Transformation.\n\n**⚠️ Warnings (require manual review):**\n- Match not found for 'Pia Jensen (Personvernombud)' (Type: people). The value was ignored.\n- Match not found for 'IT-sikkerhet)' (Type: people). The value was ignored.\n- Match not found for 'One-off' (Type: meetingfrequency). The value was ignored."
+        "humanReadableSummary": "Summary of the import process for document part 'Møtereferat: Kvartalsvis IT-sikkerhetsgjennomgang Q4 2025' from the file 'sample_4.docx'."
     },
     "dmaze_data": [
         {
-            "id": "mom-031e70b5-224d-4871-bcb1-1cdd1d31c3ab",
+            "id": "mom-2bdf9733-da29-4667-9922-dee56e114f7f",
             "objectname": "mom",
             "description": "Gjennomgå sikkerhetshendelser fra Q4, evaluere status på pågående tiltak, og planlegge prioriteringer for Q1 2026. Møtet har som mål å sikre at selskapets digitale verdier er tilstrekkelig beskyttet mot nye og eksisterende trusler.",
             "endtime": "2025-12-05T12:00:00Z",
             "startuptime": "2025-12-05T10:00:00Z",
-            "title": "Sikkerhetsmøte Q4 2025",
+            "title": "IT Security Quarterly Review Meeting",
             "e_attendees_ids": {
                 "type": "user",
                 "values": [
@@ -39,7 +40,9 @@
             },
             "e_meeting_frequency_ids": {
                 "type": "meetingfrequency",
-                "values": []
+                "values": [
+                    "2"
+                ]
             },
             "e_project_ids": {
                 "type": "project",
@@ -63,9 +66,7 @@
             },
             "e_status_ids": {
                 "type": "momstatus",
-                "values": [
-                    "1"
-                ]
+                "values": []
             },
             "e_typeofmeeting_ids": {
                 "type": "typeofmeeting",
@@ -76,23 +77,25 @@
             "a_agenda_ids": {
                 "type": "agenda",
                 "values": [
-                    "agenda-bc39389c-4040-4667-8667-7f6ad1dd0314",
-                    "agenda-3d3123d3-0280-449c-bc47-be403cfedd7a"
+                    "agenda-a2737652-160d-4888-b50c-dc87a6f25068",
+                    "agenda-3636abe3-4c36-4452-a218-d31ae5aaa664"
                 ]
             }
         },
         {
-            "id": "measure-5d699e42-789d-4fe5-821c-d0a5fd707bf1",
+            "id": "measure-b328cb63-341c-4243-929c-840e8655d580",
             "objectname": "measure",
-            "parentid": "agenda-bc39389c-4040-4667-8667-7f6ad1dd0314",
+            "parentid": "agenda-a2737652-160d-4888-b50c-dc87a6f25068",
             "parenttype": "agenda",
             "deadline": "2026-02-01T00:00:00Z",
             "description": "Sikkerhetsteamet skal lage en interaktiv modul som simulerer avanserte svindelforsøk rettet mot ledelsen.",
             "descriptionimplementation": "Tildelt til Ola Hansen. Ikke påbegynt.",
-            "title": "",
+            "title": "Gjennomgang av hendelsesrapport for Q4",
             "e_measurepriority_ids": {
                 "type": "measurepriority",
-                "values": []
+                "values": [
+                    "2"
+                ]
             },
             "e_responsible_ids": {
                 "type": "user",
@@ -103,22 +106,24 @@
             "e_status_ids": {
                 "type": "measurestate",
                 "values": [
-                    "4"
+                    "1"
                 ]
             }
         },
         {
-            "id": "measure-4e2282a4-cfda-475a-9566-ef3dc8705749",
+            "id": "measure-ebf25c5e-ee12-4da8-b4e8-873d541fb302",
             "objectname": "measure",
-            "parentid": "agenda-bc39389c-4040-4667-8667-7f6ad1dd0314",
+            "parentid": "agenda-a2737652-160d-4888-b50c-dc87a6f25068",
             "parenttype": "agenda",
             "deadline": "2026-01-15T00:00:00Z",
             "description": "Samle inn data fra Q4 og lage en detaljert rapport om hvilke typer phishing som er mest utbredt.",
             "descriptionimplementation": "lukket.",
-            "title": "",
+            "title": "Gjennomgang av hendelsesrapport for Q4",
             "e_measurepriority_ids": {
                 "type": "measurepriority",
-                "values": []
+                "values": [
+                    "2"
+                ]
             },
             "e_responsible_ids": {
                 "type": "user",
@@ -132,16 +137,18 @@
             }
         },
         {
-            "id": "agenda-bc39389c-4040-4667-8667-7f6ad1dd0314",
+            "id": "agenda-a2737652-160d-4888-b50c-dc87a6f25068",
             "objectname": "agenda",
-            "parentid": "mom-031e70b5-224d-4871-bcb1-1cdd1d31c3ab",
+            "parentid": "mom-2bdf9733-da29-4667-9922-dee56e114f7f",
             "parenttype": "mom",
             "conclusion": "Phishing-opplæringen anses som en suksess og skal videreføres med en ny modul i februar. Rutinene for tap av utstyr fungerer, og ingen endringer er nødvendig.",
             "description": "Kari Nordmann presenterte rapporten for siste kvartal. Det ble registrert en økning på 15% i phishing-forsøk sammenlignet med Q3, men antall vellykkede angrep var null. Dette skyldes trolig den nye obligatoriske opplæringen som ble rullet ut i oktober. Det ble også diskutert en mindre hendelse der en ansatt mistet en firmatelefon, men enheten ble fjernslettet innen 10 minutter i henhold til prosedyre. Teamet var enige om at rutinene fungerer som de skal.",
             "title": "Gjennomgang av hendelsesrapport for Q4",
             "e_agenda_owner_ids": {
                 "type": "user",
-                "values": []
+                "values": [
+                    "user-2-kari-nordmann-uuid"
+                ]
             },
             "e_status_ids": {
                 "type": "agendastatus",
@@ -152,23 +159,25 @@
             "a_measures_ids": {
                 "type": "measure",
                 "values": [
-                    "measure-5d699e42-789d-4fe5-821c-d0a5fd707bf1",
-                    "measure-4e2282a4-cfda-475a-9566-ef3dc8705749"
+                    "measure-b328cb63-341c-4243-929c-840e8655d580",
+                    "measure-ebf25c5e-ee12-4da8-b4e8-873d541fb302"
                 ]
             }
         },
         {
-            "id": "measure-72529e91-1053-4512-a001-35967f38f639",
+            "id": "measure-c0853530-2654-4ac8-a2a4-2bf61e13dc82",
             "objectname": "measure",
-            "parentid": "agenda-3d3123d3-0280-449c-bc47-be403cfedd7a",
+            "parentid": "agenda-3636abe3-4c36-4452-a218-d31ae5aaa664",
             "parenttype": "agenda",
             "deadline": "2026-01-31T00:00:00Z",
             "description": "Arne Pettersen, i samarbeid med økonomiavdelingen, skal utrede kostnadene ved en full oppgradering versus risikoen ved å fortsette med den midlertidige løsningen.",
             "descriptionimplementation": "Ikke påbegynt.",
-            "title": "",
+            "title": "Status for implementering av 2-faktor autentisering (2FA)",
             "e_measurepriority_ids": {
                 "type": "measurepriority",
-                "values": []
+                "values": [
+                    "2"
+                ]
             },
             "e_responsible_ids": {
                 "type": "user",
@@ -179,21 +188,23 @@
             "e_status_ids": {
                 "type": "measurestate",
                 "values": [
-                    "4"
+                    "1"
                 ]
             }
         },
         {
-            "id": "agenda-3d3123d3-0280-449c-bc47-be403cfedd7a",
+            "id": "agenda-3636abe3-4c36-4452-a218-d31ae5aaa664",
             "objectname": "agenda",
-            "parentid": "mom-031e70b5-224d-4871-bcb1-1cdd1d31c3ab",
+            "parentid": "mom-2bdf9733-da29-4667-9922-dee56e114f7f",
             "parenttype": "mom",
             "conclusion": "Prosjektet er i rute. Det må lages en plan for å fase ut den eldre applikasjonen eller oppgradere den for full 2FA-støtte.",
             "description": "Arne Pettersen ga en status på utrullingen av 2FA for alle kritiske systemer. Per i dag har 95% av brukerne aktivert 2FA. De resterende 5% er primært konsulenter og deltidsansatte. Det har vært noen tekniske utfordringer med en eldre applikasjon som ikke har innebygd støtte for moderne autentiseringsmetoder. En midlertidig løsning er på plass, men en permanent oppgradering må planlegges.",
             "title": "Status for implementering av 2-faktor autentisering (2FA)",
             "e_agenda_owner_ids": {
                 "type": "user",
-                "values": []
+                "values": [
+                    "user-5-arne-pettersen-uuid"
+                ]
             },
             "e_status_ids": {
                 "type": "agendastatus",
@@ -204,7 +215,7 @@
             "a_measures_ids": {
                 "type": "measure",
                 "values": [
-                    "measure-72529e91-1053-4512-a001-35967f38f639"
+                    "measure-c0853530-2654-4ac8-a2a4-2bf61e13dc82"
                 ]
             }
         }
