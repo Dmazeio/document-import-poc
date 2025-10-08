@@ -13,7 +13,9 @@ def collect_entities_to_match(data_node: dict, schema_node: dict, items_to_match
         entity_type = field_info.get('entitytype')
         if entity_type:
             raw_text_value = data_node.get(field_info['fieldname'])
-            if raw_text_value:
+            
+            # --- MODIFIED: Legg til sjekk for å filtrere ut 'null' strenger ---
+            if raw_text_value is not None and str(raw_text_value).strip().lower() != "null":
                 if entity_type not in items_to_match:
                     items_to_match[entity_type] = set()
                 
@@ -55,7 +57,8 @@ def flatten_recursively(client: OpenAI, data_node: dict, schema_node: dict, pare
                 continue
 
             found_ids = []
-            if raw_text_value:
+            # --- MODIFIED: Legg til sjekk for 'null' her også, for å unngå parsing av 'null' ---
+            if raw_text_value is not None and str(raw_text_value).strip().lower() != "null":
                 texts_to_match = re.split(r'[,;\n]|(?:\s+og\s+)|(?:\s+and\s+)', str(raw_text_value)) if field_type == "multivalue" else [str(raw_text_value)]
                 for text in texts_to_match:
                     cleaned_text = text.strip()

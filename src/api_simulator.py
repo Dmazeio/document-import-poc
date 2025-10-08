@@ -8,11 +8,26 @@ SIMULATED_DATABASE = {
         {"id": "user-4-lise-nilsen-uuid", "name": "Lise Nilsen", "email": "lise@example.com"},
         {"id": "user-5-arne-pettersen-uuid", "name": "Arne Pettersen", "email": "arne.p@example.com"},
         {"id": "user-6-ola-hansen-uuid", "name": "Ola Hansen", "email": "ola.hansen@example.com"},
+        # --- NYE BRUKERE LAGT TIL HER ---
+        {"id": "user-7-pia-jensen-uuid", "name": "Pia Jensen", "email": "pia.jensen@example.com"},
+        {"id": "user-8-jonas-fredriksen-uuid", "name": "Jonas Fredriksen", "email": "jonas.f@example.com"},
+        {"id": "user-9-silje-dahl-uuid", "name": "Silje Dahl", "email": "silje.d@example.com"},
+        {"id": "user-10-lise-berg-uuid", "name": "Lise Berg", "email": "lise.berg@example.com"},
+        {"id": "user-11-erik-larsen-uuid", "name": "Erik Larsen", "email": "erik.l@example.com"},
     ],
     "people": [ # 'people' er et alias for 'user' og har samme data
-        {"id": "user-1-ola-nordmann-uuid", "name": "Ola Nordmann"}, {"id": "user-2-kari-nordmann-uuid", "name": "Kari Nordmann"},
-        {"id": "user-3-arne-arnesen-uuid", "name": "Arne Arnesen"}, {"id": "user-4-lise-nilsen-uuid", "name": "Lise Nilsen"},
-        {"id": "user-5-arne-pettersen-uuid", "name": "Arne Pettersen"}, {"id": "user-6-ola-hansen-uuid", "name": "Ola Hansen"},
+        {"id": "user-1-ola-nordmann-uuid", "name": "Ola Nordmann"},
+        {"id": "user-2-kari-nordmann-uuid", "name": "Kari Nordmann"},
+        {"id": "user-3-arne-arnesen-uuid", "name": "Arne Arnesen"},
+        {"id": "user-4-lise-nilsen-uuid", "name": "Lise Nilsen"},
+        {"id": "user-5-arne-pettersen-uuid", "name": "Arne Pettersen"},
+        {"id": "user-6-ola-hansen-uuid", "name": "Ola Hansen"},
+        # --- NYE PERSONER LAGT TIL HER ---
+        {"id": "user-7-pia-jensen-uuid", "name": "Pia Jensen"},
+        {"id": "user-8-jonas-fredriksen-uuid", "name": "Jonas Fredriksen"},
+        {"id": "user-9-silje-dahl-uuid", "name": "Silje Dahl"},
+        {"id": "user-10-lise-berg-uuid", "name": "Lise Berg"},
+        {"id": "user-11-erik-larsen-uuid", "name": "Erik Larsen"},
     ],
     "project": [
         {"id": "2", "name": "Admin"}, {"id": "3", "name": "Communication"}, {"id": "4", "name": "External/Partner"},
@@ -22,7 +37,13 @@ SIMULATED_DATABASE = {
     "momstatus": [{"id": "3", "name": "Closed"}, {"id": "1", "name": "Draft"}, {"id": "2", "name": "Open"}],
     "typeofmeeting": [{"id": "1", "name": "Management meeting"}, {"id": "2", "name": "Status meeting"}],
     "unit": [{"id": "unit-1", "name": "Finance Department"}, {"id": "unit-2", "name": "Operations Division"}],
-    "measurestate": [{"id": "1", "name": "Identified (pending decision)"}, {"id": "4", "name": "In progress (not started)"}, {"id": "12", "name": "Completed (100%) (approved)"}],
+    "measurestate": [
+        {"id": "1", "name": "Identified (pending decision)"},
+        {"id": "4", "name": "In progress (not started)"},
+        {"id": "12", "name": "Completed (100%) (approved)"},
+        # --- NY STATUS LAGT TIL HER ---
+        {"id": "5", "name": "To be implemented (pending accept)"}
+    ],
     "location": [{"id": "loc-1-oslo-uuid", "name": "Møterom Oslo"}, {"id": "loc-2-bergen-uuid", "name": "Prosjektrom Bergen"}],
     "meetingfrequency": [{"id": "2", "name": "One-off"}, 
                          {"id": "1", "name": "Recurring"}],

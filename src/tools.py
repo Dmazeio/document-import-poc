@@ -3,7 +3,7 @@
 import instructor
 from openai import OpenAI
 from pydantic import BaseModel, Field
-from typing import Optional, List, Dict, Set, Literal # --- ADDED Literal ---
+from typing import Optional, List, Dict, Set, Literal
 import json
 
 # --- MODIFIED MODELS ---
@@ -11,7 +11,6 @@ class BatchMatchResult(BaseModel):
     input_text: str = Field(..., description="The original text snippet that was being matched.")
     entity_type: str = Field(..., description="The entity type for this snippet (e.g., 'people', 'project').")
     best_match_id: Optional[str] = Field(..., description="The ID of the best matching entity. Null if no confident match was found.")
-    # --- ADDED CONFIDENCE FIELD ---
     confidence: Literal["High", "Medium", "Low"] = Field(..., description="Your confidence in this match. 'High' for an exact match, 'Medium' for a likely partial match, 'Low' for a guess.")
     reasoning: str = Field(..., description="A brief explanation for the choice, justifying the confidence level.")
 
@@ -23,7 +22,7 @@ def find_best_entity_matches_in_batch(
     client: OpenAI,
     items_to_match: Dict[str, Set[str]],
     valid_entities_map: Dict[str, List[Dict]]
-) -> Dict[str, Dict[str, dict]]: # --- MODIFIED RETURN TYPE ---
+) -> Dict[str, Dict[str, dict]]:
     """
     Finds the best ID matches for a batch of text snippets across different entity types in a single AI call.
     Returns a richer dictionary containing the ID, confidence, and reasoning for each match.
@@ -38,7 +37,7 @@ def find_best_entity_matches_in_batch(
         for text in texts:
             tasks_list.append({"text": text, "entity_type": entity_type})
 
-    # --- MODIFIED SYSTEM PROMPT ---
+    # --- MODIFIED SYSTEM PROMPT (med instruksjoner for semantisk matching) ---
     system_prompt = """
     You are an expert in high-throughput entity resolution. Your task is to process a batch of text snippets and find the single best matching entity for each from a provided database of valid entities.
     The provided lists of entities are the ONLY source of truth.
@@ -49,6 +48,8 @@ def find_best_entity_matches_in_batch(
     3. `best_match_id`: The ID of the best match. Null if no confident match is found.
     4. `confidence`: Your confidence level for the match: "High", "Medium", or "Low".
     5. `reasoning`: A concise explanation for your choice. This reasoning MUST justify the confidence level (e.g., "Exact match", "Partial match on last name", "Ambiguous, best guess").
+
+    For entity types that represent predefined lists of options (e.g., statuses like 'measurestate', priorities, types), where the input text might be a descriptive phrase, find the most semantically appropriate match from the provided valid options. An exact text match is not always required for these types; prioritize the meaning and choose the closest available option.
 
     If no good match is found for a snippet, you MUST return null for `best_match_id` and "Low" for `confidence`.
     """
@@ -78,20 +79,20 @@ def find_best_entity_matches_in_batch(
             max_retries=1
         )
 
-        # --- MODIFIED TO RETURN A RICHER MAP ---
         detailed_lookup_map = {}
         for match in response.matches:
             if match.best_match_id:
                 if match.entity_type not in detailed_lookup_map:
                     detailed_lookup_map[match.entity_type] = {}
                 
-                # Store the full details of the match
                 detailed_lookup_map[match.entity_type][match.input_text] = {
                     "id": match.best_match_id,
                     "confidence": match.confidence,
                     "reasoning": match.reasoning
                 }
                 print(f"  - [BATCH MATCHER] Matched '{match.input_text}' ({match.entity_type}) -> ID: {match.best_match_id} (Confidence: {match.confidence})")
+            else:
+                print(f"  - [BATCH MATCHER] Match NOT FOUND for '{match.input_text}' ({match.entity_type}). Reasoning: {match.reasoning} (Confidence: {match.confidence})")
 
         return detailed_lookup_map
             
