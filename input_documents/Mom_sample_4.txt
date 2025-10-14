@@ -1,0 +1,75 @@
+Møtereferat: Kvartalsvis IT-sikkerhetsgjennomgang Q4 2025
+Dato: 5. desember 2025
+Tid: 10:00 - 12:00
+Sted: Møterom "Krypton"
+Deltakere
+•	Kari Nordmann (Leder, IT-sikkerhet)
+•	Ola Hansen (Systemansvarlig)
+•	Pia Jensen (Personvernombud)
+•	Arne Pettersen (Infrastruktur)
+Formål med møtet
+Gjennomgå sikkerhetshendelser fra Q4, evaluere status på pågående tiltak, og planlegge prioriteringer for Q1 2026. Møtet har som mål å sikre at selskapets digitale verdier er tilstrekkelig beskyttet mot nye og eksisterende trusler.
+________________________________________
+1. Gjennomgang av hendelsesrapport for Q4
+Diskusjon:
+Kari Nordmann presenterte rapporten for siste kvartal. Det ble registrert en økning på 15% i phishing-forsøk sammenlignet med Q3, men antall vellykkede angrep var null. Dette skyldes trolig den nye obligatoriske opplæringen som ble rullet ut i oktober. Det ble også diskutert en mindre hendelse der en ansatt mistet en firmatelefon, men enheten ble fjernslettet innen 10 minutter i henhold til prosedyre. Teamet var enige om at rutinene fungerer som de skal.
+Status er ikke påbegynt.
+Konklusjon:
+Phishing-opplæringen anses som en suksess og skal videreføres med en ny modul i februar. Rutinene for tap av utstyr fungerer, og ingen endringer er nødvendig.
+Tildelte handlinger:
+•	Handling: Utvikle ny opplæringsmodul om "CEO fraud".
+o	Beskrivelse: Sikkerhetsteamet skal lage en interaktiv modul som simulerer avanserte svindelforsøk rettet mot ledelsen.
+o	Frist: 2026-02-01
+o	Statuskommentar: Tildelt til Ola Hansen. Ikke påbegynt.
+•	Handling: Analysere og rapportere phishing-trender.
+o	Beskrivelse: Samle inn data fra Q4 og lage en detaljert rapport om hvilke typer phishing som er mest utbredt.
+o	Frist: 2026-01-15
+o	Statuskommentar: lukket.
+________________________________________
+2. Status for implementering av 2-faktor autentisering (2FA)
+Diskusjon:
+Arne Pettersen ga en status på utrullingen av 2FA for alle kritiske systemer. Per i dag har 95% av brukerne aktivert 2FA. De resterende 5% er primært konsulenter og deltidsansatte. Det har vært noen tekniske utfordringer med en eldre applikasjon som ikke har innebygd støtte for moderne autentiseringsmetoder. En midlertidig løsning er på plass, men en permanent oppgradering må planlegges.
+Status er ikke påbegynt. Møtet er ikke gjentakende.
+
+Konklusjon:
+Prosjektet er i rute. Det må lages en plan for å fase ut den eldre applikasjonen eller oppgradere den for full 2FA-støtte.
+Tildelte handlinger:
+•	Handling: Lage en kost/nytte-analyse for oppgradering av eldre applikasjon.
+o	Beskrivelse: Arne Pettersen, i samarbeid med økonomiavdelingen, skal utrede kostnadene ved en full oppgradering versus risikoen ved å fortsette med den midlertidige løsningen.
+o	Frist: 2026-01-31
+o	Statuskommentar: Ikke påbegynt.
+________________________________________
+Protokoll fra oppstartsmøte: Markedsføringskampanje "Prosjekt Phoenix"
+Dato: 6. desember 2025
+Tid: 13:00 - 14:30
+Sted: Kreativt Rom
+Deltakere
+•	Silje Dahl (Prosjektleder, Marked)
+•	Erik Larsen (Digital strateg)
+•	Lise Berg (Innholdsprodusent)
+•	Jonas Fredriksen (Eksternt byrå)
+•	Ola Hansen
+Formål med møtet
+Offisielt starte "Prosjekt Phoenix", en ny digital markedsføringskampanje rettet mot å øke merkekjennskapen med 20% i segmentet 25-40 år. Målet for møtet var å definere nøkkelbudskap, tildele ansvar og sette en overordnet tidslinje for de neste 6 ukene.
+________________________________________
+1. Definisjon av kjernebudskap og målgruppe
+Diskusjon:
+Teamet gjennomførte en workshop for å spikre hovedbudskapet. Diskusjonen landet på tre kjernekonsepter: "Enkelhet i hverdagen", "Bærekraftig valg" og "Moderne design". Jonas presenterte data som viser at målgruppen responderer best på visuelt innhold på Instagram og TikTok. Lise Berg foreslo å produsere en serie korte videoklipp som viser produktet i bruk i reelle situasjoner.
+Konklusjon:
+Hovedbudskapet blir "Enkelhet i hverdagen". Kampanjen vil primært fokusere på Instagram (Reels) og TikTok. En serie på 5 korte videoer skal produseres.
+Tildelte handlinger:
+•	Handling: Utvikle storyboard for 5 kampanjevideoer.
+o	Beskrivelse: Lise Berg og Jonas Fredriksen skal samarbeide om å lage detaljerte storyboards for videokonseptene.
+o	Frist: 2025-12-15
+o	Statuskommentar: Ikke påbegynt.
+________________________________________
+2. Budsjett og tidslinje
+Diskusjon:
+Silje Dahl presenterte det foreløpige budsjettet på 500 000 NOK. Beløpet skal dekke produksjon, annonsering og honorar til byrået. Erik Larsen mente at annonsebudsjettet burde økes med 100 000 NOK for å sikre tilstrekkelig rekkevidde på TikTok, noe som kan hentes fra reisebudsjettet som har mindre forbruk. Tidslinjen ble satt med lansering i uke 3, 2026.
+Konklusjon:
+Budsjettet økes til 600 000 NOK. Silje Dahl tar ansvaret for å få den formelle godkjenningen. Lanseringsdato er bekreftet.
+Tildelte handlinger:
+•	Handling: Få godkjenning for revidert budsjett.
+o	Beskrivelse: Silje Dahl skal sende en formell forespørsel til ledelsen for å få godkjent det økte budsjettet på 100 000 NOK.
+o	Frist: 2025-12-10
+	o	Statuskommentar: Venter på endelig tallgrunnlag fra Erik.

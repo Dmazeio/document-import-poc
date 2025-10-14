@@ -17,8 +17,8 @@ def sanitize_filename(name: str) -> str:
 
 if __name__ == "__main__":
     # --- Part 1: Define input files ---
-    input_doc_path = "input_documents/Risk Assessment Sample.docx"
-    template_path = "input-schemas/Risk Assessment - Enterprise Risk Assessment.json"
+    input_doc_path = "input_documents/sample_3.pdf"
+    template_path = "input-schemas/Minutes of Meeting.json"
     output_dir = "output"
     os.makedirs(output_dir, exist_ok=True)
     

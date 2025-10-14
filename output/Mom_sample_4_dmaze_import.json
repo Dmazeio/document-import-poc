@@ -1,0 +1,41 @@
+{
+    "summary": {
+        "inputFile": "Mom_sample_4.txt",
+        "templateUsed": "In-memory schema",
+        "overallStatus": "Success",
+        "itemTitle": null,
+        "processingTimestamp": "2025-10-14T11:15:34.236005",
+        "processingLog": {
+            "Template Processing": "Success (0.00s)",
+            "Document Conversion": "Success (0.05s)",
+            "Document Classification": "Success (1.76s)",
+            "AI Data Extraction ": "Success (1.80s)",
+            "Data Transformation ": "Success (0.00s)"
+        },
+        "errorsEncountered": [],
+        "warningsEncountered": [],
+        "humanReadableSummary": "Summary of the import process for the document from the file 'Mom_sample_4.txt'.\n  - Total parts identified in document: 1.\n  - Status for this part: Success (processed in 1.80 seconds).\n  - Errors encountered for this part: 0.\n  - Warnings encountered for this part: 0."
+    },
+    "dmaze_data": [
+        {
+            "id": "mom-59aac54f-5f16-471f-a6e3-08ca13ce78d7",
+            "objectname": "mom",
+            "description": "",
+            "endtime": "",
+            "startuptime": "",
+            "title": "Conversion Error",
+            "e_attendees_ids": "",
+            "e_meeting_frequency_ids": "",
+            "e_project_ids": "",
+            "e_projectowner_ids": "",
+            "e_responsible_unit_ids": "",
+            "e_responsiblemanager_ids": "",
+            "e_status_ids": "",
+            "e_typeofmeeting_ids": "",
+            "a_agenda_ids": {
+                "type": "agenda",
+                "values": []
+            }
+        }
+    ]
+}
