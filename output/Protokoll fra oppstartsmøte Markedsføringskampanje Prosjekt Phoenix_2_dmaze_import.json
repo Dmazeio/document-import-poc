@@ -4,31 +4,31 @@
         "templateUsed": "In-memory schema",
         "overallStatus": "SuccessWithWarnings",
         "itemTitle": "Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"",
-        "processingTimestamp": "2025-10-08T11:55:18.122119",
+        "processingTimestamp": "2025-10-14T09:23:20.571713",
         "processingLog": {
             "Template Processing": "Success (0.00s)",
-            "Document Conversion": "Success (0.04s)",
-            "Document Classification": "Success (5.12s)",
-            "Document Splitting": "Success (59.08s)",
-            "AI Data Extraction for 'Møtereferat: Kvartalsvis IT-sikkerhetsgjennomgang Q4 2025'": "Success (42.18s)",
-            "Data Transformation for 'Møtereferat: Kvartalsvis IT-sikkerhetsgjennomgang Q4 2025'": "Success (26.12s)",
-            "AI Data Extraction for 'Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"'": "Success (8.24s)",
-            "Data Transformation for 'Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"'": "Success (6.37s)"
+            "Document Conversion": "Success (0.07s)",
+            "Document Classification": "Success (5.08s)",
+            "Document Splitting": "Success (15.49s)",
+            "AI Data Extraction for 'Møtereferat: Kvartalsvis IT-sikkerhetsgjennomgang Q4 2025'": "Success (14.08s)",
+            "Data Transformation for 'Møtereferat: Kvartalsvis IT-sikkerhetsgjennomgang Q4 2025'": "Success (6.87s)",
+            "AI Data Extraction for 'Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"'": "Success (7.89s)",
+            "Data Transformation for 'Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"'": "Success (4.65s)"
         },
         "errorsEncountered": [],
         "warningsEncountered": [
             "Match not found for 'Lise Berg, Jonas Fredriksen' (Type: user). The value was ignored."
         ],
-        "humanReadableSummary": "Summary of the import process for document part 'Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"' from the file 'sample_4.docx'.\n  - Total parts identified in document: 2.\n  - Status for this part: SuccessWithWarnings (processed in 14.61 seconds).\n  - Errors encountered for this part: 0.\n  - Warnings encountered for this part: 1.\n    Important warnings: Match not found for 'Lise Berg, Jonas Fredriksen' (Type: user). The value was ignored."
+        "humanReadableSummary": "Summary of the import process for document part 'Protokoll fra oppstartsmøte: Markedsføringskampanje \"Prosjekt Phoenix\"' from the file 'sample_4.docx'.\n  - Total parts identified in document: 2.\n  - Status for this part: SuccessWithWarnings (processed in 12.53 seconds).\n  - Errors encountered for this part: 0.\n  - Warnings encountered for this part: 1.\n    Important warnings: Match not found for 'Lise Berg, Jonas Fredriksen' (Type: user). The value was ignored."
     },
     "dmaze_data": [
         {
-            "id": "mom-2d0860b2-f354-4a6c-b673-c0441ddc0a8d",
+            "id": "mom-57cf7ccd-1ae3-40ac-b8c6-e378a010ed81",
             "objectname": "mom",
             "description": "Offisielt starte \"Prosjekt Phoenix\", en ny digital markedsføringskampanje rettet mot å øke merkekjennskapen med 20% i segmentet 25-40 år. Målet for møtet var å definere nøkkelbudskap, tildele ansvar og sette en overordnet tidslinje for de neste 6 ukene.",
             "endtime": "2025-12-06T14:30:00Z",
             "startuptime": "2025-12-06T13:00:00Z",
-            "title": "Oppstartsmøte for Prosjekt Phoenix",
+            "title": "Oppstartsmøte Prosjekt Phoenix",
             "e_attendees_ids": {
                 "type": "user",
                 "values": [
@@ -48,7 +48,7 @@
             "e_project_ids": {
                 "type": "project",
                 "values": [
-                    "10"
+                    "3"
                 ]
             },
             "e_projectowner_ids": {
@@ -57,10 +57,7 @@
                     "user-9-silje-dahl-uuid"
                 ]
             },
-            "e_responsible_unit_ids": {
-                "type": "unit",
-                "values": []
-            },
+            "e_responsible_unit_ids": "",
             "e_responsiblemanager_ids": {
                 "type": "user",
                 "values": []
@@ -80,24 +77,21 @@
             "a_agenda_ids": {
                 "type": "agenda",
                 "values": [
-                    "agenda-e1957606-dd29-46fd-802d-294bd6bef8d4",
-                    "agenda-4e11d000-e23b-435f-a283-c98e46777537"
+                    "agenda-ea102010-b0af-4a1e-9a75-3f5b2db69129",
+                    "agenda-e527b205-b3a3-4335-afa6-43243512baa3"
                 ]
             }
         },
         {
-            "id": "measure-8ad0e7c9-e5e9-43d5-aaae-8b998fb1faa4",
+            "id": "measure-31ac9745-d68e-4af7-9429-9692b325ff14",
             "objectname": "measure",
-            "parentid": "agenda-e1957606-dd29-46fd-802d-294bd6bef8d4",
+            "parentid": "agenda-ea102010-b0af-4a1e-9a75-3f5b2db69129",
             "parenttype": "agenda",
             "deadline": "2025-12-15T00:00:00Z",
             "description": "Lise Berg og Jonas Fredriksen skal samarbeide om å lage detaljerte storyboards for videokonseptene.",
             "descriptionimplementation": "Ikke påbegynt.",
             "title": "",
-            "e_measurepriority_ids": {
-                "type": "measurepriority",
-                "values": []
-            },
+            "e_measurepriority_ids": "",
             "e_responsible_ids": {
                 "type": "user",
                 "values": []
@@ -110,16 +104,18 @@
             }
         },
         {
-            "id": "agenda-e1957606-dd29-46fd-802d-294bd6bef8d4",
+            "id": "agenda-ea102010-b0af-4a1e-9a75-3f5b2db69129",
             "objectname": "agenda",
-            "parentid": "mom-2d0860b2-f354-4a6c-b673-c0441ddc0a8d",
+            "parentid": "mom-57cf7ccd-1ae3-40ac-b8c6-e378a010ed81",
             "parenttype": "mom",
             "conclusion": "Hovedbudskapet blir \"Enkelhet i hverdagen\". Kampanjen vil primært fokusere på Instagram (Reels) og TikTok. En serie på 5 korte videoer skal produseres.",
-            "description": "Teamet gjennomførte en workshop for å spikre hovedbudskapet. Diskusjonen landet på tre kjernekonsepter: \"Enkelhet i hverdagen\", \"Bærekraftig valg\" og \"Moderne design\". Jonas presenterte data som viser at målgruppen responderer best på visuelt innhold på Instagram og TikTok. Lise Berg foreslo å produsere en serie korte videoklipp som viser produktet i bruk i reelle situasjoner.",
+            "description": "Teamet gjennomførte en workshop for å spikre hovedbudskapet. Diskusjonen landet på tre kjernekonsepter: \"Enkelhet i hverdagen\", \"Bærekraftig valg\" og \"Moderne design\". Jonas Fredriksen presenterte data som viser at målgruppen responderer best på visuelt innhold på Instagram og TikTok. Lise Berg foreslo å produsere en serie korte videoklipp som viser produktet i bruk i reelle situasjoner.",
             "title": "Definisjon av kjernebudskap og målgruppe",
             "e_agenda_owner_ids": {
                 "type": "user",
-                "values": []
+                "values": [
+                    "user-8-jonas-fredriksen-uuid"
+                ]
             },
             "e_status_ids": {
                 "type": "agendastatus",
@@ -130,23 +126,20 @@
             "a_measures_ids": {
                 "type": "measure",
                 "values": [
-                    "measure-8ad0e7c9-e5e9-43d5-aaae-8b998fb1faa4"
+                    "measure-31ac9745-d68e-4af7-9429-9692b325ff14"
                 ]
             }
         },
         {
-            "id": "measure-32e28596-40ae-4f95-83af-a707d7b38b70",
+            "id": "measure-56ede814-0117-4d16-8393-03b5795a724e",
             "objectname": "measure",
-            "parentid": "agenda-4e11d000-e23b-435f-a283-c98e46777537",
+            "parentid": "agenda-e527b205-b3a3-4335-afa6-43243512baa3",
             "parenttype": "agenda",
             "deadline": "2025-12-10T00:00:00Z",
             "description": "Silje Dahl skal sende en formell forespørsel til ledelsen for å få godkjent det økte budsjettet på 100 000 NOK.",
             "descriptionimplementation": "Venter på endelig tallgrunnlag fra Erik.",
             "title": "",
-            "e_measurepriority_ids": {
-                "type": "measurepriority",
-                "values": []
-            },
+            "e_measurepriority_ids": "",
             "e_responsible_ids": {
                 "type": "user",
                 "values": [
@@ -161,16 +154,18 @@
             }
         },
         {
-            "id": "agenda-4e11d000-e23b-435f-a283-c98e46777537",
+            "id": "agenda-e527b205-b3a3-4335-afa6-43243512baa3",
             "objectname": "agenda",
-            "parentid": "mom-2d0860b2-f354-4a6c-b673-c0441ddc0a8d",
+            "parentid": "mom-57cf7ccd-1ae3-40ac-b8c6-e378a010ed81",
             "parenttype": "mom",
             "conclusion": "Budsjettet økes til 600 000 NOK. Silje Dahl tar ansvaret for å få den formelle godkjenningen. Lanseringsdato er bekreftet.",
             "description": "Silje Dahl presenterte det foreløpige budsjettet på 500 000 NOK. Beløpet skal dekke produksjon, annonsering og honorar til byrået. Erik Larsen mente at annonsebudsjettet burde økes med 100 000 NOK for å sikre tilstrekkelig rekkevidde på TikTok, noe som kan hentes fra reisebudsjettet som har mindre forbruk. Tidslinjen ble satt med lansering i uke 3, 2026.",
             "title": "Budsjett og tidslinje",
             "e_agenda_owner_ids": {
                 "type": "user",
-                "values": []
+                "values": [
+                    "user-9-silje-dahl-uuid"
+                ]
             },
             "e_status_ids": {
                 "type": "agendastatus",
@@ -181,7 +176,7 @@
             "a_measures_ids": {
                 "type": "measure",
                 "values": [
-                    "measure-32e28596-40ae-4f95-83af-a707d7b38b70"
+                    "measure-56ede814-0117-4d16-8393-03b5795a724e"
                 ]
             }
         }

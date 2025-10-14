@@ -1,5 +1,3 @@
-# File: src/tools.py (MODIFIED WITH CONFIDENCE AND REASONING)
-
 import instructor
 from openai import OpenAI
 from pydantic import BaseModel, Field
@@ -37,7 +35,6 @@ def find_best_entity_matches_in_batch(
         for text in texts:
             tasks_list.append({"text": text, "entity_type": entity_type})
 
-    # --- MODIFIED SYSTEM PROMPT (med instruksjoner for semantisk matching) ---
     system_prompt = """
     You are an expert in high-throughput entity resolution. Your task is to process a batch of text snippets and find the single best matching entity for each from a provided database of valid entities.
     The provided lists of entities are the ONLY source of truth.

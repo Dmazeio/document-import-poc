@@ -5,7 +5,7 @@ from datetime import datetime
 from openai import OpenAI
 from dotenv import load_dotenv
 
-# Importer funksjonene klassen er avhengig av
+# Import functions this class depends on
 from .document_converter import convert_file_to_markdown
 from .schema_processor import process_template_hierarchically
 from .openai_extractor import extract_data_with_hierarchy
@@ -22,17 +22,17 @@ class DocumentProcessor:
         load_dotenv()
         self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-        # Felles tilstands-variabler
+        # Common state variables
         self.schema_package = None
         self.markdown_content = None
         self.doc_type = "single_item"
-        
-        # Felles logging-variabler
+
+        # Common logging variables
         self.processing_log = {}
         self.errors = []
 
     def _log_step(self, step_name: str, function_to_run):
-        """Kjører et steg, logger tid og status."""
+        """Run a processing step, log duration and status."""
         print(f"\n--- Running Step: {step_name} ---")
         step_start_time = time.time()
         status = "Pending"
@@ -57,7 +57,7 @@ class DocumentProcessor:
             self.processing_log[step_name] = summary
 
     def _process_single_chunk(self, content: str, title: str) -> dict:
-        """Kjører AI-ekstrahering og transformasjon for én del av dokumentet."""
+        """Run AI extraction and transformation for one part of the document."""
         item_log_name_prefix = f"for '{title}'" if title else ""
         
         nested_data = self._log_step(f"AI Data Extraction {item_log_name_prefix}", 
@@ -71,9 +71,9 @@ class DocumentProcessor:
             "warnings": transformation_result.get("warnings", [])
         }
 
-    # --- MODIFIED: _build_summary tar nå flere argumenter ---
+
     def _build_summary(self, item_title, dmaze_data, warnings, overall_status, total_num_chunks: int, item_processing_duration: float) -> dict:
-        """Bygger et summary-objekt for ett enkelt resultat."""
+        """Builds a summary object for a single result."""
         root_object_name = self.schema_package['schema_tree']['name'] if self.schema_package else "unknown"
         
         final_status = overall_status
@@ -91,7 +91,7 @@ class DocumentProcessor:
             "warningsEncountered": warnings,
         }
         
-        # --- MODIFIED: humanReadableSummary er nå mer detaljert ---
+
         summary_parts = []
         title_text = f"for document part '{item_title}'" if item_title else "for the document"
         
@@ -108,10 +108,10 @@ class DocumentProcessor:
         
         summary_parts.append(f"  - Warnings encountered for this part: {num_warnings}.")
         if num_warnings > 0:
-            # Begrens antall advarsler som vises direkte i sammendraget for lesbarhet
-            displayed_warnings = warnings[:3] # Vis de 3 første
+            # Limit the number of warnings shown directly in the human-readable summary for readability
+            displayed_warnings = warnings[:3]  # Show the first 3 warnings
             remaining_warnings = num_warnings - len(displayed_warnings)
-            
+
             summary_parts.append(f"    Important warnings: {'; '.join(displayed_warnings)}")
             if remaining_warnings > 0:
                 summary_parts.append(f"    ({remaining_warnings} more warnings not listed here. See 'warningsEncountered' for full list.)")
@@ -120,19 +120,19 @@ class DocumentProcessor:
         
         return summary_obj
 
-    # --- MODIFIED: run() sender nå nye argumenter til _build_summary ---
-    def run(self) -> list[dict]: # VIKTIG: Returnerer nå en liste
-        """Orkestrerer hele prosessen og returnerer en liste med resultater."""
+    # Note: run() returns a list of results
+    def run(self) -> list[dict]:
+        """Orchestrates the full processing pipeline and returns a list of results."""
         results_list = []
         
         try:
-            # Steg 1, 2, 3: Felles forberedelser
+            # Steps 1-3: Common preparations
             self.schema_package = self._log_step("Template Processing", lambda: process_template_hierarchically(self.schema_content))
             self.markdown_content = self._log_step("Document Conversion", lambda: convert_file_to_markdown(self.document_bytes, self.document_filename))
             root_name = self.schema_package['schema_tree']['name']
             self.doc_type = self._log_step("Document Classification", lambda: classify_document_type(self.client, self.markdown_content, root_name))
             
-            # Steg 4: Lag en liste over "chunks" som skal prosesseres
+            # Step 4: Build a list of chunks to process
             chunks_to_process = []
             if self.doc_type == "multiple_items":
                 chunks_to_process = self._log_step("Document Splitting", 
@@ -143,16 +143,16 @@ class DocumentProcessor:
                     item_content = self.markdown_content
                 chunks_to_process.append(SingleChunk())
 
-            total_num_chunks = len(chunks_to_process) # Hent totalt antall chunks her
+            total_num_chunks = len(chunks_to_process)  # Get total number of chunks
 
-            # Steg 5: Prosesser hver chunk i en løkke
+            # Step 5: Process each chunk individually
             for chunk in chunks_to_process:
-                item_start_time = time.time() # Starttid for denne chunken
-                # Kjør selve AI-prosesseringen for denne chunken
+                item_start_time = time.time()  # Start time for this chunk
+                # Run AI processing for this chunk
                 chunk_result = self._process_single_chunk(chunk.item_content, chunk.item_title)
-                item_processing_duration = time.time() - item_start_time # Total tid for denne chunken
+                item_processing_duration = time.time() - item_start_time  # Total time for this chunk
 
-                # Bygg et komplett resultatobjekt
+                # Build and store the summary for this chunk
                 summary = self._build_summary(
                     item_title=chunk.item_title,
                     dmaze_data=chunk_result["dmaze_data"],
@@ -168,8 +168,8 @@ class DocumentProcessor:
 
         except Exception as e:
             print(f"\nCRITICAL ERROR in workflow: {e}")
-            # Ved kritisk feil, returner en liste med ett enkelt feil-resultat
-            summary = self._build_summary(None, [], [], "Failure", total_num_chunks=0, item_processing_duration=0.0) # Tilpass for feil
+            # On critical failure, return a single error result
+            summary = self._build_summary(None, [], [], "Failure", total_num_chunks=0, item_processing_duration=0.0)
             return [{"summary": summary, "dmaze_data": []}]
         
         return results_list

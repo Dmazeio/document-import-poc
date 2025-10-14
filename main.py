@@ -6,24 +6,25 @@ import re
 from src.document_processor import DocumentProcessor
 
 def sanitize_filename(name: str) -> str:
-    """Renser en streng slik at den er et gyldig filnavn."""
+    """Sanitize a string so it is a valid file name."""
     if not name:
         return ""
     # Fjern ugyldige tegn
+    # Remove invalid characters
     name = re.sub(r'[<>:"/\\|?*]', '', name)
-    # Begrens lengden
+    # Limit length
     return name[:100].strip()
 
 if __name__ == "__main__":
-    # --- Del 1: Definer input-filer ---
-    input_doc_path = "input_documents/sample_4.docx"
-    template_path = "input-schemas/Minutes of Meeting.json"
+    # --- Part 1: Define input files ---
+    input_doc_path = "input_documents/Risk Assessment Sample.docx"
+    template_path = "input-schemas/Risk Assessment - Enterprise Risk Assessment.json"
     output_dir = "output"
     os.makedirs(output_dir, exist_ok=True)
     
     print("--- Running in CLI test mode ---")
 
-    # --- Del 2: Les filer inn i minnet ---
+    # --- Part 2: Read files into memory ---
     try:
         with open(template_path, 'r', encoding='utf-8') as f:
             schema_data = json.load(f)
@@ -33,25 +34,25 @@ if __name__ == "__main__":
         print(f"ERROR: {e}")
         exit()
 
-    # --- Del 3: Opprett og kjør prosessoren ---
+    # --- Part 3: Create and run the processor ---
     print(f"Processing document '{input_doc_path}'...")
     processor = DocumentProcessor(
         schema_content=schema_data,
         document_bytes=doc_bytes,
         document_filename=os.path.basename(input_doc_path)
     )
-    results = processor.run() # Mottar nå en LISTE med resultater
+    results = processor.run()  # Now receives a LIST of results
 
-    # --- Del 4: Håndter og lagre resultatene ---
+    # --- Part 4: Handle and save results ---
     print(f"\n--- Processing returned {len(results)} result(s). Saving to output folder... ---")
     
     for i, result in enumerate(results):
         summary = result.get("summary", {})
         item_title = summary.get("itemTitle")
         
-        # Lag et unikt og trygt filnavn
+        # Build a unique and safe filename
         base_name = sanitize_filename(item_title) if item_title else os.path.splitext(os.path.basename(input_doc_path))[0]
-        # Legg til en teller hvis det er flere med samme navn eller ingen tittel
+        # Add a counter if there are multiple results or no title
         if len(results) > 1 and not item_title:
              output_filename = f"{base_name}_item_{i+1}_dmaze_import.json"
         elif len(results) > 1:

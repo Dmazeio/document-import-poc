@@ -1,19 +1,19 @@
-# File: src/document_splitter.py (GENERALIZED VERSION)
+
 import instructor
 from openai import OpenAI
 from typing import List
-# Importer de nye, generelle modellene
+
 from .models import MultiItemDocument, DocumentChunk
 
-#Denne funksjonen fungerer som en 'digital saks' som ber en AI-modell om å lese gjennom hele dokumentet og klippe det opp i en liste av logisk separate deler, basert på hvor den finner store overskrifter.
+
 def split_document_into_items(client: OpenAI, markdown_content: str, root_object_name: str) -> List[DocumentChunk]:
     """
-    Splitter et dokument i en liste av "elementer", der hvert element
-    er en selvstendig del av dokumentet (f.eks. ett møtereferat, en risikovurdering).
+    Split a document into a list of distinct items, where each item
+    is a self-contained part of the document (e.g. a single meeting record or a risk assessment).
     """
     instructor_client = instructor.patch(client)
     
-    # GENERALISERT PROMPT:
+
     system_prompt = f"""
     You are a document analysis and segmentation expert. Your task is to split the following Markdown document into a list of distinct, self-contained '{root_object_name}' items.
     
@@ -24,14 +24,14 @@ def split_document_into_items(client: OpenAI, markdown_content: str, root_object
     try:
         structured_document = instructor_client.chat.completions.create(
             model="gpt-4o",
-            response_model=MultiItemDocument, # Bruker den nye modellen
+            response_model=MultiItemDocument,  # Uses the new structured response model
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Analyze and split the following document:\n\n{markdown_content}"}
             ],
             max_retries=2
         )
-        # Returnerer listen med generelle "items"
+        # Return the list of items
         return structured_document.items
     except Exception as e:
         print(f"  - ERROR: Document splitting failed: {e}")
