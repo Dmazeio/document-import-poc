@@ -1,24 +1,24 @@
 {
     "summary": {
-        "inputFile": "Risikovurdering.docx",
+        "inputFile": "Risk Assessment Sample.docx",
         "templateUsed": "In-memory schema",
         "overallStatus": "Success",
         "itemTitle": null,
-        "processingTimestamp": "2025-10-14T10:09:18.684232",
+        "processingTimestamp": "2025-10-14T10:20:20.546921",
         "processingLog": {
             "Template Processing": "Success (0.00s)",
-            "Document Conversion": "Success (0.04s)",
-            "Document Classification": "Success (2.47s)",
-            "AI Data Extraction ": "Success (8.53s)",
-            "Data Transformation ": "Success (4.29s)"
+            "Document Conversion": "Success (0.06s)",
+            "Document Classification": "Success (4.03s)",
+            "AI Data Extraction ": "Success (10.56s)",
+            "Data Transformation ": "Success (7.97s)"
         },
         "errorsEncountered": [],
         "warningsEncountered": [],
-        "humanReadableSummary": "Summary of the import process for the document from the file 'Risikovurdering.docx'.\n  - Total parts identified in document: 1.\n  - Status for this part: Success (processed in 12.82 seconds).\n  - Errors encountered for this part: 0.\n  - Warnings encountered for this part: 0."
+        "humanReadableSummary": "Summary of the import process for the document from the file 'Risk Assessment Sample.docx'.\n  - Total parts identified in document: 1.\n  - Status for this part: Success (processed in 18.53 seconds).\n  - Errors encountered for this part: 0.\n  - Warnings encountered for this part: 0."
     },
     "dmaze_data": [
         {
-            "id": "assessment-b167f444-fcf6-4ee9-8142-61c81acd5516",
+            "id": "assessment-aed2e363-f29d-49e9-85df-d7aa29650f36",
             "objectname": "assessment",
             "assumptions": "",
             "description": "Dette dokumentet beskriver de viktigste operasjonelle og finansielle risikoene knyttet til migreringen av vår primære kundedatabase til AWS-skyplattformen. Målet er å identifisere, vurdere og planlegge tiltak for de mest kritiske risikoene.",
@@ -38,12 +38,7 @@
                 ]
             },
             "e_responsible_unit_ids": "",
-            "e_risk_category_ids": {
-                "type": "riskcategory",
-                "values": [
-                    "riskcat-1-uuid"
-                ]
-            },
+            "e_risk_category_ids": "",
             "e_status_ids": {
                 "type": "assessmentstatus",
                 "values": [
@@ -53,20 +48,20 @@
             "a_risk_ids": {
                 "type": "risk",
                 "values": [
-                    "risk-7d33f4a2-1ba2-491b-8562-b00cd0fc0b1f",
-                    "risk-949fc6d6-fe50-4295-904e-8e822e292305"
+                    "risk-7d8d3444-48db-43f2-b5f1-f6b30a6b00a0",
+                    "risk-7eb0817f-cb51-4102-bd2b-8f145ac75e21"
                 ]
             }
         },
         {
-            "id": "measure-40a20deb-2e53-4e49-ba5f-75747e3ddc35",
+            "id": "measure-5621a6d3-be40-4c90-937a-4ca4707cc686",
             "objectname": "measure",
-            "parentid": "risk-7d33f4a2-1ba2-491b-8562-b00cd0fc0b1f",
+            "parentid": "risk-7d8d3444-48db-43f2-b5f1-f6b30a6b00a0",
             "parenttype": "risk",
             "deadline": "2025-10-15T00:00:00Z",
             "description": "Implementere og verifisere en fullstendig backup- og tilbakeføringsplan før migreringen starter.",
             "statusdescription": "",
-            "title": "",
+            "title": "Datatap under migrering",
             "e_measurepriority_ids": "",
             "e_responsible_ids": {
                 "type": "user",
@@ -77,9 +72,9 @@
             "e_status_ids": ""
         },
         {
-            "id": "risk-7d33f4a2-1ba2-491b-8562-b00cd0fc0b1f",
+            "id": "risk-7d8d3444-48db-43f2-b5f1-f6b30a6b00a0",
             "objectname": "risk",
-            "parentid": "assessment-b167f444-fcf6-4ee9-8142-61c81acd5516",
+            "parentid": "assessment-aed2e363-f29d-49e9-85df-d7aa29650f36",
             "parenttype": "assessment",
             "assumption": "",
             "consequence_justification": "",
@@ -130,19 +125,19 @@
             "a_measures_ids": {
                 "type": "measure",
                 "values": [
-                    "measure-40a20deb-2e53-4e49-ba5f-75747e3ddc35"
+                    "measure-5621a6d3-be40-4c90-937a-4ca4707cc686"
                 ]
             }
         },
         {
-            "id": "measure-610cb0c8-ee9d-4da0-8a99-28dae4d891a9",
+            "id": "measure-ecdfad9c-7ad7-40b9-917d-3a401507b341",
             "objectname": "measure",
-            "parentid": "risk-949fc6d6-fe50-4295-904e-8e822e292305",
+            "parentid": "risk-7eb0817f-cb51-4102-bd2b-8f145ac75e21",
             "parenttype": "risk",
             "deadline": "2025-10-01T00:00:00Z",
             "description": "Innhente et fastpristilbud fra en ekstern leverandør for de mest komplekse delene av migreringen.",
             "statusdescription": "",
-            "title": "",
+            "title": "Uforutsette kostnader",
             "e_measurepriority_ids": "",
             "e_responsible_ids": {
                 "type": "user",
@@ -153,9 +148,9 @@
             "e_status_ids": ""
         },
         {
-            "id": "risk-949fc6d6-fe50-4295-904e-8e822e292305",
+            "id": "risk-7eb0817f-cb51-4102-bd2b-8f145ac75e21",
             "objectname": "risk",
-            "parentid": "assessment-b167f444-fcf6-4ee9-8142-61c81acd5516",
+            "parentid": "assessment-aed2e363-f29d-49e9-85df-d7aa29650f36",
             "parenttype": "assessment",
             "assumption": "",
             "consequence_justification": "",
@@ -204,7 +199,7 @@
             "a_measures_ids": {
                 "type": "measure",
                 "values": [
-                    "measure-610cb0c8-ee9d-4da0-8a99-28dae4d891a9"
+                    "measure-ecdfad9c-7ad7-40b9-917d-3a401507b341"
                 ]
             }
         }
