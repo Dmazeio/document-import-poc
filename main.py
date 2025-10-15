@@ -2,23 +2,19 @@ import os
 import json
 import re
 
-# Importer kun den ene klassen vi trenger
 from src.document_processor import DocumentProcessor
 
 def sanitize_filename(name: str) -> str:
     """Sanitize a string so it is a valid file name."""
     if not name:
         return ""
-    # Fjern ugyldige tegn
-    # Remove invalid characters
     name = re.sub(r'[<>:"/\\|?*]', '', name)
-    # Limit length
     return name[:100].strip()
 
 if __name__ == "__main__":
     # --- Part 1: Define input files ---
-    input_doc_path = "input_documents/sample_3.pdf"
-    template_path = "input-schemas/Minutes of Meeting.json"
+    input_doc_path = "input_documents/Risk Assessment Sample.docx"
+    template_path = "input-schemas/Risk Assessment - Enterprise Risk Assessment.json"
     output_dir = "output"
     os.makedirs(output_dir, exist_ok=True)
     

@@ -3,6 +3,7 @@ from openai import OpenAI
 from pydantic import BaseModel, Field
 from typing import Optional, List, Dict, Set, Literal
 import json
+from .ai_client import AIClient 
 
 # --- MODIFIED MODELS ---
 class BatchMatchResult(BaseModel):
@@ -17,18 +18,18 @@ class BatchMatchResponse(BaseModel):
 
 # --- MODIFIED BATCH FUNCTION ---
 def find_best_entity_matches_in_batch(
-    client: OpenAI,
+    ai_client: AIClient,
     items_to_match: Dict[str, Set[str]],
     valid_entities_map: Dict[str, List[Dict]]
 ) -> Dict[str, Dict[str, dict]]:
     """
-    Finds the best ID matches for a batch of text snippets across different entity types in a single AI call.
-    Returns a richer dictionary containing the ID, confidence, and reasoning for each match.
+    Find best ID matches for a batch of text snippets in a single AI call.
+    Returns a dict mapping entity_type -> input_text -> {id, confidence, reasoning}.
+    Only successful matches are included; unmatched snippets are logged but not returned.
+    On error, an empty dict is returned.
     """
     if not items_to_match:
         return {}
-
-    instructor_client = instructor.patch(client)
 
     tasks_list = []
     for entity_type, texts in items_to_match.items():
@@ -65,34 +66,25 @@ def find_best_entity_matches_in_batch(
     Return a complete list of results for all tasks.
     """
 
-    try:
-        response = instructor_client.chat.completions.create(
-            model="gpt-4o",
-            response_model=BatchMatchResponse,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_prompt}
-            ],
-            max_retries=1
-        )
+    response = ai_client.get_structured_response(
+        response_model=BatchMatchResponse,
+        system_prompt=system_prompt,
+        user_prompt=user_prompt
+    )
 
-        detailed_lookup_map = {}
-        for match in response.matches:
-            if match.best_match_id:
-                if match.entity_type not in detailed_lookup_map:
-                    detailed_lookup_map[match.entity_type] = {}
-                
-                detailed_lookup_map[match.entity_type][match.input_text] = {
-                    "id": match.best_match_id,
-                    "confidence": match.confidence,
-                    "reasoning": match.reasoning
-                }
-                print(f"  - [BATCH MATCHER] Matched '{match.input_text}' ({match.entity_type}) -> ID: {match.best_match_id} (Confidence: {match.confidence})")
-            else:
-                print(f"  - [BATCH MATCHER] Match NOT FOUND for '{match.input_text}' ({match.entity_type}). Reasoning: {match.reasoning} (Confidence: {match.confidence})")
-
-        return detailed_lookup_map
+    detailed_lookup_map = {}
+    for match in response.matches:
+        if match.best_match_id:
+            if match.entity_type not in detailed_lookup_map:
+                detailed_lookup_map[match.entity_type] = {}
             
-    except Exception as e:
-        print(f"  - [BATCH MATCHER] CRITICAL ERROR during batch entity matching: {e}")
-        return {}
+            detailed_lookup_map[match.entity_type][match.input_text] = {
+                "id": match.best_match_id,
+                "confidence": match.confidence,
+                "reasoning": match.reasoning
+            }
+            print(f"  - [BATCH MATCHER] Matched '{match.input_text}' ({match.entity_type}) -> ID: {match.best_match_id} (Confidence: {match.confidence})")
+        else:
+            print(f"  - [BATCH MATCHER] Match NOT FOUND for '{match.input_text}' ({match.entity_type}). Reasoning: {match.reasoning} (Confidence: {match.confidence})")
+
+    return detailed_lookup_map

@@ -1,9 +1,8 @@
 import uuid
 import re
-from openai import OpenAI
+from .ai_client import AIClient # Import AIClient
 from .api_simulator import get_entities_from_api, get_entity_schema_from_api
 from .tools import find_best_entity_matches_in_batch
-
 
 def collect_entities_to_match(data_node: dict, schema_node: dict, items_to_match: dict):
     """Recursively traverses the data and schema to find all unique text values that need an ID lookup."""
@@ -28,7 +27,7 @@ def collect_entities_to_match(data_node: dict, schema_node: dict, items_to_match
         for item in child_items:
             collect_entities_to_match(item, child_schema, items_to_match)
 
-def flatten_recursively(client: OpenAI, data_node: dict, schema_node: dict, parent_id: str, parent_type: str, flat_list: list, detailed_lookup_map: dict, warnings: list):
+def flatten_recursively(ai_client: AIClient, data_node: dict, schema_node: dict, parent_id: str, parent_type: str, flat_list: list, detailed_lookup_map: dict, warnings: list):
     """
     Recursively flattens the nested data into a list of Dmaze objects.
     It uses a detailed map to look up IDs and generates warnings for low-confidence matches.
@@ -88,7 +87,7 @@ def flatten_recursively(client: OpenAI, data_node: dict, schema_node: dict, pare
         child_ids = []
         if child_items:
             for item in child_items:
-                child_id = flatten_recursively(client, item, child_schema, node_id, object_name, flat_list, detailed_lookup_map, warnings)
+                child_id = flatten_recursively(ai_client, item, child_schema, node_id, object_name, flat_list, detailed_lookup_map, warnings)
                 child_ids.append(child_id)
         
         relationship_field = child_schema['relationship_field']
@@ -99,22 +98,21 @@ def flatten_recursively(client: OpenAI, data_node: dict, schema_node: dict, pare
 
 
 # MAIN FUNCTION 
-def transform_to_dmaze_format_hierarchically(client: OpenAI, nested_data: dict, schema_package: dict) -> dict:
+def transform_to_dmaze_format_hierarchically(ai_client: AIClient, nested_data: dict, schema_package: dict) -> dict:
     final_list = []
     warnings = []
     schema_tree = schema_package['schema_tree']
     root_name = schema_tree['name']
 
-    # --- This check remains the same ---
     if root_name not in nested_data:
         return {"dmaze_data": [], "warnings": [f"Input from AI is missing the root key '{root_name}'."]}
 
-    # --- Step 1: Collect all entities to be matched (your existing logic) ---
+    # --- Step 1: Collect all entities to be matched ---
     print("\n--- Step 4a: Collecting all entities to be matched... ---")
     items_to_match = {}
     collect_entities_to_match(nested_data[root_name], schema_tree, items_to_match)
     
-    # --- Step 2: Get valid entities and perform the batch match (your existing logic) ---
+    # --- Step 2: Get valid entities and perform the batch match ---
     candidate_map = { entity_type: get_entities_from_api(entity_type) for entity_type in items_to_match.keys() }
 
     # Determine which types actually have candidates to match against
@@ -129,9 +127,10 @@ def transform_to_dmaze_format_hierarchically(client: OpenAI, nested_data: dict, 
     # Only call the batch matcher for types that actually have candidate lists
     to_match = {t: items_to_match[t] for t in matchable_types}
     valid_entities_map = {t: candidate_map[t] for t in matchable_types}
-    detailed_lookup_map = find_best_entity_matches_in_batch(client, to_match, valid_entities_map)
+    # Pass the ai_client instance to the batch matcher
+    detailed_lookup_map = find_best_entity_matches_in_batch(ai_client, to_match, valid_entities_map)
 
-    # --- STEP 3 (NEW LOGIC): Systematically check for "Not Found" errors BEFORE flattening ---
+    # --- STEP 3 Systematically check for "Not Found" errors BEFORE flattening ---
     print("\n--- Step 4c: Verifying all entities and collecting 'Not Found' warnings... ---")
     for entity_type, values_set in items_to_match.items():
         for value in values_set:
@@ -145,7 +144,7 @@ def transform_to_dmaze_format_hierarchically(client: OpenAI, nested_data: dict, 
     # The `warnings` list is passed in, so `flatten_recursively` can add its low-confidence warnings to it.
     print("\n--- Step 4d: Transforming data structure... ---")
     flatten_recursively(
-        client=client,
+        ai_client=ai_client,
         data_node=nested_data[root_name],
         schema_node=schema_tree,
         parent_id=None,
@@ -155,7 +154,6 @@ def transform_to_dmaze_format_hierarchically(client: OpenAI, nested_data: dict, 
         warnings=warnings
     )
 
-    # --- Final reordering step remains the same ---
     root_index = next((i for i, obj in enumerate(final_list) if obj.get('objectname') == root_name), -1)
     if root_index != -1:
         root_obj = final_list.pop(root_index)

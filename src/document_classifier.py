@@ -1,15 +1,11 @@
-import instructor
-from openai import OpenAI
-# Import the general structured response models
+from .ai_client import AIClient
 from .models import DocumentAnalysis, DocumentStructureType
 
-def classify_document_type(client: OpenAI, markdown_content: str, root_object_name: str) -> DocumentStructureType:
+def classify_document_type(ai_client: AIClient, markdown_content: str, root_object_name: str) -> DocumentStructureType:
     """
-    Uses AI to classify whether a document contains a single
+    Uses the centralized AIClient to classify whether a document contains a single
     or multiple distinct '{root_object_name}' items.
     """
-    instructor_client = instructor.patch(client)
-    
     sample_size = 4000
     if len(markdown_content) > sample_size * 2:
         document_sample = (
@@ -29,14 +25,15 @@ def classify_document_type(client: OpenAI, markdown_content: str, root_object_na
     Otherwise, classify it as 'single_item'.
     """
     
+    user_prompt = f"Analyze the structure of the following document sample and classify it.\n\nDOCUMENT SAMPLE:\n---\n{document_sample}\n---"
+    
     try:
-        analysis = instructor_client.chat.completions.create(
-            model="gpt-4o", 
+        # Use the centralized method with a response_model
+        analysis = ai_client.get_structured_response(
+            system_prompt=system_prompt,
+            user_prompt=user_prompt,
             response_model=DocumentAnalysis,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": f"Analyze the structure of the following document sample and classify it.\n\nDOCUMENT SAMPLE:\n---\n{document_sample}\n---"} 
-            ]
+            model="gpt-4o"
         )
         print(f"  - Document classified as: {analysis.document_type}. Reasoning: {analysis.reasoning}")
         return analysis.document_type

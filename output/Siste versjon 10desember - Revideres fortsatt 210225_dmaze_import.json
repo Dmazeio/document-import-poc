@@ -1,0 +1,491 @@
+{
+    "summary": {
+        "inputFile": "Siste versjon 10desember - Revideres fortsatt 210225.docx",
+        "templateUsed": "In-memory schema",
+        "overallStatus": "SuccessWithWarnings",
+        "itemTitle": null,
+        "processingTimestamp": "2025-10-15T09:50:01.985703",
+        "processingLog": {
+            "Template Processing": "Success (0.00s)",
+            "Document Conversion": "Success (5.24s)",
+            "Document Classification": "Success (3.46s)",
+            "AI Data Extraction ": "Success (270.54s)", /* Ran with gpt-5 */
+            "Data Transformation ": "Success (4.83s)"
+        },
+        "errorsEncountered": [],
+        "warningsEncountered": [
+            "No predefined entities available for type 'uncertainty'. Values for this type will be preserved as raw text and not matched to IDs.",
+            "No predefined entities available for type 'manageability'. Values for this type will be preserved as raw text and not matched to IDs.",
+            "Match not found for 'Ringsaker kommune, Innlandet, Norge' (Type: location). The value was ignored.",
+            "Match not found for 'Astrid P. Finneid' (Type: user). The value was ignored.",
+            "Match not found for 'Ringsaker kommune' (Type: unit). The value was ignored.",
+            "Match not found for '4. High: 10%-50% per year' (Type: consequenceprobability). The value was ignored.",
+            "Match not found for 'Low' (Type: manageability). The value was ignored.",
+            "Match not found for 'High' (Type: manageability). The value was ignored.",
+            "Match not found for 'Medium' (Type: manageability). The value was ignored.",
+            "Match not found for 'Low' (Type: uncertainty). The value was ignored.",
+            "Match not found for 'High' (Type: uncertainty). The value was ignored.",
+            "Match not found for 'Medium' (Type: uncertainty). The value was ignored."
+        ],
+        "humanReadableSummary": "Summary of the import process for the document from the file 'Siste versjon 10desember - Revideres fortsatt 210225.docx'.\n  - Total parts identified in document: 1.\n  - Status for this part: SuccessWithWarnings (processed in 275.37 seconds).\n  - Errors encountered for this part: 0.\n  - Warnings encountered for this part: 12.\n    Important warnings: No predefined entities available for type 'uncertainty'. Values for this type will be preserved as raw text and not matched to IDs.; No predefined entities available for type 'manageability'. Values for this type will be preserved as raw text and not matched to IDs.; Match not found for 'Ringsaker kommune, Innlandet, Norge' (Type: location). The value was ignored.\n    (9 more warnings not listed here. See 'warningsEncountered' for full list.)"
+    },
+    "dmaze_data": [
+        {
+            "id": "assessment-2fa4d10f-a89e-4ec0-93f7-c0a7432cd865",
+            "objectname": "assessment",
+            "assumptions": "- Analysen følger DSBs veileder for helhetlig ROS i kommunen og benytter definerte sannsynlighets- og konsekvenskategorier.\n- Fokus er på uønskede hendelser som kan etablere kommunens kriseledelse, har store konsekvenser, berører flere tjenesteområder, skaper frykt eller overstiger kommunens ordinære håndteringskapasitet. Hendelser som håndteres på tjenestenivå er ikke inkludert og forutsettes dekket i sektorvise ROS-analyser.\n- Analysen er overordnet; det er ikke gjennomført dybdeanalyser på alle områder i denne revisjonen. Interkommunale dybdeanalyser planlegges i Hamarregionen i 2026.\n- Risikobildet påvirkes av klimaendringer, digitalisering og en mer uforutsigbar sikkerhetspolitisk situasjon internasjonalt.\n- ROS oppdateres hvert 4. år, eller ved endringer i risiko- og sårbarhetsbildet. Forrige revisjon var 08.02.2021.",
+            "description": "Helhetlig risiko- og sårbarhetsanalyse (ROS) for Ringsaker kommune for perioden 2025–2028. Analysen kartlegger, systematiserer og vurderer sannsynlighet og konsekvenser av uønskede hendelser som kan inntreffe innenfor kommunens geografiske område, og hvordan disse kan påvirke befolkning, miljø, kritiske samfunnsfunksjoner og materielle verdier. Arbeidet er tverrfaglig, forankres i kommunestyret og danner grunnlag for beredskapsplanverk, prioritering av tiltak, øvelser og oppfølging. Analysen dekker blant annet klima- og naturhendelser, større branner og ulykker, forurensning, sammenbrudd i infrastruktur, forsyningssikkerhet, samfunnssikkerhet og sikkerhetspolitisk situasjon, cyberangrep, smittespredning, dyrehelse samt kommunal bygningsmasse.",
+            "objective": "Gjennomføre en helhetlig ROS i starten av kommunestyreperioden for å identifisere og vurdere uønskede hendelser, deres sannsynlighet og konsekvenser, samt anbefale og prioritere forebyggende og konsekvensreduserende tiltak som grunnlag for kommunens beredskapsarbeid og planverk.",
+            "title": "Revidert helhetlig risiko- og sårbarhetsanalyse 2025–2028 – Ringsaker kommune",
+            "e_activity_ids": "",
+            "e_location_ids": "Ringsaker kommune, Innlandet, Norge",
+            "e_projectowner_ids": "Astrid P. Finneid",
+            "e_responsible_unit_ids": "Ringsaker kommune",
+            "e_risk_category_ids": "",
+            "e_status_ids": "",
+            "a_risk_ids": {
+                "type": "risk",
+                "values": [
+                    "risk-af78a5f2-e148-4380-af6c-479ddb22a324",
+                    "risk-3752003b-5076-4a41-9ca3-82089f8b1cba",
+                    "risk-9d0e3d91-87e4-4983-af3f-e542cc2de4ab",
+                    "risk-82207b45-95e6-412c-9428-a4bc6c47a827",
+                    "risk-fb94cffa-6a65-426d-b1c5-dc690c83f5b5",
+                    "risk-4691d2b4-91de-481c-8140-c4b3b9f6d16c",
+                    "risk-182a71da-6b22-4f86-ab6b-c44ed93dc1d8",
+                    "risk-0521e33b-b8cb-4146-80f3-b5875edf1ab2",
+                    "risk-df5abe65-1222-4a62-b8a3-b37d88fd0024",
+                    "risk-d952c880-00af-486b-89a0-db57ec21746d",
+                    "risk-4d147f56-329c-4396-8071-fa0e42c1c7d5",
+                    "risk-befd1c9e-00d2-4782-b68e-b44c5d6d2136"
+                ]
+            }
+        },
+        {
+            "id": "risk-af78a5f2-e148-4380-af6c-479ddb22a324",
+            "objectname": "risk",
+            "parentid": "assessment-2fa4d10f-a89e-4ec0-93f7-c0a7432cd865",
+            "parenttype": "assessment",
+            "assumption": "Kommunen kan rammes av angrep mot egen infrastruktur eller skytjenester. Konsekvenser kan omfatte tap av effektivitet, omdømme, og påvirkning på liv og helse.",
+            "consequence_justification": "",
+            "description": "Cybertrusler fra statlige og ikke-statlige aktører kan ramme kommunens on-prem og skybaserte løsninger (inkl. løsepengevirus). Kan føre til bortfall av kritiske IKT-tjenester, eksponering av personopplysninger og betydelige kostnader ved gjenoppretting.",
+            "existingmeasuredescription": "Opplæring i informasjonssikkerhet og personvern, styringssystem og rutiner (EQS), forbedring av brannmur/sikkerhetsløsninger, sikkerhetskopiering på primær- og sekundærlokasjon, styrket identitets- og tilgangsstyring, kriseøvelser.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Cyberangrep",
+            "uncertainty_justification": "Metoder og aktører utvikler seg fortløpende; usikkerhet knyttet til nye angrepsmåter og tredjeparts (skyleverandørers) sårbarheter.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-2-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "",
+            "e_manageability_ids": "Medium",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": "",
+            "e_uncertainty_ids": "Medium",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-3752003b-5076-4a41-9ca3-82089f8b1cba",
+            "objectname": "risk",
+            "parentid": "assessment-2fa4d10f-a89e-4ec0-93f7-c0a7432cd865",
+            "parenttype": "assessment",
+            "assumption": "Stor trebearbeidende industri og næringsmiddelindustri øker brannpotensialet; transport av farlig gods langs E6 og jernbane bidrar til risikoeksponering.",
+            "consequence_justification": "",
+            "description": "Store industribranner kan gi omfattende røyk-/giftgasspredning mot befolkede områder og store økonomiske tap. Risikoen er erfart i kommunen med større branner i 2018 og 2020.",
+            "existingmeasuredescription": "Brannforebyggende tilsyn i særskilte brannobjekter og virksomheter med farlig stoff, befolkningsvarsling via telefon/SMS (oppgradert ordning under innføring), samvirke med nabobrannvesen og nasjonale ressurser.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Stor industribrann",
+            "uncertainty_justification": "Historiske hendelser lokalt gir god erfaringsbase; sannsynlighet og konsekvens relativt godt kjent.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": []
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "",
+            "e_manageability_ids": "Medium",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": "",
+            "e_uncertainty_ids": "Low",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-9d0e3d91-87e4-4983-af3f-e542cc2de4ab",
+            "objectname": "risk",
+            "parentid": "assessment-2fa4d10f-a89e-4ec0-93f7-c0a7432cd865",
+            "parenttype": "assessment",
+            "assumption": "Klimatiske forhold og teknisk svikt kan gi akutte utslipp/overløp fra avløpssystemene.",
+            "consequence_justification": "",
+            "description": "Akutt forurensning fra avløpssystemer (overløp/lekkasjer) kan forurense Mjøsa og badestrender og gi miljøskader og hygieniske utfordringer.",
+            "existingmeasuredescription": "Saneringsplan for ledningsnett (mål 1,2 %/år), driftsovervåking (sky med lokal redundans), nødstrømsløsninger på deler av systemet, vaktordning og beredskapsplaner.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Akutt forurensning av avløpssystemene",
+            "uncertainty_justification": "Klimapåvirkning og teknologisk drift er relativt godt kjent; hendelser registreres og håndteres jevnlig.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": []
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "",
+            "e_manageability_ids": "Medium",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": "",
+            "e_uncertainty_ids": "Low",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-82207b45-95e6-412c-9428-a4bc6c47a827",
+            "objectname": "risk",
+            "parentid": "assessment-2fa4d10f-a89e-4ec0-93f7-c0a7432cd865",
+            "parenttype": "assessment",
+            "assumption": "Ekstremnedbør, snøsmelting og erosjon vil forekomme hyppigere som følge av klimaendringer.",
+            "consequence_justification": "",
+            "description": "Sammenbrudd eller stengte veger pga. ulykker, ras, nedbør eller flom gir forstyrrelser for innbyggere, hjemmetjenester og nødetater.",
+            "existingmeasuredescription": "Vaktordning 24/7, maskinpark og rammeavtaler med entreprenører, vedlikehold av drenering/stikkrenner, bruk av omkjøringsmuligheter og tidlig varsling.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Sammenbrudd veger",
+            "uncertainty_justification": "Hyppige hendelser og godt erfaringstilfang gir lav usikkerhet.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": []
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "",
+            "e_manageability_ids": "High",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": "",
+            "e_uncertainty_ids": "Low",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-fb94cffa-6a65-426d-b1c5-dc690c83f5b5",
+            "objectname": "risk",
+            "parentid": "assessment-2fa4d10f-a89e-4ec0-93f7-c0a7432cd865",
+            "parenttype": "assessment",
+            "assumption": "Mer og kraftigere nedbør øker belastningen på overvannssystemer, særlig i tettbygde strøk.",
+            "consequence_justification": "",
+            "description": "Flere episoder med kraftig nedbør gir økende overvannsutfordringer, skade på veg/eiendom og belastning på VA-nett.",
+            "existingmeasuredescription": "Krav til lokal overvannshåndtering i plan/byggesaker, kartlegging og sikring av flomveger, oppgradering/dimensjonering av ledningsnett, tiltak i landbruk (kantsoner, drenering).",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Ekstremnedbør og håndtering av overvann",
+            "uncertainty_justification": "Klimaendringstrender og lokale erfaringer tilsier lav usikkerhet om utviklingen.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-2-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "",
+            "e_manageability_ids": "Medium",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": "",
+            "e_uncertainty_ids": "Low",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-4691d2b4-91de-481c-8140-c4b3b9f6d16c",
+            "objectname": "risk",
+            "parentid": "assessment-2fa4d10f-a89e-4ec0-93f7-c0a7432cd865",
+            "parenttype": "assessment",
+            "assumption": "Vannstand i Mjøsa stiger sakte ved flom; liten direkte fare for liv/helse men stor påvirkning på infrastruktur og arealer.",
+            "consequence_justification": "",
+            "description": "Høy vannstand i Mjøsa kan oversvømme landarealer, bebyggelse og teknisk infrastruktur, gi forurensning fra avløpsanlegg og skade landbruket.",
+            "existingmeasuredescription": "Aktiv bruk av NVEs flomsonekart i planlegging, beredskap for drikkevannssikring/reservekilder, sikring av kommunikasjonsårer/omkjøringsalternativer, oppdaterte beredskapsplaner i teknisk drift.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Flom i Mjøsa",
+            "uncertainty_justification": "Godt kartgrunnlag og historikk gir lav usikkerhet.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-2-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "",
+            "e_manageability_ids": "Low",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": "",
+            "e_uncertainty_ids": "Low",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-182a71da-6b22-4f86-ab6b-c44ed93dc1d8",
+            "objectname": "risk",
+            "parentid": "assessment-2fa4d10f-a89e-4ec0-93f7-c0a7432cd865",
+            "parenttype": "assessment",
+            "assumption": "Feil/havari, langvarig strømbrudd eller hovedledningsbrudd kan gi bortfall utover 24 timer, men gjensidig forsyning og bassengkapasitet reduserer sannsynlighet/konsekvens.",
+            "consequence_justification": "",
+            "description": "Sammenbrudd i vannforsyning kan gi store forstyrrelser i dagliglivet og for næringsliv/helseinstitusjoner.",
+            "existingmeasuredescription": "Gjensidig forsyning mellom Moelv/Brumunddal (under utbygging/oppdimensjonering), bassengkapasitet, nødstrøm på vannverk/trykkøkningsstasjoner, driftsovervåking med redundans, vaktordning 24/7 og befolkningsvarsling.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Sammenbrudd vannforsyning",
+            "uncertainty_justification": "",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-2-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "",
+            "e_manageability_ids": "",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": "",
+            "e_uncertainty_ids": "",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-0521e33b-b8cb-4146-80f3-b5875edf1ab2",
+            "objectname": "risk",
+            "parentid": "assessment-2fa4d10f-a89e-4ec0-93f7-c0a7432cd865",
+            "parenttype": "assessment",
+            "assumption": "Demografiske endringer gir økt tjenestebehov samtidig som tilgangen på kvalifisert personell svekkes.",
+            "consequence_justification": "",
+            "description": "Svært høy belastning og mulig svikt i helse- og omsorgstjenester ved redusert ressurstilgang; økte ventetider, kapasitetsutfordringer og press på kvalitet/pasientsikkerhet.",
+            "existingmeasuredescription": "Kontinuitetsplaner, prioritering av kritiske tjenester, omdisponering av ressurser, mobilisering av frivillighet og tiltak for nye/effektive arbeidsformer.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Svikt i helse- og omsorgstjenester ved redusert ressurstilgang",
+            "uncertainty_justification": "",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-2-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "",
+            "e_manageability_ids": "",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": "",
+            "e_uncertainty_ids": "",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-df5abe65-1222-4a62-b8a3-b37d88fd0024",
+            "objectname": "risk",
+            "parentid": "assessment-2fa4d10f-a89e-4ec0-93f7-c0a7432cd865",
+            "parenttype": "assessment",
+            "assumption": "Samfunnet er sterkt avhengig av Ekom og tjenester driftet av flere tilbydere/skyleverandører; ulike feilkilder og avhengigheter mot strøm.",
+            "consequence_justification": "",
+            "description": "Bortfall av telefoni/IKT kan stoppe samhandling med innbyggere, sette styrings- og alarmsystemer ut av drift og påvirke kritiske funksjoner, spesielt i helse.",
+            "existingmeasuredescription": "Backup på primær-/sekundærlokasjon, forbedret brannmur/sikkerhet, nødstrøm for viktige funksjoner, nødnett-telefoner, planer for manuelle rutiner ved Ekom-bortfall og tett leverandørdialog.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Bortfall telefoni og Ekom",
+            "uncertainty_justification": "Begrenset erfaring med langvarige, omfattende utfall; mange avhengigheter og varierende leverandørrobusthet.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-2-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "",
+            "e_manageability_ids": "",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": "",
+            "e_uncertainty_ids": "Medium",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-d952c880-00af-486b-89a0-db57ec21746d",
+            "objectname": "risk",
+            "parentid": "assessment-2fa4d10f-a89e-4ec0-93f7-c0a7432cd865",
+            "parenttype": "assessment",
+            "assumption": "Ny pandemi kan oppstå med ujevne mellomrom; omfang avhenger av smittsomhet/dødelighet og tilgang på vaksiner.",
+            "consequence_justification": "",
+            "description": "Epidemi/pandemi kan gi høyt sykefravær, overbelastning av helse- og omsorgstjenester og brede samfunnsmessige konsekvenser (skoler/barnehager, tjenester, økonomi).",
+            "existingmeasuredescription": "Oppdaterte planer (pandemi, smittevern, helseberedskap, massevaksinasjon), prioritering av kritisk personell, befolkningsvarsling og erfaring fra Covid-19 (TISK/kommunikasjon).",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Epidemi/pandemi",
+            "uncertainty_justification": "Viruskarakteristika og vaksinetilgang er usikre faktorer som sterkt påvirker konsekvensene.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-2-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "",
+            "e_manageability_ids": "Low",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": "",
+            "e_uncertainty_ids": "High",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-4d147f56-329c-4396-8071-fa0e42c1c7d5",
+            "objectname": "risk",
+            "parentid": "assessment-2fa4d10f-a89e-4ec0-93f7-c0a7432cd865",
+            "parenttype": "assessment",
+            "assumption": "Stor dyretetthet og omfattende transport i og gjennom kommunen; enkelte A-sykdommer sprer seg raskt og krever inngripende tiltak.",
+            "consequence_justification": "",
+            "description": "Utbrudd av alvorlig smittsom dyresykdom (A-sykdom) kan medføre omfattende tiltak (sperresoner, nedslakting, destruksjon), store økonomiske konsekvenser og langvarig innsats.",
+            "existingmeasuredescription": "Mattilsynet har operativt ansvar og bekjempelsesplaner. Kommunen bistår med personell/ressurser, koordinering, informasjon og lokal kunnskap. Samordning med næring, politiet, Sivilforsvaret og Statsforvalteren.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Utbrudd alvorlig smittsom dyresykdom (A-sykdom)",
+            "uncertainty_justification": "Flere usikre faktorer (smittevei, omfang, varighet); beredskapsplaner og ansvarslinjer er tydelige.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-2-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "",
+            "e_manageability_ids": "Medium",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": "",
+            "e_uncertainty_ids": "Medium",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-befd1c9e-00d2-4782-b68e-b44c5d6d2136",
+            "objectname": "risk",
+            "parentid": "assessment-2fa4d10f-a89e-4ec0-93f7-c0a7432cd865",
+            "parenttype": "assessment",
+            "assumption": "Telefoni/IKT avhengig av strøm; flere tilbydere og infrastruktur reduserer sannsynlighet for totalutfall, men langvarige hendelser kan få store konsekvenser.",
+            "consequence_justification": "",
+            "description": "Forsyningssikkerhet Ekom/telefoni – bortfall kan ramme nødmeldinger, tjenesteproduksjon og kommunikasjon med innbyggere. Avhengigheter til skyleverandører og fiber/mobilnett.",
+            "existingmeasuredescription": "Redundans/backup, nødstrøm der mulig, nødnett, manuelle rutiner, tett leverandørsamarbeid og løpende sikkerhetsoppgraderinger.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Forsyningssikkerhet – telefoni og Ekom",
+            "uncertainty_justification": "Erfaring med store og langvarige utfall er begrenset; teknologilandskap endres raskt.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-2-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "",
+            "e_manageability_ids": "",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": "",
+            "e_uncertainty_ids": "Medium",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        }
+    ]
+}

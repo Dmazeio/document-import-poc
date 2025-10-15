@@ -5,6 +5,8 @@ from datetime import datetime
 from openai import OpenAI
 from dotenv import load_dotenv
 
+from .ai_client import AIClient
+
 # Import functions this class depends on
 from .document_converter import convert_file_to_markdown
 from .schema_processor import process_template_hierarchically
@@ -20,9 +22,9 @@ class DocumentProcessor:
         self.document_filename = document_filename
 
         load_dotenv()
-        self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        # Create an instance of the general AIClient
+        self.ai_client = AIClient(OpenAI(api_key=os.getenv("OPENAI_API_KEY")))
 
-        # Common state variables
         self.schema_package = None
         self.markdown_content = None
         self.doc_type = "single_item"
@@ -61,10 +63,10 @@ class DocumentProcessor:
         item_log_name_prefix = f"for '{title}'" if title else ""
         
         nested_data = self._log_step(f"AI Data Extraction {item_log_name_prefix}", 
-            lambda: extract_data_with_hierarchy(self.client, content, self.schema_package))
+            lambda: extract_data_with_hierarchy(self.ai_client, content, self.schema_package))
         
         transformation_result = self._log_step(f"Data Transformation {item_log_name_prefix}", 
-            lambda: transform_to_dmaze_format_hierarchically(self.client, nested_data, self.schema_package))
+            lambda: transform_to_dmaze_format_hierarchically(self.ai_client, nested_data, self.schema_package))
         
         return {
             "dmaze_data": transformation_result.get("dmaze_data", []),
@@ -91,7 +93,6 @@ class DocumentProcessor:
             "warningsEncountered": warnings,
         }
         
-
         summary_parts = []
         title_text = f"for document part '{item_title}'" if item_title else "for the document"
         
@@ -130,36 +131,37 @@ class DocumentProcessor:
             self.schema_package = self._log_step("Template Processing", lambda: process_template_hierarchically(self.schema_content))
             self.markdown_content = self._log_step("Document Conversion", lambda: convert_file_to_markdown(self.document_bytes, self.document_filename))
             root_name = self.schema_package['schema_tree']['name']
-            self.doc_type = self._log_step("Document Classification", lambda: classify_document_type(self.client, self.markdown_content, root_name))
+            
+            # Pass the ai_client instance
+            self.doc_type = self._log_step("Document Classification", lambda: classify_document_type(self.ai_client, self.markdown_content, root_name))
             
             # Step 4: Build a list of chunks to process
             chunks_to_process = []
             if self.doc_type == "multiple_items":
+                # Pass the ai_client instance
                 chunks_to_process = self._log_step("Document Splitting", 
-                    lambda: split_document_into_items(self.client, self.markdown_content, root_name))
+                    lambda: split_document_into_items(self.ai_client, self.markdown_content, root_name))
             else:
                 class SingleChunk:
                     item_title = None
                     item_content = self.markdown_content
                 chunks_to_process.append(SingleChunk())
 
-            total_num_chunks = len(chunks_to_process)  # Get total number of chunks
+            total_num_chunks = len(chunks_to_process)
 
             # Step 5: Process each chunk individually
             for chunk in chunks_to_process:
-                item_start_time = time.time()  # Start time for this chunk
-                # Run AI processing for this chunk
+                item_start_time = time.time()
                 chunk_result = self._process_single_chunk(chunk.item_content, chunk.item_title)
-                item_processing_duration = time.time() - item_start_time  # Total time for this chunk
+                item_processing_duration = time.time() - item_start_time
 
-                # Build and store the summary for this chunk
                 summary = self._build_summary(
                     item_title=chunk.item_title,
                     dmaze_data=chunk_result["dmaze_data"],
                     warnings=chunk_result["warnings"],
-                    overall_status="Success", # Antar suksess hvis vi kommer hit
-                    total_num_chunks=total_num_chunks, # NY: sender med totalt antall
-                    item_processing_duration=item_processing_duration # NY: sender med varighet
+                    overall_status="Success",
+                    total_num_chunks=total_num_chunks,
+                    item_processing_duration=item_processing_duration
                 )
                 results_list.append({
                     "summary": summary,
@@ -168,7 +170,6 @@ class DocumentProcessor:
 
         except Exception as e:
             print(f"\nCRITICAL ERROR in workflow: {e}")
-            # On critical failure, return a single error result
             summary = self._build_summary(None, [], [], "Failure", total_num_chunks=0, item_processing_duration=0.0)
             return [{"summary": summary, "dmaze_data": []}]
         

@@ -1,0 +1,698 @@
+{
+    "summary": {
+        "inputFile": "ROS-Analyse_Stange_kommune_2023-2027__word.docx",
+        "templateUsed": "In-memory schema",
+        "overallStatus": "SuccessWithWarnings",
+        "itemTitle": null,
+        "processingTimestamp": "2025-10-15T10:01:46.477718",
+        "processingLog": {
+            "Template Processing": "Success (0.00s)",
+            "Document Conversion": "Success (3.64s)",
+            "Document Classification": "Success (2.69s)",
+            "AI Data Extraction ": "Success (434.53s)", /* Ran with gpt-5 */
+            "Data Transformation ": "Success (8.95s)"
+        },
+        "errorsEncountered": [],
+        "warningsEncountered": [
+            "No predefined entities available for type 'consequencesafety'. Values for this type will be preserved as raw text and not matched to IDs.",
+            "No predefined entities available for type 'consequenceenvironment'. Values for this type will be preserved as raw text and not matched to IDs.",
+            "No predefined entities available for type 'manageability'. Values for this type will be preserved as raw text and not matched to IDs.",
+            "No predefined entities available for type 'uncertainty'. Values for this type will be preserved as raw text and not matched to IDs.",
+            "Match not found for 'Stange kommune, Innlandet, Norway' (Type: location). The value was ignored.",
+            "Match not found for 'Tommy Østlund' (Type: user). The value was ignored.",
+            "Match not found for 'Stange kommune' (Type: unit). The value was ignored.",
+            "Match not found for '4. High: 10%-50% per year' (Type: consequenceprobability). The value was ignored.",
+            "Match not found for '1. Insignificant - Minor injury' (Type: consequencesafety). The value was ignored.",
+            "Match not found for '5. Critical - Death' (Type: consequencesafety). The value was ignored.",
+            "Match not found for '4. Serious - Injury of a permanent character' (Type: consequencesafety). The value was ignored.",
+            "Match not found for '3. Significant - Serious injury' (Type: consequencesafety). The value was ignored.",
+            "Match not found for '2. Moderate - Injury with absence' (Type: consequencesafety). The value was ignored.",
+            "Match not found for 'Medium' (Type: manageability). The value was ignored.",
+            "Match not found for 'Low' (Type: manageability). The value was ignored.",
+            "Match not found for 'High' (Type: manageability). The value was ignored.",
+            "Match not found for 'Medium' (Type: uncertainty). The value was ignored.",
+            "Match not found for 'Low' (Type: uncertainty). The value was ignored.",
+            "Match not found for 'High' (Type: uncertainty). The value was ignored.",
+            "Match not found for '5. Critical - Discharge of disastrous amounts' (Type: consequenceenvironment). The value was ignored.",
+            "Match not found for '2. Moderate - Discharge of minor amounts' (Type: consequenceenvironment). The value was ignored.",
+            "Match not found for '3. Significant - Discharge of considerable amounts' (Type: consequenceenvironment). The value was ignored.",
+            "Match not found for '5. Critical - National reputation loss' (Type: consequencereputation). The value was ignored."
+        ],
+        "humanReadableSummary": "Summary of the import process for the document from the file 'ROS-Analyse_Stange_kommune_2023-2027__word.docx'.\n  - Total parts identified in document: 1.\n  - Status for this part: SuccessWithWarnings (processed in 443.48 seconds).\n  - Errors encountered for this part: 0.\n  - Warnings encountered for this part: 23.\n    Important warnings: No predefined entities available for type 'consequencesafety'. Values for this type will be preserved as raw text and not matched to IDs.; No predefined entities available for type 'consequenceenvironment'. Values for this type will be preserved as raw text and not matched to IDs.; No predefined entities available for type 'manageability'. Values for this type will be preserved as raw text and not matched to IDs.\n    (20 more warnings not listed here. See 'warningsEncountered' for full list.)"
+    },
+    "dmaze_data": [
+        {
+            "id": "assessment-a8f8ef37-bd24-4d04-a8e7-ef3411db42ae",
+            "objectname": "assessment",
+            "assumptions": "Analysen følger DSBs veileder for helhetlig ROS i kommunen og gjelder for perioden 2023–2027. Metoden bruker definerte sannsynlighets- og konsekvenskategorier samt vurdering av usikkerhet og styrbarhet. Vurderingene bygger på tilgjengelige lokale data, regionale/faglige kilder (NVE, DSA, PST, NSM, FHI, m.fl.) og erfaringer fra hendelser i regionen.",
+            "description": "Helhetlig risiko- og sårbarhetsanalyse (ROS) for Stange kommune, forankret i kommunestyret og gjennomført i tråd med lov og forskrift om kommunal beredskapsplikt. Analysen dekker kommunens geografiske område og virksomhet og vurderer uønskede hendelser, sannsynlighet, konsekvenser, sårbarheter og styrbarhet. Hovedområder: klima- og naturfarer, brann/eksplosjon/trafikkulykker, forurensning, sammenbrudd i infrastruktur, forsyningssikkerhet (IKT/telefoni/strøm/vann og avløp/mat), utbrudd av smittsom sykdom, dyrehelse, terrorhandlinger og masseankomst av mennesker.",
+            "objective": "Identifisere og vurdere kommunens risiko- og sårbarhetsbilde, oppfylle krav i lov og forskrift om kommunal beredskapsplikt, og gi beslutningsgrunnlag for planverk, prioriteringer og forebyggende og konsekvensreduserende tiltak.",
+            "title": "Helhetlig ROS-analyse 2023–2027 (Hovedrapport)",
+            "e_activity_ids": "",
+            "e_location_ids": "Stange kommune, Innlandet, Norway",
+            "e_projectowner_ids": "Tommy Østlund",
+            "e_responsible_unit_ids": "Stange kommune",
+            "e_risk_category_ids": {
+                "type": "riskcategory",
+                "values": [
+                    "riskcat-1-uuid"
+                ]
+            },
+            "e_status_ids": {
+                "type": "assessmentstatus",
+                "values": [
+                    "assess-stat-1-uuid"
+                ]
+            },
+            "a_risk_ids": {
+                "type": "risk",
+                "values": [
+                    "risk-67a1a94d-a87f-455a-bed8-d36ee5a6c179",
+                    "risk-c8295731-a689-4eef-bcb0-06b0592ca8a3",
+                    "risk-e37aadac-0f2a-4ae4-908e-d404910acb1e",
+                    "risk-450db157-306b-4ba0-969c-e618b0a36880",
+                    "risk-0da3da74-9afe-460a-954f-10149c736288",
+                    "risk-e4f73007-263d-4f70-8b5c-c563d29ed8de",
+                    "risk-510b2ca0-642c-48ad-868b-04183885ddce",
+                    "risk-69de47ac-abeb-4006-aed7-82ef79a1a081",
+                    "risk-12b230e8-63a8-4565-a3d5-9d85c0662157",
+                    "risk-515d3bcb-e031-4dec-83c8-1998b7c98e94",
+                    "risk-1d870b12-8d66-4287-a82e-77b03f4bec17",
+                    "risk-f7f1385e-1d70-4997-8af6-08252d71c704",
+                    "risk-88282daf-c493-4723-a6c6-2ce3f9b60dd0",
+                    "risk-64db7093-79fa-4b69-aacc-77a45f26cb6d",
+                    "risk-d3070d2f-a344-4e58-b11c-418910da4fbd"
+                ]
+            }
+        },
+        {
+            "id": "risk-67a1a94d-a87f-455a-bed8-d36ee5a6c179",
+            "objectname": "risk",
+            "parentid": "assessment-a8f8ef37-bd24-4d04-a8e7-ef3411db42ae",
+            "parenttype": "assessment",
+            "assumption": "Pandemier opptrer uregelmessig (10–50 års intervall) og kan få svært store konsekvenser; lokale konsekvenser påvirkes av nasjonal tilgang på vaksine og tiltak.",
+            "consequence_justification": "Høy belastning på helsetjenesten, mulig høy dødelighet og mange alvorlig syke; omfattende forstyrrelser i samfunnskritiske funksjoner.",
+            "description": "Epidemi/pandemi med høy smittsomhet som rammer store deler av befolkningen og gir betydelig sykdomsbyrde, personellfravær og press på helse- og omsorgstjenester.",
+            "existingmeasuredescription": "Smittevernplan og pandemiplan; plan for massevaksinasjon; hygiene- og informasjonsrutiner; prioritering av vaksine til kritisk personell; kontinuitetsplaner i tjenester.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Epidemi/pandemi",
+            "uncertainty_justification": "Stor usikkerhet om smittsomhet, dødelighet, tilgang til vaksine og varighet.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-2-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "5. Critical - Death",
+            "e_manageability_ids": "Low",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": {
+                "type": "riskstatus",
+                "values": [
+                    "riskstat-2-uuid"
+                ]
+            },
+            "e_uncertainty_ids": "High",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-c8295731-a689-4eef-bcb0-06b0592ca8a3",
+            "objectname": "risk",
+            "parentid": "assessment-a8f8ef37-bd24-4d04-a8e7-ef3411db42ae",
+            "parenttype": "assessment",
+            "assumption": "Økt digitalisering øker sårbarhet; trusselbildet fra cyberangrep er voksende.",
+            "consequence_justification": "Langvarig systemutfall kan sette sentrale tjenester ut av drift; personsensitive data og tjenesteproduksjon berøres.",
+            "description": "Bortfall av IKT-tjenester som følge av digitale angrep eller store tekniske feil, med mulig langvarig gjenopprettingstid.",
+            "existingmeasuredescription": "Backup-løsninger på primær- og sekundærlokasjon; oppgraderte brannmurer og sikkerhetsløsninger; sårbarhetsanalyser; multifaktorautentisering; sikkerhetstesting; kriseøvelser; beredskapsplaner per enhet.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Bortfall av IKT",
+            "uncertainty_justification": "Angrepsvektorer og sårbarheter endrer seg raskt; konsekvens avhenger av varighet og omfang.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": []
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "",
+            "e_manageability_ids": "",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": {
+                "type": "riskstatus",
+                "values": [
+                    "riskstat-2-uuid"
+                ]
+            },
+            "e_uncertainty_ids": "Medium",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-e37aadac-0f2a-4ae4-908e-d404910acb1e",
+            "objectname": "risk",
+            "parentid": "assessment-a8f8ef37-bd24-4d04-a8e7-ef3411db42ae",
+            "parenttype": "assessment",
+            "assumption": "Korte lokale strømbrudd er svært sannsynlige; langvarige utfall kan inntreffe ved ekstremvær eller systemfeil.",
+            "consequence_justification": "Kritiske samfunnsfunksjoner og helse- og omsorgstjenester påvirkes; omfattende konsekvenser for samfunnsstabilitet.",
+            "description": "Bortfall av strøm i kommunen, fra timer til flere døgn, med konsekvenser for helse, kommunikasjon, vann/avløp, næringsliv og husholdninger.",
+            "existingmeasuredescription": "Nødstrømsaggregat ved Stange helse- og omsorgssenter, Ottestad helse og mestringssenter og Stange rådhus; planer for strømrasjonering; oppgraderinger i strømnettet; planer for ivaretakelse av sårbare innbyggere.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Bortfall av strøm",
+            "uncertainty_justification": "Avhenger av årsak og varighet; konsekvenser eskalerer med tid.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": []
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "",
+            "e_manageability_ids": "",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": {
+                "type": "riskstatus",
+                "values": [
+                    "riskstat-2-uuid"
+                ]
+            },
+            "e_uncertainty_ids": "Medium",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-450db157-306b-4ba0-969c-e618b0a36880",
+            "objectname": "risk",
+            "parentid": "assessment-a8f8ef37-bd24-4d04-a8e7-ef3411db42ae",
+            "parenttype": "assessment",
+            "assumption": "Stor variasjon i alvorlighetsgrad; brann i bolig inntreffer årlig i regionen.",
+            "consequence_justification": "Størst risiko der beboere ikke kan evakuere selv.",
+            "description": "Brann i bolig, med særskilt risiko for omkomne og alvorlige skader i boliger med sårbare beboere.",
+            "existingmeasuredescription": "Forebyggende tilsyn, brannalarm direktekoblet brannvesen der krav foreligger, informasjonsarbeid; anbefalt styrking av brannsikkerhet i hjemmetjenester og kartlegging av risikogrupper.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Brann i bolig",
+            "uncertainty_justification": "God erfaringsdata; konsekvens avhenger av objekttype og beboersammensetning.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-2-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "2. Moderate - Injury with absence",
+            "e_manageability_ids": "",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": {
+                "type": "riskstatus",
+                "values": [
+                    "riskstat-2-uuid"
+                ]
+            },
+            "e_uncertainty_ids": "Low",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-0da3da74-9afe-460a-954f-10149c736288",
+            "objectname": "risk",
+            "parentid": "assessment-a8f8ef37-bd24-4d04-a8e7-ef3411db42ae",
+            "parenttype": "assessment",
+            "assumption": "Hendelser er sjeldne, men kan gi stor helserisiko; sårbarhet størst for sårbare grupper.",
+            "consequence_justification": "Historisk har utbrudd gitt mange syke og enkelte dødsfall; mulige kroniske skader.",
+            "description": "Forurensning av drikkevann med vannbåren smitte og helsemessige konsekvenser.",
+            "existingmeasuredescription": "Høydebassenger med tilsyn og renhold; prøvetaking; driftsovervåking med alarmer; rutiner for vannbehandling, befolkningsvarsling og kokepåbud; vaktordning og beredskap.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Forurensning av drikkevann",
+            "uncertainty_justification": "Konsekvens avhenger av smittestoff, inntakssted og responstid.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-1-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "5. Critical - Death",
+            "e_manageability_ids": "",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": {
+                "type": "riskstatus",
+                "values": [
+                    "riskstat-2-uuid"
+                ]
+            },
+            "e_uncertainty_ids": "Medium",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-e4f73007-263d-4f70-8b5c-c563d29ed8de",
+            "objectname": "risk",
+            "parentid": "assessment-a8f8ef37-bd24-4d04-a8e7-ef3411db42ae",
+            "parenttype": "assessment",
+            "assumption": "Sannsynlighet øker med klimaendringer og urbanisering.",
+            "consequence_justification": "Kan gi omfattende skader på eiendom og infrastruktur og forstyrrelser i tjenester.",
+            "description": "Ekstremnedbør og utfordringer i overvannshåndtering, med urban flom og belastning på VA-nett.",
+            "existingmeasuredescription": "Bestemmelser for overvann i arealplaner; lokal overvannshåndtering (åpne løsninger); kartlegging og sikring av flomveger; dimensjonering av rør; vedlikehold av drenering; tiltak i landbruket.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Ekstremnedbør og overvann",
+            "uncertainty_justification": "Høy lokal variasjon i nedbør; prognoser gir økt hyppighet.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-2-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "",
+            "e_manageability_ids": "",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": {
+                "type": "riskstatus",
+                "values": [
+                    "riskstat-2-uuid"
+                ]
+            },
+            "e_uncertainty_ids": "Medium",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-510b2ca0-642c-48ad-868b-04183885ddce",
+            "objectname": "risk",
+            "parentid": "assessment-a8f8ef37-bd24-4d04-a8e7-ef3411db42ae",
+            "parenttype": "assessment",
+            "assumption": "Mindre vassdrag reagerer raskt ved intens nedbør; isgang kan oppstå vinterstid.",
+            "consequence_justification": "Oversvømmelser og erosjon kan gi skader og behov for sikringstiltak.",
+            "description": "Flom og isgang i elver og bekker, inkludert erosjon og skader i kulverter/lukkede bekkestrekninger.",
+            "existingmeasuredescription": "Bruk av flomsonekart og hensynssoner; sikring/vedlikehold av flomforbygninger, kantsoner og lukkede bekker; kartlegging av kritiske punkt og åpne flomveger.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Flom og isgang i elver og bekker",
+            "uncertainty_justification": "Lokal topografi og infrastruktur gir variabel konsekvens; bedre kartgrunnlag reduserer usikkerhet.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "3. Significant - Discharge of considerable amounts",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-2-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "",
+            "e_manageability_ids": "",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": {
+                "type": "riskstatus",
+                "values": [
+                    "riskstat-2-uuid"
+                ]
+            },
+            "e_uncertainty_ids": "Low",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-69de47ac-abeb-4006-aed7-82ef79a1a081",
+            "objectname": "risk",
+            "parentid": "assessment-a8f8ef37-bd24-4d04-a8e7-ef3411db42ae",
+            "parenttype": "assessment",
+            "assumption": "Hendelser skjer årlig i regionen; konsekvenser varierer etter forhold.",
+            "consequence_justification": "Kan gi personskader/omkomne, spesielt ved ulykker med mange involverte.",
+            "description": "Større trafikkulykke på veg med mange involverte.",
+            "existingmeasuredescription": "Trafikksikker planlegging; firefelts E6; mottaksapparat for evakuerte og pårørende; samvirke og redningsressurser.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Større trafikkulykke",
+            "uncertainty_justification": "God statistikk; sted, vær og involverte kjøretøy påvirker utfallet.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-2-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "3. Significant - Serious injury",
+            "e_manageability_ids": "",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": {
+                "type": "riskstatus",
+                "values": [
+                    "riskstat-2-uuid"
+                ]
+            },
+            "e_uncertainty_ids": "Low",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-12b230e8-63a8-4565-a3d5-9d85c0662157",
+            "objectname": "risk",
+            "parentid": "assessment-a8f8ef37-bd24-4d04-a8e7-ef3411db42ae",
+            "parenttype": "assessment",
+            "assumption": "Storulykker på jernbane er sjeldne, men med høyt skadepotensial.",
+            "consequence_justification": "Mulige masseskader og behov for evakuering, særlig ved farlig gods.",
+            "description": "Stor ulykke på jernbane (kollisjon/alvorlig avsporing), eventuelt med farlig gods.",
+            "existingmeasuredescription": "Sikkerhetsoppfølging av Bane Nor/operatører; brannvesenets utstyr/kompetanse for jernbane og farlig gods; plan for mottakssenter for evakuerte/pårørende.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Stor ulykke på jernbane",
+            "uncertainty_justification": "Lav frekvens; store variasjoner i mulig omfang.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-1-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "5. Critical - Death",
+            "e_manageability_ids": "",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": {
+                "type": "riskstatus",
+                "values": [
+                    "riskstat-2-uuid"
+                ]
+            },
+            "e_uncertainty_ids": "Medium",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-515d3bcb-e031-4dec-83c8-1998b7c98e94",
+            "objectname": "risk",
+            "parentid": "assessment-a8f8ef37-bd24-4d04-a8e7-ef3411db42ae",
+            "parenttype": "assessment",
+            "assumption": "Regionale og globale forhold driver migrasjon; sannsynlighet vurderes som svært høy.",
+            "consequence_justification": "Belastning på lokale tjenester (helse, skole, barnehage) og behov for mottak/innkvartering.",
+            "description": "Masseankomst av mennesker/flyktninger med behov for rask lokal mottaks- og oppfølgingskapasitet.",
+            "existingmeasuredescription": "Etablerte mottaksprosesser; plan for helsetjenester og koordinering; bruk av befolkningsvarsling og samordning med statlige/regional aktører.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Masseankomst av mennesker",
+            "uncertainty_justification": "Omfang og varighet avhenger av eksterne forhold (krig, klima, sult).",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": []
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "",
+            "e_manageability_ids": "",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": {
+                "type": "riskstatus",
+                "values": [
+                    "riskstat-2-uuid"
+                ]
+            },
+            "e_uncertainty_ids": "Medium",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-1d870b12-8d66-4287-a82e-77b03f4bec17",
+            "objectname": "risk",
+            "parentid": "assessment-a8f8ef37-bd24-4d04-a8e7-ef3411db42ae",
+            "parenttype": "assessment",
+            "assumption": "Atomulykker er sjeldne, men krig og internasjonale forhold kan øke risikoen.",
+            "consequence_justification": "Mulig svært alvorlig påvirkning på helse, miljø og samfunnsfunksjoner.",
+            "description": "Radioaktiv forurensning ved atomhendelser (luftbårne utslipp eller lokale hendelser).",
+            "existingmeasuredescription": "Nasjonal/regional atomberedskap (KU/DSA/Statsforvalter); lokale planer integrert i kommunal beredskap; tiltak som evakuering, opphold innendørs, jodtabletter, kostholdsråd.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Radioaktiv forurensning",
+            "uncertainty_justification": "Lav sannsynlighet, stor variasjon i mulige kilder og spredningsmønster.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "5. Critical - Discharge of disastrous amounts",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-2-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "5. Critical - National reputation loss",
+            "e_consequence_safety_ids": "5. Critical - Death",
+            "e_manageability_ids": "Medium",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": {
+                "type": "riskstatus",
+                "values": [
+                    "riskstat-2-uuid"
+                ]
+            },
+            "e_uncertainty_ids": "High",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-f7f1385e-1d70-4997-8af6-08252d71c704",
+            "objectname": "risk",
+            "parentid": "assessment-a8f8ef37-bd24-4d04-a8e7-ef3411db42ae",
+            "parenttype": "assessment",
+            "assumption": "Tilsiktede handlinger kan ikke utelukkes; variasjon i modus og mål.",
+            "consequence_justification": "Kan gi alvorlige personskader/omkomne og store forstyrrelser.",
+            "description": "Terrorhandlinger/PLIVO og tilsiktede hendelser i kommunen (skoler, offentlige rom, myndighetsperson).",
+            "existingmeasuredescription": "Overordnet kriseberedskap; EPS for evakuerte/pårørende; ROS og tiltakskort i skoler/barnehager; øvelser (PLIVO) med politi og nødetater; SLT-arbeid; vurdering av objektsikring og befolkningsvarsling.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Terrorhandlinger/PLIVO",
+            "uncertainty_justification": "Høy usikkerhet; hendelser kan skje uten forvarsel.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-2-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "4. Serious - Injury of a permanent character",
+            "e_manageability_ids": "Medium",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": {
+                "type": "riskstatus",
+                "values": [
+                    "riskstat-2-uuid"
+                ]
+            },
+            "e_uncertainty_ids": "High",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-88282daf-c493-4723-a6c6-2ce3f9b60dd0",
+            "objectname": "risk",
+            "parentid": "assessment-a8f8ef37-bd24-4d04-a8e7-ef3411db42ae",
+            "parenttype": "assessment",
+            "assumption": "Hendelser forventes å inntreffe jevnlig; knyttet til utstyrssvikt og ekstremvær.",
+            "consequence_justification": "Utslipp til resipient (Mjøsa) kan gi miljøskader og synlig forurensning.",
+            "description": "Akutt forurensning fra avløpssystemene (overløp/lekkasje/driftsstopp).",
+            "existingmeasuredescription": "Sanerings- og oppgraderingsprogram for ledningsnett og pumpestasjoner; drift/tilsyn; håndtering av feilkoblinger; felles kommunedelplan VA; IUA-beredskap.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Akutt forurensning fra avløpssystemene",
+            "uncertainty_justification": "Konsekvens varierer med varighet, volum og lokasjon.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "3. Significant - Discharge of considerable amounts",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-2-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "",
+            "e_manageability_ids": "",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": {
+                "type": "riskstatus",
+                "values": [
+                    "riskstat-2-uuid"
+                ]
+            },
+            "e_uncertainty_ids": "Medium",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-64db7093-79fa-4b69-aacc-77a45f26cb6d",
+            "objectname": "risk",
+            "parentid": "assessment-a8f8ef37-bd24-4d04-a8e7-ef3411db42ae",
+            "parenttype": "assessment",
+            "assumption": "Forekomster av alunskifer og historiske lokaliteter påvirker risiko.",
+            "consequence_justification": "Kan gi helserisiko (radon) og miljøpåvirkning; påvirker bygge- og gravearbeider.",
+            "description": "Forurenset grunn (inkludert alunskifer/radon og tidligere industritomter/deponier).",
+            "existingmeasuredescription": "Nasjonale databaser (Miljødirektoratet, NGU, DSA); krav i TEK17; miljørettet helseverns tilsyn; krav om kartlegging/tiltaksplan i plansaker; lokal kunnskapsoppbygging.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Forurenset grunn",
+            "uncertainty_justification": "Status endres ved nye undersøkelser/tiltak; lokal variasjon betydelig.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "2. Moderate - Discharge of minor amounts",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-2-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "1. Insignificant - Minor injury",
+            "e_manageability_ids": "High",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": {
+                "type": "riskstatus",
+                "values": [
+                    "riskstat-2-uuid"
+                ]
+            },
+            "e_uncertainty_ids": "Medium",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        },
+        {
+            "id": "risk-d3070d2f-a344-4e58-b11c-418910da4fbd",
+            "objectname": "risk",
+            "parentid": "assessment-a8f8ef37-bd24-4d04-a8e7-ef3411db42ae",
+            "parenttype": "assessment",
+            "assumption": "Legionella-utbrudd i større skala er sjeldne med dagens forebygging.",
+            "consequence_justification": "Høy dødelighet i utsatte grupper ved utbrudd.",
+            "description": "Legionella-smitte fra tekniske anlegg (dusjanlegg m.m.).",
+            "existingmeasuredescription": "Forebyggende rutiner ved institusjoner/bygg; tilsyn fra miljørettet helsevern; fokus på risikovirksomheter.",
+            "matrixcolor": "",
+            "matrixscore": "",
+            "riskscore": "",
+            "title": "Legionella",
+            "uncertainty_justification": "Mørketall kan forekomme; enkelttilfeller forventes årlig.",
+            "e_arena_ids": "",
+            "e_consequence_economy_ids": "",
+            "e_consequence_environment_ids": "",
+            "e_consequence_probability_ids": {
+                "type": "consequenceprobability",
+                "values": [
+                    "prob-1-uuid"
+                ]
+            },
+            "e_consequence_reputation_ids": "",
+            "e_consequence_safety_ids": "2. Moderate - Injury with absence",
+            "e_manageability_ids": "High",
+            "e_phase_ids": "",
+            "e_risk_owner_ids": "",
+            "e_riskstrategy_ids": "",
+            "e_status_ids": {
+                "type": "riskstatus",
+                "values": [
+                    "riskstat-2-uuid"
+                ]
+            },
+            "e_uncertainty_ids": "Medium",
+            "a_measures_ids": {
+                "type": "measure",
+                "values": []
+            }
+        }
+    ]
+}

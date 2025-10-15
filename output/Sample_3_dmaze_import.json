@@ -4,21 +4,21 @@
         "templateUsed": "In-memory schema",
         "overallStatus": "Success",
         "itemTitle": null,
-        "processingTimestamp": "2025-10-14T11:19:07.099707",
+        "processingTimestamp": "2025-10-14T12:36:32.465111",
         "processingLog": {
             "Template Processing": "Success (0.00s)",
-            "Document Conversion": "Success (0.19s)",
-            "Document Classification": "Success (2.63s)",
-            "AI Data Extraction ": "Success (12.74s)",
-            "Data Transformation ": "Success (2.71s)"
+            "Document Conversion": "Success (0.20s)",
+            "Document Classification": "Success (6.26s)",
+            "AI Data Extraction ": "Success (15.68s)",
+            "Data Transformation ": "Success (3.23s)"
         },
         "errorsEncountered": [],
         "warningsEncountered": [],
-        "humanReadableSummary": "Summary of the import process for the document from the file 'sample_3.pdf'.\n  - Total parts identified in document: 1.\n  - Status for this part: Success (processed in 15.44 seconds).\n  - Errors encountered for this part: 0.\n  - Warnings encountered for this part: 0."
+        "humanReadableSummary": "Summary of the import process for the document from the file 'sample_3.pdf'.\n  - Total parts identified in document: 1.\n  - Status for this part: Success (processed in 18.91 seconds).\n  - Errors encountered for this part: 0.\n  - Warnings encountered for this part: 0."
     },
     "dmaze_data": [
         {
-            "id": "mom-3a30b2ab-1e80-4f93-b566-7310591f040c",
+            "id": "mom-78ccdb8b-221e-494a-b000-64fb8bbf213b",
             "objectname": "mom",
             "description": "Dette møtet ble holdt for å gjennomgå og evaluere status for IT-sikkerhetstiltak i tredje kvartal. Målet var å identifisere nye risikoer, følge opp eksisterende tiltak og beslutte nye handlinger for å styrke selskapets sikkerhetspositur.",
             "endtime": "2025-09-02T10:30:00Z",
@@ -50,39 +50,80 @@
             "a_agenda_ids": {
                 "type": "agenda",
                 "values": [
-                    "agenda-30b84b8c-f23e-472e-9ab9-ff05e4abfee1",
-                    "agenda-c11034fe-beae-40fa-92fb-b025dbd32611",
-                    "agenda-e869858b-ec0f-4975-9055-d476e948c186"
+                    "agenda-6163b937-0ac1-4c76-b726-282a0f5eb708",
+                    "agenda-193fbaab-dc8b-4a00-9042-af389af388c9",
+                    "agenda-15226bef-5d1c-4e11-9277-4e979a24e031"
                 ]
             }
         },
         {
-            "id": "measure-626e0210-8ba8-4a3f-9be6-3bc21d18c1ee",
+            "id": "measure-ce808d3c-a0f2-4c4e-a822-b06bbddfe0ce",
             "objectname": "measure",
-            "parentid": "agenda-30b84b8c-f23e-472e-9ab9-ff05e4abfee1",
+            "parentid": "agenda-6163b937-0ac1-4c76-b726-282a0f5eb708",
             "parenttype": "agenda",
             "deadline": "2025-10-15T00:00:00Z",
             "description": "IT-sikkerhetsteamet skal lage en ny 15-minutters e-læringsmodul.",
             "descriptionimplementation": "Oppgaven er tildelt, men ikke påbegynt.",
-            "title": "Utvikle nytt treningsmateriell for \"spear phishing\".",
+            "title": "",
             "e_measurepriority_ids": "",
             "e_responsible_ids": "",
             "e_status_ids": {
                 "type": "measurestate",
                 "values": [
-                    "4"
+                    "5"
                 ]
             }
         },
         {
-            "id": "measure-e7c5daaa-415e-423c-a90b-714ff895cd9b",
+            "id": "measure-e3badf9a-833c-44db-8d03-f1c89f6f9bda",
             "objectname": "measure",
-            "parentid": "agenda-30b84b8c-f23e-472e-9ab9-ff05e4abfee1",
+            "parentid": "agenda-6163b937-0ac1-4c76-b726-282a0f5eb708",
             "parenttype": "agenda",
             "deadline": "2025-11-01T00:00:00Z",
             "description": "Simuleringen skal inkludere elementer av \"spear phishing\" og rettes mot salgsavdelingen.",
             "descriptionimplementation": "Venter på endelig godkjenning fra avdelingsleder.",
-            "title": "Planlegge og gjennomføre en ny phishing-simulering.",
+            "title": "",
+            "e_measurepriority_ids": "",
+            "e_responsible_ids": "",
+            "e_status_ids": {
+                "type": "measurestate",
+                "values": [
+                    "5"
+                ]
+            }
+        },
+        {
+            "id": "agenda-6163b937-0ac1-4c76-b726-282a0f5eb708",
+            "objectname": "agenda",
+            "parentid": "mom-78ccdb8b-221e-494a-b000-64fb8bbf213b",
+            "parenttype": "mom",
+            "conclusion": "Den nåværende opplæringsmodellen videreføres, men med økt fokus på å gjenkjenne \"spear phishing\". Det ble besluttet å iverksette to nye tiltak for å forsterke dette.",
+            "description": "IT-avdelingen presenterte en rapport om den nylige phishing-kampanjen rettet mot ansatte. Rapporten viste at 15% av de ansatte klikket på lenken, en nedgang fra 25% forrige kvartal. Diskusjonen fokuserte på hva som fungerte bra med den nåværende opplæringen og hvor det er forbedringspotensial. Teamet var enige om at den praktiske simuleringsøvelsen var effektiv.",
+            "title": "Gjennomgang av Phishing-kampanje i August",
+            "e_agenda_owner_ids": "",
+            "e_status_ids": {
+                "type": "agendastatus",
+                "values": [
+                    "2"
+                ]
+            },
+            "a_measures_ids": {
+                "type": "measure",
+                "values": [
+                    "measure-ce808d3c-a0f2-4c4e-a822-b06bbddfe0ce",
+                    "measure-e3badf9a-833c-44db-8d03-f1c89f6f9bda"
+                ]
+            }
+        },
+        {
+            "id": "measure-6265a733-d9d9-4c31-8fc8-1d78ee8f6048",
+            "objectname": "measure",
+            "parentid": "agenda-193fbaab-dc8b-4a00-9042-af389af388c9",
+            "parenttype": "agenda",
+            "deadline": "2025-09-10T00:00:00Z",
+            "description": "Prosjektleder skal levere en detaljert, oppdatert plan som inkluderer risikovurdering og en ny tidslinje.",
+            "descriptionimplementation": "Arbeidet er påbegynt.",
+            "title": "",
             "e_measurepriority_ids": "",
             "e_responsible_ids": "",
             "e_status_ids": {
@@ -93,50 +134,9 @@
             }
         },
         {
-            "id": "agenda-30b84b8c-f23e-472e-9ab9-ff05e4abfee1",
+            "id": "agenda-193fbaab-dc8b-4a00-9042-af389af388c9",
             "objectname": "agenda",
-            "parentid": "mom-3a30b2ab-1e80-4f93-b566-7310591f040c",
-            "parenttype": "mom",
-            "conclusion": "Den nåværende opplæringsmodellen videreføres, men med økt fokus på å gjenkjenne \"spear phishing\". Det ble besluttet å iverksette to nye tiltak for å forsterke dette.",
-            "description": "IT-avdelingen presenterte en rapport om den nylige phishing-kampanjen rettet mot ansatte. Rapporten viste at 15% av de ansatte klikket på lenken, en nedgang fra 25% forrige kvartal. Diskusjonen fokuserte på hva som fungerte bra med den nåværende opplæringen og hvor det er forbedringspotensial. Teamet var enige om at den praktiske simuleringsøvelsen var effektiv.",
-            "title": "Gjennomgang av Phishing-kampanje i August",
-            "e_agenda_owner_ids": "",
-            "e_status_ids": {
-                "type": "agendastatus",
-                "values": [
-                    "3"
-                ]
-            },
-            "a_measures_ids": {
-                "type": "measure",
-                "values": [
-                    "measure-626e0210-8ba8-4a3f-9be6-3bc21d18c1ee",
-                    "measure-e7c5daaa-415e-423c-a90b-714ff895cd9b"
-                ]
-            }
-        },
-        {
-            "id": "measure-f789392d-588d-4c55-a235-ecbbb24c4a4e",
-            "objectname": "measure",
-            "parentid": "agenda-c11034fe-beae-40fa-92fb-b025dbd32611",
-            "parenttype": "agenda",
-            "deadline": "2025-09-10T00:00:00Z",
-            "description": "Prosjektleder skal levere en detaljert, oppdatert plan som inkluderer risikovurdering og en ny tidslinje.",
-            "descriptionimplementation": "Arbeidet er påbegynt.",
-            "title": "Utarbeide en revidert plan for databasemigrering.",
-            "e_measurepriority_ids": "",
-            "e_responsible_ids": "",
-            "e_status_ids": {
-                "type": "measurestate",
-                "values": [
-                    "4"
-                ]
-            }
-        },
-        {
-            "id": "agenda-c11034fe-beae-40fa-92fb-b025dbd32611",
-            "objectname": "agenda",
-            "parentid": "mom-3a30b2ab-1e80-4f93-b566-7310591f040c",
+            "parentid": "mom-78ccdb8b-221e-494a-b000-64fb8bbf213b",
             "parenttype": "mom",
             "conclusion": "Prosjektet fortsetter som planlagt, men med en justert tidsplan for databasemigreringen. En dedikert ressurs skal settes på saken.",
             "description": "Prosjektleder for serveroppgraderingen ga en statusoppdatering. Fase 1 (utskifting av maskinvare) er 90% fullført. Det gjenstår noen utfordringer knyttet til migrering av en eldre database som har forårsaket forsinkelser. Teamet diskuterte alternative migreringsstrategier for å unngå ytterligere stopptid.",
@@ -151,14 +151,14 @@
             "a_measures_ids": {
                 "type": "measure",
                 "values": [
-                    "measure-f789392d-588d-4c55-a235-ecbbb24c4a4e"
+                    "measure-6265a733-d9d9-4c31-8fc8-1d78ee8f6048"
                 ]
             }
         },
         {
-            "id": "agenda-e869858b-ec0f-4975-9055-d476e948c186",
+            "id": "agenda-15226bef-5d1c-4e11-9277-4e979a24e031",
             "objectname": "agenda",
-            "parentid": "mom-3a30b2ab-1e80-4f93-b566-7310591f040c",
+            "parentid": "mom-78ccdb8b-221e-494a-b000-64fb8bbf213b",
             "parenttype": "mom",
             "conclusion": "Møtet ble avsluttet.",
             "description": "Ingen nye punkter ble meldt inn.",
