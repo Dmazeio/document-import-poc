@@ -4,25 +4,25 @@
         "templateUsed": "In-memory schema",
         "overallStatus": "Success",
         "itemTitle": null,
-        "processingTimestamp": "2025-10-15T13:06:43.892802",
+        "processingTimestamp": "2025-10-15T13:28:12.110341",
         "processingLog": {
             "Template Processing": "Success (0.00s)",
-            "Document Conversion": "Success (0.13s)",
-            "Document Classification": "Success (7.28s)",
-            "AI Data Extraction ": "Success (92.05s)",
-            "Data Transformation ": "Success (11.12s)"
+            "Document Conversion": "Success (0.18s)",
+            "Document Classification": "Success (3.26s)",
+            "AI Data Extraction ": "Success (73.15s)",
+            "Data Transformation ": "Success (4.58s)"
         },
         "errorsEncountered": [],
         "warningsEncountered": [],
-        "humanReadableSummary": "Summary of the import process for the document from the file 'Risk Assessment Sample.docx'.\n  - Total parts identified in document: 1.\n  - Status for this part: Success (processed in 103.18 seconds).\n  - Errors encountered for this part: 0.\n  - Warnings encountered for this part: 0."
+        "humanReadableSummary": "Summary of the import process for the document from the file 'Risk Assessment Sample.docx'.\n  - Total parts identified in document: 1.\n  - Status for this part: Success (processed in 77.73 seconds).\n  - Errors encountered for this part: 0.\n  - Warnings encountered for this part: 0."
     },
     "dmaze_data": [
         {
-            "id": "assessment-b963df61-3e07-4e49-8bec-986809b55b88",
+            "id": "assessment-fc4e1846-2850-4ae2-8969-02fe742045cf",
             "objectname": "assessment",
             "assumptions": "",
             "description": "Dette dokumentet beskriver de viktigste operasjonelle og finansielle risikoene knyttet til migreringen av vår primære kundedatabase til AWS-skyplattformen.",
-            "objective": "Identifisere, vurdere og planlegge tiltak for de mest kritiske risikoene.",
+            "objective": "Målet er å identifisere, vurdere og planlegge tiltak for de mest kritiske risikoene.",
             "title": "Risikovurdering for Sky-migreringsprosjektet - Q4 2025",
             "e_activity_ids": "",
             "e_location_ids": {
@@ -48,33 +48,15 @@
             "a_risk_ids": {
                 "type": "risk",
                 "values": [
-                    "risk-b7245c66-72ea-48dd-b38d-1371a7bb0de5",
-                    "risk-f3107f65-c3bd-44bf-a50c-349450c622a7"
+                    "risk-34e765e7-4c1b-48a1-bdb5-e97a4dc382c1",
+                    "risk-c199f6eb-3e90-43b2-8ec4-7a0a8b7db618"
                 ]
             }
         },
         {
-            "id": "measure-c2ef9383-4bec-41ed-a10e-56bc856c10e5",
-            "objectname": "measure",
-            "parentid": "risk-b7245c66-72ea-48dd-b38d-1371a7bb0de5",
-            "parenttype": "risk",
-            "deadline": "2025-10-15T00:00:00Z",
-            "description": "Implementere og verifisere en fullstendig backup- og tilbakeføringsplan før migreringen starter.",
-            "statusdescription": "",
-            "title": "",
-            "e_measurepriority_ids": "",
-            "e_responsible_ids": {
-                "type": "user",
-                "values": [
-                    "user-2-kari-nordmann-uuid"
-                ]
-            },
-            "e_status_ids": ""
-        },
-        {
-            "id": "risk-b7245c66-72ea-48dd-b38d-1371a7bb0de5",
+            "id": "risk-34e765e7-4c1b-48a1-bdb5-e97a4dc382c1",
             "objectname": "risk",
-            "parentid": "assessment-b963df61-3e07-4e49-8bec-986809b55b88",
+            "parentid": "assessment-fc4e1846-2850-4ae2-8969-02fe742045cf",
             "parenttype": "assessment",
             "assumption": "",
             "consequence_justification": "",
@@ -124,33 +106,13 @@
             "e_uncertainty_ids": "",
             "a_measures_ids": {
                 "type": "measure",
-                "values": [
-                    "measure-c2ef9383-4bec-41ed-a10e-56bc856c10e5"
-                ]
+                "values": []
             }
         },
         {
-            "id": "measure-15105566-d929-4994-8bdd-2ab1133d7838",
-            "objectname": "measure",
-            "parentid": "risk-f3107f65-c3bd-44bf-a50c-349450c622a7",
-            "parenttype": "risk",
-            "deadline": "2025-10-01T00:00:00Z",
-            "description": "Innhente et fastpristilbud fra en ekstern leverandør for de mest komplekse delene av migreringen.",
-            "statusdescription": "",
-            "title": "",
-            "e_measurepriority_ids": "",
-            "e_responsible_ids": {
-                "type": "user",
-                "values": [
-                    "user-5-arne-pettersen-uuid"
-                ]
-            },
-            "e_status_ids": ""
-        },
-        {
-            "id": "risk-f3107f65-c3bd-44bf-a50c-349450c622a7",
+            "id": "risk-c199f6eb-3e90-43b2-8ec4-7a0a8b7db618",
             "objectname": "risk",
-            "parentid": "assessment-b963df61-3e07-4e49-8bec-986809b55b88",
+            "parentid": "assessment-fc4e1846-2850-4ae2-8969-02fe742045cf",
             "parenttype": "assessment",
             "assumption": "",
             "consequence_justification": "",
@@ -198,9 +160,7 @@
             "e_uncertainty_ids": "",
             "a_measures_ids": {
                 "type": "measure",
-                "values": [
-                    "measure-15105566-d929-4994-8bdd-2ab1133d7838"
-                ]
+                "values": []
             }
         }
     ]

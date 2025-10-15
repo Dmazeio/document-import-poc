@@ -1,6 +1,6 @@
 # This dictionary simulates the entire Dmaze database with example data.
 SIMULATED_DATABASE = {
-    # --- DATA FROM 'Minutes of Meeting' ---
+
     "user": [
         {"id": "user-1-ola-nordmann-uuid", "name": "Ola Nordmann", "email": "ola@example.com"},
         {"id": "user-2-kari-nordmann-uuid", "name": "Kari Nordmann", "email": "kari@example.com"},
@@ -14,7 +14,7 @@ SIMULATED_DATABASE = {
         {"id": "user-10-lise-berg-uuid", "name": "Lise Berg", "email": "lise.berg@example.com"},
         {"id": "user-11-erik-larsen-uuid", "name": "Erik Larsen", "email": "erik.l@example.com"},
     ],
-    "people": [ # 'people' is an alias for 'user' and contains the same data
+    "people": [
         {"id": "user-1-ola-nordmann-uuid", "name": "Ola Nordmann"},
         {"id": "user-2-kari-nordmann-uuid", "name": "Kari Nordmann"},
         {"id": "user-3-arne-arnesen-uuid", "name": "Arne Arnesen"},
@@ -28,65 +28,63 @@ SIMULATED_DATABASE = {
         {"id": "user-11-erik-larsen-uuid", "name": "Erik Larsen"},
     ],
     "project": [
-        {"id": "2", "name": "Admin"}, {"id": "3", "name": "Communication"}, {"id": "4", "name": "External/Partner"},
-        {"id": "6", "name": "HR"}, {"id": "7", "name": "IT"}, {"id": "8", "name": "Management"},
-        {"id": "9", "name": "Production"}, {"id": "5", "name": "R&D"}, {"id": "10", "name": "Sale"},
+        {"id": "proj-2-admin-uuid", "name": "Admin"}, {"id": "proj-3-comm-uuid", "name": "Communication"}, {"id": "proj-4-ext-uuid", "name": "External/Partner"},
+        {"id": "proj-6-hr-uuid", "name": "HR"}, {"id": "proj-7-it-uuid", "name": "IT"}, {"id": "proj-8-mgmt-uuid", "name": "Management"},
+        {"id": "proj-9-prod-uuid", "name": "Production"}, {"id": "proj-5-rd-uuid", "name": "R&D"}, {"id": "proj-10-sale-uuid", "name": "Sale"},
     ],
-    "momstatus": [{"id": "3", "name": "Closed"}, {"id": "1", "name": "Draft"}, {"id": "2", "name": "Open"}],
-    "typeofmeeting": [{"id": "1", "name": "Management meeting"}, {"id": "2", "name": "Status meeting"}],
-    "unit": [{"id": "unit-1", "name": "Finance Department"}, {"id": "unit-2", "name": "Operations Division"}],
+    "momstatus": [{"id": "momstat-3-closed-uuid", "name": "Closed"}, {"id": "momstat-1-draft-uuid", "name": "Draft"}, {"id": "momstat-2-open-uuid", "name": "Open"}],
+    "typeofmeeting": [{"id": "meettype-1-mgmt-uuid", "name": "Management meeting"}, {"id": "meettype-2-status-uuid", "name": "Status meeting"}],
+    "unit": [{"id": "unit-1-finance-uuid", "name": "Finance Department"}, {"id": "unit-2-ops-uuid", "name": "Operations Division"}],
     "measurestate": [
-        {"id": "1", "name": "Identified (pending decision)"},
-        {"id": "4", "name": "In progress (not started)"},
-        {"id": "12", "name": "Completed (100%) (approved)"},
-        {"id": "5", "name": "To be implemented (pending accept)"}
+        {"id": "mstate-1-identified-uuid", "name": "Identified (pending decision)"},
+        {"id": "mstate-4-inprogress-uuid", "name": "In progress (not started)"},
+        {"id": "mstate-12-completed-uuid", "name": "Completed (100%) (approved)"},
+        {"id": "mstate-5-implement-uuid", "name": "To be implemented (pending accept)"}
     ],
     "location": [
         {"id": "loc-1-oslo-uuid", "name": "Møterom Oslo"}, 
         {"id": "loc-2-bergen-uuid", "name": "Prosjektrom Bergen"},
         {"id": "loc-3-stavanger-uuid", "name": "Datasenter – Stavanger"}
     ],
-    "meetingfrequency": [{"id": "2", "name": "One-off"}, {"id": "1", "name": "Recurring"}],
-    "agendastatus": [{"id": "3", "name": "Closed"}, {"id": "1", "name": "Draft"}, {"id": "2", "name": "Open"}],
-    "measurepriority": [{"id": "1", "name": "High"}, {"id": "3", "name": "Low"}, {"id": "2", "name": "Medium"}],
+    "meetingfrequency": [{"id": "meetfreq-2-oneoff-uuid", "name": "One-off"}, {"id": "meetfreq-1-recurring-uuid", "name": "Recurring"}],
+    "agendastatus": [{"id": "agendastat-3-closed-uuid", "name": "Closed"}, {"id": "agendastat-1-draft-uuid", "name": "Draft"}, {"id": "agendastat-2-open-uuid", "name": "Open"}],
+    "measurepriority": [{"id": "mprio-1-high-uuid", "name": "High"}, {"id": "mprio-3-low-uuid", "name": "Low"}, {"id": "mprio-2-medium-uuid", "name": "Medium"}],
 
-    # --- DATA FROM 'Emergency Preparedness' ---
-    "epphase": [{"id": "3", "name": "Normalisation"}, {"id": "1", "name": "Notification and mobilisation"}, {"id": "2", "name": "Handling"}],
-    "epplanrole": [{"id": "3", "name": "Fire response leader"}, {"id": "1", "name": "Emergency manager"}],
-    "epresourcecategory": [{"id": "1", "name": "Cooperative partner"}, {"id": "2", "name": "Competence"}, {"id": "3", "name": "Manning"}, {"id": "4", "name": "Equipment"}],
-    "epresourcestatus": [{"id": "5", "name": "Not relevant"}, {"id": "1", "name": "Identified"}, {"id": "2", "name": "Part of today's preparedness"}],
-    "epassessmentstatus": [{"id": "3", "name": "Closed"}, {"id": "1", "name": "Draft"}, {"id": "2", "name": "Open"}],
-    "epscenariostatus": [{"id": "1", "name": "Identified"}, {"id": "3", "name": "Not analysed"}, {"id": "2", "name": "Analysed"}],
-    "eptaskstatus": [{"id": "1", "name": "Identified"}, {"id": "2", "name": "Part of today's preparedness"}],
-    "epscenariocategory": [{"id": "1", "name": "Natural event"}, {"id": "2", "name": "Fire event"}],
-    "eptimeline": [{"id": "1", "name": "Immediately"}, {"id": "2", "name": "As soon as possible"}],
+    "epphase": [{"id": "epphase-3-norm-uuid", "name": "Normalisation"}, {"id": "epphase-1-mob-uuid", "name": "Notification and mobilisation"}, {"id": "epphase-2-handling-uuid", "name": "Handling"}],
+    "epplanrole": [{"id": "eprole-3-firelead-uuid", "name": "Fire response leader"}, {"id": "eprole-1-emgmt-uuid", "name": "Emergency manager"}],
+    "epresourcecategory": [{"id": "eprescat-1-coop-uuid", "name": "Cooperative partner"}, {"id": "eprescat-2-comp-uuid", "name": "Competence"}, {"id": "eprescat-3-manning-uuid", "name": "Manning"}, {"id": "eprescat-4-equip-uuid", "name": "Equipment"}],
+    "epresourcestatus": [{"id": "epresstat-5-notrel-uuid", "name": "Not relevant"}, {"id": "epresstat-1-ident-uuid", "name": "Identified"}, {"id": "epresstat-2-prepared-uuid", "name": "Part of today's preparedness"}],
+    "epassessmentstatus": [{"id": "epassess-3-closed-uuid", "name": "Closed"}, {"id": "epassess-1-draft-uuid", "name": "Draft"}, {"id": "epassess-2-open-uuid", "name": "Open"}],
+    "epscenariostatus": [{"id": "epscenstat-1-ident-uuid", "name": "Identified"}, {"id": "epscenstat-3-notanalysed-uuid", "name": "Not analysed"}, {"id": "epscenstat-2-analysed-uuid", "name": "Analysed"}],
+    "eptaskstatus": [{"id": "eptaskstat-1-ident-uuid", "name": "Identified"}, {"id": "eptaskstat-2-prepared-uuid", "name": "Part of today's preparedness"}],
+    "epscenariocategory": [{"id": "epscencat-1-natural-uuid", "name": "Natural event"}, {"id": "epscencat-2-fire-uuid", "name": "Fire event"}],
+    "eptimeline": [{"id": "eptime-1-immediate-uuid", "name": "Immediately"}, {"id": "eptime-2-asap-uuid", "name": "As soon as possible"}],
     
-    # --- NEW DATA FOR 'Risk Assessment' ADDED HERE ---
     "riskcategory": [
-        {"id": "riskcat-1-uuid", "name": "Operational Risk"}
+        {"id": "riskcat-1-operational-uuid", "name": "Operational Risk"}
     ],
     "consequenceprobability": [
-        {"id": "prob-1-uuid", "name": "2. Low: 0.1%-1% per year"},
-        {"id": "prob-2-uuid", "name": "3. Medium: 1%-10% per year"}
+        {"id": "prob-1-low-uuid", "name": "2. Low: 0.1%-1% per year"},
+        {"id": "prob-2-medium-uuid", "name": "3. Medium: 1%-10% per year"}
     ],
     "assessmentstatus": [
-        {"id": "assess-stat-1-uuid", "name": "Open"},
-        {"id": "assess-stat-2-uuid", "name": "Draft"}
+        {"id": "assess-stat-1-open-uuid", "name": "Open"},
+        {"id": "assess-stat-2-draft-uuid", "name": "Draft"}
     ],
     "consequenceeconomy": [
-        {"id": "econ-1-uuid", "name": "2. Moderate - 50.000-500.000 NOK"},
-        {"id": "econ-2-uuid", "name": "3. Significant - 0.5-5 MNOK"}
+        {"id": "econ-1-moderate-uuid", "name": "2. Moderate - 50.000-500.000 NOK"},
+        {"id": "econ-2-significant-uuid", "name": "3. Significant - 0.5-5 MNOK"}
     ],
     "riskstatus": [
-        {"id": "riskstat-1-uuid", "name": "Draft"},
-        {"id": "riskstat-2-uuid", "name": "Open"}
+        {"id": "riskstat-1-draft-uuid", "name": "Draft"},
+        {"id": "riskstat-2-open-uuid", "name": "Open"}
     ],
     "consequencereputation": [
-        {"id": "rep-1-uuid", "name": "4. Serious - Reputation loss prioritised stakeholders"}
+        {"id": "rep-1-serious-uuid", "name": "4. Serious - Reputation loss prioritised stakeholders"}
     ]
 }
 
-# Meta database containing the "instructions" (metadata) for each entity type.
+
 SIMULATED_META_DATABASE = {
     "user": {"primary_display_field": "name", "id_field": "id", "dmaze_format_wrapper": "user"},
     "people": {"primary_display_field": "name", "id_field": "id", "dmaze_format_wrapper": "user"},
@@ -109,7 +107,6 @@ SIMULATED_META_DATABASE = {
     "epscenariocategory": {"primary_display_field": "name", "id_field": "id", "dmaze_format_wrapper": None},
     "eptimeline": {"primary_display_field": "name", "id_field": "id", "dmaze_format_wrapper": None},
     
-    # --- NY METADATA FOR 'Risk Assessment' LAGT TIL HER ---
     "riskcategory": {"primary_display_field": "name", "id_field": "id", "dmaze_format_wrapper": None},
     "consequenceprobability": {"primary_display_field": "name", "id_field": "id", "dmaze_format_wrapper": None},
     "assessmentstatus": {"primary_display_field": "name", "id_field": "id", "dmaze_format_wrapper": None},
