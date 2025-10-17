@@ -1,3 +1,5 @@
+# --- START OF FILE api_simulator.py ---
+
 # This dictionary simulates the entire Dmaze database with example data.
 SIMULATED_DATABASE = {
 
@@ -37,7 +39,7 @@ SIMULATED_DATABASE = {
     "unit": [{"id": "unit-1-finance-uuid", "name": "Finance Department"}, {"id": "unit-2-ops-uuid", "name": "Operations Division"}],
     "measurestate": [
         {"id": "mstate-1-identified-uuid", "name": "Identified (pending decision)"},
-        {"id": "mstate-4-inprogress-uuid", "name": "In progress (not started)"},
+        # {"id": "mstate-4-inprogress-uuid", "name": "In progress (not started)"}, # FJERNET FOR TEST
         {"id": "mstate-12-completed-uuid", "name": "Completed (100%) (approved)"},
         {"id": "mstate-5-implement-uuid", "name": "To be implemented (pending accept)"}
     ],
@@ -68,7 +70,7 @@ SIMULATED_DATABASE = {
         {"id": "prob-2-medium-uuid", "name": "3. Medium: 1%-10% per year"}
     ],
     "assessmentstatus": [
-        {"id": "assess-stat-1-open-uuid", "name": "Open"},
+        # {"id": "assess-stat-1-open-uuid", "name": "Open"}, # FJERNET FOR TEST
         {"id": "assess-stat-2-draft-uuid", "name": "Draft"}
     ],
     "consequenceeconomy": [

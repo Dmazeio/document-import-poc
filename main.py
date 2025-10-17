@@ -13,7 +13,7 @@ def sanitize_filename(name: str) -> str:
 
 if __name__ == "__main__":
     # --- Part 1: Define input files ---
-    input_doc_path = "input_documents/Risk Assessment Sample.docx"
+    input_doc_path = "input_documents/ROS-Analyse_Stange_kommune_2023-2027__word.docx"
     template_path = "input-schemas/Risk Assessment - Enterprise Risk Assessment.json"
     output_dir = "output"
     os.makedirs(output_dir, exist_ok=True)
